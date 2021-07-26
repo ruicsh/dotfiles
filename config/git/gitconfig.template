@@ -43,6 +43,7 @@
   rba = rebase --abort
   rbc = rebase --continue
   rbi = rebase --interactive
+  rbs = rebase --skip
   rs = reset
   rt = remote -vv                     # List remote branches
   rtdm = remote prune                 # Delete remote merged branches
@@ -51,7 +52,7 @@
   shc = stash clear
   shl = stash list
   shp = stash pop
-  shu = stash push
+  shu = stash -u                      # include untracked files
   sl = shortlog -c -s                 # Show number of commits per author
   st = status --short --branch
   sw = show
