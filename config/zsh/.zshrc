@@ -127,5 +127,7 @@ RPS1=''
 
 # make sure user installed binaries override system's
 export PATH=/usr/local/bin:$PATH
-# make sure node modules binaries are on callable
+# make sure node modules binaries are callable
 export PATH=./node_modules/.bin:$PATH
+# replace native OSX sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"

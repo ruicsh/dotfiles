@@ -19,6 +19,10 @@ brew 'wallpaper'            # manage desktop wallpaper
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
 
+brew 'jq'                   # json query
+brew 'awscli'               # aws cli
+brew 'cfn-lint'             # aws cloudformation linter
+
 cask 'bitwarden'            # password manager
 cask 'chromium'             # development browser
 cask 'firefox'              # general use browser
