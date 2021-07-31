@@ -68,7 +68,6 @@ keybindings_rc="$vscode_rc_dir"/keybindings.json
 sed \
   -e "s|__SHELLCHECK_EXECUTABLE_PATH__|$(command -v shellcheck)|g" \
   -e "s|__GIT_EXECUTABLE_PATH__|$(command -v git)|g" \
-  -e "s|__INTEGRATED_SHELL_OSX_PATH__|$(command -v bash)|g" \
   config/vscode/settings.template.json > "$vscode_rc"
 
 cp config/vscode/keybindings.json "$keybindings_rc"
