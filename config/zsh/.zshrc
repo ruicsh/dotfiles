@@ -99,13 +99,13 @@ z() {
 
 
 # ALIASES
-alias co="code"
+alias c="code"
 alias g="git"
-alias ls='gls --group-directories-first --color=auto -la'
+alias l='gls --group-directories-first --color=auto -la'
 alias top="htop"
 alias tx="tmuxinator"
 alias tw="task"
-alias vi="vim"
+alias v="vim"
 
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
