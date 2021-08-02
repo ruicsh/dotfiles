@@ -3,7 +3,6 @@ cask 'aerial'               # screensaver
 cask 'apptivate'            # window switcher
 cask 'iterm2'               # terminal
 cask 'kap'                  # screen recording
-cask 'rambox'               # email/messaging
 cask 'rectangle'            # window manager
 cask 'runjs'                # js/ts repl
 cask 'zoom'                 # video messaging

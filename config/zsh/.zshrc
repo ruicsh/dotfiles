@@ -76,6 +76,10 @@ else
 fi
 
 
+# load .envrc on entering a directory
+eval "$(direnv hook zsh)"
+
+
 
 # COMMANDS CUSTOMIZATION
 

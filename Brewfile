@@ -18,6 +18,7 @@ brew 'vim'                  # text editor
 brew 'wallpaper'            # manage desktop wallpaper
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
+brew 'direnv'               # directory specific env-vars
 
 brew 'jq'                   # json query
 brew 'awscli'               # aws cli
