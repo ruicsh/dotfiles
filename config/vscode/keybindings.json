@@ -1,11 +1,21 @@
 [
   {
-    "key": "alt+]",
-    "command": "workbench.action.nextEditorInGroup"
+    "key": "alt+tab",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
-    "key": "alt+[",
-    "command": "workbench.action.previousEditorInGroup"
+    "key": "alt+tab",
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "alt+shift+tab",
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "alt+shift+tab",
+    "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
   },
   {
     "key": "[IntlBackslash] shift+\\",
@@ -29,3 +39,4 @@
     "command": "fileutils.newFileAtRoot"
   }
 ]
+
