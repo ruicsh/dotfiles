@@ -44,6 +44,7 @@
   rbc = rebase --continue
   rbi = rebase --interactive
   rbs = rebase --skip
+  ro = restore
   rs = reset
   rt = remote -vv                     # List remote branches
   rtdm = remote prune                 # Delete remote merged branches
@@ -54,9 +55,11 @@
   shp = stash pop
   shu = stash -u                      # include untracked files
   sl = shortlog -c -s                 # Show number of commits per author
+  so = show
+  sofc = show --pretty="" --name-only # List files on commit
+  sw = switch
+  swc = switch -c
   st = status --short --branch
-  sw = show
-  swfc = show --pretty="" --name-only # List files on commit
   
 
 [core]
