@@ -7,7 +7,7 @@ Environment setup - macOS/Ubuntu.
 ```shell
 
 cd $HOME
-git clone https://github.com/ruicosta042/dotfiles .dotfiles
+git clone https://github.com/ruicsh/dotfiles .dotfiles
 cd .dotfiles
 ./dot.sh
 

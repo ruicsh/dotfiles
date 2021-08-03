@@ -23,7 +23,7 @@ vim +PlugInstall +qall
 
 
 # taskwarrior
-git clone git@github.com:ruicosta042/tasks.git "$HOME"/.tasks
+git clone git@github.com:ruicsh/tasks.git "$HOME"/.tasks
 
 
 # vscode
