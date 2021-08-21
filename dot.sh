@@ -29,6 +29,9 @@ brew upgrade --greedy
 source 'config/config.sh'
 
 if [[ $(os_name) == "macos" ]] ; then
+  rm "$HOME/.gitconfig"
+  rm "$HOME/.wakatime.cfg"
+  rm "$HOME/.zshrc"
   stow -R macos -t "$HOME"
 elif [[ $(os_name) == "ubuntu" ]] ; then
   stow -R ubuntu -t "$HOME"
