@@ -33,10 +33,5 @@
   {
     "key": "ctrl+shift+t",
     "command": "workbench.view.extension.thunder-client-sidebar-view"
-  },
-  {
-    "key": "cmd+n",
-    "command": "fileutils.newFileAtRoot"
   }
 ]
-

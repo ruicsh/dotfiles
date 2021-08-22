@@ -28,7 +28,6 @@ vscode_extensions=(
   mhutchie.git-graph
   mikestead.dotenv
   mkxml.vscode-filesize
-  sleistner.vscode-fileutils
   qinjia.seti-icons
   rangav.vscode-thunder-client
   rsbondi.highlight-words
