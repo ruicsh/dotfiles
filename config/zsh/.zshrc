@@ -27,20 +27,7 @@ antibody bundle starcraftman/zsh-git-prompt
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-completions
 antibody bundle zsh-users/zsh-syntax-highlighting
-
-
-# VIM MODE CURSOR
-function zle-keymap-select {
-  case $KEYMAP in
-    vicmd)
-      print -n -- "\e[1 q" ;;
-    main|viins)
-      print -n -- "\e[5 q" ;;
-  esac
-
-  zle reset-prompt
-}
-zle -N zle-keymap-select
+antibody bundle jeffreytse/zsh-vi-mode
 
 
 
