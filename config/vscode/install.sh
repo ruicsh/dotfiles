@@ -14,22 +14,23 @@ fi
 # extensions
 vscode_extensions=(
   arcticicestudio.nord-visual-studio-code
-  ChakrounAnas.turbo-console-log
   christian-kohler.npm-intellisense
   christian-kohler.path-intellisense
   dbaeumer.vscode-eslint
   eamodio.gitlens
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
-  fabiospampinato.vscode-todo-plus
   formulahendry.auto-rename-tag
   jpoissonnier.vscode-styled-components
   kumar-harsh.graphql-for-vscode
+  mechatroner.rainbow-csv
+  meganrogge.template-string-converter
   mhutchie.git-graph
   mikestead.dotenv
   mkxml.vscode-filesize
+  ms-azuretools.vscode-docker
+  Prisma.prisma
   qinjia.seti-icons
-  rangav.vscode-thunder-client
   rsbondi.highlight-words
   shd101wyy.markdown-preview-enhanced
   SirTori.indenticator

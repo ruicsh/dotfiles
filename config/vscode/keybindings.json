@@ -31,7 +31,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+t",
-    "command": "workbench.view.extension.thunder-client-sidebar-view"
+    "key": "ctrl+shift+d",
+    "command": "workbench.view.extension.dockerView"
   }
 ]
