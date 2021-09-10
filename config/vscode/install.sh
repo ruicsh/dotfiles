@@ -20,6 +20,7 @@ vscode_extensions=(
   eamodio.gitlens
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
+  exiasr.hadolint
   formulahendry.auto-rename-tag
   jpoissonnier.vscode-styled-components
   kumar-harsh.graphql-for-vscode
