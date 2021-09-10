@@ -16,7 +16,6 @@ brew 'hadolint'             # Dockerfiles linter
 brew 'reattach-to-user-namespace' # macos tmux fixes
 brew 'shellcheck'           # bash linter
 brew 'stow'                 # symlink manager
-brew 'task'                 # task management
 brew 'tmux'                 # terminal multiplexer
 brew 'tmuxinator'           # tmux session manager
 brew 'vim'                  # text editor
