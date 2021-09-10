@@ -1,8 +1,6 @@
 tap 'homebrew/cask-fonts'
 
 brew 'antibody'             # zsh package manager
-brew 'awscli'               # aws cli
-brew 'cfn-lint'             # aws cloudformation linter
 brew 'coreutils'            # basic tools
 brew 'direnv'               # directory specific env-vars
 brew 'docker-compose'       # multi container operation
