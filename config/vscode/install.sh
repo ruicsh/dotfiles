@@ -16,6 +16,7 @@ vscode_extensions=(
   arcticicestudio.nord-visual-studio-code
   christian-kohler.npm-intellisense
   christian-kohler.path-intellisense
+  clinyong.vscode-css-modules
   dbaeumer.vscode-eslint
   eamodio.gitlens
   EditorConfig.EditorConfig
