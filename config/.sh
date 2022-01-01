@@ -11,10 +11,6 @@ source 'config/git/install.sh'
 source 'config/vscode/install.sh'
 
 
-# zsh
-source 'config/zsh/install.sh'
-
-
 if test "$(uname)" = "Darwin" ; then
   # chromium
   # so that the firewall doesn't ask to block incoming connections
@@ -33,6 +29,4 @@ if test "$(uname)" = "Darwin" ; then
   # wallpaper
   # set wallpaper to solid color from nord theme
   wallpaper set-solid-color 434c5e
-
-
 fi
