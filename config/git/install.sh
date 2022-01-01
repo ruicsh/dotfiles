@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -L "$HOME/.gitconfig" ]] ; then
+if [[ -L "${HOME}/.gitconfig" ]] ; then
   return
 fi
 
@@ -19,7 +19,7 @@ if ! [[ -e "${HOME}/.ssh/id_rsa" ]] ; then
   ssh-keygen -f "${HOME}/.ssh/id_rsa" -t rsa -b 4096 -C "${email}" -N ''
 fi
 eval "$(ssh-agent -s)"
-ssh-add "$HOME/.ssh/id_rsa"
+ssh-add "${HOME}/.ssh/id_rsa"
 ssl_public_key="$(tail -1 < "${HOME}"/.ssh/id_rsa.pub)"
 
 curl -H "Authorization: token ${github_api_token}" \
@@ -34,9 +34,9 @@ elif [[ $(os_name) == "ubuntu" ]] ; then
 fi
 
 sed \
-  -e "s/__GIT_USERNAME__/$name/g" \
-  -e "s/__GIT_EMAIL__/$email/g" \
-  "config/git/gitconfig.template" > "$git_config_file"
+  -e "s/__GIT_USERNAME__/${name}/g" \
+  -e "s/__GIT_EMAIL__/${email}/g" \
+  "config/git/gitconfig.template" > "${git_config_file}"
 
 # default branch name 
 git config --global init.defaultBranch main

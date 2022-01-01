@@ -11,7 +11,7 @@ elif [[ $(os_name) == "ubuntu" ]] ; then
 fi
 
 
-cp config/zsh/.dir_colors "$zsh_rc_dir"/.dir_colors
-cp config/zsh/.inputrc "$zsh_rc_dir"/.inputrc
-cp config/zsh/.zshrc "$zsh_rc_dir"/.zshrc
+cp config/zsh/.dir_colors "${zsh_rc_dir}"/.dir_colors
+cp config/zsh/.inputrc "${zsh_rc_dir}"/.inputrc
+cp config/zsh/.zshrc "${zsh_rc_dir}"/.zshrc
 

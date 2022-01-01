@@ -6,25 +6,6 @@
 # git
 source 'config/git/install.sh'
 
-# hosts
-git clone https://github.com/StevenBlack/hosts "hosts/hosts"
-cd "hosts/hosts" || return 1;
-pip3 install --user -r requirements.txt
-python3 updateHostsFile.py --auto --replace --backup --flush-dns-cache --compress
-cd ../..
-rm -rf hosts/hosts
-# comment out chtbl.com so that podcasts (conan, bill maher) can dowload
-sudo sed -e '/chtbl/s/^/#/g' -i /etc/hosts
-
-# vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qall
-
-
-# taskwarrior
-git clone git@github.com:ruicsh/tasks.git "$HOME"/.tasks
-
 
 # vscode
 source 'config/vscode/install.sh'

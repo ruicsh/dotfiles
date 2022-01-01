@@ -94,9 +94,8 @@ alias c="code"
 alias g="git"
 alias l='gls --group-directories-first --color=auto -la'
 alias top="htop"
-alias tx="tmuxinator"
-alias tw="task"
-alias v="vim"
+alias vi="nvim"
+alias v="nvim"
 
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
@@ -122,3 +121,13 @@ export PATH=/usr/local/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 # replace native OSX sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# use brew sqlite3 
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+
+
+
+
+
+
+

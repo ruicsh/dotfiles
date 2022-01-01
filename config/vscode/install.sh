@@ -65,18 +65,18 @@ elif [[ $(os_name) == "ubuntu" ]] ; then
   wakatime_rc=ubuntu/.wakatime.cfg
 fi
 
-vscode_rc="$vscode_rc_dir"/settings.json
-keybindings_rc="$vscode_rc_dir"/keybindings.json
+vscode_rc="${vscode_rc_dir}"/settings.json
+keybindings_rc="${vscode_rc_dir}"/keybindings.json
 
 sed \
   -e "s|__SHELLCHECK_EXECUTABLE_PATH__|$(command -v shellcheck)|g" \
   -e "s|__GIT_EXECUTABLE_PATH__|$(command -v git)|g" \
-  config/vscode/settings.template.json > "$vscode_rc"
+  config/vscode/settings.template.json > "${vscode_rc}"
 
-cp config/vscode/keybindings.json "$keybindings_rc"
+cp config/vscode/keybindings.json "${keybindings_rc}"
 
 # wakatime configuration
 read -r -p "[vscode] Enter your WakaTime API key: " wakatime_api_key < /dev/tty
 sed \
-  -e "s|__WAKATIME_API_KEY__|$wakatime_api_key|g" \
-  "config/vscode/wakatime.template.cfg" > "$wakatime_rc"
+  -e "s|__WAKATIME_API_KEY__|${wakatime_api_key}|g" \
+  "config/vscode/wakatime.template.cfg" > "${wakatime_rc}"
