@@ -45,7 +45,7 @@ hi Visual ctermbg=Blue ctermfg=Black  "Visual selection
 "----------------
 
 let mapleader = ","                   "Set leader key to comma
-nmap <Leader>- <C-w>s                 "Split pane horizontall
+nmap <Leader>- <C-w>s                 "Split pane horizontally
 nmap <Leader>\| <C-w>v                "Split pane vertically
 nmap <Leader>j <C-w>j                 "Switch to pane below
 nmap <Leader>k <C-w>k                 "Switch to pane on top

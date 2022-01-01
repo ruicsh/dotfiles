@@ -1,5 +1,7 @@
 tap 'homebrew/cask-fonts'
 
+brew 'ansible'              # config of virtual machines
+brew 'ansible-lint'         # linter for ansible files
 brew 'antibody'             # zsh package manager
 brew 'coreutils'            # basic tools
 brew 'direnv'               # directory specific env-vars
@@ -9,15 +11,17 @@ brew 'fzf'                  # fuzzy text search
 brew 'git'                  # version control
 brew 'gnu-sed'              # stream text editor
 brew 'grep'                 # search plain-text
-brew 'jq'                   # json query
 brew 'hadolint'             # Dockerfiles linter
-brew 'reattach-to-user-namespace' # macos tmux fixes
+brew 'jq'                   # json query
+brew 'neovim'               # text editor
 brew 'shellcheck'           # bash linter
 brew 'stow'                 # symlink manager
-brew 'vim'                  # text editor
+brew 'vagrant'              # virtual machines management
+brew 'yamllint'             # linter for YAML files
 brew 'wallpaper'            # manage desktop wallpaper
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
+
 cask 'bitwarden'            # password manager
 cask 'chromium'             # development browser
 cask 'firefox'              # general use browser

@@ -12,4 +12,4 @@ elif [[ $(os_name) == "ubuntu" ]] ; then
   stow -D ubuntu
 fi
 
-rm -rf "$HOME"/.ssh
+rm -rf "${HOME}"/.ssh

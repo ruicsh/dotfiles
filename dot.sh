@@ -29,10 +29,14 @@ brew upgrade --greedy
 source 'config/config.sh'
 
 if [[ $(os_name) == "macos" ]] ; then
-  rm "$HOME/.gitconfig"
-  rm "$HOME/.wakatime.cfg"
-  rm "$HOME/.zshrc"
-  stow -R macos -t "$HOME"
+  rm "${HOME}/.gitconfig"
+  rm "${HOME}/.wakatime.cfg"
+  rm "${HOME}/.zshrc"
+  stow -R macos -t "${HOME}"
 elif [[ $(os_name) == "ubuntu" ]] ; then
-  stow -R ubuntu -t "$HOME"
+  stow -R ubuntu -t "${HOME}"
 fi
+
+# after linking all config files, run these:
+source 'config/post-stow.sh'
+
