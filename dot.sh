@@ -26,7 +26,7 @@ brew upgrade --greedy
 
 
 # Apps configuration
-source 'config/config.sh'
+source 'config/.sh'
 
 if [[ $(os_name) == "macos" ]] ; then
   rm "${HOME}/.gitconfig"
@@ -38,5 +38,5 @@ elif [[ $(os_name) == "ubuntu" ]] ; then
 fi
 
 # after linking all config files, run these:
-source 'config/post-stow.sh'
+source 'post-stow/.sh'
 
