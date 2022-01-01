@@ -124,6 +124,8 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 # use brew sqlite3 
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+# add homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
 
 
 
