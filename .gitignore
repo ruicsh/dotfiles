@@ -1,12 +1,11 @@
 .DS_Store
-Brewfile.lock.json
 Brewfile-mac.lock.json
-
+Brewfile.lock.json
+macos/.config/karabiner/assets
+macos/.config/nvim/plugged
 macos/.gitconfig
 macos/.wakatime.cfg
-macos/.config/nvim/plugged
-/macos/Library/Application\ Support/Code
-
+macos/Library/Application\ Support/Code
+ubuntu/.config/Code
 ubuntu/.gitconfig
 ubuntu/.wakatime.cfg
-/ubuntu/.config/Code
