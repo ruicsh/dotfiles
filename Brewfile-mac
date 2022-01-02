@@ -1,4 +1,6 @@
 
+brew 'hammerspoon'          # macos automation
+
 cask 'aerial'               # screensaver
 cask 'apptivate'            # window switcher
 cask 'free-ruler'           # screen ruler
