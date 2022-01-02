@@ -8,7 +8,6 @@ function obj:init()
   hs.grid.MARGINX = 0
   hs.grid.MARGINY = 0
 
-  local hyper = {"ctrl", "alt"}
 
   local keysToCells = {
     { 'left',   '0,0 3x6' }, -- left half

@@ -2,15 +2,10 @@ local obj = {}
 obj.__index = obj
 
 function obj:init()
-  local hyper = {"ctrl", "cmd"}
-
   local keysToApps = {
-    { ',', 'Firefox' },
-    { '.', 'Visual Studio Code' },
-    { '/', 'iTerm'},
-    { 'L', 'DevUtils'},
-    { ';', 'Postman' },
-    { "'", 'Docker' }
+    { 'o', 'Firefox' },
+    { 'p', 'Visual Studio Code' },
+    { "[", 'iTerm'},
   }
 
   for i in ipairs(keysToApps) do
