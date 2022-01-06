@@ -1,7 +1,9 @@
 local obj = {}
 obj.__index = obj
 
+
 function obj:init()
+  local hyper = {"ctrl", "alt", "shift", "cmd"}
   local keysToApps = {
     { 'o', 'Firefox' },
     { 'p', 'Visual Studio Code' },
