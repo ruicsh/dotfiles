@@ -1,6 +1,7 @@
 
 brew 'hammerspoon'          # macos automation
 brew 'karabiner-elements'   # keyboard customizer
+brew 'stats'                # system monitoring
 
 cask 'aerial'               # screensaver
 cask 'free-ruler'           # screen ruler
