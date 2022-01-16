@@ -4,8 +4,6 @@ Brewfile.lock.json
 macos/.config/karabiner/assets
 macos/.config/nvim/plugged
 macos/.gitconfig
-macos/.wakatime.cfg
 macos/Library/Application\ Support/Code
 ubuntu/.config/Code
 ubuntu/.gitconfig
-ubuntu/.wakatime.cfg

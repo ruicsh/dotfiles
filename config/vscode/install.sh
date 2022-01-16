@@ -42,7 +42,6 @@ vscode_extensions=(
   Tyriar.sort-lines
   usernamehw.errorlens
   vscodevim.vim
-  WakaTime.vscode-wakatime
   wix.vscode-import-cost
   xabikos.JavaScriptSnippets
 )
@@ -56,13 +55,11 @@ if [[ $(os_name) == "macos" ]] ; then
   mkdir macos/Library/Application\ Support/Code
   mkdir macos/Library/Application\ Support/Code/User
   vscode_rc_dir=macos/Library/Application\ Support/Code/User
-  wakatime_rc=macos/.wakatime.cfg
 elif [[ $(os_name) == "ubuntu" ]] ; then
   mkdir ubuntu/.config
   mkdir ubuntu/.config/Code
   mkdir ubuntu/.config/Code/User
   vscode_rc_dir=ubuntu/.config/Code/User
-  wakatime_rc=ubuntu/.wakatime.cfg
 fi
 
 vscode_rc="${vscode_rc_dir}"/settings.json
@@ -74,9 +71,3 @@ sed \
   config/vscode/settings.template.json > "${vscode_rc}"
 
 cp config/vscode/keybindings.json "${keybindings_rc}"
-
-# wakatime configuration
-read -r -p "[vscode] Enter your WakaTime API key: " wakatime_api_key < /dev/tty
-sed \
-  -e "s|__WAKATIME_API_KEY__|${wakatime_api_key}|g" \
-  "config/vscode/wakatime.template.cfg" > "${wakatime_rc}"

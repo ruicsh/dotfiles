@@ -92,7 +92,7 @@ z() {
 # ALIASES
 alias c="code"
 alias g="git"
-alias l='gls --group-directories-first --color=auto -la'
+alias l='gls --group-directories-first --color=auto -lah'
 alias top="htop"
 alias v="nvim"
 alias vi="nvim"

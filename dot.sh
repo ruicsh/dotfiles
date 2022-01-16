@@ -30,7 +30,6 @@ source 'config/.sh'
 
 if [[ $(os_name) == "macos" ]] ; then
   rm "${HOME}/.gitconfig"
-  rm "${HOME}/.wakatime.cfg"
   rm "${HOME}/.zshrc"
   stow -R macos -t "${HOME}"
 elif [[ $(os_name) == "ubuntu" ]] ; then
@@ -39,4 +38,3 @@ fi
 
 # after linking all config files, run these:
 source 'post-stow/.sh'
-
