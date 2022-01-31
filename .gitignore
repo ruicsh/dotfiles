@@ -1,6 +1,7 @@
 .DS_Store
 Brewfile-mac.lock.json
 Brewfile.lock.json
+macos/.config/iterm2/AppSupport
 macos/.config/karabiner/assets
 macos/.config/nvim/plugged
 macos/.gitconfig

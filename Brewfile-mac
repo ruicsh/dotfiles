@@ -1,12 +1,10 @@
-
-brew 'hammerspoon'          # macos automation
-brew 'karabiner-elements'   # keyboard customizer
-brew 'stats'                # system monitoring
-
 cask 'aerial'               # screensaver
+cask 'devutils'             # developer utilities
 cask 'free-ruler'           # screen ruler
+cask 'hammerspoon'          # macos automation
 cask 'iterm2'               # terminal
 cask 'kap'                  # screen recording
+cask 'karabiner-elements'   # keyboard customizer
 cask 'maccy'                # clopboard manager
 cask 'runjs'                # js/ts repl
 cask 'skype'                # instant messaging
