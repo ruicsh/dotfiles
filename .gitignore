@@ -5,6 +5,7 @@ macos/.config/iterm2/AppSupport
 macos/.config/karabiner/assets
 macos/.config/nvim/plugged
 macos/.gitconfig
+macos/.config/karabiner/automatic_backups
 macos/Library/Application\ Support/Code
 ubuntu/.config/Code
 ubuntu/.gitconfig
