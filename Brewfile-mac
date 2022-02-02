@@ -8,6 +8,7 @@ cask 'iterm2'                 # terminal
 cask 'kap'                    # screen recording
 cask 'karabiner-elements'     # keyboard customizer
 cask 'maccy'                  # clopboard manager
+cask 'postman'                # http client
 cask 'runjs'                  # js/ts repl
 cask 'skype'                  # instant messaging
 cask 'zoom'                   # video messaging
