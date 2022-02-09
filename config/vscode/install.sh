@@ -23,7 +23,6 @@ vscode_extensions=(
   esbenp.prettier-vscode
   exiasr.hadolint
   formulahendry.auto-rename-tag
-  jpoissonnier.vscode-styled-components
   kumar-harsh.graphql-for-vscode
   mechatroner.rainbow-csv
   meganrogge.template-string-converter
@@ -37,6 +36,7 @@ vscode_extensions=(
   shd101wyy.markdown-preview-enhanced
   SirTori.indenticator
   streetsidesoftware.code-spell-checker
+  styled-components.vscode-styled-components
   stylelint.vscode-stylelint
   timonwong.shellcheck
   Tyriar.sort-lines

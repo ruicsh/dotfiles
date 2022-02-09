@@ -16,8 +16,8 @@ brew 'jq'                   # json query
 brew 'neovim'               # text editor
 brew 'shellcheck'           # bash linter
 brew 'stow'                 # symlink manager
-brew 'vagrant'              # virtual machines management
 brew 'yamllint'             # linter for YAML files
+brew 'yarn'                 # nodejs package manager
 brew 'wallpaper'            # manage desktop wallpaper
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell

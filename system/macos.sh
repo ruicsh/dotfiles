@@ -20,9 +20,6 @@ fi
 # set to Dark Mode
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 
-# Hide the menu bar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
-
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
