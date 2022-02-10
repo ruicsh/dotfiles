@@ -28,9 +28,11 @@ rm -rf .dotfiles
 
 | Application shortcuts | <kbd>Right Opt</kbd> |
 | --------------------- | -------------------- |
-| <kbd>O</kbd>          | Firefox              |
-| <kbd>P</kbd>          | VSCode               |
-| <kbd>[</kbd>          | iTerm                |
+| <kbd>l</kbd>          | Firefox              |
+| <kbd>;</kbd>          | VSCode               |
+| <kbd>'</kbd>          | iTerm                |
+| <kbd>p</kbd>          | Citrix Viewer        |
+| <kbd>[</kbd>          | Bitwarden            |
 
 Hyper key: <kbd>Control</kbd> + <kbd>Option</kbd>
 
@@ -58,7 +60,6 @@ Hyper key: <kbd>Control</kbd> + <kbd>Option</kbd>
 ## macOS (missing)
 
 - [ ] [iterm2] set theme to minimal
-- [ ] set <kbd>CAPS-LOCK</kbd> to <kbd>CTRL</kbd>
 - [ ] set Spotlight shortcut to <kbd>CMD</kbd> + <kbd>SPACE</kbd>
 
 ## Ubuntu (missing)
