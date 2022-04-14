@@ -9,7 +9,6 @@ bindkey -v
 
 
 
-
 # NVM
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
@@ -17,14 +16,13 @@ export NVM_AUTO_USE=true
 
 
 # PLUGINS
-source <(antibody init)
-antibody bundle lukechilds/zsh-nvm
-antibody bundle rupa/z
-antibody bundle starcraftman/zsh-git-prompt
-antibody bundle zsh-users/zsh-autosuggestions
-antibody bundle zsh-users/zsh-completions
-antibody bundle zsh-users/zsh-syntax-highlighting
-antibody bundle jeffreytse/zsh-vi-mode
+# clone antidote if necessary
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+# source antidote
+. ~/.antidote/antidote.zsh
+# generate and source plugins from ~/.zsh_plugins.txt
+antidote load
+
 
 
 # GIT PROMPT
@@ -57,6 +55,7 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
+
 
 
 # load .envrc on entering a directory
