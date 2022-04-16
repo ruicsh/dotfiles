@@ -2,6 +2,7 @@ tap 'homebrew/cask-fonts'
 
 brew 'ansible'              # config of virtual machines
 brew 'ansible-lint'         # linter for ansible files
+brew 'bash'                 # shell script interpreter
 brew 'bitwarden-cli'        # bitwarden command line
 brew 'coreutils'            # basic tools
 brew 'direnv'               # directory specific env-vars
