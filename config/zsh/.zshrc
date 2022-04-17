@@ -17,6 +17,7 @@ export NVM_AUTO_USE=true
 
 # PLUGINS
 # clone antidote if necessary
+export ANTIDOTE_HOME=~/.cache/antidote
 [[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
 # source antidote
 . ~/.antidote/antidote.zsh
