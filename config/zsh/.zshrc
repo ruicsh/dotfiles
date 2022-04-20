@@ -123,7 +123,8 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # add homebrew's sbin
 export PATH="/usr/local/sbin:$PATH"
-
+# add installed gnu-sed instead of system's
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 
 

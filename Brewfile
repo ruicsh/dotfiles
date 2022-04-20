@@ -16,6 +16,7 @@ brew 'grep'                 # search plain-text
 brew 'hadolint'             # Dockerfiles linter
 brew 'jq'                   # json query
 brew 'neovim'               # text editor
+brew 'sed'                  # text replacement utility
 brew 'shellcheck'           # bash linter
 brew 'shfmt'                # shell script formatter
 brew 'stow'                 # symlink manager
