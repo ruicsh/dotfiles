@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # https://stackoverflow.com/a/44549662
 sudo sh -c "echo $(which zsh) >> /etc/shells"

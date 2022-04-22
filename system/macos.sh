@@ -3,18 +3,16 @@
 # appstore
 sudo softwareupdate -i -a
 
-#  xcode
+# xcode
 if [[ $(/usr/bin/gcc 2>&1) =~ "no developer tools were found" ]] || [[ ! -x /usr/bin/gcc ]]; then
-  xcode-select --install
-  sudo xcodebuild -license accept
+	xcode-select --install
+	sudo xcodebuild -license accept
 fi
-
 
 # homebrew
 if [[ ! -x /usr/local/bin/brew ]]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
-
 
 # reasonable macOS defaults.
 # set to Dark Mode
@@ -48,7 +46,7 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
