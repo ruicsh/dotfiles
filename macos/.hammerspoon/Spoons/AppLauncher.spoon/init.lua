@@ -7,8 +7,9 @@ function obj:init()
     { syshyper, 'l', 'Firefox' },
     { syshyper, ';', 'Visual Studio Code' },
     { syshyper, "'", 'iTerm' },
-    { syshyper, "p", 'Citrix Viewer' },
+    { syshyper, "p", 'Docker' },
     { syshyper, '[', 'Bitwarden' },
+    { syshyper, ']', 'Citrix Viewer' },
   }
 
   for i in ipairs(keysToApps) do
