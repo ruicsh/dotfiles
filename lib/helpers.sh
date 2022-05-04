@@ -12,7 +12,7 @@ os_name() {
 }
 
 prompt_yes_no() {
-	local question="${1:?}"
+	local -r question="${1:?}"
 	read -r -p "${question} [yN]: " reply </dev/tty
 	if [[ "${reply}" =~ ^[Yy]$ ]]; then
 		return 0
