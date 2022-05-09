@@ -1,7 +1,7 @@
 tap 'homebrew/cask-fonts'
 
-brew 'ansible'              # config of virtual machines
 brew 'ansible-lint'         # linter for ansible files
+brew 'ansible'              # config of virtual machines
 brew 'bash'                 # shell script interpreter
 brew 'bitwarden-cli'        # bitwarden command line
 brew 'coreutils'            # basic tools
@@ -20,9 +20,10 @@ brew 'sed'                  # text replacement utility
 brew 'shellcheck'           # bash linter
 brew 'shfmt'                # shell script formatter
 brew 'stow'                 # symlink manager
+brew 'volta'                # nodejs version manager
+brew 'wallpaper'            # manage desktop wallpaper
 brew 'yamllint'             # linter for YAML files
 brew 'yarn'                 # nodejs package manager
-brew 'wallpaper'            # manage desktop wallpaper
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
 

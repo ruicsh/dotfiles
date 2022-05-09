@@ -1,16 +1,20 @@
 # Copyright (C) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+
 # Copyright (C) 2017-present Sven Greb <development@svengreb.de>
 
-# Project:    Nord dircolors
-# Version:    0.2.0
+# Project: Nord dircolors
+
+# Version: 0.2.0
+
 # Repository: https://github.com/arcticicestudio/nord-dircolors
-# License:    MIT
+
+# License: MIT
 
 COLOR tty
 
 TERM ansi
-TERM *color*
-TERM con[0-9]*x[0-9]*
+TERM _color_
+TERM con[0-9]_x[0-9]_
 TERM cons25
 TERM console
 TERM cygwin
@@ -178,7 +182,7 @@ STICKY 04;37;44
 .reg 01;36
 
 #+--- Ignores ---+
-*~ 02;37
+\*~ 02;37
 .bak 02;37
 .BAK 02;37
 .log 02;37

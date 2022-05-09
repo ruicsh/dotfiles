@@ -1,4 +1,3 @@
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -6,14 +5,6 @@ SAVEHIST=1000
 unsetopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
-
-
-
-# NVM
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-
-
 
 # PLUGINS
 # clone antidote if necessary
@@ -23,8 +14,6 @@ export ANTIDOTE_HOME=~/.cache/antidote
 . ~/.antidote/antidote.zsh
 # generate and source plugins from ~/.zsh_plugins.txt
 antidote load
-
-
 
 # GIT PROMPT
 ZSH_THEME_GIT_PROMPT_PREFIX="  "
@@ -46,8 +35,6 @@ ZSH_THEME_GIT_PROMPT_UPSTREAM_END="%{${reset_color}%}}"
 
 PROMPT=$'\n''%F{blue}# %1~%f $(git_super_status)'$'\n''$ '
 
-
-
 # SHELL COMPLETIONS
 autoload -Uz compinit
 # https://carlosbecker.com/posts/speeding-up-zsh/
@@ -57,12 +44,8 @@ else
   compinit -C
 fi
 
-
-
 # load .envrc on entering a directory
 eval "$(direnv hook zsh)"
-
-
 
 # COMMANDS CUSTOMIZATION
 
@@ -77,13 +60,11 @@ export FZF_DEFAULT_OPTS="
 
 # z
 # like normal z when used with arguments but displays an fzf prompt when used without.
-unalias z 2> /dev/null
+unalias z 2>/dev/null
 z() {
-    [ $# -gt 0 ] && _z "$*" && return
-    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
-
-
 
 # ALIASES
 alias c="code"
@@ -100,17 +81,11 @@ alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
 # SUFFIX ALIASES
 alias -s {js,jsx,ts,tsx,json,css,scss,md}=code
 
-
-
-
 # DIRCOLORS
 export CLICOLOR=YES
 
-
-
 # NOTHING SHOWN ON RIGHT PROMPT
 RPS1=''
-
 
 # make sure user installed binaries override system's
 export PATH=/usr/local/bin:$PATH
@@ -118,12 +93,15 @@ export PATH=/usr/local/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 # replace native OSX sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-# use brew sqlite3 
+# use brew sqlite3
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # add homebrew's sbin
 export PATH="/usr/local/sbin:$PATH"
 # add installed gnu-sed instead of system's
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
+# bashlib
 export TUPLO_BASHLIB="${HOME}/.local/include/@tuplo/bashlib/.sh"
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

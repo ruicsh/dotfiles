@@ -1,4 +1,3 @@
-lukechilds/zsh-nvm
 rupa/z
 starcraftman/zsh-git-prompt
 zsh-users/zsh-autosuggestions
