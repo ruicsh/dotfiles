@@ -2,7 +2,6 @@
   "breadcrumbs.enabled": true,
   "breadcrumbs.symbolSortOrder": "name",
   "breadcrumbs.symbolPath": "off",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Hack, monospace",
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
@@ -91,5 +90,24 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+  "terraform.languageServer": {
+    "external": true,
+    "args": ["serve"]
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

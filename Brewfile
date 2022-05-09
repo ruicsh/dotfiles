@@ -20,6 +20,7 @@ brew 'sed'                  # text replacement utility
 brew 'shellcheck'           # bash linter
 brew 'shfmt'                # shell script formatter
 brew 'stow'                 # symlink manager
+brew 'terraform'            # provisioning tool
 brew 'volta'                # nodejs version manager
 brew 'wallpaper'            # manage desktop wallpaper
 brew 'yamllint'             # linter for YAML files

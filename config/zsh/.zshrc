@@ -105,3 +105,6 @@ export TUPLO_BASHLIB="${HOME}/.local/include/@tuplo/bashlib/.sh"
 # volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

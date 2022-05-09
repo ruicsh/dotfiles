@@ -27,6 +27,7 @@ main() {
 		formulahendry.auto-rename-tag
 		foxundermoon.shell-format
 		kumar-harsh.graphql-for-vscode
+		hashicorp.terraform
 		mechatroner.rainbow-csv
 		meganrogge.template-string-converter
 		mhutchie.git-graph
