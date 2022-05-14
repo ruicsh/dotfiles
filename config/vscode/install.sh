@@ -26,17 +26,21 @@ main() {
 		exiasr.hadolint
 		formulahendry.auto-rename-tag
 		foxundermoon.shell-format
-		kumar-harsh.graphql-for-vscode
+		GitHub.copilot
 		hashicorp.terraform
+		kumar-harsh.graphql-for-vscode
+		mattpocock.ts-error-translator
 		mechatroner.rainbow-csv
 		meganrogge.template-string-converter
 		mhutchie.git-graph
 		mikestead.dotenv
 		mkxml.vscode-filesize
+		mrmlnc.vscode-postcss-sorting
 		ms-azuretools.vscode-docker
 		Prisma.prisma
 		qinjia.seti-icons
 		rsbondi.highlight-words
+		ryuta46.multi-command
 		shd101wyy.markdown-preview-enhanced
 		SirTori.indenticator
 		streetsidesoftware.code-spell-checker
@@ -46,6 +50,7 @@ main() {
 		Tyriar.sort-lines
 		usernamehw.errorlens
 		vscodevim.vim
+		william-voyek.vscode-nginx
 		wix.vscode-import-cost
 		xabikos.JavaScriptSnippets
 	)
