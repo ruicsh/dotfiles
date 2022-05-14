@@ -70,10 +70,11 @@ z() {
 alias c="code"
 alias g="git"
 alias l='gls --group-directories-first --color=auto -lah'
+alias tf="terraform"
 alias top="htop"
 alias v="nvim"
 alias vi="nvim"
-alias vim="nvim"
+alias y='yarn'
 
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
