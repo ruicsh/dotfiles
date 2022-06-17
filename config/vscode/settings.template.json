@@ -91,6 +91,26 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts, ${capture}.module.scss, ${capture}.test.tsx",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock"
+  },
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[terraform]": {
     "editor.formatOnSave": true
   },
@@ -113,5 +133,8 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.fileNesting.expand": false
+  "postcssSorting.config": {
+    "properties-order": "alphabetical"
+  },
+  "diffEditor.ignoreTrimWhitespace": false
 }
