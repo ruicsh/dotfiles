@@ -58,6 +58,9 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
 "
 
+# tab display size
+tabs -2
+
 # z
 # like normal z when used with arguments but displays an fzf prompt when used without.
 unalias z 2>/dev/null
