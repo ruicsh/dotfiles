@@ -1,5 +1,4 @@
 cask 'aerial'                 # screensaver
-cask 'db-browser-for-sqlite'  # sqlite app
 cask 'devutils'               # developer utilities
 cask 'docker'                 # docker for macos
 cask 'free-ruler'             # screen ruler
@@ -7,8 +6,9 @@ cask 'hammerspoon'            # macos automation
 cask 'iterm2'                 # terminal
 cask 'kap'                    # screen recording
 cask 'karabiner-elements'     # keyboard customizer
-cask 'maccy'                  # clopboard manager
 cask 'postman'                # http client
+cask 'raycast'                # app launcher
 cask 'runjs'                  # js/ts repl
 cask 'skype'                  # instant messaging
+cask 'sqlpro-for-sqlite'      # sqlite app
 cask 'zoom'                   # video messaging
