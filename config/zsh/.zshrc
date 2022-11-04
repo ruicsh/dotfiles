@@ -105,8 +105,6 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # add installed gnu-sed instead of system's
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-# bashlib
-export TUPLO_BASHLIB="${HOME}/.local/include/@tuplo/bashlib/.sh"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
