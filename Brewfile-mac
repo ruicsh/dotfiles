@@ -7,7 +7,6 @@ cask 'iterm2'                 # terminal
 cask 'kap'                    # screen recording
 cask 'karabiner-elements'     # keyboard customizer
 cask 'postman'                # http client
-cask 'raycast'                # app launcher
 cask 'runjs'                  # js/ts repl
 cask 'skype'                  # instant messaging
 cask 'sqlpro-for-sqlite'      # sqlite app
