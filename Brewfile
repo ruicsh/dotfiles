@@ -8,6 +8,7 @@ brew 'coreutils'            # basic tools
 brew 'direnv'               # directory specific env-vars
 brew 'docker-compose'       # multi container operation
 brew 'docker'               # containers
+brew 'fnm'                  # node version manager
 brew 'fzf'                  # fuzzy text search
 brew 'gh'                   # github command line
 brew 'git'                  # version control
