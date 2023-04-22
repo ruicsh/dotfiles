@@ -3,6 +3,7 @@ cask 'devutils'               # developer utilities
 cask 'docker'                 # docker for macos
 cask 'free-ruler'             # screen ruler
 cask 'hammerspoon'            # macos automation
+cask 'hyperkey'               # keyboard shortcuts
 cask 'iterm2'                 # terminal
 cask 'kap'                    # screen recording
 cask 'karabiner-elements'     # keyboard customizer

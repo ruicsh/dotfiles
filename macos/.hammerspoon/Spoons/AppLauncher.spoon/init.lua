@@ -9,7 +9,7 @@ function obj:init()
     { syshyper, "'", 'iTerm' },
     { syshyper, "p", 'Docker' },
     { syshyper, '[', 'Bitwarden' },
-    { syshyper, ']', 'Citrix Viewer' },
+    { syshyper, ']', 'vmware Horizon Client' },
   }
 
   for i in ipairs(keysToApps) do
