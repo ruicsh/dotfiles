@@ -113,3 +113,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # node version manager
 eval "$(fnm env --use-on-cd)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

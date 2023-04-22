@@ -15,7 +15,9 @@ main() {
 
 	# extensions
 	vscode_extensions=(
-		arcticicestudio.nord-visual-studio-code
+		astro-build.astro-vscode
+		asvetliakov.vscode-neovim
+		bbenoist.vagrant
 		christian-kohler.npm-intellisense
 		christian-kohler.path-intellisense
 		clinyong.vscode-css-modules
@@ -27,7 +29,9 @@ main() {
 		formulahendry.auto-rename-tag
 		foxundermoon.shell-format
 		GitHub.copilot
+		github.vscode-github-actions
 		hashicorp.terraform
+		janisdd.vscode-edit-csv
 		kumar-harsh.graphql-for-vscode
 		mattpocock.ts-error-translator
 		mechatroner.rainbow-csv
@@ -37,11 +41,17 @@ main() {
 		mkxml.vscode-filesize
 		mrmlnc.vscode-postcss-sorting
 		ms-azuretools.vscode-docker
-		Prisma.prisma
+		ms-playwright.playwright
+		ms-python.isort
+		ms-python.python
+		ms-python.vscode-pylance
 		qinjia.seti-icons
+		redhat.ansible
+		redhat.vscode-yaml
+		richie5um2.vscode-sort-json
 		rsbondi.highlight-words
 		ryuta46.multi-command
-		shd101wyy.markdown-preview-enhanced
+		samuelcolvin.jinjahtml
 		SirTori.indenticator
 		streetsidesoftware.code-spell-checker
 		styled-components.vscode-styled-components
@@ -49,7 +59,7 @@ main() {
 		timonwong.shellcheck
 		Tyriar.sort-lines
 		usernamehw.errorlens
-		vscodevim.vim
+		wholroyd.jinja
 		william-voyek.vscode-nginx
 		wix.vscode-import-cost
 		xabikos.JavaScriptSnippets

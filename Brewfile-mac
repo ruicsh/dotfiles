@@ -6,9 +6,10 @@ cask 'hammerspoon'            # macos automation
 cask 'hyperkey'               # keyboard shortcuts
 cask 'iterm2'                 # terminal
 cask 'kap'                    # screen recording
-cask 'karabiner-elements'     # keyboard customizer
+cask 'macdown'                # markdown editor   
 cask 'postman'                # http client
 cask 'runjs'                  # js/ts repl
 cask 'skype'                  # instant messaging
 cask 'sqlpro-for-sqlite'      # sqlite app
+cask 'utm'                    # virtual machines
 cask 'zoom'                   # video messaging
