@@ -31,5 +31,5 @@ brew 'zsh'                  # shell
 cask 'bitwarden'            # password manager
 cask 'chromium'             # development browser
 cask 'firefox'              # general use browser
-cask 'font-hack'            # code font
+cask 'font-jetbrains-mono'  # code font
 cask 'visual-studio-code'   # code editor
