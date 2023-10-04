@@ -16,7 +16,6 @@ main() {
 	# extensions
 	vscode_extensions=(
 		astro-build.astro-vscode
-		asvetliakov.vscode-neovim
 		bbenoist.vagrant
 		christian-kohler.npm-intellisense
 		christian-kohler.path-intellisense
@@ -25,13 +24,13 @@ main() {
 		eamodio.gitlens
 		EditorConfig.EditorConfig
 		esbenp.prettier-vscode
-		exiasr.hadolint
 		formulahendry.auto-rename-tag
 		foxundermoon.shell-format
 		GitHub.copilot
+		GitHub.copilot-chat
 		github.vscode-github-actions
 		hashicorp.terraform
-		janisdd.vscode-edit-csv
+		jeff-hykin.better-dockerfile-syntax
 		kumar-harsh.graphql-for-vscode
 		mattpocock.ts-error-translator
 		mechatroner.rainbow-csv
@@ -40,11 +39,13 @@ main() {
 		mikestead.dotenv
 		mkxml.vscode-filesize
 		mrmlnc.vscode-postcss-sorting
-		ms-azuretools.vscode-docker
 		ms-playwright.playwright
 		ms-python.isort
 		ms-python.python
 		ms-python.vscode-pylance
+		ms-vscode-remote.remote-ssh
+		ms-vscode-remote.remote-ssh-edit
+		ms-vscode.remote-explorer
 		qinjia.seti-icons
 		redhat.ansible
 		redhat.vscode-yaml
@@ -59,10 +60,13 @@ main() {
 		timonwong.shellcheck
 		Tyriar.sort-lines
 		usernamehw.errorlens
+		vscodevim.vim
+		WallabyJs.console-ninja
 		wholroyd.jinja
 		william-voyek.vscode-nginx
 		wix.vscode-import-cost
 		xabikos.JavaScriptSnippets
+		yoavbls.pretty-ts-errors
 	)
 
 	for extension in "${vscode_extensions[@]}"; do
