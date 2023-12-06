@@ -13,6 +13,7 @@ brew 'fzf'                  # fuzzy text search
 brew 'gh'                   # github command line
 brew 'git'                  # version control
 brew 'gnu-sed'              # stream text editor
+brew 'go'										# golang
 brew 'grep'                 # search plain-text
 brew 'hadolint'             # Dockerfiles linter
 brew 'jq'                   # json query
