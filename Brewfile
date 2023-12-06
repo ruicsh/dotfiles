@@ -24,7 +24,6 @@ brew 'stow'                 # symlink manager
 brew 'terraform'            # provisioning tool
 brew 'wallpaper'            # manage desktop wallpaper
 brew 'yamllint'             # linter for YAML files
-brew 'yarn'                 # nodejs package manager
 brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
 

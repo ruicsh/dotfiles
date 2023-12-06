@@ -77,8 +77,11 @@ alias tf="terraform"
 alias top="htop"
 alias v="nvim"
 alias vi="nvim"
-alias y='yarn'
-alias yw='yarn workspace'
+alias n='npm'
+alias ni='npm install --legacy-peer-deps'
+alias nr='npm run'
+alias nu='npm uninstall --legacy-peer-deps'
+alias nw='npm --workspace'
 
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
@@ -108,8 +111,6 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # node version manager
 eval "$(fnm env --use-on-cd)"
