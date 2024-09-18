@@ -58,6 +58,7 @@ nmap <Leader>l <C-w>l                 "Switch to pane to the right
 " MISCELLANEOUS 
 "----------------
 
+" -----------
 " Change cursor shape between insert and normal mode
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[1 q"
@@ -67,4 +68,13 @@ let &t_EI = "\e[1 q"
 augroup ResetCursorShape
 au!
 autocmd VimEnter * :normal :startinsert :stopinsert
+augroup END
+
+" -----------
+" Automatically toggle between relative and absolute line numbers
+" https://jeffkreeftmeijer.com/vim-number/#automatic-toggling-between-line-number-modes
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
