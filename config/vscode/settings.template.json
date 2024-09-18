@@ -1,79 +1,33 @@
 {
-  "breadcrumbs.enabled": true,
-  "breadcrumbs.symbolSortOrder": "name",
-  "breadcrumbs.symbolPath": "off",
-  "editor.minimap.enabled": false,
-  "editor.scrollBeyondLastLine": false,
-  "editor.tabSize": 2,
-  "explorer.openEditors.visible": 1,
-  "extensions.autoUpdate": true,
-  "extensions.ignoreRecommendations": true,
-  "files.simpleDialog.enable": true,
-  "git.path": "__GIT_EXECUTABLE_PATH__",
-  "gitlens.menus": {
-    "editorGroup": {
-      "blame": false,
-      "compare": false
-    }
-  },
-  "gitlens.views.commits.showBranchComparison": false,
-  "gitlens.views.commits.pullRequests.enabled": false,
-  "gitlens.views.commits.files.compact": false,
-  "gitlens.views.commits.avatars": false,
-  "gitlens.views.fileHistory.avatars": false,
-  "gitlens.views.showRelativeDateMarkers": false,
-  "javascript.suggest.autoImports": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "scm.defaultViewMode": "tree",
-  "shellcheck.disableVersionCheck": true,
-  "shellcheck.exclude": ["SC1090", "SC1091"],
-  "shellcheck.executablePath": "__SHELLCHECK_EXECUTABLE_PATH__",
-  "shellcheck.run": "onSave",
-  "stylelint.stylelintPath": "./node_modules/stylelint",
-  "typescript.suggest.autoImports": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.titleBarStyle": "custom",
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#81a1c1",
-    "editor.selectionForeground": "#2e3440"
-  },
-  "workbench.editor.decorations.badges": false,
-  "workbench.editor.decorations.colors": false,
-  "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "newUntitledFile",
-  "cSpell.userWords": [],
-  "editor.inlineSuggest.enabled": true,
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "[dockerfile]": {
     "editor.formatOnSave": false
   },
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.d.ts",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts, ${capture}.module.scss, ${capture}.test.tsx, ${capture}.test.ts",
-    "tsconfig.json": "tsconfig.*.json",
-    "package.json": "package-lock.json, yarn.lock, bun.lockb"
-  },
-  "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[terraform]": {
     "editor.formatOnSave": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -81,27 +35,85 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.symbolSortOrder": "name",
+  "cSpell.enableFiletypes": ["!plaintext"],
+  "cSpell.userWords": [],
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "jetbrains mono, monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 2,
+  "errorLens.excludeBySource": ["ts(2451)"],
+  "errorLens.fontFamily": "jetbrains mono, monospace",
+  "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.d.ts",
+    "*.tsx": "${capture}.ts, ${capture}.module.scss, ${capture}.test.tsx, ${capture}.test.ts",
+    "package.json": "package-lock.json, yarn.lock, bun.lockb",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+  "explorer.openEditors.visible": 1,
+  "extensions.autoUpdate": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "extensions.ignoreRecommendations": true,
+  "files.simpleDialog.enable": true,
+  "git.path": "__GIT_EXECUTABLE_PATH__",
+  "github.copilot.enable": {
+    "*": true,
+    "dockerfile": true,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false,
+    "yaml": true
+  },
+  "gitlens.menus": {
+    "editorGroup": {
+      "blame": false,
+      "compare": false
+    }
+  },
+  "gitlens.views.commits.avatars": false,
+  "gitlens.views.commits.files.compact": false,
+  "gitlens.views.commits.pullRequests.enabled": false,
+  "gitlens.views.commits.showBranchComparison": false,
+  "gitlens.views.fileHistory.avatars": false,
+  "gitlens.views.showRelativeDateMarkers": false,
+  "javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "postcssSorting.config": {
     "properties-order": "alphabetical"
   },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.layoutControl.enabled": false,
-  "editor.fontFamily": "jetbrains mono, monospace",
-  "errorLens.fontFamily": "jetbrains mono, monospace",
-  "terraform.languageServer.enable": true,
   "redhat.telemetry.enabled": false,
-  "workbench.editorAssociations": {
-    "*.pdf": "default"
+  "remote.SSH.remotePlatform": {
+    "sandbox.omm4xv.csb": "linux"
   },
-  "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": true,
+  "remote.portsAttributes": {
+    "443": {
+      "protocol": "https"
+    },
+    "8443": {
+      "protocol": "https"
+    }
+  },
+  "scm.defaultViewMode": "tree",
+  "shellcheck.disableVersionCheck": true,
+  "shellcheck.exclude": ["SC1090", "SC1091"],
+  "shellcheck.executablePath": "__SHELLCHECK_EXECUTABLE_PATH__",
+  "shellcheck.run": "onSave",
+  "stylelint.stylelintPath": "./node_modules/stylelint",
+  "terraform.languageServer.enable": true,
   "totalTypeScript.hiddenTips": [
     "in-operator-narrowing",
     "passing-generics-to-types",
@@ -126,40 +138,36 @@
     "never-keyword",
     "parameters-utility-type"
   ],
-  "remote.portsAttributes": {
-    "443": {
-      "protocol": "https"
-    },
-    "8443": {
-      "protocol": "https"
-    }
-  },
-  "workbench.editor.enablePreview": false,
-  "[python]": {
-    "editor.formatOnType": true
-  },
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
+  "typescript.suggest.autoImports": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.highlightedyank.enable": true,
+  "vim.replaceWithRegister": true,
+  "vim.showMarksInGutter": true,
+  "vim.smartRelativeLine": true,
+  "vim.sneak": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindings": [],
+  "vim.visualstar": true,
+  "window.titleBarStyle": "custom",
   "workbench.activityBar.visible": false,
-  "workbench.iconTheme": "seti",
-  "workbench.editor.limit.value": 5,
-  "workbench.editor.limit.enabled": true,
-  "editor.accessibilitySupport": "off",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "yaml": true,
-    "dockerfile": true
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#81a1c1",
+    "editor.selectionForeground": "#2e3440"
   },
-  "errorLens.excludeBySource": ["ts(2451)"],
   "workbench.colorTheme": "Visual Studio Dark",
-  "remote.SSH.remotePlatform": {
-    "sandbox.omm4xv.csb": "linux"
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 5,
+  "workbench.editorAssociations": {
+    "*.pdf": "default"
   },
-  "cSpell.enableFiletypes": ["!plaintext"],
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "editor.formatOnSave": true,
-  "editor.fontLigatures": true
+  "workbench.iconTheme": "seti",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.startupEditor": "newUntitledFile"
 }
