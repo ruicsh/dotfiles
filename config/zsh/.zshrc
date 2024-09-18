@@ -58,6 +58,8 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
 "
 
+eval "$(fzf --zsh)"
+
 # tab display size
 tabs -2
 
@@ -78,9 +80,9 @@ alias top="htop"
 alias v="nvim"
 alias vi="nvim"
 alias n='npm'
-alias ni='npm install --legacy-peer-deps'
+alias ni='npm install'
 alias nr='npm run'
-alias nu='npm uninstall --legacy-peer-deps'
+alias nu='npm uninstall'
 alias nw='npm --workspace'
 
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
@@ -122,3 +124,8 @@ eval "$(fnm env --use-on-cd)"
 
 # bun completions
 [ -s "/opt/homebrew/Cellar/bun/1.0.0/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.0.0/share/zsh/site-functions/_bun"
+
+
+# Created by `pipx` on 2024-05-24 09:53:02
+export PATH="$PATH:/Users/ruic/.local/bin"
+
