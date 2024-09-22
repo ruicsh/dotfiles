@@ -5,6 +5,7 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 
@@ -44,13 +45,42 @@ hi Visual ctermbg=Blue ctermfg=Black  "Visual selection
 " KEY MAPPINGS 
 "----------------
 
-let mapleader = ","                   "Set leader key to comma
-nmap <Leader>- <C-w>s                 "Split pane horizontally
-nmap <Leader>\| <C-w>v                "Split pane vertically
-nmap <Leader>j <C-w>j                 "Switch to pane below
-nmap <Leader>k <C-w>k                 "Switch to pane on top
-nmap <Leader>h <C-w>h                 "Switch to pane to the left
-nmap <Leader>l <C-w>l                 "Switch to pane to the right
+" default leader key \
+let mapleader = '\'
+
+" center screen when moving
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap N Nzz
+nnoremap n nzz
+
+" disable arrow keys
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
+vnoremap <up> <nop>
+
+" sort selection then switch to normal mode
+xnoremap <Leader>s :sort<CR><ESC>
+
+" quicker switch to normal mode from insert
+inoremap jj <ESC>
+
+" don't lose selection when indenting
+xnoremap < <gv
+xnoremap > >gv
+
+
 
 
 
