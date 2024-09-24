@@ -80,6 +80,8 @@ inoremap jj <Esc>
 xnoremap < <gv
 xnoremap > >gv
 
+" on insert mode, move forward 1 char
+inoremap <C-l> <C-o>l
 
 
 
