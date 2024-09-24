@@ -57,24 +57,24 @@ nnoremap N Nzz
 nnoremap n nzz
 
 " disable arrow keys
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-vnoremap <up> <nop>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up> <NOP>
+vnoremap <Down> <NOP>
+vnoremap <Left> <NOP>
+vnoremap <Right> <NOP>
+vnoremap <Up> <NOP>
 
 " sort selection then switch to normal mode
-xnoremap <Leader>s :sort<CR><ESC>
+xnoremap <Leader>s :sort<CR><Esc>
 
 " quicker switch to normal mode from insert
-inoremap jj <ESC>
+inoremap jj <Esc>
 
 " don't lose selection when indenting
 xnoremap < <gv
