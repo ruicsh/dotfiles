@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 
@@ -56,14 +57,14 @@ vnoremap <Up> <NOP>
 " sort selection then switch to normal mode
 xnoremap <Leader>s :sort<CR><Esc>
 
-" quicker switch to normal mode from insert
-inoremap jj <Esc>
-
 " don't lose selection when indenting
 xnoremap < <gv
 xnoremap > >gv
 
-" on insert mode, move forward 1 char
+" insert mode arrow navigation
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
 
 
