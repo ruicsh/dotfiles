@@ -3,6 +3,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 
@@ -11,13 +12,9 @@ call plug#end()
 " SETTINGS 
 "----------------
 
-set autoread                          "Reload files changed outside vim
-set backspace=indent,eol,start        "Allow backspace in insert mode
 set clipboard=unnamed                 "Clipboard (so that yank goes to OS clipboard)
 set cursorline                        "Highlight current line
-set expandtab                         "Expand tabs to spaces
 set linebreak                         "Don't break line on middle of word
-set nofoldenable                      "Don't fold chapters
 set noswapfile                        "Stop creating swp files
 set relativenumber                    "Show relative line numbers
 set shortmess+=I                      "Disable startup message
@@ -66,6 +63,3 @@ inoremap <C-h> <C-o>h
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
-
-
-
