@@ -1,0 +1,70 @@
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+call plug#end()
+
+
+
+"----------------
+" SETTINGS 
+"----------------
+
+set autoread                          "Reload files changed outside vim
+set backspace=indent,eol,start        "Allow backspace in insert mode
+set clipboard=unnamed                 "Clipboard (so that yank goes to OS clipboard)
+set cursorline                        "Highlight current line
+set expandtab                         "Expand tabs to spaces
+set linebreak                         "Don't break line on middle of word
+set nofoldenable                      "Don't fold chapters
+set noswapfile                        "Stop creating swp files
+set relativenumber                    "Show relative line numbers
+set shortmess+=I                      "Disable startup message
+set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
+
+
+
+"----------------
+" KEY MAPPINGS 
+"----------------
+
+" default leader key \
+let mapleader = '\'
+
+" center screen when moving
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap N Nzz
+nnoremap n nzz
+
+" disable arrow keys
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up> <NOP>
+vnoremap <Down> <NOP>
+vnoremap <Left> <NOP>
+vnoremap <Right> <NOP>
+vnoremap <Up> <NOP>
+
+" sort selection then switch to normal mode
+xnoremap <Leader>s :sort<CR><Esc>
+
+" quicker switch to normal mode from insert
+inoremap jj <Esc>
+
+" don't lose selection when indenting
+xnoremap < <gv
+xnoremap > >gv
+
+" on insert mode, move forward 1 char
+inoremap <C-l> <C-o>l
+
+
+

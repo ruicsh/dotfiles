@@ -24,6 +24,15 @@ rm -rf .dotfiles
 
 ```
 
+## Configs for apps
+
+- [x] git
+- [x] hammerspoon (mac)
+- [x] iterm2 (mac)
+- [x] nvim
+- [x] vscode
+- [x] zsh
+
 ## macOS keybindings
 
 | Application shortcuts | <kbd>Right Opt</kbd> |
@@ -31,8 +40,6 @@ rm -rf .dotfiles
 | <kbd>l</kbd>          | Firefox              |
 | <kbd>;</kbd>          | VSCode               |
 | <kbd>'</kbd>          | iTerm                |
-| <kbd>p</kbd>          | Citrix Viewer        |
-| <kbd>[</kbd>          | Bitwarden            |
 
 Hyper key: <kbd>Control</kbd> + <kbd>Option</kbd>
 

@@ -27,6 +27,7 @@ main() {
 	# Apps configuration
 	source 'config/.sh'
 
+	# stow
 	if [[ $(os_name) == "macos" ]]; then
 		rm "${HOME}/.gitconfig"
 		rm "${HOME}/.zshrc"
