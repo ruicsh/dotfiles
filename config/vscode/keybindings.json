@@ -1,44 +1,21 @@
 [
   {
-    "key": "alt+tab",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
   },
   {
-    "key": "alt+tab",
-    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },{
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
   },
   {
-    "key": "alt+shift+tab",
-    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "alt+shift+tab",
-    "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
-  },
-  {
-    "key": "[IntlBackslash] shift+\\",
-    "command": "workbench.action.splitEditor"
-  },
-  {
-    "key": "[IntlBackslash] -",
-    "command": "workbench.action.splitEditorOrthogonal"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+d",
-    "command": "workbench.view.extension.dockerView"
-  },
-  {
-    "key": "cmd+s",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": ["postcssSorting.execute", "workbench.action.files.save"]
-    }
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
   }
 ]
