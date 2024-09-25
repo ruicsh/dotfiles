@@ -29,7 +29,7 @@ set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
 "----------------
 
 " default leader key \
-let mapleader = '\'
+let mapleader = ','
 
 " center screen when moving
 nnoremap <C-f> <C-f>zz
@@ -65,3 +65,9 @@ inoremap <C-h> <C-o>h
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
