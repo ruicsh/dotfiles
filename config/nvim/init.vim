@@ -1,12 +1,12 @@
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
+Plug 'ggandor/leap.nvim'
+Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'ggandor/leap.nvim'
 call plug#end()
 
 
@@ -22,8 +22,8 @@ set noswapfile                        "Stop creating swp files
 set relativenumber                    "Show relative line numbers
 set shortmess+=I                      "Disable startup message
 set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
-
-
+set ignorecase                        "Ignore case on search patterns
+set smartcase                         "Use case sensitive if keyword contains capital letters
 
 "----------------
 " KEY MAPPINGS 
@@ -78,10 +78,8 @@ nnoremap s <Plug>(leap-forward)
 nnoremap S <Plug>(leap-backward)
 
 " move text up and down
-vnoremap <C-j> :m .+1<CR>==
-vnoremap <C-k> :m .-2<CR>==
-xnoremap <C-j> :move '>+1<CR>gv-gv
-xnoremap <C-k> :move '<-2<CR>gv-gv
+xnoremap <S-j> :move '>+1<CR>gv=gv
+xnoremap <S-k> :move '<-2<CR>gv=gv
 
 " removes highlighting after escaping vim search
 nnoremap <Esc> <Esc>:noh<CR>
@@ -100,4 +98,14 @@ nnoremap <Leader>6 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor6
 nnoremap <Leader>7 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor7')<CR>
 nnoremap <Leader>8 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor8')<CR>
 nnoremap <Leader>9 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor9')<CR>
+
+" vscode.lsp
+nnoremap gd <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
+nnoremap gD <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
+nnoremap gi <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
+nnoremap gI <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
+nnoremap go <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
+nnoremap gO <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
+nnoremap gr <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
+nnoremap gR <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
 
