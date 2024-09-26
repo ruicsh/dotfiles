@@ -5,7 +5,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'ggandor/leap.nvim'
 call plug#end()
 
 
@@ -29,7 +30,7 @@ set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
 "----------------
 
 " default leader key \
-let mapleader = ','
+let mapleader = ' '
 
 " center screen when moving
 nnoremap <C-f> <C-f>zz
@@ -48,10 +49,10 @@ nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Up> <NOP>
-vnoremap <Down> <NOP>
-vnoremap <Left> <NOP>
-vnoremap <Right> <NOP>
-vnoremap <Up> <NOP>
+xnoremap <Down> <NOP>
+xnoremap <Left> <NOP>
+xnoremap <Right> <NOP>
+xnoremap <Up> <NOP>
 
 " sort selection then switch to normal mode
 xnoremap <Leader>s :sort<CR><Esc>
@@ -71,3 +72,11 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" keys for leap.nvim
+nnoremap s <Plug>(leap-forward)
+nnoremap S <Plug>(leap-backward)
+
+" move text up and down
+xnoremap <C-j> :move '>+1<CR>gv-gv
+xnoremap <C-k> :move '<-2<CR>gv-gv
