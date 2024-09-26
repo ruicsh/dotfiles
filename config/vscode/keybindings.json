@@ -18,5 +18,25 @@
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
+  },
+  {
+    "key": "right",
+    "command": "",
+    "when": "editorTextFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "left",
+    "command": "",
+    "when": "editorTextFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "up",
+    "command": "",
+    "when": "editorTextFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "down",
+    "command": "",
+    "when": "editorTextFocus && neovim.mode == 'insert'"
   }
 ]
