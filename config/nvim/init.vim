@@ -41,18 +41,18 @@ nnoremap N Nzz
 nnoremap n nzz
 
 " disable arrow keys
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Up> <NOP>
-xnoremap <Down> <NOP>
-xnoremap <Left> <NOP>
-xnoremap <Right> <NOP>
-xnoremap <Up> <NOP>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+xnoremap <Down> <Nop>
+xnoremap <Left> <Nop>
+xnoremap <Right> <Nop>
+xnoremap <Up> <Nop>
 
 " sort selection then switch to normal mode
 xnoremap <Leader>s :sort<CR><Esc>
@@ -68,15 +68,36 @@ inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <Cmd>Telescope find_files<CR>
+nnoremap <leader>fg <Cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <Cmd>Telescope buffers<CR>
+nnoremap <leader>fh <Cmd>Telescope help_tags<CR>
 
 " keys for leap.nvim
 nnoremap s <Plug>(leap-forward)
 nnoremap S <Plug>(leap-backward)
 
 " move text up and down
+vnoremap <C-j> :m .+1<CR>==
+vnoremap <C-k> :m .-2<CR>==
 xnoremap <C-j> :move '>+1<CR>gv-gv
 xnoremap <C-k> :move '<-2<CR>gv-gv
+
+" removes highlighting after escaping vim search
+nnoremap <Esc> <Esc>:noh<CR>
+
+" vscode.harpoon
+nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>
+nnoremap <Leader>ho <Cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>
+nnoremap <Leader>he <Cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>
+nnoremap <Leader>hn <Cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<CR>
+nnoremap <Leader>1 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>
+nnoremap <Leader>2 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<CR>
+nnoremap <Leader>3 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>
+nnoremap <Leader>4 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>
+nnoremap <Leader>5 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>
+nnoremap <Leader>6 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor6')<CR>
+nnoremap <Leader>7 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor7')<CR>
+nnoremap <Leader>8 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor8')<CR>
+nnoremap <Leader>9 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor9')<CR>
+

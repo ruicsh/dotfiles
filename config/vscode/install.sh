@@ -15,8 +15,7 @@ main() {
 
 	# extensions
 	vscode_extensions=(
-		astro-build.astro-vscode
-		bbenoist.vagrant
+		asvetliakov.vscode-neovim
 		christian-kohler.npm-intellisense
 		christian-kohler.path-intellisense
 		clinyong.vscode-css-modules
@@ -40,9 +39,6 @@ main() {
 		mkxml.vscode-filesize
 		mrmlnc.vscode-postcss-sorting
 		ms-playwright.playwright
-		ms-python.isort
-		ms-python.python
-		ms-python.vscode-pylance
 		ms-vscode-remote.remote-ssh
 		ms-vscode-remote.remote-ssh-edit
 		ms-vscode.remote-explorer
@@ -58,11 +54,8 @@ main() {
 		styled-components.vscode-styled-components
 		stylelint.vscode-stylelint
 		timonwong.shellcheck
-		Tyriar.sort-lines
+		tobias-z.vscode-harpoon
 		usernamehw.errorlens
-		vscodevim.vim
-		WallabyJs.console-ninja
-		wholroyd.jinja
 		william-voyek.vscode-nginx
 		wix.vscode-import-cost
 		xabikos.JavaScriptSnippets
