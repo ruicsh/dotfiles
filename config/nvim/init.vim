@@ -7,9 +7,9 @@ Plug 'ggandor/leap.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-
-
 
 "----------------
 " SETTINGS 
@@ -24,6 +24,11 @@ set shortmess+=I                      "Disable startup message
 set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
 set ignorecase                        "Ignore case on search patterns
 set smartcase                         "Use case sensitive if keyword contains capital letters
+
+"----------------
+" THEME
+"----------------
+let g:airline_theme='lucius'
 
 "----------------
 " KEY MAPPINGS 
