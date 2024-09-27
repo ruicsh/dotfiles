@@ -99,18 +99,14 @@ nnoremap <Leader>2 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2
 nnoremap <Leader>3 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>
 nnoremap <Leader>4 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>
 nnoremap <Leader>5 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>
-nnoremap <Leader>6 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor6')<CR>
-nnoremap <Leader>7 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor7')<CR>
-nnoremap <Leader>8 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor8')<CR>
-nnoremap <Leader>9 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor9')<CR>
 
 " vscode.lsp
-nnoremap gd <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
-nnoremap gD <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
-nnoremap gi <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
-nnoremap gI <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
-nnoremap go <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
-nnoremap gO <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
-nnoremap gr <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
-nnoremap gR <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
+nnoremap gD <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
+nnoremap gd <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
+nnoremap gI <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
+nnoremap gi <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
+nnoremap gO <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
+nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
+nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
+nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
 
