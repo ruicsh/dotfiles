@@ -4,11 +4,13 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ggandor/leap.nvim'
-Plug 'airblade/vim-gitgutter'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+if !exists('g:vscode')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+endif
 call plug#end()
 
 "----------------
@@ -89,30 +91,31 @@ xnoremap <S-k> :move '<-2<CR>gv=gv
 " removes highlighting after escaping vim search
 nnoremap <Esc> <Esc>:noh<CR>
 
-" vscode.switch tabs
-nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
-nnoremap <Leader>] <Cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<CR>
-nnoremap <Leader>; <Cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<CR>
-nnoremap <Leader>' <Cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<CR>
+if exists('g:vscode')
+  " vscode.switch tabs
+  nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
+  nnoremap <Leader>] <Cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<CR>
+  nnoremap <Leader>; <Cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<CR>
+  nnoremap <Leader>' <Cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<CR>
 
-" vscode.harpoon
-nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>
-nnoremap <Leader>ho <Cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>
-nnoremap <Leader>he <Cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>
-nnoremap <Leader>hn <Cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<CR>
-nnoremap <Leader>1 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>
-nnoremap <Leader>2 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<CR>
-nnoremap <Leader>3 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>
-nnoremap <Leader>4 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>
-nnoremap <Leader>5 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>
+  " vscode.harpoon
+  nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>
+  nnoremap <Leader>ho <Cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>
+  nnoremap <Leader>he <Cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>
+  nnoremap <Leader>hn <Cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<CR>
+  nnoremap <Leader>1 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>
+  nnoremap <Leader>2 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<CR>
+  nnoremap <Leader>3 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>
+  nnoremap <Leader>4 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>
+  nnoremap <Leader>5 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>
 
-" vscode.lsp
-nnoremap gD <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
-nnoremap gd <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
-nnoremap gI <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
-nnoremap gi <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
-nnoremap gO <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
-nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
-nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
-nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
-
+  " vscode.lsp
+  nnoremap gD <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
+  nnoremap gd <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
+  nnoremap gI <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
+  nnoremap gi <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
+  nnoremap gO <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
+  nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
+  nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
+  nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
+endif
