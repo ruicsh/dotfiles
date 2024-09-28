@@ -1,7 +1,7 @@
 {
   "Profiles": [
     {
-      "Close Sessions On End": true,
+      "Non-ASCII Anti Aliased": true,
       "Ansi 15 Color (Dark)": {
         "Red Component": 0.90727746486663818,
         "Color Space": "Calibrated",
@@ -9,7 +9,13 @@
         "Alpha Component": 1,
         "Green Component": 0.92092084884643555
       },
-      "Non-ASCII Anti Aliased": true,
+      "Foreground Color (Dark)": {
+        "Red Component": 0.81214725971221924,
+        "Color Space": "Calibrated",
+        "Blue Component": 0.89225912094116211,
+        "Alpha Component": 1,
+        "Green Component": 0.83857882022857666
+      },
       "Cursor Text Color": {
         "Green Component": 0.74690163135528564,
         "Red Component": 0.88014161586761475,
@@ -166,7 +172,7 @@
       "Description": "Default",
       "Unlimited Scrollback": false,
       "Use Italic Font": true,
-      "Working Directory": "\/Users\/ruic",
+      "Working Directory": "/Users/ruic",
       "Selected Text Color (Dark)": {
         "Red Component": 0.81214714050292969,
         "Color Space": "Calibrated",
@@ -214,8 +220,8 @@
       },
       "Semantic History": {
         "editor": "com.microsoft.VSCode",
-        "text": "",
-        "action": "editor"
+        "action": "editor",
+        "text": ""
       },
       "Ansi 9 Color (Dark)": {
         "Red Component": 0.68855589628219604,
@@ -224,7 +230,7 @@
         "Alpha Component": 1,
         "Green Component": 0.29435792565345764
       },
-      "Dynamic Profile Filename": "\/Users\/ruic\/Library\/Application Support\/iTerm2\/DynamicProfiles\/ruic",
+      "Dynamic Profile Filename": "/Users/ruic/Library/Application Support/iTerm2/DynamicProfiles/ruic",
       "Ansi 14 Color (Dark)": {
         "Red Component": 0.49344515800476074,
         "Color Space": "Calibrated",
@@ -239,16 +245,9 @@
         "Alpha Component": 0.7057952880859375,
         "Green Component": 0.23046499490737915
       },
-      "Tags": [
-        "Dynamic"
-      ],
+      "Tags": ["Dynamic"],
       "Custom Command": "No",
-      "Jobs to Ignore": [
-        "rlogin",
-        "ssh",
-        "slogin",
-        "telnet"
-      ],
+      "Jobs to Ignore": ["rlogin", "ssh", "slogin", "telnet"],
       "Use Non-ASCII Font": false,
       "Custom Directory": "No",
       "Use Selected Text Color (Light)": true,
@@ -347,7 +346,7 @@
         "Alpha Component": 1,
         "Green Component": 0.7002110481262207
       },
-      "Normal Font": "JetBrainsMono-Regular_Bold 12",
+      "Normal Font": "JetBrainsMonoNF-Bold 12",
       "Use Selected Text Color (Dark)": true,
       "Foreground Color": {
         "Green Component": 0.80784314870834351,
@@ -758,7 +757,7 @@
         "Alpha Component": 1,
         "Green Component": 0.2652154266834259
       },
-      "ASCII Ligatures": true,
+      "ASCII Ligatures": false,
       "Ansi 1 Color": {
         "Green Component": 0.15686275064945221,
         "Red Component": 0.7607843279838562,
@@ -778,17 +777,11 @@
         "Alpha Component": 1,
         "Green Component": 0.56080448627471924
       },
+      "Close Sessions On End": true,
       "Ansi 0 Color": {
         "Green Component": 0.19607843137254902,
         "Red Component": 0.19607843137254902,
         "Blue Component": 0.19607843137254902
-      },
-      "Foreground Color (Dark)": {
-        "Red Component": 0.81214725971221924,
-        "Color Space": "Calibrated",
-        "Blue Component": 0.89225912094116211,
-        "Alpha Component": 1,
-        "Green Component": 0.83857882022857666
       }
     }
   ]

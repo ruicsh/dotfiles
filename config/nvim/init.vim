@@ -10,6 +10,8 @@ if !exists('g:vscode')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'preservim/nerdtree'
 endif
 call plug#end()
 
@@ -36,7 +38,7 @@ let g:airline_theme='lucius'
 " KEY MAPPINGS 
 "----------------
 
-" default leader key \
+" default leader key Space
 let mapleader = ' '
 
 " center screen when moving
@@ -91,6 +93,7 @@ xnoremap <S-k> :move '<-2<CR>gv=gv
 " removes highlighting after escaping vim search
 nnoremap <Esc> <Esc>:noh<CR>
 
+" vscode only keymaps
 if exists('g:vscode')
   " vscode.switch tabs
   nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
@@ -118,4 +121,11 @@ if exists('g:vscode')
   nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
   nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
   nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
+
+  " vscode equivalent to nerdtree
+  " nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<CR> 
+  nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.view.explorer')<CR> 
+else
+  " nerdtree
+  nnoremap <Leader>e <Cmd>NERDTreeToggle<CR>
 endif
