@@ -1,7 +1,4 @@
 {
-  "[dockerfile]": {
-    "editor.formatOnSave": false
-  },
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -17,17 +14,11 @@
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[terraform]": {
-    "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -113,7 +104,6 @@
   "shellcheck.executablePath": "__SHELLCHECK_EXECUTABLE_PATH__",
   "shellcheck.run": "onSave",
   "stylelint.stylelintPath": "./node_modules/stylelint",
-  "terraform.languageServer.enable": true,
   "totalTypeScript.hiddenTips": [
     "in-operator-narrowing",
     "passing-generics-to-types",
@@ -160,7 +150,7 @@
   ],
   "window.titleBarStyle": "custom",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Default Dark Modern",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
   "workbench.editor.enablePreview": false,
@@ -170,5 +160,9 @@
   "workbench.iconTheme": "seti",
   "workbench.layoutControl.enabled": false,
   "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorCustomizations": {
+    "editor.background": "#181818",
+    "sideBar.background": "#1f1f1f"
+  }
 }
