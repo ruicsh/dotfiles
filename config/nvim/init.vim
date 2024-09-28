@@ -2,29 +2,29 @@
 " SETTINGS 
 "----------------
 
-set clipboard=unnamed                 "Clipboard (so that yank goes to OS clipboard)
-set cursorline                        "Highlight current line
-set linebreak                         "Don't break line on middle of word
-set noswapfile                        "Stop creating swp files
-set relativenumber                    "Show relative line numbers
-set shortmess+=I                      "Disable startup message
-set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
-set ignorecase                        "Ignore case on search patterns
-set smartcase                         "Use case sensitive if keyword contains capital letters
+set clipboard=unnamed                 "clipboard (so that yank goes to OS clipboard)
+set cursorline                        "highlight current line
+set linebreak                         "don't break line on middle of word
+set noswapfile                        "stop creating swp files
+set relativenumber                    "show relative line numbers
+set shortmess+=I                      "disable startup message
+set tabstop=2 shiftwidth=2 expandtab  "soft tabs
+set ignorecase                        "ignore case on search patterns
+set smartcase                         "use case sensitive if keyword contains capital letters
 
 "----------------
 " KEY MAPPINGS 
 "----------------
 
-" default leader key Space
+" default leader key space
 let mapleader = ' '
 
 " start/end of line
-nnoremap <s-h> ^
-nnoremap <s-l> $
+nnoremap H ^
+nnoremap L $
 
 " redo
-nnoremap <s-u> <c-r>
+nnoremap U <c-r>
 
 " quit/save
 nnoremap <leader>w :w<cr>
@@ -34,61 +34,61 @@ nnoremap <leader>q :q<cr>
 nnoremap x "_x
 
 " paste over without overwriting register
-xnoremap p <s-p>
+xnoremap p P
 
 " center screen when moving (doesn't work on vscode, why?!)
-nnoremap <C-f> <C-f>zz
-nnoremap <C-b> <C-b>zz
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-nnoremap <s-n> <s-n>zzzv
+nnoremap <c-f> <c-f>zz
+nnoremap <c-b> <c-b>zz
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+nnoremap N Nzzzv
 nnoremap n nzzzv
 nnoremap <c-o> <c-o>zz
 nnoremap <c-i> <c-i>zz
 
 " disable arrow keys
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up> <Nop>
-xnoremap <Down> <Nop>
-xnoremap <Left> <Nop>
-xnoremap <Right> <Nop>
-xnoremap <Up> <Nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <up> <nop>
+xnoremap <down> <nop>
+xnoremap <left> <nop>
+xnoremap <right> <nop>
+xnoremap <up> <nop>
 
 " sort selection then switch to normal mode
-xnoremap <Leader>s :sort<CR><Esc>
+xnoremap <leader>s :sort<cr><esc>
 
 " don't lose selection when indenting
 xnoremap < <gv
 xnoremap > >gv
 
 " insert mode arrow navigation
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>a
+inoremap <c-h> <c-o>h
+inoremap <c-j> <c-o>j
+inoremap <c-k> <c-o>k
+inoremap <c-l> <c-o>a
 
 " keys for leap.nvim
-nnoremap s <Plug>(leap-forward)
-nnoremap <s-s> <Plug>(leap-backward)
+nnoremap s <plug>(leap-forward)
+nnoremap S <plug>(leap-backward)
 
 " move text up and down
-xnoremap <s-j> :move '>+1<cr>gv=gv
-xnoremap <s-k> :move '<-2<cr>gv=gv
+xnoremap J :move '>+1<cr>gv=gv
+xnoremap K :move '<-2<cr>gv=gv
 
 " remove search highlighting
 nnoremap <cr> :noh<cr><cr>
 
 " keeps cursor in place when joining lines
-nnoremap <s-j> mzJ`z
+nnoremap J mzJ`z
 
 " search and replace the current word
-nnoremap <leader>sr :%s/\<<c-r><C-w>\>//gI<left><left><left>
+nnoremap <leader>s :%s/\<<c-r><c-w>\>/
 
 " don't include paragraph jumps on jumplist
 nnoremap { <cmd>keepj normal!{<cr>
@@ -104,6 +104,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ggandor/leap.nvim'
+
 if !exists('g:vscode')
   Plug 'airblade/vim-gitgutter'
   Plug 'nvim-lua/plenary.nvim'
@@ -114,6 +115,7 @@ if !exists('g:vscode')
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-fugitive'
 endif
+
 call plug#end()
 
 
@@ -127,36 +129,36 @@ if exists('g:vscode')
   nnoremap ]u <cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<cr>
 
   " vscode.harpoon
-  nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>
-  nnoremap <Leader>ho <Cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>
-  nnoremap <Leader>he <Cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>
-  nnoremap <Leader>hn <Cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<CR>
-  nnoremap <Leader>1 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>
-  nnoremap <Leader>2 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<CR>
-  nnoremap <Leader>3 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>
-  nnoremap <Leader>4 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>
-  nnoremap <Leader>5 <Cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>
+  nnoremap <leader>ha <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
+  nnoremap <leader>ho <cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<cr>
+  nnoremap <leader>he <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
+  nnoremap <leader>hn <cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<cr>
+  nnoremap <leader>1 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<cr>
+  nnoremap <leader>2 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<cr>
+  nnoremap <leader>3 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<cr>
+  nnoremap <leader>4 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<cr>
+  nnoremap <leader>5 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<cr>
 
   " vscode.lsp
-  nnoremap gD <Cmd>lua require('vscode').action('editor.action.peekDefinition')<CR>
-  nnoremap gd <Cmd>lua require('vscode').action('editor.action.revealDefinition')<CR>
-  nnoremap gI <Cmd>lua require('vscode').action('editor.action.peekImplementation')<CR>
-  nnoremap gi <Cmd>lua require('vscode').action('references-view.findImplementations')<CR>
-  nnoremap gO <Cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<CR>
-  nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
-  nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
-  nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
+  nnoremap gD <cmd>lua require('vscode').action('editor.action.peekDefinition')<cr>
+  nnoremap gd <cmd>lua require('vscode').action('editor.action.revealDefinition')<cr>
+  nnoremap gI <cmd>lua require('vscode').action('editor.action.peekImplementation')<cr>
+  nnoremap gi <cmd>lua require('vscode').action('references-view.findImplementations')<cr>
+  nnoremap gO <cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<cr>
+  nnoremap go <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
+  nnoremap gR <cmd>lua require('vscode').action('editor.action.goToReferences')<cr>
+  nnoremap gr <cmd>lua require('vscode').action('references-view.findReferences')<cr>
   
   " vscode equivalent to telescope
-  nnoremap <Leader>ff <Cmd>lua require('vscode').action('workbench.action.quickOpen')<CR> 
-  nnoremap <Leader>fg <Cmd>lua require('vscode').action('workbench.action.findInFiles')<CR> 
-  nnoremap <Leader>fc <Cmd>lua require('vscode').action('workbench.action.showCommands')<CR> 
+  nnoremap <leader>ff <cmd>lua require('vscode').action('workbench.action.quickOpen')<cr> 
+  nnoremap <leader>fg <cmd>lua require('vscode').action('workbench.action.findInFiles')<cr> 
+  nnoremap <leader>fc <cmd>lua require('vscode').action('workbench.action.showCommands')<cr> 
 
   " vscode equivalent to nerdtree
-  nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<CR> 
+  nnoremap <leader>e <cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<cr> 
   
   " vscode equivalent to vim.fugitive
-  nnoremap <Leader>g <Cmd>lua require('vscode').action('workbench.view.scm')<CR> 
+  nnoremap <leader>g <cmd>lua require('vscode').action('workbench.view.scm')<cr> 
 
 else
 
@@ -164,16 +166,16 @@ else
   let g:airline_theme='lucius'
 
   " telescope 
-  nnoremap <Leader>ff <Cmd>Telescope find_files<CR>
-  nnoremap <Leader>fs <Cmd>Telescope grep_string<CR>
-  nnoremap <Leader>fg <Cmd>Telescope live_grep<CR>
-  nnoremap <Leader>fh <Cmd>Telescope help_tags<CR>
-  nnoremap <Leader>fc <Cmd>Telescope commands<CR>
+  nnoremap <leader>ff <cmd>Telescope find_files<cr>
+  nnoremap <leader>fs <cmd>Telescope grep_string<cr>
+  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+  nnoremap <leader>fc <cmd>Telescope commands<cr>
   
   " nerdtree
-  nnoremap <Leader>e <Cmd>NERDTreeToggle<CR>
+  nnoremap <leader>e <cmd>NERDTreeToggle<cr>
 
   " fugitive
-  nnoremap <Leader>g <Cmd>G<CR>
+  nnoremap <leader>g <cmd>G<cr>
 
 endif
