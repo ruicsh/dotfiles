@@ -89,6 +89,12 @@ xnoremap <S-k> :move '<-2<CR>gv=gv
 " removes highlighting after escaping vim search
 nnoremap <Esc> <Esc>:noh<CR>
 
+" vscode.switch tabs
+nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
+nnoremap <Leader>] <Cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<CR>
+nnoremap <Leader>; <Cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<CR>
+nnoremap <Leader>' <Cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<CR>
+
 " vscode.harpoon
 nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>
 nnoremap <Leader>ho <Cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>
