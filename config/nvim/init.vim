@@ -1,21 +1,3 @@
-call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'machakann/vim-highlightedyank'
-Plug 'ggandor/leap.nvim'
-if !exists('g:vscode')
-  Plug 'airblade/vim-gitgutter'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'preservim/nerdtree'
-  Plug 'tpope/vim-fugitive'
-endif
-call plug#end()
-
 "----------------
 " SETTINGS 
 "----------------
@@ -29,11 +11,6 @@ set shortmess+=I                      "Disable startup message
 set tabstop=2 shiftwidth=2 expandtab  "Soft tabs
 set ignorecase                        "Ignore case on search patterns
 set smartcase                         "Use case sensitive if keyword contains capital letters
-
-"----------------
-" THEME
-"----------------
-let g:airline_theme='lucius'
 
 "----------------
 " KEY MAPPINGS 
@@ -53,6 +30,12 @@ nnoremap <s-u> <c-r>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
+" delete single character without copying into register
+nnoremap x "_x
+
+" paste over without overwriting register
+xnoremap p <s-p>
+
 " center screen when moving (doesn't work on vscode, why?!)
 nnoremap <C-f> <C-f>zz
 nnoremap <C-b> <C-b>zz
@@ -62,9 +45,6 @@ nnoremap <s-n> <s-n>zzzv
 nnoremap n nzzzv
 nnoremap <c-o> <c-o>zz
 nnoremap <c-i> <c-i>zz
-
-" paste over without overwriting register
-xnoremap p <s-p>
 
 " disable arrow keys
 inoremap <Down> <Nop>
@@ -110,8 +90,36 @@ nnoremap <s-j> mzJ`z
 " search and replace the current word
 nnoremap <leader>sr :%s/\<<c-r><C-w>\>//gI<left><left><left>
 
+" don't include paragraph jumps on jumplist
+nnoremap { <cmd>keepj normal!{<cr>
+nnoremap } <cmd>keepj normal!}<cr>
+
+"----------------
+" PLUGINS
+"----------------
+
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+Plug 'ggandor/leap.nvim'
+if !exists('g:vscode')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'preservim/nerdtree'
+  Plug 'tpope/vim-fugitive'
+endif
+call plug#end()
+
+
 " vscode only keymaps
 if exists('g:vscode')
+
   " vscode.switch tabs
   nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
   nnoremap <Leader>] <Cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<CR>
@@ -149,7 +157,12 @@ if exists('g:vscode')
   
   " vscode equivalent to vim.fugitive
   nnoremap <Leader>g <Cmd>lua require('vscode').action('workbench.view.scm')<CR> 
+
 else
+
+  " airline
+  let g:airline_theme='lucius'
+
   " telescope 
   nnoremap <Leader>ff <Cmd>Telescope find_files<CR>
   nnoremap <Leader>fs <Cmd>Telescope grep_string<CR>
@@ -162,4 +175,5 @@ else
 
   " fugitive
   nnoremap <Leader>g <Cmd>G<CR>
+
 endif
