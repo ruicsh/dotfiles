@@ -121,10 +121,10 @@ call plug#end()
 if exists('g:vscode')
 
   " vscode.switch tabs
-  nnoremap <Leader>[ <Cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<CR>
-  nnoremap <Leader>] <Cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<CR>
-  nnoremap <Leader>; <Cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<CR>
-  nnoremap <Leader>' <Cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<CR>
+  nnoremap [t <cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<cr>
+  nnoremap ]t <cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<cr>
+  nnoremap [u <cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<cr>
+  nnoremap ]u <cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<cr>
 
   " vscode.harpoon
   nnoremap <Leader>ha <Cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>

@@ -53,5 +53,5 @@
     "key": "x",
     "command": "git.clean",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
-  },
+  }
 ]
