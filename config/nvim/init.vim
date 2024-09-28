@@ -42,13 +42,29 @@ let g:airline_theme='lucius'
 " default leader key Space
 let mapleader = ' '
 
-" center screen when moving
+" start/end of line
+nnoremap <s-h> ^
+nnoremap <s-l> $
+
+" redo
+nnoremap <s-u> <c-r>
+
+" quit/save
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+
+" center screen when moving (doesn't work on vscode, why?!)
 nnoremap <C-f> <C-f>zz
 nnoremap <C-b> <C-b>zz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
-nnoremap N Nzz
-nnoremap n nzz
+nnoremap <s-n> <s-n>zzzv
+nnoremap n nzzzv
+nnoremap <c-o> <c-o>zz
+nnoremap <c-i> <c-i>zz
+
+" paste over without overwriting register
+xnoremap p <s-p>
 
 " disable arrow keys
 inoremap <Down> <Nop>
@@ -75,18 +91,24 @@ xnoremap > >gv
 inoremap <C-h> <C-o>h
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>l
+inoremap <C-l> <C-o>a
 
 " keys for leap.nvim
 nnoremap s <Plug>(leap-forward)
-nnoremap S <Plug>(leap-backward)
+nnoremap <s-s> <Plug>(leap-backward)
 
 " move text up and down
-xnoremap <S-j> :move '>+1<CR>gv=gv
-xnoremap <S-k> :move '<-2<CR>gv=gv
+xnoremap <s-j> :move '>+1<cr>gv=gv
+xnoremap <s-k> :move '<-2<cr>gv=gv
 
-" removes highlighting after escaping vim search
-nnoremap <Esc> <Esc>:noh<CR>
+" remove search highlighting
+nnoremap <cr> :noh<cr><cr>
+
+" keeps cursor in place when joining lines
+nnoremap <s-j> mzJ`z
+
+" search and replace the current word
+nnoremap <leader>sr :%s/\<<c-r><C-w>\>//gI<left><left><left>
 
 " vscode only keymaps
 if exists('g:vscode')
