@@ -1,25 +1,5 @@
 [
   {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.quickOpenSelectNext",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "inQuickOpen"
-  },
-  {
     "key": "right",
     "command": "",
     "when": "editorTextFocus && neovim.mode == 'insert'"
@@ -38,5 +18,40 @@
     "key": "down",
     "command": "",
     "when": "editorTextFocus && neovim.mode == 'insert'"
-  }
+  },
+  {
+    "key": "tab",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletVisible && searchViewletFocus && !inputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.findInFiles", 
+    "when": "searchViewletVisible && searchViewletFocus"
+  },
+  {
+    "key": "tab",
+    "command": "workbench.scm.action.focusNextResourceGroup",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.scm.action.focusPreviousInput",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "key": "s",
+    "command": "git.stage",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+  },
+  {
+    "key": "u",
+    "command": "git.unstage",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "git.clean",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+  },
 ]

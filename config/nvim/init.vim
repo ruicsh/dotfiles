@@ -12,6 +12,7 @@ if !exists('g:vscode')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'ryanoasis/vim-devicons'
   Plug 'preservim/nerdtree'
+  Plug 'tpope/vim-fugitive'
 endif
 call plug#end()
 
@@ -76,12 +77,6 @@ inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <Cmd>Telescope find_files<CR>
-nnoremap <leader>fg <Cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <Cmd>Telescope buffers<CR>
-nnoremap <leader>fh <Cmd>Telescope help_tags<CR>
-
 " keys for leap.nvim
 nnoremap s <Plug>(leap-forward)
 nnoremap S <Plug>(leap-backward)
@@ -121,11 +116,28 @@ if exists('g:vscode')
   nnoremap go <Cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<CR>
   nnoremap gR <Cmd>lua require('vscode').action('editor.action.goToReferences')<CR>
   nnoremap gr <Cmd>lua require('vscode').action('references-view.findReferences')<CR>
+  
+  " vscode equivalent to telescope
+  nnoremap <Leader>ff <Cmd>lua require('vscode').action('workbench.action.quickOpen')<CR> 
+  nnoremap <Leader>fg <Cmd>lua require('vscode').action('workbench.action.findInFiles')<CR> 
+  nnoremap <Leader>fc <Cmd>lua require('vscode').action('workbench.action.showCommands')<CR> 
 
   " vscode equivalent to nerdtree
-  " nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<CR> 
-  nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.view.explorer')<CR> 
+  nnoremap <Leader>e <Cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<CR> 
+  
+  " vscode equivalent to vim.fugitive
+  nnoremap <Leader>g <Cmd>lua require('vscode').action('workbench.view.scm')<CR> 
 else
+  " telescope 
+  nnoremap <Leader>ff <Cmd>Telescope find_files<CR>
+  nnoremap <Leader>fs <Cmd>Telescope grep_string<CR>
+  nnoremap <Leader>fg <Cmd>Telescope live_grep<CR>
+  nnoremap <Leader>fh <Cmd>Telescope help_tags<CR>
+  nnoremap <Leader>fc <Cmd>Telescope commands<CR>
+  
   " nerdtree
   nnoremap <Leader>e <Cmd>NERDTreeToggle<CR>
+
+  " fugitive
+  nnoremap <Leader>g <Cmd>G<CR>
 endif
