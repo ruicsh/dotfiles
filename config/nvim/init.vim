@@ -83,6 +83,15 @@ inoremap <c-j> <c-o>j
 inoremap <c-k> <c-o>k
 inoremap <c-l> <c-o>a
 
+" go to the beginning and end of current line in insert mode quickly
+inoremap <c-a> <home>
+inoremap <c-e> <end>
+inoremap <c-b> <c-o>B
+inoremap <c-w> <c-o>W
+
+" delete the character to the right of the cursor
+inoremap <c-d> <del>
+
 " keys for leap.nvim
 nnoremap s <plug>(leap-forward)
 nnoremap S <plug>(leap-backward)
