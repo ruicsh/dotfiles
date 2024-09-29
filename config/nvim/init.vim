@@ -156,10 +156,8 @@ if exists('g:vscode')
   nnoremap [t <cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<cr>
 
   " vscode.harpoon
-  nnoremap <leader>ha <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
-  nnoremap <leader>ho <cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<cr>
-  nnoremap <leader>he <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
-  nnoremap <leader>hn <cmd>lua require('vscode').action('vscode-harpoon.gotoPreviousHarpoonEditor')<cr>
+  nnoremap <leader>h <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
+  nnoremap <leader>H <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
   nnoremap <leader>1 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<cr>
   nnoremap <leader>2 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<cr>
   nnoremap <leader>3 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<cr>
@@ -171,8 +169,8 @@ if exists('g:vscode')
   nnoremap gd <cmd>lua require('vscode').action('editor.action.revealDefinition')<cr>
   nnoremap gI <cmd>lua require('vscode').action('editor.action.peekImplementation')<cr>
   nnoremap gi <cmd>lua require('vscode').action('references-view.findImplementations')<cr>
-  nnoremap gO <cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<cr>
-  nnoremap go <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
+  nnoremap gT <cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<cr>
+  nnoremap gt <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
   nnoremap gR <cmd>lua require('vscode').action('editor.action.goToReferences')<cr>
   nnoremap gr <cmd>lua require('vscode').action('references-view.findReferences')<cr>
   
