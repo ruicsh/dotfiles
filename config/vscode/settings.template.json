@@ -153,7 +153,6 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
-  "workbench.editor.enablePreview": false,
   "workbench.editorAssociations": {
     "*.pdf": "default"
   },
@@ -163,6 +162,9 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorCustomizations": {
     "editor.background": "#181818",
-    "sideBar.background": "#1f1f1f"
-  }
+    "editor.lineHighlightBackground": "#2f2f2f",
+    "sideBar.background": "#1f1f1f",
+    "sideBarSectionHeader.background": "#1f1f1f"
+  },
+  "editor.renderLineHighlight": "line"
 }

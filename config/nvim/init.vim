@@ -138,6 +138,14 @@ endif
 call plug#end()
 
 
+
+" highlighted yank
+highlight HighlightedyankRegion cterm=reverse gui=reverse
+let g:highlightedyank_highlight_duration = 500
+let g:highlightedyank_highlight_in_visual = 0
+
+
+
 " vscode only keymaps
 if exists('g:vscode')
 
