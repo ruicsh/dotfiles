@@ -30,11 +30,21 @@ nnoremap U <c-r>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
-" delete single character without copying into register
+" don't yank on delete char
 nnoremap x "_x
+nnoremap X "_X
+vnoremap x "_x
+vnoremap X "_X
 
-" paste over without overwriting register
-xnoremap p P
+" change text without putting it into the vim register
+nnoremap c "_c
+nnoremap C "_C
+nnoremap cc "_cc
+xnoremap c "_c
+
+" paste over currently selected text without yanking it
+xnoremap p  "_dp
+xnoremap P "_dP
 
 " center screen when moving (doesn't work on vscode, why?!)
 nnoremap <c-f> <c-f>zz
