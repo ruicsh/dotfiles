@@ -20,15 +20,10 @@ set smartcase                         "use case sensitive if keyword contains ca
 let mapleader = ' '
 
 " start/end of line
-nnoremap H ^
-nnoremap L $
-
-" redo
-nnoremap U <c-r>
-
-" quit/save
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
+nnoremap <c-a> ^
+nnoremap <c-e> $
+inoremap <c-a> <c-o>^
+inoremap <c-e> <c-o>$
 
 " don't yank on delete char
 nnoremap x "_x
@@ -83,20 +78,11 @@ inoremap <c-j> <c-o>j
 inoremap <c-k> <c-o>k
 inoremap <c-l> <c-o>a
 
-" go to the beginning and end of current line in insert mode quickly
-inoremap <c-a> <home>
-inoremap <c-e> <end>
-inoremap <c-b> <c-o>B
-inoremap <c-w> <c-o>W
-
-" delete the character to the right of the cursor
-inoremap <c-d> <del>
-
 " keys for leap.nvim
 nnoremap s <plug>(leap-forward)
 nnoremap S <plug>(leap-backward)
 
-" move text up and down
+" move lines up/down
 xnoremap J :move '>+1<cr>gv=gv
 xnoremap K :move '<-2<cr>gv=gv
 
@@ -107,15 +93,15 @@ nnoremap <cr> :noh<cr><cr>
 nnoremap J mzJ`z
 
 " search and replace the current word
-nnoremap <leader>s :%s/\<<c-r><c-w>\>/
+nnoremap <leader>sr :%s/\<<c-r><c-w>\>/
 
 " don't include paragraph jumps on jumplist
 nnoremap { <cmd>keepj normal!{<cr>
 nnoremap } <cmd>keepj normal!}<cr>
 
 "----------------
-" PLUGINS
-"----------------
+" 
+"--------PLUGINS--------
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
@@ -137,14 +123,10 @@ endif
 
 call plug#end()
 
-
-
 " highlighted yank
 highlight HighlightedyankRegion cterm=reverse gui=reverse
 let g:highlightedyank_highlight_duration = 500
 let g:highlightedyank_highlight_in_visual = 0
-
-
 
 " vscode only keymaps
 if exists('g:vscode')
@@ -157,7 +139,7 @@ if exists('g:vscode')
 
   " vscode.harpoon
   nnoremap <leader>h <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
-  nnoremap <leader>H <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
+  nnoremap <leader>ha <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
   nnoremap <leader>1 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<cr>
   nnoremap <leader>2 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<cr>
   nnoremap <leader>3 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<cr>
@@ -184,6 +166,9 @@ if exists('g:vscode')
   
   " vscode equivalent to vim.fugitive
   nnoremap <leader>g <cmd>lua require('vscode').action('workbench.view.scm')<cr> 
+
+  " vscode fold
+  nnoremap za <cmd>lua require('vscode').action('editor.toggleFold')<cr>
 
 else
 

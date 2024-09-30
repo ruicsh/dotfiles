@@ -2,9 +2,6 @@
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -36,9 +33,14 @@
   "editor.accessibilitySupport": "off",
   "editor.fontFamily": "jetbrains mono, monospace",
   "editor.fontLigatures": true,
+  "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
+  "editor.indentSize": "tabSize",
   "editor.inlineSuggest.enabled": true,
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "line",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 2,
   "errorLens.excludeBySource": ["ts(2451)"],
@@ -139,32 +141,33 @@
     "d",
     "h",
     "j",
+    "k",
+    "l",
     "m",
     "o",
     "r",
     "t",
     "u",
-    "w",
-    "k",
-    "l"
+    "w"
   ],
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Default Dark Modern",
-  "workbench.editor.decorations.badges": false,
-  "workbench.editor.decorations.colors": false,
-  "workbench.editorAssociations": {
-    "*.pdf": "default"
-  },
-  "workbench.iconTheme": "seti",
-  "workbench.layoutControl.enabled": false,
-  "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "editor.background": "#181818",
     "editor.lineHighlightBackground": "#2f2f2f",
     "sideBar.background": "#1f1f1f",
     "sideBarSectionHeader.background": "#1f1f1f"
   },
-  "editor.renderLineHighlight": "line"
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editorAssociations": {
+    "*.pdf": "default"
+  },
+  "workbench.iconTheme": "seti",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.startupEditor": "newUntitledFile"
 }
