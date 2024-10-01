@@ -4,13 +4,14 @@
 
 set clipboard=unnamed                 "clipboard (so that yank goes to OS clipboard)
 set cursorline                        "highlight current line
-set linebreak                         "don't break line on middle of word
 set noswapfile                        "stop creating swp files
 set relativenumber                    "show relative line numbers
 set shortmess+=I                      "disable startup message
 set tabstop=2 shiftwidth=2 expandtab  "soft tabs
 set ignorecase                        "ignore case on search patterns
 set smartcase                         "use case sensitive if keyword contains capital letters
+set nowrap                            "do not automatically wrap on load
+set formatoptions-=t                  "do not automatically wrap text when typing
 
 "----------------
 " KEY MAPPINGS 
@@ -100,13 +101,14 @@ nnoremap { <cmd>keepj normal!{<cr>
 nnoremap } <cmd>keepj normal!}<cr>
 
 "----------------
-" 
-"--------PLUGINS--------
+" PLUGINS 
+"----------------
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ggandor/leap.nvim'
 
@@ -131,11 +133,12 @@ let g:highlightedyank_highlight_in_visual = 0
 " vscode only keymaps
 if exists('g:vscode')
 
-  " vscode.switch tabs
+  " vscode.window management
   nnoremap <tab> <cmd>lua require('vscode').action('workbench.action.openPreviousRecentlyUsedEditor')<cr>
   nnoremap <s-tab> <cmd>lua require('vscode').action('workbench.action.openNextRecentlyUsedEditor')<cr>
   nnoremap ]t <cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<cr>
   nnoremap [t <cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<cr>
+  nnoremap <c-w>o <cmd>lua require('vscode').action('workbench.action.closeOtherEditors')<cr>
 
   " vscode.harpoon
   nnoremap <leader>h <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
@@ -151,8 +154,8 @@ if exists('g:vscode')
   nnoremap gd <cmd>lua require('vscode').action('editor.action.revealDefinition')<cr>
   nnoremap gI <cmd>lua require('vscode').action('editor.action.peekImplementation')<cr>
   nnoremap gi <cmd>lua require('vscode').action('references-view.findImplementations')<cr>
-  nnoremap gT <cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<cr>
-  nnoremap gt <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
+  nnoremap gO <cmd>lua require('vscode').action('editor.action.peekTypeDefinition')<cr>
+  nnoremap go <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
   nnoremap gR <cmd>lua require('vscode').action('editor.action.goToReferences')<cr>
   nnoremap gr <cmd>lua require('vscode').action('references-view.findReferences')<cr>
   
@@ -169,6 +172,13 @@ if exists('g:vscode')
 
   " vscode fold
   nnoremap za <cmd>lua require('vscode').action('editor.toggleFold')<cr>
+  nnoremap zr <cmd>lua require('vscode').action('editor.unfoldAll')<cr>
+  nnoremap zm <cmd>lua require('vscode').action('editor.foldAll')<cr>
+  nnoremap zc <cmd>lua require('vscode').action('editor.fold')<cr>
+  nnoremap zo <cmd>lua require('vscode').action('editor.unfold')<cr>
+  
+  " vscode native commands
+  nnoremap <leader>vb <cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<cr>
 
 else
 

@@ -151,7 +151,7 @@
     "w"
   ],
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.background": "#181818",
     "editor.lineHighlightBackground": "#2f2f2f",
