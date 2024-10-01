@@ -121,6 +121,7 @@ if !exists('g:vscode')
   Plug 'ryanoasis/vim-devicons'
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-fugitive'
+  Plug 'folke/which-key.nvim'
 endif
 
 call plug#end()
@@ -141,8 +142,10 @@ if exists('g:vscode')
   nnoremap <c-w>o <cmd>lua require('vscode').action('workbench.action.closeOtherEditors')<cr>
 
   " vscode.harpoon
-  nnoremap <leader>h <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
+  nnoremap <leader>hh <cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<cr>
+  nnoremap <leader>he <cmd>lua require('vscode').action('vscode-harpoon.editEditors')<cr>
   nnoremap <leader>ha <cmd>lua require('vscode').action('vscode-harpoon.addEditor')<cr>
+  nnoremap <leader>hr <cmd>lua require('vscode').action('vscode-harpoon.removeEditor')<cr>
   nnoremap <leader>1 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<cr>
   nnoremap <leader>2 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<cr>
   nnoremap <leader>3 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<cr>
@@ -160,9 +163,10 @@ if exists('g:vscode')
   nnoremap gr <cmd>lua require('vscode').action('references-view.findReferences')<cr>
   
   " vscode equivalent to telescope
+  nnoremap <leader>fb <cmd>lua require('vscode').action('workbench.action.showAllEditors')<cr> 
+  nnoremap <leader>fc <cmd>lua require('vscode').action('workbench.action.showCommands')<cr> 
   nnoremap <leader>ff <cmd>lua require('vscode').action('workbench.action.quickOpen')<cr> 
   nnoremap <leader>fg <cmd>lua require('vscode').action('workbench.action.findInFiles')<cr> 
-  nnoremap <leader>fc <cmd>lua require('vscode').action('workbench.action.showCommands')<cr> 
 
   " vscode equivalent to nerdtree
   nnoremap <leader>e <cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<cr> 
@@ -172,10 +176,10 @@ if exists('g:vscode')
 
   " vscode fold
   nnoremap za <cmd>lua require('vscode').action('editor.toggleFold')<cr>
-  nnoremap zr <cmd>lua require('vscode').action('editor.unfoldAll')<cr>
-  nnoremap zm <cmd>lua require('vscode').action('editor.foldAll')<cr>
   nnoremap zc <cmd>lua require('vscode').action('editor.fold')<cr>
+  nnoremap zm <cmd>lua require('vscode').action('editor.foldAll')<cr>
   nnoremap zo <cmd>lua require('vscode').action('editor.unfold')<cr>
+  nnoremap zr <cmd>lua require('vscode').action('editor.unfoldAll')<cr>
   
   " vscode native commands
   nnoremap <leader>vb <cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<cr>
@@ -186,11 +190,12 @@ else
   let g:airline_theme='lucius'
 
   " telescope 
+  nnoremap <leader>fb <cmd>Telescope buffers<cr>
+  nnoremap <leader>fc <cmd>Telescope commands<cr>
   nnoremap <leader>ff <cmd>Telescope find_files<cr>
-  nnoremap <leader>fs <cmd>Telescope grep_string<cr>
   nnoremap <leader>fg <cmd>Telescope live_grep<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-  nnoremap <leader>fc <cmd>Telescope commands<cr>
+  nnoremap <leader>fs <cmd>Telescope grep_string<cr>
   
   " nerdtree
   nnoremap <leader>e <cmd>NERDTreeToggle<cr>

@@ -33,6 +33,7 @@
   "editor.accessibilitySupport": "off",
   "editor.fontFamily": "jetbrains mono, monospace",
   "editor.fontLigatures": true,
+  "editor.fontSize": 11,
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.indentSize": "tabSize",
