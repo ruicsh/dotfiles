@@ -4,14 +4,18 @@
 
 set clipboard=unnamed                 "clipboard (so that yank goes to OS clipboard)
 set cursorline                        "highlight current line
+set foldlevel=99                      "open all folds by default
+set foldmethod=syntax                 "folding method based on syntax
+set formatoptions-=t                  "do not automatically wrap text when typing
+set ignorecase                        "ignore case on search patterns
 set noswapfile                        "stop creating swp files
+set nowrap                            "do not automatically wrap on load
 set relativenumber                    "show relative line numbers
 set shortmess+=I                      "disable startup message
-set tabstop=2 shiftwidth=2 expandtab  "soft tabs
-set ignorecase                        "ignore case on search patterns
 set smartcase                         "use case sensitive if keyword contains capital letters
-set nowrap                            "do not automatically wrap on load
-set formatoptions-=t                  "do not automatically wrap text when typing
+set splitbelow                        "open a new horizontal split below
+set splitright                        "open a new vertical split to the right
+set tabstop=2 shiftwidth=2 expandtab  "soft tabs
 
 "----------------
 " KEY MAPPINGS 
@@ -111,6 +115,9 @@ Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ggandor/leap.nvim'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'szw/vim-maximizer'
 
 if !exists('g:vscode')
   Plug 'airblade/vim-gitgutter'
@@ -140,6 +147,7 @@ if exists('g:vscode')
   nnoremap ]t <cmd>lua require('vscode').action('workbench.action.nextEditorInGroup')<cr>
   nnoremap [t <cmd>lua require('vscode').action('workbench.action.previousEditorInGroup')<cr>
   nnoremap <c-w>o <cmd>lua require('vscode').action('workbench.action.closeOtherEditors')<cr>
+  nnoremap <c-w>m <cmd>lua require('vscode').action('workbench.action.toggleMaximizeEditorGroup')<cr>
 
   " vscode.harpoon
   nnoremap <leader>hh <cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<cr>
@@ -151,6 +159,10 @@ if exists('g:vscode')
   nnoremap <leader>3 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<cr>
   nnoremap <leader>4 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<cr>
   nnoremap <leader>5 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<cr>
+  nnoremap <leader>6 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor6')<cr>
+  nnoremap <leader>7 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor7')<cr>
+  nnoremap <leader>8 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor8')<cr>
+  nnoremap <leader>9 <cmd>lua require('vscode').action('vscode-harpoon.gotoEditor9')<cr>
 
   " vscode.lsp
   nnoremap gD <cmd>lua require('vscode').action('editor.action.peekDefinition')<cr>
@@ -161,7 +173,7 @@ if exists('g:vscode')
   nnoremap go <cmd>lua require('vscode').action('editor.action.goToTypeDefinition')<cr>
   nnoremap gR <cmd>lua require('vscode').action('editor.action.goToReferences')<cr>
   nnoremap gr <cmd>lua require('vscode').action('references-view.findReferences')<cr>
-  
+ 
   " vscode equivalent to telescope
   nnoremap <leader>fb <cmd>lua require('vscode').action('workbench.action.showAllEditors')<cr> 
   nnoremap <leader>fc <cmd>lua require('vscode').action('workbench.action.showCommands')<cr> 
@@ -170,17 +182,20 @@ if exists('g:vscode')
 
   " vscode equivalent to nerdtree
   nnoremap <leader>e <cmd>lua require('vscode').action('workbench.files.action.focusFilesExplorer')<cr> 
-  
+
   " vscode equivalent to vim.fugitive
   nnoremap <leader>g <cmd>lua require('vscode').action('workbench.view.scm')<cr> 
 
   " vscode fold
   nnoremap za <cmd>lua require('vscode').action('editor.toggleFold')<cr>
+  nnoremap zA <cmd>lua require('vscode').action('editor.toggleFoldRecursively')<cr>
   nnoremap zc <cmd>lua require('vscode').action('editor.fold')<cr>
-  nnoremap zm <cmd>lua require('vscode').action('editor.foldAll')<cr>
+  nnoremap zC <cmd>lua require('vscode').action('editor.foldRecursively')<cr>
+  nnoremap zM <cmd>lua require('vscode').action('editor.foldAll')<cr>
   nnoremap zo <cmd>lua require('vscode').action('editor.unfold')<cr>
-  nnoremap zr <cmd>lua require('vscode').action('editor.unfoldAll')<cr>
-  
+  nnoremap zO <cmd>lua require('vscode').action('editor.unfoldRecursively')<cr>
+  nnoremap zR <cmd>lua require('vscode').action('editor.unfoldAll')<cr>
+
   " vscode native commands
   nnoremap <leader>vb <cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<cr>
 
@@ -189,6 +204,9 @@ else
   " airline
   let g:airline_theme='lucius'
 
+  " window managemnt
+  noremap <c-w>m :MaximizerToggle<cr>
+
   " telescope 
   nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fc <cmd>Telescope commands<cr>
@@ -196,7 +214,7 @@ else
   nnoremap <leader>fg <cmd>Telescope live_grep<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
   nnoremap <leader>fs <cmd>Telescope grep_string<cr>
-  
+
   " nerdtree
   nnoremap <leader>e <cmd>NERDTreeToggle<cr>
 
