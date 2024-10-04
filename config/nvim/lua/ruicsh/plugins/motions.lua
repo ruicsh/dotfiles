@@ -29,17 +29,6 @@ return {
 		},
 	},
 
-	{ -- extend a/i objects
-		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-		"echasnovski/mini.ai",
-		-- Examples:
-		--  - va)  - [V]isually select [A]round [)]paren
-		--  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-		--  - ci'  - [C]hange [I]nside [']quote
-
-		version = "main",
-	},
-
 	{ -- surroundings (brackets, quotes)
 		-- https://github.com/tpope/vim-surround
 
