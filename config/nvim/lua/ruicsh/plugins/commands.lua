@@ -170,4 +170,13 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+
+	{ -- sort selection
+		-- https://github.com/sQVe/sort.nvim
+		"sQVe/sort.nvim",
+		keys = {
+			{ "<leader>ss", "<cmd>Sort<cr>", mode = "v" },
+		},
+		config = true,
+	},
 }

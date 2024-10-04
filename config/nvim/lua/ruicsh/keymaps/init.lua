@@ -58,7 +58,6 @@ vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting
 vim.keymap.set("v", ">", ">gv") -- keep visual selection after indenting
 
 vim.keymap.set("v", "<cr>", ":noh<cr><cr>") -- remove search highlighting
-vim.keymap.set("v", "<leader>s", ":sort<cr>") -- sort selection
 
 -- registers
 vim.keymap.set("v", "P", '"_dP') -- paste over currently selected text without yanking it
