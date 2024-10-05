@@ -151,26 +151,6 @@
     "u",
     "w"
   ],
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "top",
-  "workbench.colorCustomizations": {
-    "editor.background": "#181818",
-    "editor.lineHighlightBackground": "#2f2f2f",
-    "sideBar.background": "#1f1f1f",
-    "sideBarSectionHeader.background": "#1f1f1f"
-  },
-  "workbench.colorTheme": "Default Dark Modern",
-  "workbench.editor.decorations.badges": false,
-  "workbench.editor.decorations.colors": false,
-  "workbench.editor.revealIfOpen": true,
-  "workbench.editorAssociations": {
-    "*.pdf": "default"
-  },
-  "workbench.iconTheme": "seti",
-  "workbench.layoutControl.enabled": false,
-  "workbench.panel.defaultLocation": "right",
-  "workbench.settings.enableNaturalLanguageSearch": false,
-  "workbench.startupEditor": "newUntitledFile",
   "vscode-neovim.ctrlKeysForNormalMode": [
     "/",
     "]",
@@ -202,5 +182,41 @@
     "x",
     "y",
     "z"
-  ]
+  ],
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "editor.background": "#181818",
+    "editor.inlineValuesBackground": "#181818",
+    "editor.lineHighlightBackground": "#2f2f2f",
+    "editorGroupHeader.tabsBackground": "#181818",
+    "editorGutter.background": "#181818",
+    "editorHoverWidget.background": "#181818",
+    "input.background": "#181818",
+    "input.border": "#181818",
+    "pickerGroup.border": "#181818",
+    "quickInput.background": "#1f1f1f",
+    "quickInputTitle.background": "#181818",
+    "sideBar.background": "#181818",
+    "sideBarSectionHeader.background": "#181818",
+    "statusBar.background": "#181818",
+    "tab.activeBorderTop": "#88c0d0",
+    "tab.activeBackground": "#181818",
+    "tab.inactiveBackground": "#181818",
+    "tab.hoverBackground": "#262626",
+    "tab.unfocusedHoverBackground": "#262626",
+    "titleBar.activeBackground": "#181818"
+  },
+  "workbench.colorTheme": "Nord",
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editorAssociations": {
+    "*.pdf": "default"
+  },
+  "workbench.iconTheme": "seti",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.startupEditor": "newUntitledFile"
 }
