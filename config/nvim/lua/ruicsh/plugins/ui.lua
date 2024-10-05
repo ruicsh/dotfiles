@@ -15,50 +15,6 @@ return {
 		end,
 	},
 
-	{ -- tabs
-		-- https://github.com/akinsho/bufferline.nvim
-		"akinsho/bufferline.nvim",
-		config = function()
-			local bufferline = require("bufferline")
-			bufferline.setup({
-				options = {
-					enforce_regular_tabs = true,
-					offsets = {
-						filetype = "NvimTree",
-					},
-					separator_style = "thick",
-					show_buffer_close_icons = false,
-					style_preset = {
-						bufferline.style_preset.no_italic,
-						bufferline.style_preset.no_bold,
-					},
-					themable = true,
-				},
-			})
-		end,
-
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- indentation guides
-		-- https://github.com/lukas-reineke/indent-blankline.nvim
-		"lukas-reineke/indent-blankline.nvim",
-		-- optional `vim.uv` typings
-		-- See `:help ibl`
-		opts = {
-			whitespace = { highlight = { "Whitespace", "Normal" } },
-		},
-
-		main = "ibl",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
 	{ -- folds
 		-- https://github.com/kevinhwang91/nvim-ufo
 		"kevinhwang91/nvim-ufo",
@@ -82,16 +38,6 @@ return {
 		end,
 	},
 
-	{ -- scrollbar
-		-- https://github.com/petertriho/nvim-scrollbar
-		"petertriho/nvim-scrollbar",
-		config = true,
-
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
 	{ -- breadcrumbs
 		-- https://github.com/utilyre/barbecue.nvim
 		"utilyre/barbecue.nvim",
@@ -101,24 +47,6 @@ return {
 		version = "*",
 		dependencies = {
 			"SmiteshP/nvim-navic",
-		},
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- status bar
-		-- https://github.com/nvim-lualine/lualine.nvim
-		"nvim-lualine/lualine.nvim",
-		config = true,
-		opts = {
-			options = {
-				theme = "auto",
-			},
-		},
-
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
 		},
 		cond = function()
 			return not vim.g.vscode
@@ -160,34 +88,6 @@ return {
 		},
 
 		cmd = "ZenMode",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- search/replace
-		-- https://github.com/nvim-pack/nvim-spectre
-		"nvim-pack/nvim-spectre",
-		keys = {
-			{ "<leader>ss", "<cmd>lua require('spectre').toggle()<cr>", desc = "[S]pectre" },
-			{
-				"<leader>sw",
-				"<cmd>lua require('spectre').open_visual({select_word=true})<cr>",
-				desc = "[S]earch [W]ord",
-			},
-			{
-				"<leader>sw",
-				"<cmd>lua require('foobar').open_visual()<cr>",
-				mode = "v",
-				desc = "[S]earch [W]ord",
-			},
-			{
-				"<leader>sf",
-				"<cmd>lua require('spectre').open_file_search({select_word=true})<cr>",
-				desc = "[S]earch on [F]ile",
-			},
-		},
-
 		cond = function()
 			return not vim.g.vscode
 		end,

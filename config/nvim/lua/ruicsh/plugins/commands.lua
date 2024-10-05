@@ -179,4 +179,32 @@ return {
 		},
 		config = true,
 	},
+
+	{ -- search/replace
+		-- https://github.com/nvim-pack/nvim-spectre
+		"nvim-pack/nvim-spectre",
+		keys = {
+			{ "<leader>ss", "<cmd>lua require('spectre').toggle()<cr>", desc = "[S]pectre" },
+			{
+				"<leader>sw",
+				"<cmd>lua require('spectre').open_visual({select_word=true})<cr>",
+				desc = "[S]earch [W]ord",
+			},
+			{
+				"<leader>sw",
+				"<cmd>lua require('foobar').open_visual()<cr>",
+				mode = "v",
+				desc = "[S]earch [W]ord",
+			},
+			{
+				"<leader>sf",
+				"<cmd>lua require('spectre').open_file_search({select_word=true})<cr>",
+				desc = "[S]earch on [F]ile",
+			},
+		},
+
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
 }

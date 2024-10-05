@@ -354,17 +354,4 @@ return {
 			return not vim.g.vscode
 		end,
 	},
-
-	{ -- code context
-		-- https://github.com/nvim-treesitter/nvim-treesitter-context
-		"nvim-treesitter/nvim-treesitter-context",
-		config = function()
-			require("treesitter-context").setup()
-		end,
-
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
 }
