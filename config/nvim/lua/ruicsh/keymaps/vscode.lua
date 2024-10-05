@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>g", ac("workbench.view.scm"))
 vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>kz", ac("workbench.action.toggleZenMode"))
-vim.keymap.set("n", "-", ac("vsnetrw.open"))
+vim.keymap.set("n", "<leader>sr", ac("actions.find"))
 
 -- tabs
 vim.keymap.set("n", "[t", ac("workbench.action.previousEditorInGroup"))
@@ -66,3 +66,4 @@ vim.keymap.set("n", "zo", ac("editor.unfold"))
 
 -- native
 vim.keymap.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
+vim.keymap.set("x", "<leader>sr", ac("actions.find"))
