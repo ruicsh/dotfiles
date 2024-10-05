@@ -21,14 +21,13 @@ main() {
 		clinyong.vscode-css-modules
 		dbaeumer.vscode-eslint
 		eamodio.gitlens
-		EditorConfig.EditorConfig
+		editorconfig.editorconfig
 		esbenp.prettier-vscode
 		formulahendry.auto-rename-tag
 		foxundermoon.shell-format
-		GitHub.copilot
-		GitHub.copilot-chat
+		github.copilot
+		github.copilot-chat
 		github.vscode-github-actions
-		hashicorp.terraform
 		jeff-hykin.better-dockerfile-syntax
 		kumar-harsh.graphql-for-vscode
 		mattpocock.ts-error-translator
@@ -43,13 +42,11 @@ main() {
 		ms-vscode-remote.remote-ssh-edit
 		ms-vscode.remote-explorer
 		qinjia.seti-icons
-		redhat.ansible
 		redhat.vscode-yaml
 		richie5um2.vscode-sort-json
-		rsbondi.highlight-words
-		ryuta46.multi-command
+		ruicsh.vscode-theme-nordstone
 		samuelcolvin.jinjahtml
-		SirTori.indenticator
+		sirtori.indenticator
 		streetsidesoftware.code-spell-checker
 		styled-components.vscode-styled-components
 		stylelint.vscode-stylelint
@@ -58,7 +55,7 @@ main() {
 		usernamehw.errorlens
 		william-voyek.vscode-nginx
 		wix.vscode-import-cost
-		xabikos.JavaScriptSnippets
+		xabikos.javascriptsnippets
 		yoavbls.pretty-ts-errors
 	)
 
