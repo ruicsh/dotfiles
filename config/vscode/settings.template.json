@@ -51,7 +51,7 @@
   "explorer.fileNesting.patterns": {
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
     "*.jsx": "${capture}.js",
-    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.d.ts",
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.d.ts, ${capture}.scss",
     "*.tsx": "${capture}.ts, ${capture}.module.scss, ${capture}.test.tsx, ${capture}.test.ts",
     "package.json": "package-lock.json, yarn.lock, bun.lockb",
     "tsconfig.json": "tsconfig.*.json"

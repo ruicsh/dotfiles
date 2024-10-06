@@ -1,25 +1,26 @@
 return {
 	{ -- tabs bookmarks
+		-- using grapple instead of harpoon, but same features, just easier config
 		-- https://github.com/cbochs/grapple.nvim
 		"cbochs/grapple.nvim",
 		opts = {
 			scope = "git_branch",
 		},
 		keys = {
-			{ "<leader>1", "<cmd>Grapple select index=1<cr>", desc = "Grapple to buffer 1" },
-			{ "<leader>2", "<cmd>Grapple select index=2<cr>", desc = "Grapple to buffer 2" },
-			{ "<leader>3", "<cmd>Grapple select index=3<cr>", desc = "Grapple to buffer 3" },
-			{ "<leader>4", "<cmd>Grapple select index=4<cr>", desc = "Grapple to buffer 4" },
-			{ "<leader>5", "<cmd>Grapple select index=5<cr>", desc = "Grapple to buffer 5" },
-			{ "<leader>6", "<cmd>Grapple select index=6<cr>", desc = "Grapple to buffer 6" },
-			{ "<leader>7", "<cmd>Grapple select index=7<cr>", desc = "Grapple to buffer 7" },
-			{ "<leader>8", "<cmd>Grapple select index=8<cr>", desc = "Grapple to buffer 8" },
-			{ "<leader>9", "<cmd>Grapple select index=9<cr>", desc = "Grapple to buffer 9" },
-			{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "Grapple: [A]dd buffer" },
-			{ "<leader>hh", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple" },
-			{ "<leader>hn", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple: [N]ext buffer" },
-			{ "<leader>hp", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple: [P]revious buffer" },
-			{ "<leader>hr", "<cmd>Grapple untag<cr>", desc = "Grapple: [R]emove buffer" },
+			{ "<leader>1", "<cmd>Grapple select index=1<cr>", desc = "Harppon: Go to file [1]" },
+			{ "<leader>2", "<cmd>Grapple select index=2<cr>", desc = "Harppon: Go to file [2]" },
+			{ "<leader>3", "<cmd>Grapple select index=3<cr>", desc = "Harppon: Go to file [3]" },
+			{ "<leader>4", "<cmd>Grapple select index=4<cr>", desc = "Harppon: Go to file [4]" },
+			{ "<leader>5", "<cmd>Grapple select index=5<cr>", desc = "Harppon: Go to file [5]" },
+			{ "<leader>6", "<cmd>Grapple select index=6<cr>", desc = "Harppon: Go to file [6]" },
+			{ "<leader>7", "<cmd>Grapple select index=7<cr>", desc = "Harppon: Go to file [7]" },
+			{ "<leader>8", "<cmd>Grapple select index=8<cr>", desc = "Harppon: Go to file [7]" },
+			{ "<leader>9", "<cmd>Grapple select index=9<cr>", desc = "Harppon: Go to file [8]" },
+			{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "Harpoon: [A]dd buffer" },
+			{ "<leader>hh", "<cmd>Grapple toggle_tags<cr>", desc = "Harpoon: [H]arpoon" },
+			{ "<leader>hn", "<cmd>Grapple cycle_tags next<cr>", desc = "Harpoon: [N]ext file" },
+			{ "<leader>hp", "<cmd>Grapple cycle_tags prev<cr>", desc = "Harpoon: [P]revious file" },
+			{ "<leader>hr", "<cmd>Grapple untag<cr>", desc = "Harpoon: [R]emove file" },
 		},
 
 		cmd = "Grapple",

@@ -17,6 +17,13 @@ vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility")
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>kz", ac("workbench.action.toggleZenMode"))
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
+vim.keymap.set("n", "-", function()
+	local vscode = require("vscode")
+	vscode.action("workbench.action.splitEditorRight")
+	vscode.action("vsnetrw.open")
+	vscode.action("workbench.action.previousEditorInGroup")
+	vscode.action("workbench.action.closeActiveEditor")
+end)
 
 -- tabs
 vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
@@ -62,6 +69,21 @@ vim.keymap.set("n", "zO", ac("editor.unfoldRecursively"))
 vim.keymap.set("n", "zR", ac("editor.unfoldAll"))
 vim.keymap.set("n", "zc", ac("editor.fold"))
 vim.keymap.set("n", "zo", ac("editor.unfold"))
+
+-- harpoon
+vim.keymap.set("n", "<leader>1", ac("vscode-harpoon.gotoEditor1"), { desc = "Harpoon: Go to file [1]" })
+vim.keymap.set("n", "<leader>2", ac("vscode-harpoon.gotoEditor2"), { desc = "Harpoon: Go to file [2]" })
+vim.keymap.set("n", "<leader>3", ac("vscode-harpoon.gotoEditor3"), { desc = "Harpoon: Go to file [3]" })
+vim.keymap.set("n", "<leader>4", ac("vscode-harpoon.gotoEditor4"), { desc = "Harpoon: Go to file [4]" })
+vim.keymap.set("n", "<leader>5", ac("vscode-harpoon.gotoEditor5"), { desc = "Harpoon: Go to file [5]" })
+vim.keymap.set("n", "<leader>6", ac("vscode-harpoon.gotoEditor6"), { desc = "Harpoon: Go to file [6]" })
+vim.keymap.set("n", "<leader>7", ac("vscode-harpoon.gotoEditor7"), { desc = "Harpoon: Go to file [9]" })
+vim.keymap.set("n", "<leader>8", ac("vscode-harpoon.gotoEditor8"), { desc = "Harpoon: Go to file [8]" })
+vim.keymap.set("n", "<leader>9", ac("vscode-harpoon.gotoEditor9"), { desc = "Harpoon: Go to file [9]" })
+vim.keymap.set("n", "<leader>ha", ac("vscode-harpoon.addEditor"), { desc = "Harpoon: [A]dd file" })
+vim.keymap.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"), { desc = "Harpoon: [H]arpoon" })
+vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"), { desc = "Harpoon: [N]ext file" })
+vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"), { desc = "Harpoon: [P]revious file" })
 
 -- [[ VISUAL MODE ]]
 
