@@ -4,6 +4,11 @@ vim.g.maplocalleader = " " -- set local leader key to space
 
 -- [[ NORMAL MODE ]]
 
+-- faster save/quit
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "[Q]uit" })
+
 -- tabs
 vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to tab in position 1" })
 vim.keymap.set("n", "<leader>b2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to tab in position 2" })
