@@ -17,13 +17,6 @@ vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility")
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>kz", ac("workbench.action.toggleZenMode"))
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
-vim.keymap.set("n", "-", function()
-	local vscode = require("vscode")
-	vscode.action("workbench.action.splitEditorRight")
-	vscode.action("vsnetrw.open")
-	vscode.action("workbench.action.previousEditorInGroup")
-	vscode.action("workbench.action.closeActiveEditor")
-end)
 
 -- tabs
 vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
