@@ -195,4 +195,9 @@ return {
 			return not vim.g.vscode
 		end,
 	},
+
+	{ -- better %
+		-- https://github.com/andymass/vim-matchup
+		"andymass/vim-matchup",
+	},
 }

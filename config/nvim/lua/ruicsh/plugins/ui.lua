@@ -38,6 +38,34 @@ return {
 		end,
 	},
 
+	{ -- tabs
+		-- https://github.com/akinsho/bufferline.nvim
+		"akinsho/bufferline.nvim",
+		config = function()
+			local bufferline = require("bufferline")
+			bufferline.setup({
+				options = {
+					enforce_regular_tabs = true,
+					offsets = {
+						filetype = "NvimTree",
+					},
+					separator_style = "thick",
+					show_buffer_close_icons = false,
+					style_preset = {
+						bufferline.style_preset.no_italic,
+						bufferline.style_preset.no_bold,
+					},
+					themable = true,
+				},
+			})
+		end,
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
+
 	{ -- breadcrumbs
 		-- https://github.com/utilyre/barbecue.nvim
 		"utilyre/barbecue.nvim",

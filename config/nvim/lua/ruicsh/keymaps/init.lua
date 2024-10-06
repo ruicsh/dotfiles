@@ -5,19 +5,20 @@ vim.g.maplocalleader = " " -- set local leader key to space
 -- [[ NORMAL MODE ]]
 
 -- tabs
-vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>") -- go to tab in position 1
-vim.keymap.set("n", "<leader>b2", "<cmd>BufferLineGoToBuffer 2<cr>") -- go to tab in position 2
-vim.keymap.set("n", "<leader>b3", "<cmd>BufferLineGoToBuffer 3<cr>") -- go to tab in position 3
-vim.keymap.set("n", "<leader>b4", "<cmd>BufferLineGoToBuffer 4<cr>") -- go to tab in position 4
-vim.keymap.set("n", "<leader>b5", "<cmd>BufferLineGoToBuffer 5<cr>") -- go to tab in position 5
-vim.keymap.set("n", "<leader>b6", "<cmd>BufferLineGoToBuffer 6<cr>") -- go to tab in position 6
-vim.keymap.set("n", "<leader>b7", "<cmd>BufferLineGoToBuffer 7<cr>") -- go to tab in position 7
-vim.keymap.set("n", "<leader>b8", "<cmd>BufferLineGoToBuffer 8<cr>") -- go to tab in position 8
-vim.keymap.set("n", "<leader>b9", "<cmd>BufferLineGoToBuffer 9<cr>") -- go to tab in position 9
-vim.keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>") -- close tab
-vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>") -- pick tab
-vim.keymap.set("n", "[t", "<cmd>BufferLineCyclePrev<cr>") -- previous tab
-vim.keymap.set("n", "]t", "<cmd>BufferLineCycleNext<cr>") -- next tab
+vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to tab in position 1" })
+vim.keymap.set("n", "<leader>b2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to tab in position 2" })
+vim.keymap.set("n", "<leader>b3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Go to tab in position 3" })
+vim.keymap.set("n", "<leader>b4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Go to tab in position 4" })
+vim.keymap.set("n", "<leader>b5", "<cmd>BufferLineGoToBuffer 5<cr>", { desc = "Go to tab in position 5" })
+vim.keymap.set("n", "<leader>b6", "<cmd>BufferLineGoToBuffer 6<cr>", { desc = "Go to tab in position 6" })
+vim.keymap.set("n", "<leader>b7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Go to tab in position 7" })
+vim.keymap.set("n", "<leader>b8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Go to tab in position 8" })
+vim.keymap.set("n", "<leader>b9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Go to tab in position 9" })
+vim.keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>", { desc = "Close tab" })
+vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Pick tab" })
+vim.keymap.set("n", "<leader>bC", "<cmd>bufdo bd<cr>", { desc = "Close all tabs" })
+vim.keymap.set("n", "[t", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab" })
+vim.keymap.set("n", "]t", "<cmd>BufferLineCycleNext<cr>", { desc = "Next tab" })
 
 -- center screen when moving
 vim.keymap.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
