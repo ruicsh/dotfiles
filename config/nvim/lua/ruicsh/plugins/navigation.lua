@@ -16,11 +16,11 @@ return {
 			{ "<leader>7", "<cmd>Grapple select index=7<cr>", desc = "Harppon: Go to file [7]" },
 			{ "<leader>8", "<cmd>Grapple select index=8<cr>", desc = "Harppon: Go to file [7]" },
 			{ "<leader>9", "<cmd>Grapple select index=9<cr>", desc = "Harppon: Go to file [8]" },
-			{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "Harpoon: [A]dd buffer" },
-			{ "<leader>hh", "<cmd>Grapple toggle_tags<cr>", desc = "Harpoon: [H]arpoon" },
-			{ "<leader>hn", "<cmd>Grapple cycle_tags next<cr>", desc = "Harpoon: [N]ext file" },
-			{ "<leader>hp", "<cmd>Grapple cycle_tags prev<cr>", desc = "Harpoon: [P]revious file" },
-			{ "<leader>hr", "<cmd>Grapple untag<cr>", desc = "Harpoon: [R]emove file" },
+			{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "[H]arpoon: [A]dd buffer" },
+			{ "<leader>hh", "<cmd>Grapple toggle_tags<cr>", desc = "[H]arpoon: [H]arpoon" },
+			{ "<leader>hn", "<cmd>Grapple cycle_tags next<cr>", desc = "[H]arpoon: [N]ext file" },
+			{ "<leader>hp", "<cmd>Grapple cycle_tags prev<cr>", desc = "[H]arpoon: [P]revious file" },
+			{ "<leader>hr", "<cmd>Grapple untag<cr>", desc = "[H]arpoon: [R]emove file" },
 		},
 
 		cmd = "Grapple",
@@ -59,7 +59,7 @@ return {
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
+			vim.keymap.set("n", "<leader>bl", builtin.buffers, { desc = "[B]uffers [L]ist" })
 			vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
