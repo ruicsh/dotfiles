@@ -24,7 +24,7 @@ return {
 			end,
 		},
 		init = function()
-			vim.o.foldcolumn = "1" -- '0' is not bad
+			vim.o.foldcolumn = "0" -- '0' is not bad
 			vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 			vim.o.foldlevelstart = 99
 			vim.o.foldenable = true
@@ -33,6 +33,7 @@ return {
 		dependencies = {
 			"kevinhwang91/promise-async",
 		},
+		event = "BufReadPost",
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -65,21 +66,6 @@ return {
 
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- breadcrumbs
-		-- https://github.com/utilyre/barbecue.nvim
-		"utilyre/barbecue.nvim",
-		config = true,
-
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-		},
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -120,24 +106,5 @@ return {
 	{ -- nake the yanked region apparent
 		-- https://github.com/machakann/vim-highlightedyank
 		"machakann/vim-highlightedyank",
-	},
-
-	{ -- zen mode
-		-- https://github.com/folke/zen-mode.nvim
-		"folke/zen-mode.nvim",
-		keys = {
-			{ "<leader>kz", "<cmd>ZenMode<cr>" },
-		},
-		opts = {
-			window = {
-				backdrop = 1,
-				width = 0.85,
-			},
-		},
-
-		cmd = "ZenMode",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }
