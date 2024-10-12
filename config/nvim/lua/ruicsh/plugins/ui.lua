@@ -43,19 +43,22 @@ return {
 		"akinsho/bufferline.nvim",
 		config = function()
 			local bufferline = require("bufferline")
+			local colors = require("nord.colors")
+			local highlights = require("nord").bufferline.highlights({
+				bg = colors.nord0_gui,
+				bold = true,
+				buffer_bg = colors.nord0_gui,
+				buffer_bg_selected = "none",
+				buffer_bg_visible = "#2A2F3A",
+				fill = "none",
+				indicator = colors.nord9_gui,
+				italic = true,
+			})
 			bufferline.setup({
+				highlights = highlights,
 				options = {
 					enforce_regular_tabs = true,
-					offsets = {
-						filetype = "NvimTree",
-					},
-					separator_style = "thick",
 					show_buffer_close_icons = false,
-					style_preset = {
-						bufferline.style_preset.no_italic,
-						bufferline.style_preset.no_bold,
-					},
-					themable = true,
 				},
 			})
 		end,
