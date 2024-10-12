@@ -52,14 +52,11 @@ vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove sea
 
 -- [[ INSERT MODE ]]
 
-vim.keymap.set("i", "<c-h>", "<c-o>h") -- move cursor left
-vim.keymap.set("i", "<c-j>", "<c-o>j") -- move cursor down
-vim.keymap.set("i", "<c-k>", "<c-o>k") -- move cursor up
-vim.keymap.set("i", "<c-l>", "<c-o>a") -- move cursor right
+vim.keymap.set("i", "jj", "<esc>", { desc = "Exit insert mode" })
 
 -- [[ VISUAL MODE ]]
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv") -- move lines down
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv") -- move lines up
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move lines down" })
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move lines" })
 
 -- indent
 vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting

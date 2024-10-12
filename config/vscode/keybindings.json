@@ -26,7 +26,7 @@
   },
   {
     "key": "shift+tab",
-    "command": "workbench.action.findInFiles", 
+    "command": "workbench.action.findInFiles",
     "when": "searchViewletVisible && searchViewletFocus"
   },
   {

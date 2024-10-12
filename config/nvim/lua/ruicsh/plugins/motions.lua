@@ -31,7 +31,11 @@ return {
 
 	{ -- surroundings (brackets, quotes)
 		-- https://github.com/tpope/vim-surround
-
 		"tpope/vim-surround",
+	},
+
+	{ -- insert mode navigation
+		-- https://github.com/tpope/vim-rsi
+		"tpope/vim-rsi",
 	},
 }
