@@ -13,7 +13,6 @@ brew 'fzf'                  # fuzzy text search
 brew 'gh'                   # github command line
 brew 'git'                  # version control
 brew 'gnu-sed'              # stream text editor
-brew 'go'										# golang
 brew 'grep'                 # search plain-text
 brew 'hadolint'             # Dockerfiles linter
 brew 'jq'                   # json query
@@ -21,6 +20,7 @@ brew 'neovim'               # text editor
 brew 'sed'                  # text replacement utility
 brew 'shellcheck'           # bash linter
 brew 'shfmt'                # shell script formatter
+brew 'starship'             # shell prompt
 brew 'stow'                 # symlink manager
 brew 'terraform'            # provisioning tool
 brew 'wallpaper'            # manage desktop wallpaper
@@ -29,7 +29,6 @@ brew 'z'                    # jump around directories
 brew 'zsh'                  # shell
 
 cask 'bitwarden'            # password manager
-cask 'chromium'             # development browser
 cask 'firefox'              # general use browser
-cask 'font-jetbrains-mono'  # code font
+cask 'font-jetbrains-mono-nerd-font'  # code font
 cask 'visual-studio-code'   # code editor

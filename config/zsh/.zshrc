@@ -15,25 +15,7 @@ export ANTIDOTE_HOME=~/.cache/antidote
 # generate and source plugins from ~/.zsh_plugins.txt
 antidote load
 
-# GIT PROMPT
-ZSH_THEME_GIT_PROMPT_PREFIX="  "
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_HASH_PREFIX=":"
-ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
-ZSH_THEME_GIT_PROMPT_CONFLICTS=" %{$fg[red]%}%{✖%G%}"
-ZSH_THEME_GIT_PROMPT_CHANGED=" %{$fg[blue]%}%{✚%G%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{↓·%2G%}"
-ZSH_THEME_GIT_PROMPT_AHEAD=" %{↑·%2G%}"
-ZSH_THEME_GIT_PROMPT_STASHED=" %{$fg_bold[blue]%}%{⚑%G%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$fg[cyan]%}%{…%G%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
-ZSH_THEME_GIT_PROMPT_LOCAL=" L"
-ZSH_THEME_GIT_PROMPT_UPSTREAM_FRONT=" {%{$fg_bold[blue]%}"
-ZSH_THEME_GIT_PROMPT_UPSTREAM_END="%{${reset_color}%}}"
-
-PROMPT=$'\n''%F{blue}# %1~%f $(git_super_status)'$'\n''$ '
+eval "$(starship init zsh)"
 
 # SHELL COMPLETIONS
 autoload -Uz compinit
@@ -109,21 +91,13 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # add installed gnu-sed instead of system's
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-# go binaries
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # node version manager
 eval "$(fnm env --use-on-cd)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# bun completions
-[ -s "/opt/homebrew/Cellar/bun/1.0.0/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.0.0/share/zsh/site-functions/_bun"
-
 
 # Created by `pipx` on 2024-05-24 09:53:02
 export PATH="$PATH:/Users/ruic/.local/bin"
