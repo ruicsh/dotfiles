@@ -16,8 +16,6 @@ return {
 	{ -- additional text objects
 		-- https://github.com/wellle/targets.vim
 		"wellle/targets.vim",
-
-		event = "VeryLazy",
 	},
 
 	{ -- text objects for entire buffer
