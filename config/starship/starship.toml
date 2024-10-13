@@ -29,11 +29,11 @@ disabled = false
 
 [directory]
 style = "fg:#5e81ac"
-format = "[ 󰉋 $path ]($style)"
+format = "[󰉋 $path ]($style)"
 
 [character]
-success_symbol = " [\\$](#88c0d0)"
-error_symbol = " [\\$](#88c0d0)"
+success_symbol = "[\\$](#88c0d0)"
+error_symbol = "[\\$](#88c0d0)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
