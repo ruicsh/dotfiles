@@ -56,6 +56,16 @@ vim.keymap.set("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
 
 vim.keymap.set("i", "jj", "<esc>", { desc = "Exit insert mode" })
 
+-- navigation (alt-* keymaps from vim-rsi don't work on vscode)
+vim.keymap.set("i", "<c-n>", "<c-o>j", { desc = "Mode down a line" })
+vim.keymap.set("i", "<c-p>", "<c-o>k", { desc = "Move up a line" })
+
+-- disable these old insert mode navination mappings
+vim.keymap.set("i", "<c-h>", "<nop>")
+vim.keymap.set("i", "<c-j>", "<nop>")
+vim.keymap.set("i", "<c-k>", "<nop>")
+vim.keymap.set("i", "<c-l>", "<nop>")
+
 -- [[ VISUAL MODE ]]
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move lines down" })
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move lines" })
