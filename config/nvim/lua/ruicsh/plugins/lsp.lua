@@ -298,7 +298,6 @@ return {
 	{ -- parser
 		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
-		-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 		opts = {
 			ensure_installed = {
 				"bash",
@@ -322,7 +321,10 @@ return {
 				--  the list of additional_vim_regex_highlighting and disabled languages for indent.
 				additional_vim_regex_highlighting = { "ruby" },
 			},
-			indent = { enable = true, disable = { "ruby" } },
+			indent = {
+				enable = true,
+				disable = { "ruby" },
+			},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -332,11 +334,6 @@ return {
 					node_decremental = "grm",
 				},
 			},
-			textobjects = {
-				select = {
-					enable = true,
-				},
-			},
 		},
 
 		main = "nvim-treesitter.configs", -- Sets main module to use for opts
@@ -344,15 +341,5 @@ return {
 			return not vim.g.vscode
 		end,
 		build = ":TSUpdate",
-	},
-
-	{ -- syntax aware text-objects
-		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		"nvim-treesitter/nvim-treesitter-textobjects",
-
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }
