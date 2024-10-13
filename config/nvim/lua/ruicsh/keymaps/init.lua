@@ -10,8 +10,8 @@ vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "[Q]uit" })
 
 -- tabs
-vim.keymap.set("n", "<bs>", "<c-^>", { desc = "Go back to previous visited tab" })
-vim.keymap.set("n", "<s-bs>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
+vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
+vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
 vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to tab in position 1" })
 vim.keymap.set("n", "<leader>b2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to tab in position 2" })
 vim.keymap.set("n", "<leader>b3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Go to tab in position 3" })
@@ -24,8 +24,9 @@ vim.keymap.set("n", "<leader>b9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "G
 vim.keymap.set("n", "<leader>bC", "<cmd>bufdo bd<cr>", { desc = "Close all tabs" })
 vim.keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Pick tab" })
-vim.keymap.set("n", "[t", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab on bufferline" })
-vim.keymap.set("n", "]t", "<cmd>BufferLineCycleNext<cr>", { desc = "Next tab on bufferline" })
+vim.keymap.set("n", "<leader>bx", "<cmd>bdelete!<cr>", { desc = "Exit tab" })
+vim.keymap.set("n", "[t", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab" })
+vim.keymap.set("n", "]t", "<cmd>BufferLineCycleNext<cr>", { desc = "Next tab" })
 
 -- center screen when moving
 vim.keymap.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
@@ -49,6 +50,7 @@ vim.keymap.set("n", "X", '"_X') -- don't yank on delete char before cursor
 vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
+vim.keymap.set("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
 
 -- [[ INSERT MODE ]]
 
@@ -74,6 +76,8 @@ vim.keymap.set("v", "x", '"_x') -- don't yank on delete char under cursor
 -- [[ COMMAND MODE ]]
 
 -- [[ TERMINAL MODE ]]
+vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
+vim.keymap.set("t", "<c-\\>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
 
 -- [[ ALL MODES ]]
 local all_modes = { "n", "i", "v", "s", "o", "t" }

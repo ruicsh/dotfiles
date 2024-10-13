@@ -59,7 +59,7 @@ return {
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader>bl", builtin.buffers, { desc = "[B]uffers [L]ist" })
+			vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = "[B]uffers" })
 			vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
@@ -119,14 +119,5 @@ return {
 		cond = function()
 			return not vim.g.vscode
 		end,
-	},
-
-	{ -- manage terminal windows
-		-- https://github.com/akinsho/toggleterm.nvim
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {
-			open_mapping = [[<c-\>]],
-		},
 	},
 }
