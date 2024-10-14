@@ -12,7 +12,7 @@ end
 -- [[ NORMAL MODE ]]
 
 -- native
-vim.keymap.set("n", "<leader>g", ac("workbench.view.scm"))
+vim.keymap.set("n", "<leader>gg", ac("workbench.view.scm"))
 vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>kz", ac("workbench.action.toggleZenMode"))
