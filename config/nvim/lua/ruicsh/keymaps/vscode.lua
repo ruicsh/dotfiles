@@ -44,7 +44,6 @@ vim.keymap.set("n", "gI", ac("editor.action.peekImplementation"))
 vim.keymap.set("n", "gO", ac("editor.action.peekTypeDefinition"))
 vim.keymap.set("n", "gR", ac("editor.action.goToReferences"))
 vim.keymap.set("n", "gd", ac("editor.action.revealDefinition"))
-vim.keymap.set("n", "gi", ac("references-view.findImplementations"))
 vim.keymap.set("n", "go", ac("editor.action.goToTypeDefinition"))
 vim.keymap.set("n", "gr", ac("references-view.findReferences"))
 

@@ -4,6 +4,8 @@ vim.g.maplocalleader = " " -- set local leader key to space
 
 -- [[ NORMAL MODE ]]
 
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
+
 -- tabs
 vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
 vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
