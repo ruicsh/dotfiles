@@ -78,6 +78,16 @@ vim.keymap.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"), { desc = "Ha
 vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"), { desc = "Harpoon: [N]ext file" })
 vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"), { desc = "Harpoon: [P]revious file" })
 
+-- git
+vim.keymap.set("n", "<leader>gs", ac("git.stageSelectedRanges"), { desc = "Git: [s]tage hunk" })
+vim.keymap.set("n", "<leader>gr", ac("git.revertSelectedRanges"), { desc = "Git: [r]evert hunk" })
+vim.keymap.set("n", "<leader>gu", ac("git.unstageSelectedRanges"), { desc = "Git: [u]nstage hunk" })
+vim.keymap.set("n", "<leader>gS", ac("git.stageFile"), { desc = "Git: [S]tage file" })
+vim.keymap.set("n", "<leader>gR", ac("workbench.action.files.revert"), { desc = "Git: [R]evert file" })
+vim.keymap.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"), { desc = "Git: toggle [b]lame" })
+vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"), { desc = "Git: jump to previous [c]hange" })
+vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"), { desc = "Git: jump to next [c]hange" })
+
 -- [[ VISUAL MODE ]]
 
 -- native
