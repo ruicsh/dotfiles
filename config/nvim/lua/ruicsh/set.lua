@@ -39,6 +39,11 @@ if vim.g.vscode then
 	vim.opt.cmdheight = 1
 end
 
+-- [[ WINDOWS ]]
+if vim.fn.has("win32") then
+	vim.o.shell = "powershell.exe"
+end
+
 -- [[ NEOVIDE ]]
 if vim.g.neovide then
 	-- turn off all animations
