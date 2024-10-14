@@ -4,11 +4,6 @@ vim.g.maplocalleader = " " -- set local leader key to space
 
 -- [[ NORMAL MODE ]]
 
--- faster save/quit
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
-vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit" })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "[Q]uit" })
-
 -- tabs
 vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
 vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
