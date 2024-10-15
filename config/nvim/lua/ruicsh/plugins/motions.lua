@@ -36,4 +36,9 @@ return {
 		-- https://github.com/tpope/vim-rsi
 		"tpope/vim-rsi",
 	},
+
+	{ -- text exchange operator
+		-- https://github.com/tommcdo/vim-exchange
+		"tommcdo/vim-exchange",
+	},
 }
