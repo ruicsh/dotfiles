@@ -85,6 +85,7 @@ vim.keymap.set("n", "<leader>gu", ac("git.unstageSelectedRanges"), { desc = "Git
 vim.keymap.set("n", "<leader>gS", ac("git.stageFile"), { desc = "Git: [S]tage file" })
 vim.keymap.set("n", "<leader>gR", ac("workbench.action.files.revert"), { desc = "Git: [R]evert file" })
 vim.keymap.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"), { desc = "Git: toggle [b]lame" })
+vim.keymap.set("n", "<leader>gp", ac("git.openChange"), { desc = "Git: [p]review change" })
 vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"), { desc = "Git: jump to previous [c]hange" })
 vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"), { desc = "Git: jump to next [c]hange" })
 
