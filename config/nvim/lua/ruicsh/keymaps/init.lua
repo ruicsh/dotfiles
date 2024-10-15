@@ -49,6 +49,9 @@ vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph j
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
 vim.keymap.set("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
 
+vim.keymap.set("n", "<a-j>", ":m .+1<cr>", { desc = "Move line down" })
+vim.keymap.set("n", "<a-k>", ":m .-2<cr>", { desc = "Move line up" })
+
 -- [[ INSERT MODE ]]
 
 vim.keymap.set("i", "jj", "<esc>", { desc = "Exit insert mode" })
@@ -64,8 +67,9 @@ vim.keymap.set("i", "<c-k>", "<nop>")
 vim.keymap.set("i", "<c-l>", "<nop>")
 
 -- [[ VISUAL MODE ]]
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move lines down" })
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move lines" })
+
+vim.keymap.set("v", "<a-j>", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "<a-k>", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- indent
 vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting

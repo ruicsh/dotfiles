@@ -89,8 +89,16 @@ vim.keymap.set("n", "<leader>gp", ac("git.openChange"), { desc = "Git: [p]review
 vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"), { desc = "Git: jump to previous [c]hange" })
 vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"), { desc = "Git: jump to next [c]hange" })
 
+-- move lines
+vim.keymap.set("n", "∆", ":m .+1<cr>", { desc = "Move line down" })
+vim.keymap.set("n", "˚", ":m .-2<cr>", { desc = "Move line up" })
+
 -- [[ VISUAL MODE ]]
 
 -- native
 vim.keymap.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
 vim.keymap.set("x", "<leader>sr", ac("actions.find"))
+
+-- move lines
+vim.keymap.set("v", "∆", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "˚", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
