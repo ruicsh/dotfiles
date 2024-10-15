@@ -86,14 +86,5 @@ vim.keymap.set("v", "x", '"_x') -- don't yank on delete char under cursor
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
 vim.keymap.set("t", "<c-\\>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
 
--- [[ ALL MODES ]]
-local all_modes = { "n", "i", "v", "s", "o", "t" }
-
--- -- [[ disable arrow keys ]]
-vim.keymap.set(all_modes, "<down>", "<nop>") -- disable down arrow key
-vim.keymap.set(all_modes, "<left>", "<nop>") -- disable left arrow key
-vim.keymap.set(all_modes, "<right>", "<nop>") -- disable right arrow key
-vim.keymap.set(all_modes, "<up>", "<nop>") -- disable up arrow key
-
 -- [[ VSCode only keymaps ]]
 require("ruicsh/keymaps/vscode")
