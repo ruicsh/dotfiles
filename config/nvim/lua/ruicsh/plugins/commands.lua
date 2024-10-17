@@ -177,13 +177,14 @@ return {
 	{ -- search/replace
 		-- https://github.com/nvim-pack/nvim-spectre
 		"nvim-pack/nvim-spectre",
-		keys = {
-			{
+		config = function()
+			vim.keymap.set(
+				"n",
 				"<leader>sr",
-				"<cmd>lua require('spectre').open_file_search({ select_word = true })<cr>",
-				desc = "[S]earch [R]eplace",
-			},
-		},
+				"<cmd>lua require('spectre').toggle()<cr>",
+				{ desc = "[S]earch [R]eplace" }
+			)
+		end,
 
 		cond = function()
 			return not vim.g.vscode
