@@ -190,11 +190,6 @@ return {
 		end,
 	},
 
-	{ -- better %
-		-- https://github.com/andymass/vim-matchup
-		"andymass/vim-matchup",
-	},
-
 	{ -- bracket mappings
 		-- https://github.com/tpope/vim-unimpaired
 		"tpope/vim-unimpaired",
