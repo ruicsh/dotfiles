@@ -89,10 +89,6 @@ vim.keymap.set("n", "<leader>gp", ac("git.openChange"), { desc = "Git: [p]review
 vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"), { desc = "Git: jump to previous [c]hange" })
 vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"), { desc = "Git: jump to next [c]hange" })
 
--- move lines
-vim.keymap.set("n", "∆", ":m .+1<cr>", { desc = "Move line down" })
-vim.keymap.set("n", "˚", ":m .-2<cr>", { desc = "Move line up" })
-
 -- [[ VISUAL MODE ]]
 
 -- native
