@@ -146,16 +146,9 @@ return {
 	},
 
 	{ -- delete buffer
-		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bufremove.md
-		"echasnovski/mini.bufremove",
-		opts = {
-			-- Whether to set Vim's settings for buffers (allow hidden buffers)
-			set_vim_settings = true,
-			-- Whether to disable showing non-error feedback
-			silent = false,
-		},
+		-- https://github.com/moll/vim-bbye
+		"moll/vim-bbye",
 
-		version = false,
 		cond = function()
 			return not vim.g.vscode
 		end,
