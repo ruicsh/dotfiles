@@ -43,6 +43,9 @@ vim.keymap.set("n", "cc", '"_cc') -- change line without putting it into registe
 vim.keymap.set("n", "x", '"_x') -- don't yank on delete char under cursor
 vim.keymap.set("n", "X", '"_X') -- don't yank on delete char before cursor
 
+-- folds
+vim.keymap.set("", "zk", "zk%^") -- jump to start of previous fold
+
 -- misc
 vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist

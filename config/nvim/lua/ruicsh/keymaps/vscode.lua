@@ -64,6 +64,9 @@ vim.keymap.set("n", "zO", ac("editor.unfoldRecursively"))
 vim.keymap.set("n", "zR", ac("editor.unfoldAll"))
 vim.keymap.set("n", "zc", ac("editor.fold"))
 vim.keymap.set("n", "zo", ac("editor.unfold"))
+vim.keymap.set("n", "[z", ac("editor.gotoParentFold"))
+vim.keymap.set("n", "zk", ac("editor.gotoPreviousFold"))
+vim.keymap.set("n", "zj", ac("editor.gotoNextFold"))
 
 -- harpoon
 vim.keymap.set("n", "<leader>1", ac("vscode-harpoon.gotoEditor1"), { desc = "Harpoon: Go to file [1]" })
