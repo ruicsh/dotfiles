@@ -301,43 +301,103 @@ return {
 				"bash",
 				"css",
 				"diff",
+				"dockerfile",
 				"html",
 				"javascript",
+				"json",
 				"jsdoc",
 				"lua",
 				"luadoc",
 				"markdown",
 				"markdown_inline",
+				"regex",
+				"scss",
+				"tsx",
 				"typescript",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
 				enable = true,
-				-- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-				--  If you are experiencing weird indenting issues, add the language to
-				--  the list of additional_vim_regex_highlighting and disabled languages for indent.
-				additional_vim_regex_highlighting = { "ruby" },
 			},
 			indent = {
 				enable = true,
-				disable = { "ruby" },
 			},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "gnn",
-					node_incremental = "grn",
-					scope_incremental = "grc",
-					node_decremental = "grm",
+					init_selection = "[n",
+					node_incremental = "[n",
+					scope_incremental = false,
+					node_decremental = "]n",
 				},
 			},
 		},
 
 		main = "nvim-treesitter.configs", -- Sets main module to use for opts
+		event = { "BufReadPre", "BufNewFile" },
+		build = ":TSUpdate",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"nvim-treesitter/nvim-treesitter-refactor",
+		},
 		cond = function()
 			return not vim.g.vscode
 		end,
-		build = ":TSUpdate",
+	},
+
+	{ -- syntax aware text objects
+		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		opts = {
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+					keymaps = {
+						["am"] = {
+							query = "@function.outer",
+							desc = "Select outer part of a method/function definition",
+						},
+						["im"] = {
+							query = "@function.inner",
+							desc = "Select inner part of a method/function definition",
+						},
+					},
+				},
+				move = {
+					enabled = true,
+					set_jumps = false,
+					goto_next_start = {
+						["]m"] = { query = "@function.outer", desc = "Next method/function def start" },
+					},
+					goto_previous_start = {
+						["[m"] = { query = "@function.outer", desc = "Prev method/function def start" },
+					},
+				},
+			},
+		},
+
+		main = "nvim-treesitter.configs",
+		lazy = true,
+	},
+
+	{ -- syntax aware navigation
+		-- https://github.com/nvim-treesitter/nvim-treesitter-refactor
+		"nvim-treesitter/nvim-treesitter-refactor",
+		opts = {
+			refactor = {
+				navigation = {
+					enable = true,
+					keymaps = {
+						goto_next_usage = "]r",
+						goto_previous_usage = "[r",
+					},
+				},
+			},
+		},
+
+		main = "nvim-treesitter.configs",
+		lazy = true,
 	},
 }

@@ -47,6 +47,8 @@ vim.keymap.set("n", "<leader>cd", ac("editor.action.revealDefinition"))
 vim.keymap.set("n", "<leader>co", ac("editor.action.goToTypeDefinition"))
 vim.keymap.set("n", "<leader>cr", ac("references-view.findReferences"))
 vim.keymap.set("n", "<leader>cn", ac("editor.action.rename"))
+vim.keymap.set("n", "[r", ac("editor.action.wordHighlight.prev"))
+vim.keymap.set("n", "]r", ac("editor.action.wordHighlight.next"))
 
 -- fuzzy find (equivalent to telescope)
 vim.keymap.set("n", "<leader>fc", ac("workbench.action.showCommands"))
