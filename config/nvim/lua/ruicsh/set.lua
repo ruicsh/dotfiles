@@ -40,7 +40,8 @@ if vim.g.vscode then
 end
 
 -- [[ WINDOWS ]]
-if vim.fn.has("win32") then
+local OS = vim.uv.os_uname().sysname
+if OS:find("Windows") then
 	vim.o.shell = "powershell.exe"
 end
 
