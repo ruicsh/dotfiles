@@ -66,8 +66,8 @@ vim.keymap.set("i", "<c-l>", "<nop>")
 
 -- [[ VISUAL MODE ]]
 
-vim.keymap.set("v", "<a-j>", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
-vim.keymap.set("v", "<a-k>", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- indent
 vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting
