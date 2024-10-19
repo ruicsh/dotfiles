@@ -70,6 +70,7 @@ return {
 			vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
 			vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "git: List changed" })
+			vim.keymap.set("n", "<leader>cs", builtin.treesitter, { desc = "Go to symbols" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
