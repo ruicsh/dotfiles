@@ -15,13 +15,11 @@ end
 vim.keymap.set("n", "<leader>gg", ac("workbench.view.scm"))
 vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
-vim.keymap.set("n", "<leader>kz", ac("workbench.action.toggleZenMode"))
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
+vim.keymap.set("n", "<c-t>", ac("workbench.action.terminal.new"))
 
 -- tabs
 vim.keymap.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
-vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
-vim.keymap.set("n", "<c-w>o", ac("workbench.action.closeOtherEditors"))
 vim.keymap.set("n", "<leader>b1", ac("workbench.action.openEditorAtIndex1"))
 vim.keymap.set("n", "<leader>b2", ac("workbench.action.openEditorAtIndex2"))
 vim.keymap.set("n", "<leader>b3", ac("workbench.action.openEditorAtIndex3"))
@@ -34,9 +32,13 @@ vim.keymap.set("n", "<leader>b9", ac("workbench.action.openEditorAtIndex9"))
 vim.keymap.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
 vim.keymap.set("n", "<leader>bc", ac("workbench.action.closeActiveEditor"))
 vim.keymap.set("n", "<leader>bb", ac("workbench.action.showAllEditors"))
+vim.keymap.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
 vim.keymap.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
 vim.keymap.set("n", "[t", ac("workbench.action.previousEditorInGroup"))
 vim.keymap.set("n", "]t", ac("workbench.action.nextEditorInGroup"))
+
+-- splits
+vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
 
 -- lsp
 vim.keymap.set("n", "<leader>cD", ac("editor.action.peekDefinition"))
@@ -48,6 +50,7 @@ vim.keymap.set("n", "<leader>cn", ac("editor.action.rename"))
 vim.keymap.set("n", "<leader>co", ac("editor.action.goToTypeDefinition"))
 vim.keymap.set("n", "<leader>cr", ac("references-view.findReferences"))
 vim.keymap.set("n", "<leader>cs", ac("workbench.action.gotoSymbol"))
+vim.keymap.set("n", "<leader>cw", ac("workbench.action.showAllSymbols"))
 vim.keymap.set("n", "[r", ac("editor.action.wordHighlight.prev"))
 vim.keymap.set("n", "]r", ac("editor.action.wordHighlight.next"))
 

@@ -6,7 +6,7 @@ vim.g.maplocalleader = " " -- set local leader key to space
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
 
--- tabs
+-- tabs (buffers)
 vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
 vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
 vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to tab in position 1" })
@@ -20,6 +20,7 @@ vim.keymap.set("n", "<leader>b8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "G
 vim.keymap.set("n", "<leader>b9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Go to tab in position 9" })
 vim.keymap.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
 vim.keymap.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
+vim.keymap.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Pick tab" })
 vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 vim.keymap.set("n", "[t", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab" })
@@ -50,7 +51,7 @@ vim.keymap.set("", "zk", "zk%^") -- jump to start of previous fold
 vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
-vim.keymap.set("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
+vim.keymap.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
 
 -- [[ INSERT MODE ]]
 
@@ -86,7 +87,7 @@ vim.keymap.set("v", "x", '"_x') -- don't yank on delete char under cursor
 
 -- [[ TERMINAL MODE ]]
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
-vim.keymap.set("t", "<c-\\>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
+vim.keymap.set("t", "<c-t>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
 
 -- [[ VSCode only keymaps ]]
 require("ruicsh/keymaps/vscode")
