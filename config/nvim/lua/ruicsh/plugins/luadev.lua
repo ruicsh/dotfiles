@@ -1,6 +1,8 @@
+-- neovim apis
+-- used for completion, annotations and signatures of Neovim apis
+
 return {
-	{ -- neovim apis
-		-- used for completion, annotations and signatures of Neovim apis
+	{
 		"folke/lazydev.nvim",
 		ft = "lua",
 		opts = {
