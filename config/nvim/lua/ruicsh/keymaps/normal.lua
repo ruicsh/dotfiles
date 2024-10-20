@@ -1,9 +1,3 @@
--- [[ LEADER KEY ]]
-vim.g.mapleader = " " -- set leader key to space
-vim.g.maplocalleader = " " -- set local leader key to space
-
--- [[ NORMAL MODE ]]
-
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
 
 -- tabs (buffers)
@@ -43,52 +37,16 @@ vim.keymap.set("n", "c", '"_c') -- change text without putting it into register
 vim.keymap.set("n", "cc", '"_cc') -- change line without putting it into register
 vim.keymap.set("n", "x", '"_x') -- don't yank on delete char under cursor
 vim.keymap.set("n", "X", '"_X') -- don't yank on delete char before cursor
+vim.keymap.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 
 -- folds
-vim.keymap.set("", "zk", "zk%^") -- jump to start of previous fold
+vim.keymap.set("n", "zk", "zk%^") -- jump to start of previous fold
+
+-- alternate file (projectionist)
+vim.keymap.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Open [A]lternate file" })
 
 -- misc
 vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
 vim.keymap.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
-
--- [[ INSERT MODE ]]
-
--- navigation (alt-* keymaps from vim-rsi don't work on vscode)
-vim.keymap.set("i", "<c-n>", "<c-o>j", { desc = "Jump down a line" })
-vim.keymap.set("i", "<c-p>", "<c-o>k", { desc = "Jump up a line" })
-vim.keymap.set("i", "<c-r>", "<c-r>+", { desc = "Paste" })
-
--- disable these old insert mode navination mappings
-vim.keymap.set("i", "<c-h>", "<nop>")
-vim.keymap.set("i", "<c-j>", "<nop>")
-vim.keymap.set("i", "<c-k>", "<nop>")
-vim.keymap.set("i", "<c-l>", "<nop>")
-
--- [[ VISUAL MODE ]]
-
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
-
--- indent
-vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting
-vim.keymap.set("v", ">", ">gv") -- keep visual selection after indenting
-
-vim.keymap.set("v", "<cr>", ":noh<cr><cr>") -- remove search highlighting
-
--- registers
-vim.keymap.set("v", "P", '"_dP') -- paste over currently selected text without yanking it
-vim.keymap.set("v", "X", '"_X') -- don't yank on delete char before cursor
-vim.keymap.set("v", "c", '"_c') -- change selection without putting it into register
-vim.keymap.set("v", "p", '"_dp') -- paste over currently selected text without yanking it
-vim.keymap.set("v", "x", '"_x') -- don't yank on delete char under cursor
-
--- [[ COMMAND MODE ]]
-
--- [[ TERMINAL MODE ]]
-vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
-vim.keymap.set("t", "<c-t>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
-
--- [[ VSCode only keymaps ]]
-require("ruicsh/keymaps/vscode")
