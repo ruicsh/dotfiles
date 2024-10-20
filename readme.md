@@ -58,6 +58,9 @@
 - `<c-f>` move forward one character
 - `<c-n>` jump to line below
 - `<c-p>` jump to line above
+- `<c-r>` paste from clipboard
+- `<c-u>` delete before the cursor in current line
+- `<c-w>` delete word before
 
 ### LSP
 
