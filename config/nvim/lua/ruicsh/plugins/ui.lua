@@ -15,6 +15,21 @@ return {
 		end,
 	},
 
+	{ -- breadcrumbs
+		-- https://github.com/utilyre/barbecue.nvim
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		opts = {
+			-- configurations go here
+		},
+
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+	},
+
 	{ -- folds
 		-- https://github.com/kevinhwang91/nvim-ufo
 		"kevinhwang91/nvim-ufo",
