@@ -19,7 +19,10 @@ vim.keymap.set("n", "<leader>sr", ac("actions.find"))
 vim.keymap.set("n", "<c-t>", ac("workbench.action.terminal.new"))
 
 -- tabs
+vim.keymap.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
+vim.keymap.set("n", "]b", ac("workbench.action.nextEditorInGroup"))
 vim.keymap.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
+vim.keymap.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
 vim.keymap.set("n", "<leader>b1", ac("workbench.action.openEditorAtIndex1"))
 vim.keymap.set("n", "<leader>b2", ac("workbench.action.openEditorAtIndex2"))
 vim.keymap.set("n", "<leader>b3", ac("workbench.action.openEditorAtIndex3"))
@@ -33,9 +36,6 @@ vim.keymap.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
 vim.keymap.set("n", "<leader>bc", ac("workbench.action.closeActiveEditor"))
 vim.keymap.set("n", "<leader>bb", ac("workbench.action.showAllEditors"))
 vim.keymap.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
-vim.keymap.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
-vim.keymap.set("n", "[t", ac("workbench.action.previousEditorInGroup"))
-vim.keymap.set("n", "]t", ac("workbench.action.nextEditorInGroup"))
 
 -- splits
 vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))

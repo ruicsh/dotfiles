@@ -92,6 +92,8 @@
 
 ### Tabs (buffers in neovim)
 
+- `[b` previous tab
+- `]b` next tab
 - `<tab>` open previous recently used tab
 - `<s-tab>` open next recently used tab
 - `<leader>b1` go to tab in position 1
@@ -109,8 +111,6 @@
 - `<leader>bo` close the other tabs
 - `<leader>bp` pick tab
 - `<leader>bx` exit tab
-- `[t` previous tab
-- `]t` next tab
 
 ### Splits (views in vscode, windows in neovim)
 
