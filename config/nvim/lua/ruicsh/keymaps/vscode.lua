@@ -96,5 +96,5 @@ vim.keymap.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
 vim.keymap.set("x", "<leader>sr", ac("actions.find"))
 
 -- move lines
-vim.keymap.set("v", "J", ":m '>+1<cr>gv") -- move selected lines down
-vim.keymap.set("v", "K", ":m '<-2<cr>gv") -- move selected lines up
+vim.keymap.set("v", "J", ":move '>+1<cr>gv") -- move selected lines down
+vim.keymap.set("v", "K", ":move '<-2<cr>gv") -- move selected lines up

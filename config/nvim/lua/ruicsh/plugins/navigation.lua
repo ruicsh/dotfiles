@@ -128,6 +128,10 @@ return {
 		config = function()
 			vim.g.projectionist_heuristics = {
 				["*"] = {
+					-- angular / template / scss
+					["*.component.ts"] = { alternate = { "{}.component.html", "{}.component.scss" } },
+					["*.component.html"] = { alternate = { "{}.component.ts" } },
+					["*.component.scss"] = { alternate = { "{}.component.ts" } },
 					-- source / tests
 					["*.ts"] = { alternate = { "{}.spec.ts", "{}.test.ts" } },
 					["*.spec.ts"] = { alternate = "{}.ts" },
@@ -136,10 +140,6 @@ return {
 					["*.tsx"] = { alternate = { "{}.scss", "{}.module.scss" } },
 					["*.scss"] = { alternate = "{}.tsx" },
 					["*.module.scss"] = { alternate = "{}.tsx" },
-					-- angular / template / scss
-					["*.component.ts"] = { alternate = { "{}.component.html", "{}.component.scss" } },
-					["*.component.html"] = { alternate = "{}.component.ts" },
-					["*.component.scss"] = { alternate = "{}.component.ts" },
 				},
 			}
 		end,

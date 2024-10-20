@@ -1,6 +1,6 @@
 -- move selected lines
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move selected lines down" })
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move selected lines up" })
+vim.keymap.set("v", "J", ":move '>+1<cr>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "K", ":move '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- indent
 vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting
