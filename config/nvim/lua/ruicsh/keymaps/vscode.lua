@@ -12,7 +12,6 @@ end
 -- [[ NORMAL MODE ]]
 
 -- native
-vim.keymap.set("n", "<leader>gg", ac("workbench.view.scm"))
 vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
@@ -79,6 +78,7 @@ vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
 vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
 
 -- git
+vim.keymap.set("n", "<leader>gg", ac("workbench.view.scm"))
 vim.keymap.set("n", "<leader>gs", ac("git.stageSelectedRanges"))
 vim.keymap.set("n", "<leader>gr", ac("git.revertSelectedRanges"))
 vim.keymap.set("n", "<leader>gu", ac("git.unstageSelectedRanges"))
@@ -88,6 +88,9 @@ vim.keymap.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"))
 vim.keymap.set("n", "<leader>gp", ac("git.openChange"))
 vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"))
 vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"))
+
+-- misc
+vim.keymap.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
 
 -- [[ VISUAL MODE ]]
 
