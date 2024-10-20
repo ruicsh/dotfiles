@@ -1,23 +1,11 @@
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
 
--- tabs (buffers)
-vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab" })
-vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next tab" })
+-- buffers
 vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
 vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
-vim.keymap.set("n", "<leader>b1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to tab in position 1" })
-vim.keymap.set("n", "<leader>b2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to tab in position 2" })
-vim.keymap.set("n", "<leader>b3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Go to tab in position 3" })
-vim.keymap.set("n", "<leader>b4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Go to tab in position 4" })
-vim.keymap.set("n", "<leader>b5", "<cmd>BufferLineGoToBuffer 5<cr>", { desc = "Go to tab in position 5" })
-vim.keymap.set("n", "<leader>b6", "<cmd>BufferLineGoToBuffer 6<cr>", { desc = "Go to tab in position 6" })
-vim.keymap.set("n", "<leader>b7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Go to tab in position 7" })
-vim.keymap.set("n", "<leader>b8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Go to tab in position 8" })
-vim.keymap.set("n", "<leader>b9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Go to tab in position 9" })
 vim.keymap.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
 vim.keymap.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
-vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Pick tab" })
 vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 
 -- center screen when moving

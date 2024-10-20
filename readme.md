@@ -96,20 +96,10 @@
 - `]b` next tab
 - `<tab>` open previous recently used tab
 - `<s-tab>` open next recently used tab
-- `<leader>b1` go to tab in position 1
-- `<leader>b2` go to tab in position 2
-- `<leader>b3` go to tab in position 3
-- `<leader>b4` go to tab in position 4
-- `<leader>b5` go to tab in position 5
-- `<leader>b6` go to tab in position 6
-- `<leader>b7` go to tab in position 7
-- `<leader>b8` go to tab in position 8
-- `<leader>b9` go to tab in position 9
-- `<leader>bb` list open tabs
+- `<leader><leader>` list open tabs
 - `<leader>bc` close tab
 - `<leader>bC` close all tabs
 - `<leader>bo` close the other tabs
-- `<leader>bp` pick tab
 - `<leader>bx` exit tab
 
 ### Splits (views in vscode, windows in neovim)
@@ -128,8 +118,8 @@
 - `zR` decrement foldlevel to zero
 - `zM` increment foldlevel to maximum
 - `zo` open current fold
-- `zO` open current fold recursively
 - `zc` close current fold
+- `zO` open current fold recursively
 - `zC` close current fold recursively
 - `za` toggle fold
 - `zA` toggle fold recursively
