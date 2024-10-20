@@ -123,14 +123,16 @@
 
 ### Folds
 
+- `zr` decrement foldlevel _(not vscode)_
+- `zm` increment foldlevel _(not vscode)_
+- `zR` decrement foldlevel to zero
+- `zM` increment foldlevel to maximum
+- `zo` open current fold
+- `zO` open current fold recursively
+- `zc` close current fold
+- `zC` close current fold recursively
 - `za` toggle fold
 - `zA` toggle fold recursively
-- `zC` close fold recursively
-- `zM` close all folds
-- `zO` open fold recursively
-- `zR` open all folds
-- `zc` close fold
-- `zo` open fold
 - `[z` go to parent fold
 - `zk` go to previous fold
 - `zj` go to next fold
