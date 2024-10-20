@@ -23,6 +23,8 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 0.5,
   "breadcrumbs.enabled": true,
   "breadcrumbs.symbolPath": "off",
   "breadcrumbs.symbolSortOrder": "name",
@@ -183,12 +185,14 @@
     "y",
     "z"
   ],
+  "window.customTitleBarVisibility": "never",
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "top",
   "workbench.colorTheme": "NordStone",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
   "workbench.editor.revealIfOpen": true,
+  "workbench.editor.showTabs": "none",
   "workbench.editorAssociations": {
     "*.pdf": "default"
   },
@@ -196,5 +200,6 @@
   "workbench.layoutControl.enabled": false,
   "workbench.panel.defaultLocation": "right",
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": false
 }
