@@ -88,6 +88,9 @@ return {
 
 		main = "nvim-treesitter.configs",
 		lazy = true,
+		cond = function()
+			return not vim.g.vscode
+		end,
 	},
 
 	{ -- syntax aware navigation
@@ -107,6 +110,8 @@ return {
 
 		main = "nvim-treesitter.configs",
 		lazy = true,
+		cond = function()
+			return not vim.g.vscode
+		end,
 	},
 }
-
