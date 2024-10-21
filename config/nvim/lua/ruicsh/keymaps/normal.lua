@@ -18,6 +18,10 @@ vim.keymap.set("n", "<c-u>", "<c-u>zz") -- scrolling up (half page up)
 vim.keymap.set("n", "N", "Nzz") -- center screen when moving to previous match
 vim.keymap.set("n", "n", "Nzz") -- center screen when moving to next match
 
+-- splits
+vim.keymap.set("n", "[w", "<c-w>x<c-w>w", { desc = "Move to left window" })
+vim.keymap.set("n", "]w", "<c-w>x<c-w>w", { desc = "Move to right window" })
+
 -- registers
 vim.keymap.set("n", "C", '"_C') -- change to end of line without putting it into register
 vim.keymap.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines

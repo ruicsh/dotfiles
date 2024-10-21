@@ -104,6 +104,8 @@
 
 ### Splits (views in vscode, windows in neovim)
 
+- `[w` move active window to the left
+- `]w` move active window to the right
 - `<c-w><` decrease window width
 - `<c-w>>` increase window width
 - `<c-w>m` maximize split
