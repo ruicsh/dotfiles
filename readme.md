@@ -104,14 +104,14 @@
 
 ### Splits (views in vscode, windows in neovim)
 
-- `[w` move active window to the left
-- `]w` move active window to the right
-- `<c-w><` decrease window width
-- `<c-w>>` increase window width
+- `<s-w>` switch splits
+- `<c-w><` decrease split width
+- `<c-w>>` increase split width
+- `<c-w>[` move file to split on the left
+- `<c-w>]` move file to split on the right
 - `<c-w>m` maximize split
-- `<c-w>q` quit window
+- `<c-w>q` quit split
 - `<c-w>v` split vertically
-- `<c-w>w` switch splits
 
 ### Folds
 

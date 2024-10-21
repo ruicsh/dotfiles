@@ -28,9 +28,10 @@ vim.keymap.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
 vim.keymap.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
 
 -- splits
+vim.keymap.set("n", "<s-w>", ac("workbench.action.focusNextGroup"))
 vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
-vim.keymap.set("n", "[w", ac("workbench.action.moveEditorToLeftGroup"))
-vim.keymap.set("n", "]w", ac("workbench.action.moveEditorToRightGroup"))
+vim.keymap.set("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
+vim.keymap.set("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
 
 -- lsp
 vim.keymap.set("n", "<leader>cD", ac("editor.action.peekDefinition"))
