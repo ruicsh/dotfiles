@@ -4,11 +4,12 @@
 return {
 	"stevearc/oil.nvim",
 	keys = {
-		{ "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+		{ "\\", "<cmd>Oil<cr>", desc = "Open parent directory" },
 	},
 	opts = {
 		default_file_explorer = true,
 		delete_to_trash = true,
+		skip_confirm_for_simple_edits = true,
 		keymaps = {
 			["g?"] = "actions.show_help",
 			["<cr>"] = "actions.select",
@@ -17,7 +18,7 @@ return {
 				opts = { vertical = true },
 				desc = "Open the entry in a vertical split",
 			},
-			["<c-w>"] = {
+			["<c-o>"] = {
 				"actions.select",
 				opts = { horizontal = true },
 				desc = "Open the entry in a horizontal split",
@@ -53,4 +54,3 @@ return {
 		return not vim.g.vscode
 	end,
 }
-

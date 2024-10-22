@@ -7,7 +7,20 @@
 - `<leader>ff` list files
 - `[f` open previous file in current directory
 - `]f` open next file in current directory
-- `\` focus file explorer
+
+### File explorer
+
+- `\` open explorer
+- `<c-c>` close explorer
+- `<enter>` open entry
+- `<c-o>` open entry in horizonal split
+- `<c-v>` open entry in vertical split
+- `<c-p>` preview entry
+- `-` open parent directory
+- `_` open current working directory (root)
+- `gs` change sort
+- `g.` toggle hidden
+- `g\` toggle trash
 
 ### Search
 
