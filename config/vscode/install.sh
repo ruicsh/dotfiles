@@ -19,6 +19,7 @@ main() {
 		christian-kohler.npm-intellisense
 		christian-kohler.path-intellisense
 		clinyong.vscode-css-modules
+		danprince.vsnetrw
 		dbaeumer.vscode-eslint
 		eamodio.gitlens
 		editorconfig.editorconfig

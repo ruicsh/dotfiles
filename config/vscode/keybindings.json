@@ -20,6 +20,11 @@
     "when": "editorTextFocus && neovim.mode == 'insert'"
   },
   {
+    "key": "\\",
+    "command": "vsnetrw.open",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
     "key": "tab",
     "command": "search.action.focusSearchList",
     "when": "searchViewletVisible && searchViewletFocus && !inputFocus"
