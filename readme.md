@@ -117,7 +117,7 @@
 
 ### Splits (views in vscode, windows in neovim)
 
-- `<s-w>` switch splits
+- `|` switch splits
 - `<c-w><` decrease split width
 - `<c-w>>` increase split width
 - `<c-w>[` move file to split on the left

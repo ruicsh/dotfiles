@@ -19,7 +19,7 @@ vim.keymap.set("n", "N", "Nzz") -- center screen when moving to previous match
 vim.keymap.set("n", "n", "Nzz") -- center screen when moving to next match
 
 -- splits
-vim.keymap.set("n", "<s-w>", "<c-w>w", { desc = "Switch splits" })
+vim.keymap.set("n", "|", "<c-w>w", { desc = "Switch splits" })
 vim.keymap.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Move file to split on the left" })
 vim.keymap.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Move file to split on the right" })
 
