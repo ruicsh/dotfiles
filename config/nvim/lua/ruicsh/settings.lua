@@ -11,7 +11,6 @@ vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.scrolloff = 10 -- number of lines to keep above and below the cursor
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
-vim.opt.shortmess = "I" -- disable intro message
 vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
 vim.opt.smartindent = true -- smart indent
 vim.opt.softtabstop = 2 -- number of spaces that a <Tab> key in the file counts for
