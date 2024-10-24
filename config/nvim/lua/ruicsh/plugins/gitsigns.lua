@@ -56,10 +56,10 @@ return {
 			map("v", "<leader>gr", function()
 				gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, { desc = "Git: [r]eset hunk" })
-			map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "git: [S]tage file" })
-			map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git: [R]eset file" })
-			map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "git: [p]review hunk" })
-			map("n", "<leader>gb", gitsigns.blame_line, { desc = "git: toggle [b]lame" })
+			map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Git: [S]tage file" })
+			map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
+			map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git: [p]review hunk" })
+			map("n", "<leader>gb", gitsigns.blame_line, { desc = "Git: toggle [b]lame" })
 
 			-- Text object
 			map({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>")
@@ -70,4 +70,3 @@ return {
 		return not vim.g.vscode
 	end,
 }
-

@@ -58,5 +58,15 @@
     "key": "x",
     "command": "git.clean",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+  },
+  {
+    "key": "[ c",
+    "command": "workbench.action.compareEditor.previousChange",
+    "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "] c",
+    "command": "workbench.action.compareEditor.nextChange",
+    "when": "textCompareEditorVisible"
   }
 ]

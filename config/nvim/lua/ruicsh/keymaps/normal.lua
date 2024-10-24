@@ -25,7 +25,6 @@ vim.keymap.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Move file to split on th
 
 -- registers
 vim.keymap.set("n", "C", '"_C') -- change to end of line without putting it into register
-vim.keymap.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines
 vim.keymap.set("n", "c", '"_c') -- change text without putting it into register
 vim.keymap.set("n", "cc", '"_cc') -- change line without putting it into register
 vim.keymap.set("n", "x", '"_x') -- don't yank on delete char under cursor
@@ -43,3 +42,4 @@ vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph j
 vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
 vim.keymap.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
+vim.keymap.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines
