@@ -59,8 +59,8 @@
 
 ### Motions
 
-- `s` jump to next position by entering a 2char search
-- `S` jump to previous position by entering a 2char search
+- `s` jump to labelled search result
+- `S` jump to labelled treesiter node _(not vscode)_
 
 ### Insert mode navigation
 

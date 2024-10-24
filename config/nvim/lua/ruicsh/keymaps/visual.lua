@@ -3,8 +3,8 @@ vim.keymap.set("v", "J", ":move '>+1<cr>gv=gv", { desc = "Move selected lines do
 vim.keymap.set("v", "K", ":move '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- indent
-vim.keymap.set("v", "<", "<gv") -- keep visual selection after indenting
-vim.keymap.set("v", ">", ">gv") -- keep visual selection after indenting
+vim.keymap.set("v", "<<", "<gv") -- keep visual selection after indenting
+vim.keymap.set("v", ">>", ">gv") -- keep visual selection after indenting
 
 vim.keymap.set("v", "<cr>", ":noh<cr><cr>") -- remove search highlighting
 
