@@ -16,6 +16,8 @@ vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility")
 vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
 vim.keymap.set("n", "<c-t>", ac("workbench.action.terminal.new"))
+vim.keymap.set("n", "<leader>fk", ac("workbench.action.openGlobalKeybindings"))
+vim.keymap.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile"))
 
 -- tabs
 vim.keymap.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
