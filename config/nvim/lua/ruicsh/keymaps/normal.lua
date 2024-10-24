@@ -8,6 +8,9 @@ vim.keymap.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
 vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 
+-- git
+vim.keymap.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
+
 -- center screen when moving
 vim.keymap.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
 vim.keymap.set("n", "<c-d>", "<c-d>zz") -- scrolling down (half page down)
