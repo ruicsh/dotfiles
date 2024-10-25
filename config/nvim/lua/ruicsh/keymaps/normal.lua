@@ -11,6 +11,29 @@ vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 -- git
 vim.keymap.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 
+-- lsp - typescript
+vim.keymap.set("n", "<leader>toi", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize [i]mports" })
+vim.keymap.set("n", "<leader>tsi", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort [i]mports" })
+vim.keymap.set(
+	"n",
+	"<leader>tui",
+	"<cmd>TSToolsRemoveUnusedImports<cr>",
+	{ desc = "[T]ypeScript: remove [u]nused [i]mports" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tcd",
+	"<cmd>TSToolsGoToSourceDefinition<cr>",
+	{ desc = "[T]ypeScript: go to source [d]efinition" }
+)
+vim.keymap.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
+vim.keymap.set(
+	"n",
+	"<leader>tcr",
+	"<cmd>TSToolsFileReferences<cr>",
+	{ desc = "[T]ypeScript: [f]ind files that [r]eference this file" }
+)
+
 -- sort
 vim.keymap.set("n", "<leader>so", "vi<esc><cmd>Sort<cr>", { desc = "[So]rt" })
 vim.keymap.set("n", "<leader>so(", "vi(<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [(]" })

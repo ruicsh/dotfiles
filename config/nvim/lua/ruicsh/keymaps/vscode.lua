@@ -26,6 +26,13 @@ vim.keymap.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile
 vim.keymap.set("n", "<leader>fn", ac("workbench.action.openGlobalSettings"))
 vim.keymap.set("n", "<leader>fN", ac("workbench.action.openSettingsJson"))
 
+-- lsp - typescript
+vim.keymap.set("n", "<leader>toi", ac("editor.action.organizeImports"))
+vim.keymap.set("n", "<leader>tsi", ac("typescript.sortImports"))
+vim.keymap.set("n", "<leader>tui", ac("typescript.removeUnusedImports"))
+vim.keymap.set("n", "<leader>tcd", ac("typescript.goToSourceDefinition"))
+vim.keymap.set("n", "<leader>tcr", ac("typescript.findAllFileReferences"))
+
 -- search
 vim.keymap.set("n", "<leader>sr", ac("actions.find"))
 vim.keymap.set("n", "<leader>fg", ac("workbench.action.findInFiles"))

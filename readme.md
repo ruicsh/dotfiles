@@ -97,6 +97,15 @@
 - `<leader>cs` list symbols in document
 - `<leader>cw` list symbols in workspace
 
+### LSP - TypeScript
+
+- `<leader>toi` organize imports
+- `<leader>tsi` sort imports
+- `<leader>tui` remove unused imports
+- `<leader>tcd` go to source definition
+- `<leader>trf` rename file and updatechanges to connected files _(not vscode)_
+- `<leader>tcr` find files that reference this file
+
 ### Git
 
 - `<leader>gg` status
