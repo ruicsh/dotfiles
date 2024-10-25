@@ -13,11 +13,22 @@ end
 
 -- native
 vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
-vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
-vim.keymap.set("n", "<leader>sr", ac("actions.find"))
 vim.keymap.set("n", "<c-t>", ac("workbench.action.terminal.new"))
+vim.keymap.set("n", "<leader>fc", ac("workbench.action.showCommands"))
+
+-- explorer
+vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
+vim.keymap.set("n", "<leader>ff", ac("workbench.action.quickOpen"))
+
+-- settings
 vim.keymap.set("n", "<leader>fk", ac("workbench.action.openGlobalKeybindings"))
 vim.keymap.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile"))
+vim.keymap.set("n", "<leader>fn", ac("workbench.action.openGlobalSettings"))
+vim.keymap.set("n", "<leader>fN", ac("workbench.action.openSettingsJson"))
+
+-- search
+vim.keymap.set("n", "<leader>sr", ac("actions.find"))
+vim.keymap.set("n", "<leader>fg", ac("workbench.action.findInFiles"))
 
 -- tabs
 vim.keymap.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
@@ -49,11 +60,6 @@ vim.keymap.set("n", "<leader>cw", ac("workbench.action.showAllSymbols"))
 vim.keymap.set("n", "[r", ac("editor.action.wordHighlight.prev"))
 vim.keymap.set("n", "]r", ac("editor.action.wordHighlight.next"))
 
--- fuzzy find (equivalent to telescope)
-vim.keymap.set("n", "<leader>fc", ac("workbench.action.showCommands"))
-vim.keymap.set("n", "<leader>ff", ac("workbench.action.quickOpen"))
-vim.keymap.set("n", "<leader>fg", ac("workbench.action.findInFiles"))
-
 -- folds
 vim.keymap.set("n", "za", ac("editor.toggleFold"))
 vim.keymap.set("n", "zA", ac("editor.toggleFoldRecursively"))
@@ -83,8 +89,8 @@ vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
 vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
 
 -- git
--- vim.keymap.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
-vim.keymap.set({ "n", "x" }, "<leader>gg", ac("fugitive.open"))
+vim.keymap.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
+-- vim.keymap.set({ "n", "x" }, "<leader>gg", ac("fugitive.open")) -- while fugitive isn't ready
 vim.keymap.set({ "n", "x" }, "<leader>gs", ac("git.stageSelectedRanges"))
 vim.keymap.set({ "n", "x" }, "<leader>gu", ac("git.unstageSelectedRanges"))
 vim.keymap.set({ "n", "x" }, "<leader>gr", ac("git.revertSelectedRanges"))
