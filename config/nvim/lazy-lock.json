@@ -1,6 +1,5 @@
 {
   "LuaSnip": { "branch": "master", "commit": "787dee55ca364cc9119787165418fe93b74c1842" },
-  "auto-session": { "branch": "main", "commit": "3cd531ce4d46fb156268ddedf5f3e6822ef26af7" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
