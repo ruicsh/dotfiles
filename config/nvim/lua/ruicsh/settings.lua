@@ -41,7 +41,7 @@ end
 -- [[ WINDOWS ]]
 local OS = vim.uv.os_uname().sysname
 if OS:find("Windows") then
-	vim.o.shell = "powershell.exe"
+	vim.o.shell = "pwsh.exe"
 end
 
 -- [[ NEOVIDE ]]
