@@ -83,7 +83,8 @@ vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
 vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
 
 -- git
-vim.keymap.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
+-- vim.keymap.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
+vim.keymap.set({ "n", "x" }, "<leader>gg", ac("fugitive.open"))
 vim.keymap.set({ "n", "x" }, "<leader>gs", ac("git.stageSelectedRanges"))
 vim.keymap.set({ "n", "x" }, "<leader>gu", ac("git.unstageSelectedRanges"))
 vim.keymap.set({ "n", "x" }, "<leader>gr", ac("git.revertSelectedRanges"))
