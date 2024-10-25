@@ -4,6 +4,9 @@ local k = vim.keymap
 k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
 
 -- editing
+k.set("n", "dw", 'vb"_d', { desc = "[d]elete [w]ord backwards" })
+k.set("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
+k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 
 -- buffers
 k.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
@@ -19,8 +22,8 @@ k.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 -- lsp - typescript
 k.set("n", "<leader>toi", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize [i]mports" })
 k.set("n", "<leader>tsi", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort [i]mports" })
-k.set("n", "<leader>tui", "<cmd>TSToolsRemoveUnusedImports<cr>", { desc = "[T]ypeScript: remove [u]nused [i]mports" })
-k.set("n", "<leader>tcd", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]ypeScript: go to source [d]efinition" })
+k.set("n", "<leader>tui", "<cmd>TSToolsRemoveUnusedImports<cr>", { desc = "[T]ypeScript: Remove [u]nused [i]mports" })
+k.set("n", "<leader>tcd", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]ypeScript: Go to source [d]efinition" })
 k.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
 
 -- sort
@@ -31,6 +34,7 @@ k.set("n", "<leader>so{", "vi{<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [{]"
 k.set("n", "<leader>so'", "vi'<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [']" })
 k.set("n", "<leader>so`", "vi`<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [`]" })
 k.set("n", '<leader>so"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
+k.set("n", "<leader>so}", "V}k<esc><cmd>Sort<cr>}", { desc = "[So]rt: Paragrah" })
 
 -- center screen when moving
 k.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
@@ -53,7 +57,6 @@ k.set("n", "c", '"_c') -- change text without putting it into register
 k.set("n", "cc", '"_cc') -- change line without putting it into register
 k.set("n", "x", '"_x') -- don't yank on delete char under cursor
 k.set("n", "X", '"_X') -- don't yank on delete char before cursor
-k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 
 -- folds
 k.set("n", "zk", "zk%^") -- jump to start of previous fold

@@ -2,14 +2,11 @@
 
 ## NeoVim/VSCode keybindings
 
-### Files
+### File explorer (oil in neovim, explorer in vscode)
 
 - `<leader>ff` list files
 - `[f` open previous file in current directory
 - `]f` open next file in current directory
-
-### File explorer
-
 - `\` open explorer
 - `<c-c>` close explorer
 - `<enter>` open entry
@@ -21,6 +18,46 @@
 - `gs` change sort
 - `g.` toggle hidden
 - `g\` toggle trash
+
+### Files (buffers in neovim, tabs in vscode)
+
+- `[b` previous open file
+- `]b` next open file
+- `<tab>` open previous recently used file
+- `<s-tab>` open next recently used file
+- `<leader><leader>` list open files
+- `<leader>bc` close file
+- `<leader>bC` close all files
+- `<leader>bo` close the other files
+- `<leader>bx` exit file
+
+### Editing
+
+- `<c-a>` select all
+- `J` move selected lines above (visual-mode)
+- `K` move selected lines below (visual-mode)
+- `[<space>` add blank line above cursor
+- `]<space>` add blank line below cursor
+- `[e` move line above
+- `]e` move line below
+- `cs` change surrounding character
+- `ds` delete surrounding character
+- `ys` insert surrounding character
+- `dw` backwards delete word
+- `cx` exchange text
+
+### Insert mode navigation
+
+- `<c-a>` go to beginning of line
+- `<c-b>` go backwards one character
+- `<c-d>` delete character in front of cursor
+- `<c-e>` go to end of line
+- `<c-f>` move forward one character
+- `<c-n>` jump to line below
+- `<c-p>` jump to line above
+- `<c-r>` paste from clipboard
+- `<c-u>` delete before the cursor in current line
+- `<c-w>` delete word before
 
 ### Search
 
@@ -39,15 +76,6 @@
 - `<leader>so`` sort inside ``
 - `<leader>so"` sort inside ""
 
-### Commands
-
-- `[<space>` add blank line above cursor
-- `]<space>` add blank line below cursor
-- `[e` move line above
-- `]e` move line below
-- `J` move selected lines above (visual-mode)
-- `K` move selected lines below (visual-mode)
-
 ### Text objects
 
 - `a` function argument
@@ -59,28 +87,6 @@
 - `q` quotes
 - `lq` last quote
 - `nq` next quote
-- `ae` entire file
-- `ie` entire file without leading and trailing empty lines
-
-### Operators
-
-- `cs` change surrounding character
-- `ds` delete surrounding character
-- `ys` insert surrounding character
-- `cx` exchange text
-
-### Insert mode navigation
-
-- `<c-a>` go to beginning of line
-- `<c-b>` go backwards one character
-- `<c-d>` delete character in front of cursor
-- `<c-e>` go to end of line
-- `<c-f>` move forward one character
-- `<c-n>` jump to line below
-- `<c-p>` jump to line above
-- `<c-r>` paste from clipboard
-- `<c-u>` delete before the cursor in current line
-- `<c-w>` delete word before
 
 ### LSP
 
@@ -103,8 +109,7 @@
 - `<leader>tsi` sort imports
 - `<leader>tui` remove unused imports
 - `<leader>tcd` go to source definition
-- `<leader>trf` rename file and updatechanges to connected files _(not vscode)_
-- `<leader>tcr` find files that reference this file
+- `<leader>trf` rename file and update changes to connected files _(not vscode)_
 
 ### Git
 
@@ -118,18 +123,6 @@
 - `<leader>gp` preview change
 - `<leader>[c` previous change
 - `<leader>]c` next change
-
-### Tabs (buffers in neovim)
-
-- `[b` previous tab
-- `]b` next tab
-- `<tab>` open previous recently used tab
-- `<s-tab>` open next recently used tab
-- `<leader><leader>` list open tabs
-- `<leader>bc` close tab
-- `<leader>bC` close all tabs
-- `<leader>bo` close the other tabs
-- `<leader>bx` exit tab
 
 ### Splits (views in vscode, windows in neovim)
 
