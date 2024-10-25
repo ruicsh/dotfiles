@@ -1,80 +1,69 @@
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
+local k = vim.keymap
+
+-- save
+k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
+
+-- editing
 
 -- buffers
-vim.keymap.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
-vim.keymap.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
-vim.keymap.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
-vim.keymap.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
-vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
+k.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
+k.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
+k.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
+k.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
+k.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
+k.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 
 -- git
-vim.keymap.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
+k.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 
 -- lsp - typescript
-vim.keymap.set("n", "<leader>toi", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize [i]mports" })
-vim.keymap.set("n", "<leader>tsi", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort [i]mports" })
-vim.keymap.set(
-	"n",
-	"<leader>tui",
-	"<cmd>TSToolsRemoveUnusedImports<cr>",
-	{ desc = "[T]ypeScript: remove [u]nused [i]mports" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>tcd",
-	"<cmd>TSToolsGoToSourceDefinition<cr>",
-	{ desc = "[T]ypeScript: go to source [d]efinition" }
-)
-vim.keymap.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
-vim.keymap.set(
-	"n",
-	"<leader>tcr",
-	"<cmd>TSToolsFileReferences<cr>",
-	{ desc = "[T]ypeScript: [f]ind files that [r]eference this file" }
-)
+k.set("n", "<leader>toi", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize [i]mports" })
+k.set("n", "<leader>tsi", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort [i]mports" })
+k.set("n", "<leader>tui", "<cmd>TSToolsRemoveUnusedImports<cr>", { desc = "[T]ypeScript: remove [u]nused [i]mports" })
+k.set("n", "<leader>tcd", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]ypeScript: go to source [d]efinition" })
+k.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
 
 -- sort
-vim.keymap.set("n", "<leader>so", "vi<esc><cmd>Sort<cr>", { desc = "[So]rt" })
-vim.keymap.set("n", "<leader>so(", "vi(<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [(]" })
-vim.keymap.set("n", "<leader>so[", "vi[<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [[]" })
-vim.keymap.set("n", "<leader>so{", "vi{<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [{]" })
-vim.keymap.set("n", "<leader>so'", "vi'<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [']" })
-vim.keymap.set("n", "<leader>so`", "vi`<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [`]" })
-vim.keymap.set("n", '<leader>so"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
+k.set("n", "<leader>so", "vi<esc><cmd>Sort<cr>", { desc = "[So]rt" })
+k.set("n", "<leader>so(", "vi(<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [(]" })
+k.set("n", "<leader>so[", "vi[<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [[]" })
+k.set("n", "<leader>so{", "vi{<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [{]" })
+k.set("n", "<leader>so'", "vi'<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [']" })
+k.set("n", "<leader>so`", "vi`<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [`]" })
+k.set("n", '<leader>so"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
 
 -- center screen when moving
-vim.keymap.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
-vim.keymap.set("n", "<c-d>", "<c-d>zz") -- scrolling down (half page down)
-vim.keymap.set("n", "<c-f>", "<c-f>zz") -- scrolling down (page down)
-vim.keymap.set("n", "<c-i>", "<c-i>zz") -- moving to newer cursor position
-vim.keymap.set("n", "<c-o>", "<c-o>zz") -- moving to older cursor position
-vim.keymap.set("n", "<c-u>", "<c-u>zz") -- scrolling up (half page up)
-vim.keymap.set("n", "N", "Nzz") -- center screen when moving to previous match
-vim.keymap.set("n", "n", "Nzz") -- center screen when moving to next match
+k.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
+k.set("n", "<c-d>", "<c-d>zz") -- scrolling down (half page down)
+k.set("n", "<c-f>", "<c-f>zz") -- scrolling down (page down)
+k.set("n", "<c-i>", "<c-i>zz") -- moving to newer cursor position
+k.set("n", "<c-o>", "<c-o>zz") -- moving to older cursor position
+k.set("n", "<c-u>", "<c-u>zz") -- scrolling up (half page up)
+k.set("n", "N", "Nzz") -- center screen when moving to previous match
+k.set("n", "n", "Nzz") -- center screen when moving to next match
 
 -- splits
-vim.keymap.set("n", "|", "<c-w>w", { desc = "Switch splits" })
-vim.keymap.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Move file to split on the left" })
-vim.keymap.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Move file to split on the right" })
+k.set("n", "|", "<c-w>w", { desc = "Switch splits" })
+k.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Move file to split on the left" })
+k.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Move file to split on the right" })
 
 -- registers
-vim.keymap.set("n", "C", '"_C') -- change to end of line without putting it into register
-vim.keymap.set("n", "c", '"_c') -- change text without putting it into register
-vim.keymap.set("n", "cc", '"_cc') -- change line without putting it into register
-vim.keymap.set("n", "x", '"_x') -- don't yank on delete char under cursor
-vim.keymap.set("n", "X", '"_X') -- don't yank on delete char before cursor
-vim.keymap.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
+k.set("n", "C", '"_C') -- change to end of line without putting it into register
+k.set("n", "c", '"_c') -- change text without putting it into register
+k.set("n", "cc", '"_cc') -- change line without putting it into register
+k.set("n", "x", '"_x') -- don't yank on delete char under cursor
+k.set("n", "X", '"_X') -- don't yank on delete char before cursor
+k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 
 -- folds
-vim.keymap.set("n", "zk", "zk%^") -- jump to start of previous fold
+k.set("n", "zk", "zk%^") -- jump to start of previous fold
 
 -- alternate file (projectionist)
-vim.keymap.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Open [A]lternate file" })
+k.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Open [A]lternate file" })
 
 -- misc
-vim.keymap.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
-vim.keymap.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
-vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
-vim.keymap.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
-vim.keymap.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines
+k.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
+k.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
+k.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
+k.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
+k.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines

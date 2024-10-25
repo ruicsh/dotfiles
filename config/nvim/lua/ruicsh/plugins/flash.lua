@@ -4,12 +4,14 @@
 return {
 	"folke/flash.nvim",
 	config = function()
+		local k = vim.keymap
 		local flash = require("flash")
-		vim.keymap.set({ "n", "x", "o" }, "s", flash.jump, { desc = "Flash" })
-		vim.keymap.set({ "n", "x", "o" }, "S", flash.treesitter, { desc = "Flash: Treesitter" })
-		vim.keymap.set("o", "r", flash.remote, { desc = "Flash: Remote" })
-		vim.keymap.set({ "x", "o" }, "R", flash.treesitter_search, { desc = "Flash: Treesitter Search" })
-		vim.keymap.set("c", "<c-s>", flash.toggle, { desc = "Flash: Toggle" })
+
+		k.set({ "n", "x", "o" }, "s", flash.jump, { desc = "Flash" })
+		k.set({ "n", "x", "o" }, "S", flash.treesitter, { desc = "Flash: Treesitter" })
+		k.set("o", "r", flash.remote, { desc = "Flash: Remote" })
+		k.set({ "x", "o" }, "R", flash.treesitter_search, { desc = "Flash: Treesitter Search" })
+		k.set("c", "<c-s>", flash.toggle, { desc = "Flash: Toggle" })
 	end,
 
 	event = "VeryLazy",

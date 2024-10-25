@@ -2,6 +2,8 @@ if not vim.g.vscode then
 	return
 end
 
+local k = vim.keymap
+
 -- run vscode action
 local function ac(action)
 	return function()
@@ -12,112 +14,112 @@ end
 -- [[ NORMAL MODE ]]
 
 -- native
-vim.keymap.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
-vim.keymap.set("n", "<c-t>", ac("workbench.action.terminal.new"))
-vim.keymap.set("n", "<leader>fc", ac("workbench.action.showCommands"))
+k.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
+k.set("n", "<c-t>", ac("workbench.action.terminal.new"))
+k.set("n", "<leader>fc", ac("workbench.action.showCommands"))
 
 -- explorer
-vim.keymap.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
-vim.keymap.set("n", "<leader>ff", ac("workbench.action.quickOpen"))
+k.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
+k.set("n", "<leader>ff", ac("workbench.action.quickOpen"))
 
 -- settings
-vim.keymap.set("n", "<leader>fk", ac("workbench.action.openGlobalKeybindings"))
-vim.keymap.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile"))
-vim.keymap.set("n", "<leader>fn", ac("workbench.action.openGlobalSettings"))
-vim.keymap.set("n", "<leader>fN", ac("workbench.action.openSettingsJson"))
+k.set("n", "<leader>fk", ac("workbench.action.openGlobalKeybindings"))
+k.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile"))
+k.set("n", "<leader>fn", ac("workbench.action.openGlobalSettings"))
+k.set("n", "<leader>fN", ac("workbench.action.openSettingsJson"))
 
 -- lsp - typescript
-vim.keymap.set("n", "<leader>toi", ac("editor.action.organizeImports"))
-vim.keymap.set("n", "<leader>tsi", ac("typescript.sortImports"))
-vim.keymap.set("n", "<leader>tui", ac("typescript.removeUnusedImports"))
-vim.keymap.set("n", "<leader>tcd", ac("typescript.goToSourceDefinition"))
-vim.keymap.set("n", "<leader>tcr", ac("typescript.findAllFileReferences"))
+k.set("n", "<leader>toi", ac("editor.action.organizeImports"))
+k.set("n", "<leader>tsi", ac("typescript.sortImports"))
+k.set("n", "<leader>tui", ac("typescript.removeUnusedImports"))
+k.set("n", "<leader>tcd", ac("typescript.goToSourceDefinition"))
+k.set("n", "<leader>tcr", ac("typescript.findAllFileReferences"))
 
 -- search
-vim.keymap.set("n", "<leader>sr", ac("actions.find"))
-vim.keymap.set("n", "<leader>fg", ac("workbench.action.findInFiles"))
+k.set("n", "<leader>sr", ac("actions.find"))
+k.set("n", "<leader>fg", ac("workbench.action.findInFiles"))
 
 -- tabs
-vim.keymap.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
-vim.keymap.set("n", "]b", ac("workbench.action.nextEditorInGroup"))
-vim.keymap.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
-vim.keymap.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
-vim.keymap.set("n", "<leader><leader>", ac("workbench.action.showAllEditors"))
-vim.keymap.set("n", "<leader>bc", ac("workbench.action.closeActiveEditor"))
-vim.keymap.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
-vim.keymap.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
+k.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
+k.set("n", "]b", ac("workbench.action.nextEditorInGroup"))
+k.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
+k.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
+k.set("n", "<leader><leader>", ac("workbench.action.showAllEditors"))
+k.set("n", "<leader>bc", ac("workbench.action.closeActiveEditor"))
+k.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
+k.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
 
 -- splits
-vim.keymap.set("n", "|", ac("workbench.action.focusNextGroup"))
-vim.keymap.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
-vim.keymap.set("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
-vim.keymap.set("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
+k.set("n", "|", ac("workbench.action.focusNextGroup"))
+k.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
+k.set("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
+k.set("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
 
 -- lsp
-vim.keymap.set("n", "<leader>cD", ac("editor.action.peekDefinition"))
-vim.keymap.set("n", "<leader>cI", ac("editor.action.peekImplementation"))
-vim.keymap.set("n", "<leader>cO", ac("editor.action.peekTypeDefinition"))
-vim.keymap.set("n", "<leader>cR", ac("editor.action.goToReferences"))
-vim.keymap.set("n", "<leader>cd", ac("editor.action.revealDefinition"))
-vim.keymap.set("n", "<leader>cn", ac("editor.action.rename"))
-vim.keymap.set("n", "<leader>co", ac("editor.action.goToTypeDefinition"))
-vim.keymap.set("n", "<leader>cr", ac("references-view.findReferences"))
-vim.keymap.set("n", "<leader>cs", ac("workbench.action.gotoSymbol"))
-vim.keymap.set("n", "<leader>cw", ac("workbench.action.showAllSymbols"))
-vim.keymap.set("n", "[r", ac("editor.action.wordHighlight.prev"))
-vim.keymap.set("n", "]r", ac("editor.action.wordHighlight.next"))
+k.set("n", "<leader>cD", ac("editor.action.peekDefinition"))
+k.set("n", "<leader>cI", ac("editor.action.peekImplementation"))
+k.set("n", "<leader>cO", ac("editor.action.peekTypeDefinition"))
+k.set("n", "<leader>cR", ac("editor.action.goToReferences"))
+k.set("n", "<leader>cd", ac("editor.action.revealDefinition"))
+k.set("n", "<leader>cn", ac("editor.action.rename"))
+k.set("n", "<leader>co", ac("editor.action.goToTypeDefinition"))
+k.set("n", "<leader>cr", ac("references-view.findReferences"))
+k.set("n", "<leader>cs", ac("workbench.action.gotoSymbol"))
+k.set("n", "<leader>cw", ac("workbench.action.showAllSymbols"))
+k.set("n", "[r", ac("editor.action.wordHighlight.prev"))
+k.set("n", "]r", ac("editor.action.wordHighlight.next"))
 
 -- folds
-vim.keymap.set("n", "za", ac("editor.toggleFold"))
-vim.keymap.set("n", "zA", ac("editor.toggleFoldRecursively"))
-vim.keymap.set("n", "zC", ac("editor.foldRecursively"))
-vim.keymap.set("n", "zM", ac("editor.foldAll"))
-vim.keymap.set("n", "zO", ac("editor.unfoldRecursively"))
-vim.keymap.set("n", "zR", ac("editor.unfoldAll"))
-vim.keymap.set("n", "zc", ac("editor.fold"))
-vim.keymap.set("n", "zo", ac("editor.unfold"))
-vim.keymap.set("n", "[z", ac("editor.gotoParentFold"))
-vim.keymap.set("n", "zk", ac("editor.gotoPreviousFold"))
-vim.keymap.set("n", "zj", ac("editor.gotoNextFold"))
+k.set("n", "za", ac("editor.toggleFold"))
+k.set("n", "zA", ac("editor.toggleFoldRecursively"))
+k.set("n", "zC", ac("editor.foldRecursively"))
+k.set("n", "zM", ac("editor.foldAll"))
+k.set("n", "zO", ac("editor.unfoldRecursively"))
+k.set("n", "zR", ac("editor.unfoldAll"))
+k.set("n", "zc", ac("editor.fold"))
+k.set("n", "zo", ac("editor.unfold"))
+k.set("n", "[z", ac("editor.gotoParentFold"))
+k.set("n", "zk", ac("editor.gotoPreviousFold"))
+k.set("n", "zj", ac("editor.gotoNextFold"))
 
 -- harpoon
-vim.keymap.set("n", "<leader>1", ac("vscode-harpoon.gotoEditor1"))
-vim.keymap.set("n", "<leader>2", ac("vscode-harpoon.gotoEditor2"))
-vim.keymap.set("n", "<leader>3", ac("vscode-harpoon.gotoEditor3"))
-vim.keymap.set("n", "<leader>4", ac("vscode-harpoon.gotoEditor4"))
-vim.keymap.set("n", "<leader>5", ac("vscode-harpoon.gotoEditor5"))
-vim.keymap.set("n", "<leader>6", ac("vscode-harpoon.gotoEditor6"))
-vim.keymap.set("n", "<leader>7", ac("vscode-harpoon.gotoEditor7"))
-vim.keymap.set("n", "<leader>8", ac("vscode-harpoon.gotoEditor8"))
-vim.keymap.set("n", "<leader>9", ac("vscode-harpoon.gotoEditor9"))
-vim.keymap.set("n", "<leader>ha", ac("vscode-harpoon.addEditor"))
-vim.keymap.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"))
-vim.keymap.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
-vim.keymap.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
+k.set("n", "<leader>1", ac("vscode-harpoon.gotoEditor1"))
+k.set("n", "<leader>2", ac("vscode-harpoon.gotoEditor2"))
+k.set("n", "<leader>3", ac("vscode-harpoon.gotoEditor3"))
+k.set("n", "<leader>4", ac("vscode-harpoon.gotoEditor4"))
+k.set("n", "<leader>5", ac("vscode-harpoon.gotoEditor5"))
+k.set("n", "<leader>6", ac("vscode-harpoon.gotoEditor6"))
+k.set("n", "<leader>7", ac("vscode-harpoon.gotoEditor7"))
+k.set("n", "<leader>8", ac("vscode-harpoon.gotoEditor8"))
+k.set("n", "<leader>9", ac("vscode-harpoon.gotoEditor9"))
+k.set("n", "<leader>ha", ac("vscode-harpoon.addEditor"))
+k.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"))
+k.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
+k.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
 
 -- git
-vim.keymap.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
--- vim.keymap.set({ "n", "x" }, "<leader>gg", ac("fugitive.open")) -- while fugitive isn't ready
-vim.keymap.set({ "n", "x" }, "<leader>gs", ac("git.stageSelectedRanges"))
-vim.keymap.set({ "n", "x" }, "<leader>gu", ac("git.unstageSelectedRanges"))
-vim.keymap.set({ "n", "x" }, "<leader>gr", ac("git.revertSelectedRanges"))
-vim.keymap.set("n", "<leader>gS", ac("git.stage"))
-vim.keymap.set("n", "<leader>gU", ac("git.unstage"))
-vim.keymap.set("n", "<leader>gR", ac("workbench.action.files.revert"))
-vim.keymap.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"))
-vim.keymap.set("n", "<leader>gp", ac("git.openChange"))
-vim.keymap.set("n", "[c", ac("workbench.action.editor.previousChange"))
-vim.keymap.set("n", "]c", ac("workbench.action.editor.nextChange"))
+k.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
+-- k.set({ "n", "x" }, "<leader>gg", ac("fugitive.open")) -- while fugitive isn't ready
+k.set({ "n", "x" }, "<leader>gs", ac("git.stageSelectedRanges"))
+k.set({ "n", "x" }, "<leader>gu", ac("git.unstageSelectedRanges"))
+k.set({ "n", "x" }, "<leader>gr", ac("git.revertSelectedRanges"))
+k.set("n", "<leader>gS", ac("git.stage"))
+k.set("n", "<leader>gU", ac("git.unstage"))
+k.set("n", "<leader>gR", ac("workbench.action.files.revert"))
+k.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"))
+k.set("n", "<leader>gp", ac("git.openChange"))
+k.set("n", "[c", ac("workbench.action.editor.previousChange"))
+k.set("n", "]c", ac("workbench.action.editor.nextChange"))
 
 -- misc
-vim.keymap.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
+k.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
 
 -- [[ VISUAL MODE ]]
 
 -- native
-vim.keymap.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
-vim.keymap.set("x", "<leader>sr", ac("actions.find"))
+k.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
+k.set("x", "<leader>sr", ac("actions.find"))
 
 -- move lines
-vim.keymap.set("v", "J", ":move '>+1<cr>gv") -- move selected lines down
-vim.keymap.set("v", "K", ":move '<-2<cr>gv") -- move selected lines up
+k.set("v", "J", ":move '>+1<cr>gv") -- move selected lines down
+k.set("v", "K", ":move '<-2<cr>gv") -- move selected lines up
