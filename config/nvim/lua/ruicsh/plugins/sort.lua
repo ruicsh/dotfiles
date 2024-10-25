@@ -3,9 +3,14 @@
 
 return {
 	"sQVe/sort.nvim",
-	keys = {
-		{ "<leader>ss", "<cmd>Sort<cr>", mode = "v" },
+	opts = {
+		delimiters = {
+			",",
+			"|",
+			";",
+			":",
+			"s", -- Space
+			"t", -- Tab
+		},
 	},
-	config = true,
 }
-

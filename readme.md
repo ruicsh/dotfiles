@@ -26,6 +26,18 @@
 
 - `<leader>fg` find in workspace
 - `<leader>sr` find in document
+- `s` jump to labelled search result
+- `S` jump to labelled treesiter node _(not vscode)_
+
+### Sorting
+
+- `<leader>so` sort selection
+- `<leader>so(` sort inside ()
+- `<leader>so[` sort inside []
+- `<leader>so{` sort inside {}
+- `<leader>so'` sort inside ''
+- `<leader>so`` sort inside ``
+- `<leader>so"` sort inside ""
 
 ### Commands
 
@@ -57,11 +69,6 @@
 - `ys` insert surrounding character
 - `cx` exchange text
 
-### Motions
-
-- `s` jump to labelled search result
-- `S` jump to labelled treesiter node _(not vscode)_
-
 ### Insert mode navigation
 
 - `<c-a>` go to beginning of line
@@ -92,7 +99,7 @@
 
 ### Git
 
-- `<leader>gg` open git changes
+- `<leader>gg` status
 - `<leader>gs` stage hunk
 - `<leader>gr` reset hunk
 - `<leader>gu` unstage hunk

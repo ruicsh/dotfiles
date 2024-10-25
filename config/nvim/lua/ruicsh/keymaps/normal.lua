@@ -11,6 +11,15 @@ vim.keymap.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
 -- git
 vim.keymap.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 
+-- sort
+vim.keymap.set("n", "<leader>so", "vi<esc><cmd>Sort<cr>", { desc = "Sort" })
+vim.keymap.set("n", "<leader>so(", "vi(<esc><cmd>Sort<cr>", { desc = "Sort: Inside [(]" })
+vim.keymap.set("n", "<leader>so[", "vi[<esc><cmd>Sort<cr>", { desc = "Sort: Inside [[]" })
+vim.keymap.set("n", "<leader>so{", "vi{<esc><cmd>Sort<cr>", { desc = "Sort: Inside [{]" })
+vim.keymap.set("n", "<leader>so'", "vi'<esc><cmd>Sort<cr>", { desc = "Sort: Inside [']" })
+vim.keymap.set("n", "<leader>so`", "vi`<esc><cmd>Sort<cr>", { desc = "Sort: Inside [`]" })
+vim.keymap.set("n", '<leader>so"', 'vi"<esc><cmd>Sort<cr>', { desc = 'Sort: Inside ["]' })
+
 -- center screen when moving
 vim.keymap.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
 vim.keymap.set("n", "<c-d>", "<c-d>zz") -- scrolling down (half page down)
