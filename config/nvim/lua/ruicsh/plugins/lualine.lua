@@ -3,8 +3,27 @@
 
 return {
 	"nvim-lualine/lualine.nvim",
-	config = true,
+	config = function()
+		local theme = require("lualine.themes.nord")
+		theme.normal.c.bg = ""
+		theme.inactive.c.bg = ""
 
+		require("lualine").setup({
+			options = {
+				theme = theme,
+			},
+			sections = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = { "filename" },
+				lualine_x = {},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
+			},
+		})
+	end,
+
+	event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	cond = function()
 		return not vim.g.vscode

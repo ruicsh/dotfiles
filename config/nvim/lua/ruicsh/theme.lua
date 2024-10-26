@@ -1,10 +1,10 @@
--- rasmus
--- https://github.com/kvrohit/rasmus.nvim
+-- nord
+-- https://github.com/shaunsingh/nord.nvim
 
 return {
-	"kvrohit/rasmus.nvim",
+	"shaunsingh/nord.nvim",
 	config = function()
-		vim.g.rasmus_transparent = true
-		vim.cmd.colorscheme("rasmus")
+		vim.g.nord_disable_background = true
+		vim.cmd.colorscheme("nord")
 	end,
 }

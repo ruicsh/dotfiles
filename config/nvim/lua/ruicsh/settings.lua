@@ -1,6 +1,6 @@
 vim.opt.backup = false -- do not create backup files
 vim.opt.cursorline = true -- highlight current line
-vim.opt.guifont = "JetBrainsMono Nerd Font:h12" -- font family and size
+vim.opt.guifont = "JetBrainsMono Nerd Font:h10" -- font family and size
 vim.opt.ignorecase = true -- ignore case on search patterns
 vim.opt.inccommand = "nosplit" -- show live preview of substitution
 vim.opt.linespace = 4 -- line height
