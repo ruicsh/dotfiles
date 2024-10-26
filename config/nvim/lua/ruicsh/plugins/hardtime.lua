@@ -3,11 +3,13 @@
 
 return {
 	"m4xshen/hardtime.nvim",
-	opts = {},
+	opts = {
+		notification = false,
+		force_exit_insert_mode = true,
+	},
 
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
 	},
 }
-
