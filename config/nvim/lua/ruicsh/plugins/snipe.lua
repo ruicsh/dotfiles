@@ -5,7 +5,7 @@ return {
 	"leath-dub/snipe.nvim",
 	keys = {
 		{
-			"<up><up>",
+			"§",
 			function()
 				require("snipe").open_buffer_menu()
 			end,
@@ -13,4 +13,8 @@ return {
 		},
 	},
 	opts = {},
+
+	cond = function()
+		return not vim.g.vscode
+	end,
 }

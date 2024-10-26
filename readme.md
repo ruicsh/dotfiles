@@ -20,7 +20,7 @@
 
 ### Files (buffers in neovim, tabs in vscode)
 
-- `<up><up>` list open files
+- `§` list open files
 - `<up>f` fuzzy find files
 - `<up>.` fuzzy find old files
 - `[b` previous open file
