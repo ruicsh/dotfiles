@@ -93,26 +93,24 @@
 
 ### LSP
 
-- `<leader>[r` go to previous reference
-- `<leader>]r` go to next reference
-- `<leader>cD` peek declaration
-- `<leader>cI` peek implementation
-- `<leader>cO` peek type definition
-- `<leader>cR` peek references
-- `<leader>cd` go to declaration
-- `<leader>cn` rename symbol
-- `<leader>co` go to type definition
-- `<leader>cr` list references
-- `<leader>cs` list symbols in document
-- `<leader>cw` list symbols in workspace
+- `K` display hover information for symbol
+- `gd` go to definition
+- `gi` go to implementation
+- `go` go to type definition
+- `gr` list references
+- `gs` list symbols in document
+- `gS` list symbols in workspace
+- `<f2>` rename symbol
+- `[r` go to previous reference
+- `]r` go to next reference
 
 ### LSP - TypeScript
 
-- `<leader>toi` organize imports
-- `<leader>tsi` sort imports
-- `<leader>tui` remove unused imports
-- `<leader>tcd` go to source definition
-- `<leader>trf` rename file and update changes to connected files _(not vscode)_
+- `<leader>to` organize imports
+- `<leader>ts` sort imports
+- `<leader>tu` remove unused imports
+- `<leader>td` go to source definition
+- `<leader>tr` rename file and update changes to connected files _(not vscode)_
 
 ### Git
 

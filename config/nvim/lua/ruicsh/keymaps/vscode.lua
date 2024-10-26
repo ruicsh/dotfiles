@@ -27,14 +27,6 @@ k.set("n", "<up>k", ac("workbench.action.openGlobalKeybindings"))
 k.set("n", "<up>K", ac("workbench.action.openGlobalKeybindingsFile"))
 k.set("n", "<up>n", ac("workbench.action.openGlobalSettings"))
 k.set("n", "<up>N", ac("workbench.action.openSettingsJson"))
-
--- lsp - typescript
-k.set("n", "<leader>toi", ac("editor.action.organizeImports"))
-k.set("n", "<leader>tsi", ac("typescript.sortImports"))
-k.set("n", "<leader>tui", ac("typescript.removeUnusedImports"))
-k.set("n", "<leader>tcd", ac("typescript.goToSourceDefinition"))
-k.set("n", "<leader>tcr", ac("typescript.findAllFileReferences"))
-
 -- search
 k.set("n", "<leader>sr", ac("actions.find"))
 k.set("n", "<up>g", ac("workbench.action.findInFiles"))
@@ -55,19 +47,20 @@ k.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
 k.set("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
 k.set("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
 
--- lsp
-k.set("n", "<leader>cD", ac("editor.action.peekDefinition"))
-k.set("n", "<leader>cI", ac("editor.action.peekImplementation"))
-k.set("n", "<leader>cO", ac("editor.action.peekTypeDefinition"))
-k.set("n", "<leader>cR", ac("editor.action.goToReferences"))
-k.set("n", "<leader>cd", ac("editor.action.revealDefinition"))
-k.set("n", "<leader>cn", ac("editor.action.rename"))
-k.set("n", "<leader>co", ac("editor.action.goToTypeDefinition"))
-k.set("n", "<leader>cr", ac("references-view.findReferences"))
-k.set("n", "<leader>cs", ac("workbench.action.gotoSymbol"))
-k.set("n", "<leader>cw", ac("workbench.action.showAllSymbols"))
+-- -- lsp
+k.set("n", "go", ac("editor.action.goToTypeDefinition"))
+k.set("n", "gr", ac("references-view.findReferences"))
+k.set("n", "gs", ac("workbench.action.gotoSymbol"))
+k.set("n", "gS", ac("workbench.action.showAllSymbols"))
 k.set("n", "[r", ac("editor.action.wordHighlight.prev"))
 k.set("n", "]r", ac("editor.action.wordHighlight.next"))
+k.set("n", "<f4>", ac("editor.action.refactor"))
+
+-- lsp - typescript
+k.set("n", "<leader>to", ac("editor.action.organizeImports"))
+k.set("n", "<leader>ts", ac("typescript.sortImports"))
+k.set("n", "<leader>tu", ac("typescript.removeUnusedImports"))
+k.set("n", "<leader>td", ac("typescript.goToSourceDefinition"))
 
 -- folds
 k.set("n", "za", ac("editor.toggleFold"))
