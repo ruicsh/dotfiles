@@ -6,22 +6,27 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
+				"angular",
 				"bash",
 				"css",
 				"diff",
 				"dockerfile",
+				"gitcommit",
 				"html",
 				"javascript",
-				"json",
 				"jsdoc",
+				"json",
 				"lua",
 				"luadoc",
 				"markdown",
-				"markdown_inline",
+				"powershell",
 				"regex",
+				"rust",
 				"scss",
+				"toml",
 				"tsx",
 				"typescript",
+				"yaml",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
@@ -29,6 +34,9 @@ return {
 				enable = true,
 			},
 			indent = {
+				enable = true,
+			},
+			auto_tag = {
 				enable = true,
 			},
 			incremental_selection = {
