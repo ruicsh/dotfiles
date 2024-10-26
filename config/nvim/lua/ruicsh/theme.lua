@@ -1,12 +1,10 @@
-return {
-	"shaunsingh/nord.nvim",
-	config = function()
-		vim.g.nord_disable_background = true
-		vim.cmd.colorscheme("nord")
-	end,
+-- rasmus
+-- https://github.com/kvrohit/rasmus.nvim
 
-	priority = 1000,
-	cond = function()
-		return not vim.g.vscode
+return {
+	"kvrohit/rasmus.nvim",
+	config = function()
+		vim.g.rasmus_transparent = true
+		vim.cmd.colorscheme("rasmus")
 	end,
 }
