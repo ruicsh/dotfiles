@@ -117,7 +117,7 @@ k.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
 -- [[ VISUAL MODE ]]
 
 -- native
-k.set("x", "<leader>so", ac("editor.action.sortLinesAscending"))
+k.set("x", "<leader>s", ac("editor.action.sortLinesAscending"))
 k.set("x", "<leader>sr", ac("actions.find"))
 
 -- move lines

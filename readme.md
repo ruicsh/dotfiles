@@ -71,13 +71,13 @@
 
 ### Sorting
 
-- `<leader>so(` sort inside ()
-- `<leader>so` sort selection
-- `<leader>so[` sort inside []
-- `<leader>so{` sort inside {}
-- `<leader>so'` sort inside ''
-- `<leader>so"` sort inside ""
-- `<leader>so}` sort paragraph
+- `<leader>s` sort selection
+- `<leader>s(` sort inside ()
+- `<leader>s[` sort inside []
+- `<leader>s{` sort inside {}
+- `<leader>s'` sort inside ''
+- `<leader>s"` sort inside ""
+- `<leader>s}` sort paragraph
 
 ### Text objects
 
