@@ -6,6 +6,7 @@ return {
 	opts = {
 		notification = false,
 		force_exit_insert_mode = true,
+		max_insert_idle_ms = 10000,
 	},
 
 	dependencies = {
