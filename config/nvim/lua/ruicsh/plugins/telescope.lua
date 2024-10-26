@@ -26,31 +26,31 @@ return {
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 
-		-- See `:help telescope.builtin`
+		-- see `:help telescope.builtin`
 		local k = vim.keymap
 		local builtin = require("telescope.builtin")
-		k.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-		k.set("n", "<leader><leader>", function()
-			builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
-		end, { desc = "Buffers" })
-		k.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
-		k.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
-		k.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-		k.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
-		k.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
-		k.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
-		k.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
-		k.set("n", "<leader>fs", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
-		k.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
+		k.set("n", "<up>.", builtin.oldfiles, { desc = 'Telescope: find recent files ("." for repeat)' })
+		-- k.set("n", "<up><up>", function()
+		-- 	builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
+		-- end, { desc = "Buffers" })
+		k.set("n", "<up>c", builtin.commands, { desc = "Telescope: [c]ommands" })
+		k.set("n", "<up>d", builtin.diagnostics, { desc = "Telescope: [d]iagnostics" })
+		k.set("n", "<up>f", builtin.find_files, { desc = "Telescope: [f]iles" })
+		k.set("n", "<up>g", builtin.live_grep, { desc = "Telescope: find word in workspace" })
+		k.set("n", "<up>h", builtin.help_tags, { desc = "Telescope: [h]elp" })
+		k.set("n", "<up>k", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
+		k.set("n", "<up>r", builtin.resume, { desc = "Telescope: [l]esume" })
+		k.set("n", "<up>t", builtin.builtin, { desc = "Telescope: select [t]elescope" })
+		k.set("n", "<up>w", builtin.grep_string, { desc = "Telescope: find current [w]ord" })
 
 		-- Slightly advanced example of overriding default behavior and theme
-		k.set("n", "<leader>/", function()
+		k.set("n", "<up>/", function()
 			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
 				previewer = false,
 			}))
-		end, { desc = "[/] Fuzzily search in current buffer" })
+		end, { desc = "Telescope: [/] Fuzzily search in current buffer" })
 
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -59,12 +59,12 @@ return {
 				grep_open_files = true,
 				prompt_title = "Live Grep in Open Files",
 			})
-		end, { desc = "[F]ind [/] in Open Files" })
+		end, { desc = "Telescope: [/] in Open Files" })
 
 		-- Shortcut for searching your Neovim configuration files
-		k.set("n", "<leader>fn", function()
+		k.set("n", "<up>n", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[F]ind [N]eovim files" })
+		end, { desc = "Telescope: [N]eovim files" })
 	end,
 
 	event = "VimEnter",

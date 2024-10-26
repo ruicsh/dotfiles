@@ -27,14 +27,12 @@ k.set("n", "<leader>tcd", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]y
 k.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
 
 -- sort
-k.set("n", "<leader>so", "vi<esc><cmd>Sort<cr>", { desc = "[So]rt" })
-k.set("n", "<leader>so(", "vi(<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [(]" })
-k.set("n", "<leader>so[", "vi[<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [[]" })
-k.set("n", "<leader>so{", "vi{<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [{]" })
-k.set("n", "<leader>so'", "vi'<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [']" })
-k.set("n", "<leader>so`", "vi`<esc><cmd>Sort<cr>", { desc = "[So]rt: Inside [`]" })
-k.set("n", '<leader>so"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
-k.set("n", "<leader>so}", "V}k<esc><cmd>Sort<cr>}", { desc = "[So]rt: Paragrah" })
+k.set("n", "<leader>s'", "vi'<esc><cmd>Sort<cr>", { desc = "[S]ort: Inside [']" })
+k.set("n", "<leader>s(", "vi(<esc><cmd>Sort<cr>", { desc = "[S]ort: Inside [(]" })
+k.set("n", "<leader>s[", "vi[<esc><cmd>Sort<cr>", { desc = "[S]ort: Inside [[]" })
+k.set("n", "<leader>s{", "vi{<esc><cmd>Sort<cr>", { desc = "[S]ort: Inside [{]" })
+k.set("n", "<leader>s}", "V}k<esc><cmd>Sort<cr>}", { desc = "[S]ort: Paragrah" })
+k.set("n", '<leader>s"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
 
 -- center screen when moving
 k.set("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)

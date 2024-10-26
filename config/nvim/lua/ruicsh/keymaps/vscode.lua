@@ -16,17 +16,17 @@ end
 -- native
 k.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 k.set("n", "<c-t>", ac("workbench.action.terminal.new"))
-k.set("n", "<leader>fc", ac("workbench.action.showCommands"))
+k.set("n", "<up>c", ac("workbench.action.showCommands"))
 
 -- explorer
 k.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
-k.set("n", "<leader>ff", ac("workbench.action.quickOpen"))
+k.set("n", "<up>f", ac("workbench.action.quickOpen"))
 
 -- settings
-k.set("n", "<leader>fk", ac("workbench.action.openGlobalKeybindings"))
-k.set("n", "<leader>fK", ac("workbench.action.openGlobalKeybindingsFile"))
-k.set("n", "<leader>fn", ac("workbench.action.openGlobalSettings"))
-k.set("n", "<leader>fN", ac("workbench.action.openSettingsJson"))
+k.set("n", "<up>k", ac("workbench.action.openGlobalKeybindings"))
+k.set("n", "<up>K", ac("workbench.action.openGlobalKeybindingsFile"))
+k.set("n", "<up>n", ac("workbench.action.openGlobalSettings"))
+k.set("n", "<up>N", ac("workbench.action.openSettingsJson"))
 
 -- lsp - typescript
 k.set("n", "<leader>toi", ac("editor.action.organizeImports"))
@@ -37,14 +37,14 @@ k.set("n", "<leader>tcr", ac("typescript.findAllFileReferences"))
 
 -- search
 k.set("n", "<leader>sr", ac("actions.find"))
-k.set("n", "<leader>fg", ac("workbench.action.findInFiles"))
+k.set("n", "<up>g", ac("workbench.action.findInFiles"))
 
 -- tabs
 k.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
 k.set("n", "]b", ac("workbench.action.nextEditorInGroup"))
 k.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
 k.set("n", "<s-tab>", ac("workbench.action.openNextRecentlyUsedEditor"))
-k.set("n", "<leader><leader>", ac("workbench.action.showAllEditors"))
+k.set("n", "<up><up>", ac("workbench.action.showAllEditors"))
 k.set("n", "<leader>bc", ac("workbench.action.closeActiveEditor"))
 k.set("n", "<leader>bC", ac("workbench.action.closeAllEditors"))
 k.set("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
@@ -117,7 +117,7 @@ k.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
 -- [[ VISUAL MODE ]]
 
 -- native
-k.set("x", "<leader>ss", ac("editor.action.sortLinesAscending"))
+k.set("x", "<leader>so", ac("editor.action.sortLinesAscending"))
 k.set("x", "<leader>sr", ac("actions.find"))
 
 -- move lines

@@ -4,7 +4,6 @@
 
 ### File explorer (oil in neovim, explorer in vscode)
 
-- `<leader>ff` list files
 - `[f` open previous file in current directory
 - `]f` open next file in current directory
 - `\` open explorer
@@ -21,11 +20,13 @@
 
 ### Files (buffers in neovim, tabs in vscode)
 
+- `<up><up>` list open files
+- `<up>f` fuzzy find files
+- `<up>.` fuzzy find old files
 - `[b` previous open file
 - `]b` next open file
 - `<tab>` open previous recently used file
 - `<s-tab>` open next recently used file
-- `<leader><leader>` list open files
 - `<leader>bc` close file
 - `<leader>bC` close all files
 - `<leader>bo` close the other files
@@ -61,20 +62,22 @@
 
 ### Search
 
-- `<leader>fg` find in workspace
+- `<up>g` find in workspace
+- `<up>w` find current word in workspace
+- `<up>r` resume last search
 - `<leader>sr` find in document
 - `s` jump to labelled search result
 - `S` jump to labelled treesiter node _(not vscode)_
 
 ### Sorting
 
-- `<leader>so` sort selection
 - `<leader>so(` sort inside ()
+- `<leader>so` sort selection
 - `<leader>so[` sort inside []
 - `<leader>so{` sort inside {}
 - `<leader>so'` sort inside ''
-- `<leader>so`` sort inside ``
 - `<leader>so"` sort inside ""
+- `<leader>so}` sort paragraph
 
 ### Text objects
 

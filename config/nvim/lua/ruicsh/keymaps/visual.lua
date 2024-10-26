@@ -5,7 +5,7 @@ k.set("v", "J", ":move '>+1<cr>gv=gv", { desc = "Move selected lines down" })
 k.set("v", "K", ":move '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- sort
-k.set("v", "<leader>so", "<esc><cmd>Sort<cr>", { desc = "Sort" })
+k.set("v", "<leader>s", "<esc><cmd>Sort<cr>", { desc = "[S]ort" })
 
 -- indent
 k.set("v", "<<", "<gv") -- keep visual selection after indenting
