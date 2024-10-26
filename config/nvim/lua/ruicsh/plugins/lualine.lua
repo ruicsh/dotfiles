@@ -5,8 +5,8 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		local theme = require("lualine.themes.nord")
-		theme.normal.c.bg = ""
-		theme.inactive.c.bg = ""
+		theme.normal.c.bg = "NONE"
+		theme.inactive.c.bg = "NONE"
 
 		require("lualine").setup({
 			options = {

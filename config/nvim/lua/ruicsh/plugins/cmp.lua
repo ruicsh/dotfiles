@@ -31,11 +31,8 @@ return {
 				["<c-b>"] = cmp.mapping.scroll_docs(-4),
 				["<c-f>"] = cmp.mapping.scroll_docs(4),
 
-				-- Accept ([y]es) the completion.
-				--  This will auto-import if your LSP supports it.
-				--  This will expand snippets if the LSP sent a snippet.
 				["<tab>"] = cmp.mapping.confirm({ select = true }),
-				["<enter>"] = cmp.mapping.confirm({ select = true }),
+				["<enter>"] = cmp.mapping.close(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display
