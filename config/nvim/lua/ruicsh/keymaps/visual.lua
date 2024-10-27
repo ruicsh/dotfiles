@@ -1,8 +1,8 @@
 local k = vim.keymap
 
--- move selected lines
-k.set("v", "J", ":move '>+1<cr>gv=gv", { desc = "Move selected lines down" })
-k.set("v", "K", ":move '<-2<cr>gv=gv", { desc = "Move selected lines up" })
+-- -- move selected lines
+-- k.set("v", "J", ":move '>+1<cr>gv=gv", { desc = "Move selected lines down" })
+-- k.set("v", "K", ":move '<-2<cr>gv=gv", { desc = "Move selected lines up" })
 
 -- sort
 k.set("v", "<leader>s", "<esc><cmd>Sort<cr>", { desc = "[S]ort" })

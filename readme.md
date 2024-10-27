@@ -4,8 +4,6 @@
 
 ### File explorer (oil in neovim, explorer in vscode)
 
-- `[f` open previous file in current directory
-- `]f` open next file in current directory
 - `\` open explorer
 - `<c-c>` close explorer
 - `<enter>` open entry
@@ -23,8 +21,8 @@
 - `§` list open files
 - `<up>f` fuzzy find files
 - `<up>.` fuzzy find old files
-- `[b` previous open file
-- `]b` next open file
+- `[b` previous opened file
+- `]b` next opened file
 - `<tab>` open previous recently used file
 - `<s-tab>` open next recently used file
 - `<leader>bc` close file
@@ -35,12 +33,10 @@
 ### Editing
 
 - `<c-a>` select all
-- `J` move selected lines above (visual-mode)
-- `K` move selected lines below (visual-mode)
 - `[<space>` add blank line above cursor
 - `]<space>` add blank line below cursor
-- `[e` move line above
-- `]e` move line below
+- `[e` move line/selection above
+- `]e` move line/selection below
 - `cs` change surrounding character
 - `ds` delete surrounding character
 - `ys` insert surrounding character

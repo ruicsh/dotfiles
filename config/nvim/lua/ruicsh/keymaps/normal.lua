@@ -7,8 +7,12 @@ k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
 k.set("n", "dw", 'vb"_d', { desc = "[d]elete [w]ord backwards" })
 k.set("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
 k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
+k.set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
+k.set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
 
 -- buffers
+k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Go to previous opened tab" })
+k.set("n", "]b", "<cmd>bnext<cr>", { desc = "Go to next opened tab" })
 k.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
 k.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
 k.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
