@@ -8,4 +8,3 @@ return {
 		return not vim.g.vscode
 	end,
 }
-
