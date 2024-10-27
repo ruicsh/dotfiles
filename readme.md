@@ -86,6 +86,8 @@
 - `q` quotes
 - `lq` last quote
 - `nq` next quote
+- `af` outer function
+- `if` inner function
 
 ### LSP
 
@@ -97,8 +99,6 @@
 - `gs` list symbols in document
 - `gS` list symbols in workspace
 - `<f2>` rename symbol
-- `[r` go to previous reference
-- `]r` go to next reference
 
 ### LSP - TypeScript
 
@@ -107,6 +107,27 @@
 - `<leader>tu` remove unused imports
 - `<leader>td` go to source definition
 - `<leader>tr` rename file and update changes to connected files _(not vscode)_
+
+### Syntax parser
+
+- `[a` go to previous argument start _(not vscode)_
+- `]a` go to next argument start _(not vscode)_
+- `[A` go to previous argument end _(not vscode)_
+- `]A` go to next argument end _(not vscode)_
+- `[d` go to previous block start _(not vscode)_
+- `]d` go to next block start _(not vscode)_
+- `[D` go to previous block end _(not vscode)_
+- `]D` go to next block end _(not vscode)_
+- `[f` go to previous function start _(not vscode)_
+- `]f` go to next function start _(not vscode)_
+- `[F` go to previous function end _(not vscode)_
+- `]F` go to next function end _(not vscode)_
+- `[n` increase node selection to parent node
+- `[n` start node selection
+- `]n` decrease node selection to child node 
+- `[r` go to previous symbol reference
+- `]r` go to next symbol reference
+- `[t` jump upwards to context _(not vscode)_
 
 ### Git
 

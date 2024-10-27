@@ -25,7 +25,15 @@ local conf_lsp_servers = function()
 		cssmodules_ls = {},
 		html = {},
 		jsonls = {},
-		lua_ls = {},
+		lua_ls = {
+			settings = {
+				Lua = {
+					diagnostics = {
+						disable = { "missing-parameters", "missing-fields" },
+					},
+				},
+			},
+		},
 		rust_analyzer = {},
 	}
 

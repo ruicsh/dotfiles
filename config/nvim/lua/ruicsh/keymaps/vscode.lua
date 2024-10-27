@@ -62,6 +62,10 @@ k.set("n", "<leader>ts", ac("typescript.sortImports"))
 k.set("n", "<leader>tu", ac("typescript.removeUnusedImports"))
 k.set("n", "<leader>td", ac("typescript.goToSourceDefinition"))
 
+-- syntax
+k.set({ "n", "x" }, "[n", ac("editor.action.smartSelect.expand"))
+k.set({ "n", "x" }, "]n", ac("editor.action.smartSelect.shrink"))
+
 -- folds
 k.set("n", "za", ac("editor.toggleFold"))
 k.set("n", "zA", ac("editor.toggleFoldRecursively"))

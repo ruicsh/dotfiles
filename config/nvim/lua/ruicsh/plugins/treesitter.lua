@@ -9,9 +9,15 @@ return {
 				"angular",
 				"bash",
 				"css",
+				"csv",
 				"diff",
 				"dockerfile",
+				"embedded_template",
+				"git_rebase",
+				"gitattributes",
 				"gitcommit",
+				"gitignore",
+				"graphql",
 				"html",
 				"javascript",
 				"jsdoc",
@@ -19,16 +25,21 @@ return {
 				"lua",
 				"luadoc",
 				"markdown",
+				"nginx",
 				"powershell",
+				"pug",
 				"regex",
 				"rust",
 				"scss",
+				"sql",
+				"styled",
 				"toml",
 				"tsx",
 				"typescript",
+				"vim",
 				"yaml",
 			},
-			-- Autoinstall languages that are not installed
+			-- autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
 				enable = true,
@@ -50,13 +61,38 @@ return {
 			},
 		},
 
-		main = "nvim-treesitter.configs", -- Sets main module to use for opts
-		event = { "BufReadPre", "BufNewFile" },
+		main = "nvim-treesitter.configs", -- sets main module to use for opts
+		event = { "bufreadpre", "bufnewfile" },
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"nvim-treesitter/nvim-treesitter-refactor",
 		},
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
+
+	{ -- syntax aware navigation
+		-- https://github.com/nvim-treesitter/nvim-treesitter-refactor
+		"nvim-treesitter/nvim-treesitter-refactor",
+		opts = {
+			refactor = {
+				navigation = {
+					enable = true,
+					keymaps = {
+						goto_definition = false,
+						list_definitions = false,
+						list_definitions_toc = false,
+						goto_next_usage = "]r",
+						goto_previous_usage = "[r",
+					},
+				},
+			},
+		},
+
+		main = "nvim-treesitter.configs",
+		lazy = true,
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -71,24 +107,46 @@ return {
 					enable = true,
 					lookahead = true,
 					keymaps = {
-						["am"] = {
+						["af"] = {
 							query = "@function.outer",
-							desc = "Select outer part of a method/function definition",
+							desc = "select outer part of a method/function definition",
 						},
-						["im"] = {
+						["if"] = {
 							query = "@function.inner",
-							desc = "Select inner part of a method/function definition",
+							desc = "select inner part of a method/function definition",
+						},
+						["aa"] = {
+							query = "@paramenter.outer",
+							desc = "select outer part of a argument/parameter",
+						},
+						["ia"] = {
+							query = "@paramenter.inner",
+							desc = "select inner part of a argument/parameter",
 						},
 					},
 				},
 				move = {
-					enabled = true,
+					enable = true,
 					set_jumps = false,
-					goto_next_start = {
-						["]m"] = { query = "@function.outer", desc = "Next method/function def start" },
-					},
 					goto_previous_start = {
-						["[m"] = { query = "@function.outer", desc = "Prev method/function def start" },
+						["[f"] = { query = "@function.outer", desc = "Previous method/function" },
+						["[a"] = { query = "@parameter.inner", desc = "Previous argument/parameter" },
+						["[d"] = { query = "@block.inner", desc = "Previous block" },
+					},
+					goto_previous_end = {
+						["[F"] = { query = "@function.outer", desc = "Previous method/function" },
+						["[A"] = { query = "@parameter.inner", desc = "Previous argument/parameter" },
+						["[D"] = { query = "@block.inner", desc = "Previous block" },
+					},
+					goto_next_start = {
+						["]f"] = { query = "@function.outer", desc = "Next method/function" },
+						["]a"] = { query = "@parameter.inner", desc = "Next argument/parameter" },
+						["]d"] = { query = "@block.inner", desc = "Next block" },
+					},
+					goto_next_end = {
+						["]F"] = { query = "@function.outer", desc = "Next method/function" },
+						["]A"] = { query = "@parameter.inner", desc = "Next argument/parameter" },
+						["]D"] = { query = "@block.inner", desc = "Next block" },
 					},
 				},
 			},
@@ -101,23 +159,36 @@ return {
 		end,
 	},
 
-	{ -- syntax aware navigation
-		-- https://github.com/nvim-treesitter/nvim-treesitter-refactor
-		"nvim-treesitter/nvim-treesitter-refactor",
-		opts = {
-			refactor = {
-				navigation = {
-					enable = true,
-					keymaps = {
-						goto_next_usage = "]r",
-						goto_previous_usage = "[r",
-					},
-				},
-			},
-		},
+	{
+		-- code context
+		-- https://github.com/nvim-treesitter/nvim-treesitter-context
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			vim.keymap.set("n", "[t", function()
+				local ctx = require("treesitter-context")
+				ctx.go_to_context(vim.v.count1)
+			end, { silent = true })
+		end,
 
-		main = "nvim-treesitter.configs",
-		lazy = true,
+		event = "VeryLazy",
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
+
+	{ -- auto-close/rename html tags
+		-- https://github.com/windwp/nvim-ts-autotag
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({
+				opts = {
+					enable_close = true, -- Auto close tags
+					enable_rename = true, -- Auto rename pairs of tags
+					enable_close_on_slash = true, -- Auto close on trailing </
+				},
+			})
+		end,
+
 		cond = function()
 			return not vim.g.vscode
 		end,
