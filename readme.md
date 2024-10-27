@@ -62,6 +62,8 @@
 - `]<space>` add blank line below cursor
 - `[e` move line/selection above
 - `]e` move line/selection below
+- `[p` paste to new line above
+- `]p` paste to new line below
 - `cs` change surrounding character
 - `ds` delete surrounding character
 - `ys` insert surrounding character
@@ -74,8 +76,8 @@
 - `<c-d>` delete character in front of cursor
 - `<c-e>` go to end of line
 - `<c-f>` move forward one character
-- `<c-n>` jump to line below
-- `<c-p>` jump to line above
+- `<c-j>` jump to line below
+- `<c-k>` jump to line above
 - `<c-r>` paste from clipboard
 - `<c-u>` delete before the cursor in current line
 - `<c-w>` delete word before
