@@ -2,25 +2,50 @@
 
 ## NeoVim/VSCode keybindings
 
-### File explorer (oil in neovim, explorer in vscode)
+### Files explorer
 
-- `\` open explorer
-- `<c-c>` close explorer
-- `<enter>` open entry
-- `<c-o>` open entry in horizonal split
+- `\` toggle tree explorer
+- `-` open directory explorer
+- `<up>f` fuzzy find files
+- `<up>.` fuzzy find recent files
+
+### Tree explorer
+
+- `<enter>` open 
+- `<c-v>` open file to the side 
+- `a` add
+- `r` rename
+- `c` duplicate
+- `y` copy
+- `h` collapse directory
+- `l` open file or expand directory
+- `d` delete
+- `x` cut
+- `p` paste
+- `L` expand all _(not vscode)_
+- `H` collapse all
+- `I` toggle filter: gitignore _(not vscode)_
+- `q` close explorer
+- `[c` previous git change _(not vscode)_
+- `]c` next git change _(not vscode)_
+- `<` previous source _(not vscode)_
+- `>` next source _(not vscode)_
+
+### Directory explorer _(not vscode)_
+
+- `<enter>` open 
 - `<c-v>` open entry in vertical split
-- `<c-p>` preview entry
+- `<c-p>` preview 
 - `-` open parent directory
 - `_` open current working directory (root)
 - `gs` change sort
 - `g.` toggle hidden
 - `g\` toggle trash
+- `q` close explorer
 
-### Files (buffers in neovim, tabs in vscode)
+### Opened files 
 
 - `§` list open files
-- `<up>f` fuzzy find files
-- `<up>.` fuzzy find old files
 - `[b` previous opened file
 - `]b` next opened file
 - `<tab>` open previous recently used file
@@ -107,7 +132,7 @@
 - `<leader>td` go to source definition
 - `<leader>tr` rename file and update changes to connected files _(not vscode)_
 
-### Syntax 
+### Syntax _(not vscode)_
 
 - `[a` go to previous argument start _(not vscode)_
 - `]a` go to next argument start _(not vscode)_
@@ -143,7 +168,7 @@
 - `[c` previous change
 - `]c` next change
 
-### Splits (views in vscode, windows in neovim)
+### Splits 
 
 - `|` switch splits
 - `<c-w><` decrease split width

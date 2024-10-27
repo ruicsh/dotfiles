@@ -27,11 +27,12 @@ k.set("n", "<up>k", ac("workbench.action.openGlobalKeybindings"))
 k.set("n", "<up>K", ac("workbench.action.openGlobalKeybindingsFile"))
 k.set("n", "<up>n", ac("workbench.action.openGlobalSettings"))
 k.set("n", "<up>N", ac("workbench.action.openSettingsJson"))
+
 -- search
 k.set("n", "<leader>sr", ac("actions.find"))
 k.set("n", "<up>g", ac("workbench.action.findInFiles"))
 
--- tabs
+-- opened files
 k.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
 k.set("n", "]b", ac("workbench.action.nextEditorInGroup"))
 k.set("n", "<tab>", ac("workbench.action.openPreviousRecentlyUsedEditor"))
@@ -47,7 +48,7 @@ k.set("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
 k.set("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
 k.set("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
 
--- -- lsp
+-- lsp
 k.set("n", "go", ac("editor.action.goToTypeDefinition"))
 k.set("n", "gr", ac("references-view.findReferences"))
 k.set("n", "gs", ac("workbench.action.gotoSymbol"))

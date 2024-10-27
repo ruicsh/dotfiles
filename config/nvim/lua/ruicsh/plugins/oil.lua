@@ -4,7 +4,7 @@
 return {
 	"stevearc/oil.nvim",
 	keys = {
-		{ "\\", "<cmd>Oil<cr>", desc = "Open parent directory" },
+		{ "-", "<cmd>Oil<cr>", desc = "Oil: Open parent directory" },
 	},
 	opts = {
 		default_file_explorer = true,
@@ -16,16 +16,16 @@ return {
 			["<c-v>"] = {
 				"actions.select",
 				opts = { vertical = true },
-				desc = "Open the entry in a vertical split",
+				desc = "Oil: Open the entry in a vertical split",
 			},
 			["<c-o>"] = {
 				"actions.select",
 				opts = { horizontal = true },
-				desc = "Open the entry in a horizontal split",
+				desc = "Oil: Open the entry in a horizontal split",
 			},
-			["<c-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
+			["<c-t>"] = { "actions.select", opts = { tab = true }, desc = "Oil: Open the entry in new tab" },
 			["<c-p>"] = "actions.preview",
-			["<c-c>"] = "actions.close",
+			["q"] = "actions.close",
 			["<c-l>"] = "actions.refresh",
 			["-"] = "actions.parent",
 			["_"] = "actions.open_cwd",
@@ -33,7 +33,7 @@ return {
 			["~"] = {
 				"actions.cd",
 				opts = { scope = "tab" },
-				desc = ":tcd to the current oil directory",
+				desc = "Oil: :tcd to the current oil directory",
 				mode = "n",
 			},
 			["gs"] = "actions.change_sort",
@@ -48,7 +48,7 @@ return {
 
 	cmd = "Oil",
 	dependencies = {
-		{ "echasnovski/mini.icons", opts = {} },
+		{ "nvim-tree/nvim-web-devicons" },
 	},
 	cond = function()
 		return not vim.g.vscode

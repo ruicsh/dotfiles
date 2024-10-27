@@ -22,7 +22,7 @@ vim.opt.termguicolors = true -- enable true colors
 vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
 vim.opt.wrap = false -- do not automatically wrap text
 
--- disable netrw in favor of oil
+-- disable netrw in favor of nvim-tree/oil
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

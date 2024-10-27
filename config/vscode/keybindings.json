@@ -20,11 +20,6 @@
     "when": "editorTextFocus && neovim.mode == 'insert'"
   },
   {
-    "key": "\\",
-    "command": "vsnetrw.open",
-    "when": "editorTextFocus && neovim.mode == 'normal'"
-  },
-  {
     "key": "tab",
     "command": "search.action.focusSearchList",
     "when": "searchViewletVisible && searchViewletFocus && !inputFocus"
@@ -68,5 +63,15 @@
     "key": "] c",
     "command": "workbench.action.compareEditor.nextChange",
     "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus && !treeFindOpen"
   }
 ]
