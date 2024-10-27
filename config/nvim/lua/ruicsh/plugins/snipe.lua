@@ -12,6 +12,9 @@ return {
 					border = "rounded",
 				},
 			},
+			navigate = {
+				cancel_snipe = "<c-q>",
+			},
 		})
 
 		vim.keymap.set("n", "§", snipe.open_buffer_menu, { desc = "Open list of opened files" })

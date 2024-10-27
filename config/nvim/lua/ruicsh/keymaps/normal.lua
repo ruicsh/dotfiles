@@ -54,6 +54,7 @@ k.set("n", "|", "<c-w>w", { desc = "Splits: Switch" })
 k.set("n", "<c-w>|", "<c-w>v", { desc = "Splits: Open vertical" })
 k.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Splits: Move file to the left" })
 k.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Splits: Move file to the right" })
+k.set("n", "<c-q>", "<c-w>q", { desc = "Splits: Close" })
 
 -- registers
 k.set("n", "C", '"_C') -- change to end of line without putting it into register

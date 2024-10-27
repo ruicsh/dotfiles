@@ -4,17 +4,20 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	config = function()
-		-- See `:help telescope` and `:help telescope.setup()`
-		require("telescope").setup({
-			-- You can put your default mappings / updates / etc. in here
-			--  All the info you're looking for is in `:help telescope.setup()`
-			--
-			-- defaults = {
-			--   mappings = {
-			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-			--   },
-			-- },
-			-- pickers = {}
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+
+		telescope.setup({
+			defaults = {
+				mappings = {
+					i = {
+						["<c-q>"] = actions.close,
+					},
+				},
+				file_ignore_patterns = {
+					"node_modules",
+				},
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
@@ -23,16 +26,13 @@ return {
 		})
 
 		-- Enable Telescope extensions if they are installed
-		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "ui-select")
+		pcall(telescope.load_extension, "fzf")
+		pcall(telescope.load_extension, "ui-select")
 
 		-- see `:help telescope.builtin`
 		local k = vim.keymap
 		local builtin = require("telescope.builtin")
 		k.set("n", "<up>.", builtin.oldfiles, { desc = 'Telescope: find recent files ("." for repeat)' })
-		-- k.set("n", "<up><up>", function()
-		-- 	builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
-		-- end, { desc = "Buffers" })
 		k.set("n", "<up>c", builtin.commands, { desc = "Telescope: [c]ommands" })
 		k.set("n", "<up>d", builtin.diagnostics, { desc = "Telescope: [d]iagnostics" })
 		k.set("n", "<up>f", builtin.find_files, { desc = "Telescope: [f]iles" })
@@ -85,8 +85,6 @@ return {
 			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
-
-		-- Useful for getting pretty icons, but requires a Nerd Font.
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 	},
 	cond = function()

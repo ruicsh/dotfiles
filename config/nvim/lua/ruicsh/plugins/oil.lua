@@ -25,7 +25,7 @@ return {
 			},
 			["<c-t>"] = { "actions.select", opts = { tab = true }, desc = "Oil: Open the entry in new tab" },
 			["<c-p>"] = "actions.preview",
-			["q"] = "actions.close",
+			["<c-q>"] = "actions.close",
 			["<c-l>"] = "actions.refresh",
 			["-"] = "actions.parent",
 			["_"] = "actions.open_cwd",

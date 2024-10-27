@@ -18,6 +18,7 @@ return {
 				["l"] = { "open", desc = "Explorer: Open file or expand directory" },
 				["H"] = { "close_all_nodes", desc = "Explorer: Collapse all" },
 				["L"] = { "expand_all_nodes", desc = "Explorer: Expand all" },
+				["<c-q>"] = { "close_window", desc = "Explorer: Quit" },
 			},
 		},
 		filesystem = {

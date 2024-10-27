@@ -25,7 +25,7 @@
 - `L` expand all _(not vscode)_
 - `H` collapse all
 - `I` toggle filter: gitignore _(not vscode)_
-- `q` close explorer
+- `<c-q>` close explorer
 - `[c` previous git change _(not vscode)_
 - `]c` next git change _(not vscode)_
 - `<` previous source _(not vscode)_
@@ -41,7 +41,7 @@
 - `gs` change sort
 - `g.` toggle hidden
 - `g\` toggle trash
-- `q` close explorer
+- `<c-q>` close explorer
 
 ### Opened files 
 
@@ -176,7 +176,7 @@
 - `<c-w>[` move file to split on the left
 - `<c-w>]` move file to split on the right
 - `<c-w>m` maximize split
-- `<c-w>q` quit split
+- `<c-q>` quit split
 - `<c-w>v` split vertically
 
 ### Folds
