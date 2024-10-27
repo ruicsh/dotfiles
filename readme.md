@@ -40,7 +40,6 @@
 - `cs` change surrounding character
 - `ds` delete surrounding character
 - `ys` insert surrounding character
-- `dw` backwards delete word
 - `cx` exchange text
 
 ### Insert mode navigation
@@ -108,7 +107,7 @@
 - `<leader>td` go to source definition
 - `<leader>tr` rename file and update changes to connected files _(not vscode)_
 
-### Syntax parser
+### Syntax 
 
 - `[a` go to previous argument start _(not vscode)_
 - `]a` go to next argument start _(not vscode)_
@@ -137,10 +136,12 @@
 - `<leader>gu` unstage hunk
 - `<leader>gS` stage file
 - `<leader>gR` reset file
-- `<leader>gB` blame file
+- `<leader>gb` blame hunk
 - `<leader>gp` preview change
-- `<leader>[c` previous change
-- `<leader>]c` next change
+- `<leader>gd` open diff
+- `<leader>gt` toggle deleted
+- `[c` previous change
+- `]c` next change
 
 ### Splits (views in vscode, windows in neovim)
 

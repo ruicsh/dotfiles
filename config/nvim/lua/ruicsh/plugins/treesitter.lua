@@ -109,19 +109,19 @@ return {
 					keymaps = {
 						["af"] = {
 							query = "@function.outer",
-							desc = "select outer part of a method/function definition",
+							desc = "Syntax: Select [a] [f]unction",
 						},
 						["if"] = {
 							query = "@function.inner",
-							desc = "select inner part of a method/function definition",
+							desc = "Syntax: Select [i]nner [f]unction",
 						},
 						["aa"] = {
 							query = "@paramenter.outer",
-							desc = "select outer part of a argument/parameter",
+							desc = "Syntax: Select [a] [a]rgument",
 						},
 						["ia"] = {
 							query = "@paramenter.inner",
-							desc = "select inner part of a argument/parameter",
+							desc = "Syntax: Select [i]nner [a]rgument",
 						},
 					},
 				},
@@ -129,24 +129,24 @@ return {
 					enable = true,
 					set_jumps = false,
 					goto_previous_start = {
-						["[f"] = { query = "@function.outer", desc = "Previous method/function" },
-						["[a"] = { query = "@parameter.inner", desc = "Previous argument/parameter" },
-						["[d"] = { query = "@block.inner", desc = "Previous block" },
+						["[f"] = { query = "@function.outer", desc = "Syntax: Previous [f]unction" },
+						["[a"] = { query = "@parameter.inner", desc = "Syntax: Previous [a]rgument" },
+						["[d"] = { query = "@block.inner", desc = "Syntax: Previous block" },
 					},
 					goto_previous_end = {
-						["[F"] = { query = "@function.outer", desc = "Previous method/function" },
-						["[A"] = { query = "@parameter.inner", desc = "Previous argument/parameter" },
-						["[D"] = { query = "@block.inner", desc = "Previous block" },
+						["[F"] = { query = "@function.outer", desc = "Syntax: Previous [f]unction" },
+						["[A"] = { query = "@parameter.inner", desc = "Syntax: Previous [a]rgument" },
+						["[D"] = { query = "@block.inner", desc = "Syntax: Previous block" },
 					},
 					goto_next_start = {
-						["]f"] = { query = "@function.outer", desc = "Next method/function" },
-						["]a"] = { query = "@parameter.inner", desc = "Next argument/parameter" },
-						["]d"] = { query = "@block.inner", desc = "Next block" },
+						["]f"] = { query = "@function.outer", desc = "Syntax: Next [f]unction" },
+						["]a"] = { query = "@parameter.inner", desc = "Syntax: Next [a]rgument" },
+						["]d"] = { query = "@block.inner", desc = "Syntax: Next block" },
 					},
 					goto_next_end = {
-						["]F"] = { query = "@function.outer", desc = "Next method/function" },
-						["]A"] = { query = "@parameter.inner", desc = "Next argument/parameter" },
-						["]D"] = { query = "@block.inner", desc = "Next block" },
+						["]F"] = { query = "@function.outer", desc = "Syntax: Next [f]unction" },
+						["]A"] = { query = "@parameter.inner", desc = "Syntax: Next [a]rgument" },
+						["]D"] = { query = "@block.inner", desc = "Syntax: Next block" },
 					},
 				},
 			},
@@ -167,7 +167,7 @@ return {
 			vim.keymap.set("n", "[t", function()
 				local ctx = require("treesitter-context")
 				ctx.go_to_context(vim.v.count1)
-			end, { silent = true })
+			end, { silent = true, desc = "Syntax: Jump to con[t]ext" })
 		end,
 
 		event = "VeryLazy",

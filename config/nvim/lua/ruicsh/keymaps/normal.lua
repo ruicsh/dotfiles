@@ -1,34 +1,35 @@
 local k = vim.keymap
 
--- save
+-- save/quit/exit
 k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
+k.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quick quit" })
+k.set("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quick exit" })
 
 -- editing
-k.set("n", "dw", 'vb"_d', { desc = "[d]elete [w]ord backwards" })
 k.set("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
 k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 k.set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 k.set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
 
 -- buffers
-k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Go to previous opened tab" })
-k.set("n", "]b", "<cmd>bnext<cr>", { desc = "Go to next opened tab" })
-k.set("n", "<tab>", "<c-^>", { desc = "Go back to previous visited tab" })
-k.set("n", "<s-tab>", "<c-^>", { desc = "Go back to previous visited tab" }) -- for compatibility with vscode
-k.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Close all tabs" })
-k.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Close tab" })
-k.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Close all other tabs" })
-k.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Exit tab" })
+k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Buffers: Go to previous" })
+k.set("n", "]b", "<cmd>bnext<cr>", { desc = "Buffers: Go to next" })
+k.set("n", "<tab>", "<c-^>", { desc = "Buffers: Go to previous visited" })
+k.set("n", "<s-tab>", "<c-^>", { desc = "Buffers: Go to previous visited" }) -- for compatibility with vscode
+k.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Buffers: Close all" })
+k.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Buffers: Close" })
+k.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Buffers: Close all other" })
+k.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Buffers: Exit" })
 
 -- git
 k.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 
 -- lsp - typescript
-k.set("n", "<leader>toi", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize [i]mports" })
-k.set("n", "<leader>tsi", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort [i]mports" })
-k.set("n", "<leader>tui", "<cmd>TSToolsRemoveUnusedImports<cr>", { desc = "[T]ypeScript: Remove [u]nused [i]mports" })
-k.set("n", "<leader>tcd", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]ypeScript: Go to source [d]efinition" })
-k.set("n", "<leader>trf", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
+k.set("n", "<leader>to", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize imports" })
+k.set("n", "<leader>ts", "<cmd>TSToolsSortImports<cr>", { desc = "[T]ypeScript: [s]ort imports" })
+k.set("n", "<leader>tu", "<cmd>TSToolsRemoveUnusedImports<cr>", { desc = "[T]ypeScript: Remove [u]nused imports" })
+k.set("n", "<leader>td", "<cmd>TSToolsGoToSourceDefinition<cr>", { desc = "[T]ypeScript: Go to source [d]efinition" })
+k.set("n", "<leader>tr", "<cmd>TSToolsRenameFile<cr>", { desc = "[T]ypeScript: [r]ename [f]ile" })
 
 -- sort
 k.set("n", "<leader>s'", "vi'<esc><cmd>Sort<cr>", { desc = "[S]ort: Inside [']" })
@@ -49,9 +50,10 @@ k.set("n", "N", "Nzz") -- center screen when moving to previous match
 k.set("n", "n", "Nzz") -- center screen when moving to next match
 
 -- splits
-k.set("n", "|", "<c-w>w", { desc = "Switch splits" })
-k.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Move file to split on the left" })
-k.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Move file to split on the right" })
+k.set("n", "|", "<c-w>w", { desc = "Splits: Switch" })
+k.set("n", "<c-w>|", "<c-w>v", { desc = "Splits: Open vertical" })
+k.set("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Splits: Move file to the left" })
+k.set("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Splits: Move file to the right" })
 
 -- registers
 k.set("n", "C", '"_C') -- change to end of line without putting it into register
@@ -64,7 +66,7 @@ k.set("n", "X", '"_X') -- don't yank on delete char before cursor
 k.set("n", "zk", "zk%^") -- jump to start of previous fold
 
 -- alternate file (projectionist)
-k.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Open [A]lternate file" })
+k.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate file" })
 
 -- misc
 k.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist

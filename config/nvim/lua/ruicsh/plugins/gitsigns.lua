@@ -36,7 +36,7 @@ return {
 				else
 					gitsigns.nav_hunk("next")
 				end
-			end, { desc = "git: Jump to next [c]hange" })
+			end, { desc = "Git: Jump to next [c]hange" })
 
 			map("n", "[c", function()
 				if vim.wo.diff then
@@ -44,12 +44,11 @@ return {
 				else
 					gitsigns.nav_hunk("prev")
 				end
-			end, { desc = "git: Jump to previous [c]hange" })
+			end, { desc = "Git: Jump to previous [c]hange" })
 
 			-- Actions
 			map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "Git: [s]tage hunk" })
 			map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Git: [r]eset hunk" })
-			map("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Git: [u]nstage hunk" })
 			map("v", "<leader>gs", function()
 				gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, { desc = "Git: [s]tage hunk" })
@@ -57,9 +56,12 @@ return {
 				gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, { desc = "Git: [r]eset hunk" })
 			map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Git: [S]tage file" })
+			map("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Git: [u]nstage hunk" })
 			map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
 			map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git: [p]review hunk" })
 			map("n", "<leader>gb", gitsigns.blame_line, { desc = "Git: toggle [b]lame" })
+			map("n", "<leader>gd", gitsigns.diffthis, { desc = "Git: [d]iff hunk" })
+			map("n", "<leader>gt", gitsigns.toggle_deleted, { desc = "Git: [t]oggle deleted" })
 
 			-- Text object
 			map({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>")
