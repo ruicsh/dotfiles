@@ -10,8 +10,8 @@ k.set("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
 k.set("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 k.set("n", "[<space>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>", { desc = "Put empty line above" })
 k.set("n", "]<space>", "<cmd>call append(line('.'),     repeat([''], v:count1))<cr>", { desc = "Put empty line below" })
-k.set("n", "[p", "<cmd>pu!<cr>", { desc = "Paste on new line above" })
-k.set("n", "]p", "<cmd>pu<cr>", { desc = "Paste on new line below" })
+k.set("n", "[p", "<cmd>pu!<cr>==", { desc = "Paste on new line above" })
+k.set("n", "]p", "<cmd>pu<cr>==", { desc = "Paste on new line below" })
 
 -- buffers
 k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Buffers: Go to previous" })
