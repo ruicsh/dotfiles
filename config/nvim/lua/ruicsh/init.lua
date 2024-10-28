@@ -1,4 +1,5 @@
 require("ruicsh.settings")
+require("ruicsh.commands")
 
 require("ruicsh/keymaps/leader")
 require("ruicsh/keymaps/normal")
