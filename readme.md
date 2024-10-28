@@ -70,6 +70,7 @@
 - `ys` insert surrounding character
 - `cx` exchange text
 - `U` redo
+- `<leader>j` syntax aware join lines
 
 ### Insert mode navigation
 
