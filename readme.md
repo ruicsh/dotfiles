@@ -220,6 +220,13 @@
 - `<c-o>` jump to older position
 - `<c-i>` jump to newer position
 
+### Session management _(not vscode)_
+
+- `<leader>qs` load session for workspace
+- `<leader>qS` pick sessions
+- `<leader>ql` load last session
+- `<leader>qd` stop saving session
+
 ### Application
 
 - `<leader>nn` show notifications history _(only neovim)_
