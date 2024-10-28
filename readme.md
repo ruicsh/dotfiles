@@ -58,6 +58,7 @@
 ### Editing
 
 - `<c-a>` select all
+- `<c-l>` jump to end of line
 - `[<space>` add blank line above cursor
 - `]<space>` add blank line below cursor
 - `[e` move line/selection above
@@ -68,6 +69,7 @@
 - `ds` delete surrounding character
 - `ys` insert surrounding character
 - `cx` exchange text
+- `U` redo
 
 ### Insert mode navigation
 

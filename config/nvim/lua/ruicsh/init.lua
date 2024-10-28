@@ -20,9 +20,25 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	ui = {
+		border = "rounded",
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"netrwPlugin",
+				"rplugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+	change_detection = { notify = false },
 	spec = {
 		{ import = "ruicsh.plugins" },
 		{ import = "ruicsh/theme" },
 	},
-	change_detection = { notify = false },
 })

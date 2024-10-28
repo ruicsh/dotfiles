@@ -12,6 +12,7 @@ k.set("n", "[<space>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<
 k.set("n", "]<space>", "<cmd>call append(line('.'),     repeat([''], v:count1))<cr>", { desc = "Put empty line below" })
 k.set("n", "[p", "<cmd>pu!<cr>==", { desc = "Paste on new line above" })
 k.set("n", "]p", "<cmd>pu<cr>==", { desc = "Paste on new line below" })
+k.set("n", "U", "<C-r>", { desc = "Redo" })
 
 -- buffers
 k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Buffers: Go to previous" })
