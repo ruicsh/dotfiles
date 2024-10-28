@@ -77,3 +77,4 @@ k.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on j
 k.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 k.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
 k.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines
+k.set("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open classic terminal" }) -- instead of using ToggleTerm
