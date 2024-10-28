@@ -75,5 +75,4 @@ k.set("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate 
 k.set("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 k.set("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
 k.set("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
-k.set("n", "<c-t>", "<cmd>terminal<cr>", { desc = "Open Terminal" })
 k.set("n", "J", "mzJ`z") -- keep cursor in place when joining lines
