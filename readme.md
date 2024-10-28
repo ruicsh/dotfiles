@@ -202,20 +202,23 @@
 
 ### Harpoon
 
-- `<leader>1` go to file 1
-- `<leader>2` go to file 2
-- `<leader>3` go to file 3
-- `<leader>4` go to file 4
-- `<leader>5` go to file 5
-- `<leader>6` go to file 6
-- `<leader>7` go to file 7
-- `<leader>8` go to file 8
-- `<leader>9` go to file 9
-- `<leader>ha` add file
-- `<leader>hh` list files
-- `<leader>hn` next file
-- `<leader>hp` previous file
-- `<leader>hr` remove file
+- `§1` go to file 1
+- `§2` go to file 2
+- `§3` go to file 3
+- `§4` go to file 4
+- `§5` go to file 5
+- `§6` go to file 6
+- `§7` go to file 7
+- `§8` go to file 8
+- `§9` go to file 9
+- `[§` go to previous pinned
+- `]§` go to next pinned
+
+### Jumplist
+
+- `<leader>j` show jumplist
+- `<c-o>` jump to older position
+- `<c-i>` jump to newer position
 
 ### VSCode
 
