@@ -28,6 +28,7 @@ return {
 		-- Enable Telescope extensions if they are installed
 		pcall(telescope.load_extension, "fzf")
 		pcall(telescope.load_extension, "ui-select")
+		pcall(telescope.load_extension, "advanced_git_search")
 
 		-- see `:help telescope.builtin`
 		local k = vim.keymap
@@ -86,6 +87,7 @@ return {
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		{ "aaronhallaert/advanced-git-search.nvim", cmd = { "AdvancedGitSearch" } },
 	},
 	cond = function()
 		return not vim.g.vscode

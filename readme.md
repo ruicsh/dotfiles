@@ -158,6 +158,7 @@
 ### Git
 
 - `<leader>gg` status
+- `<leader>gh` search
 - `<leader>gs` stage hunk
 - `<leader>gr` reset hunk
 - `<leader>gu` unstage hunk

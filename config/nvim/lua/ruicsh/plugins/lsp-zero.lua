@@ -7,13 +7,21 @@ local set_keymaps = function(event)
 
 	local telescope = require("telescope.builtin")
 
+	local lsp_symbols = { "method", "function", "class" }
+	local function lsp_document_symbols()
+		telescope.lsp_document_symbols({ symbols = lsp_symbols })
+	end
+	local function lsp_workspace_symbols()
+		telescope.lsp_workspace_symbols({ symbols = lsp_symbols })
+	end
+
 	map("K", "<cmd>lua vim.lsp.buf.hover()<cr>", "LSP: Display hover for symbol")
 	map("gd", telescope.lsp_definitions, "LSP: Jump to [d]efinition")
 	map("gi", telescope.lsp_implementations, "LSP: Jump to [i]mplementation")
 	map("go", telescope.lsp_type_definitions, "LSP: Jump to type definition")
 	map("gr", telescope.lsp_references, "LSP: List [r]eferences")
-	map("gs", telescope.lsp_document_symbols, "LSP: Document [s]ymbols")
-	map("gS", telescope.lsp_workspace_symbols, "LSP: Workspace [S]ymbols")
+	map("gs", lsp_document_symbols, "LSP: Document [s]ymbols")
+	map("gS", lsp_workspace_symbols, "LSP: Workspace [S]ymbols")
 	map("<f2>", vim.lsp.buf.rename, "LSP: Rename symbol")
 end
 
