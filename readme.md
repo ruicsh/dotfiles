@@ -220,9 +220,10 @@
 - `<c-o>` jump to older position
 - `<c-i>` jump to newer position
 
-### VSCode
+### Application
 
-- `<leader>vb` toggle sidebar visibility
+- `<leader>nn` show notifications history _(only neovim)_
+- `<leader>vb` toggle sidebar visibility _(only vscode)_
 
 ## macOS keybindings
 

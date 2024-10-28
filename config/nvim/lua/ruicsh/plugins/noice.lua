@@ -3,6 +3,16 @@
 
 return {
 	"folke/noice.nvim",
+	keys = function()
+		local noice = require("noice")
+		local show_history = function()
+			noice.cmd("pick")
+		end
+
+		return {
+			{ "<leader>nn", show_history, { desc = "Noice: Show history" } },
+		}
+	end,
 	opts = {
 		notify = {
 			enabled = false,
