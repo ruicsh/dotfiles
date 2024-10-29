@@ -90,16 +90,17 @@
 - `s` jump to labelled search result
 - `S` jump to labelled treesiter node _(not vscode)_
 - `<leader>f` find in workspace
-- `<leader><s-f>` find current word in workspace
+- `<leader>F` find current word in workspace
 - `<leader><c-f>` find in open files
 - `<leader>tr` resume last search
-- `<leader>sr` search and replace in document
+- `<leader>ss` search and replace 
+- `<leader>sw` search and replace current word
 - `<leader>/` fuzzy find in document
 - `<leader>ts` select fuzzy finder to use _(only neovim)_
 
 ### Sorting
 
-- `<leader>s` sort selection
+- `<leader>so` sort selection
 - `<leader>s(` sort inside ()
 - `<leader>s[` sort inside []
 - `<leader>s{` sort inside {}

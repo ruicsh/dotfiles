@@ -29,8 +29,8 @@ k.set("n", "<leader>n,", ac("workbench.action.openGlobalSettings"))
 k.set("n", "<leader>n<", ac("workbench.action.openSettingsJson"))
 
 -- search
-k.set("n", "<leader>sr", ac("actions.find"))
-k.set("n", "<leader>f", ac("workbench.action.findInFiles"))
+k.set("n", "<leader>fr", ac("actions.find"))
+k.set("n", "<leader>s", ac("workbench.action.findInFiles"))
 
 -- opened files
 k.set("n", "[b", ac("workbench.action.previousEditorInGroup"))

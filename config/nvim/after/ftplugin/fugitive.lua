@@ -1,1 +1,4 @@
-vim.api.nvim_buf_set_keymap(0, "n", "<c-q>", "<plug>fugitive:gq", { noremap = true })
+local k = vim.keymap.set
+
+-- quit with <c-q>
+k("n", "<c-q>", "<plug>fugitive:gq", { noremap = true })
