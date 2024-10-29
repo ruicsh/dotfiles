@@ -9,6 +9,8 @@ require("ruicsh/keymaps/terminal")
 require("ruicsh/keymaps/command")
 require("ruicsh/keymaps/vscode")
 
+require("ruicsh/theme")
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -40,6 +42,5 @@ require("lazy").setup({
 	change_detection = { notify = false },
 	spec = {
 		{ import = "ruicsh.plugins" },
-		{ import = "ruicsh/theme" },
 	},
 })
