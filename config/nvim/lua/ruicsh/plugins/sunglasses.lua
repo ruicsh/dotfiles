@@ -1,3 +1,6 @@
+-- dim unfocused windows
+-- https://github.com/miversen33/sunglasses.nvim
+
 return {
 	"miversen33/sunglasses.nvim",
 	opts = {
