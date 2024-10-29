@@ -6,8 +6,8 @@
 
 - `\` toggle tree explorer
 - `-` open directory explorer
-- `<up>f` fuzzy find files
-- `<up>.` fuzzy find recent files
+- `<leader>f` fuzzy find files
+- `<leader>,` fuzzy find recent files
 
 ### Tree explorer
 
@@ -87,12 +87,15 @@
 
 ### Search
 
-- `<up>g` find in workspace
-- `<up>w` find current word in workspace
-- `<up>r` resume last search
-- `<leader>sr` find in document
 - `s` jump to labelled search result
 - `S` jump to labelled treesiter node _(not vscode)_
+- `<leader>f` find in workspace
+- `<leader><s-f>` find current word in workspace
+- `<leader><c-f>` find in open files
+- `<leader>tr` resume last search
+- `<leader>sr` search and replace in document
+- `<leader>/` fuzzy find in document
+- `<leader>ts` select fuzzy finder to use _(only neovim)_
 
 ### Sorting
 
@@ -201,7 +204,7 @@
 - `zk` go to previous fold
 - `zj` go to next fold
 
-### Harpoon
+### Pinned tabs
 
 - `§1` go to file 1
 - `§2` go to file 2
@@ -230,7 +233,13 @@
 
 ### Application
 
+- `<leader>n,` search configuration / open settings
+- `<leader>n<` open settings (JSON) _(only vscode)_
 - `<leader>nn` show notifications history _(only neovim)_
+- `<leader>nc` show commands
+- `<leader>nh` help
+- `<leader>nk` keyboard shortcuts
+- `<leader>nK` keyboard shortcuts (JSON) _(only vscode)_
 - `<leader>vb` toggle sidebar visibility _(only vscode)_
 
 ## macOS keybindings

@@ -16,21 +16,21 @@ end
 -- native
 k.set("n", "<leader>vb", ac("workbench.action.toggleSidebarVisibility"))
 k.set("n", "<c-t>", ac("workbench.action.terminal.new"))
-k.set("n", "<up>c", ac("workbench.action.showCommands"))
+k.set("n", "<leader>nc", ac("workbench.action.showCommands"))
 
 -- explorer
 k.set("n", "\\", ac("workbench.files.action.focusFilesExplorer"))
-k.set("n", "<up>f", ac("workbench.action.quickOpen"))
+k.set("n", "<leader><leader>", ac("workbench.action.quickOpen"))
 
 -- settings
-k.set("n", "<up>k", ac("workbench.action.openGlobalKeybindings"))
-k.set("n", "<up>K", ac("workbench.action.openGlobalKeybindingsFile"))
-k.set("n", "<up>n", ac("workbench.action.openGlobalSettings"))
-k.set("n", "<up>N", ac("workbench.action.openSettingsJson"))
+k.set("n", "<leader>nk", ac("workbench.action.openGlobalKeybindings"))
+k.set("n", "<leader>nK", ac("workbench.action.openGlobalKeybindingsFile"))
+k.set("n", "<leader>n,", ac("workbench.action.openGlobalSettings"))
+k.set("n", "<leader>n<", ac("workbench.action.openSettingsJson"))
 
 -- search
 k.set("n", "<leader>sr", ac("actions.find"))
-k.set("n", "<up>g", ac("workbench.action.findInFiles"))
+k.set("n", "<leader>f", ac("workbench.action.findInFiles"))
 
 -- opened files
 k.set("n", "[b", ac("workbench.action.previousEditorInGroup"))
@@ -80,16 +80,16 @@ k.set("n", "[z", ac("editor.gotoParentFold"))
 k.set("n", "zk", ac("editor.gotoPreviousFold"))
 k.set("n", "zj", ac("editor.gotoNextFold"))
 
--- harpoon
-k.set("n", "<leader>1", ac("vscode-harpoon.gotoEditor1"))
-k.set("n", "<leader>2", ac("vscode-harpoon.gotoEditor2"))
-k.set("n", "<leader>3", ac("vscode-harpoon.gotoEditor3"))
-k.set("n", "<leader>4", ac("vscode-harpoon.gotoEditor4"))
-k.set("n", "<leader>5", ac("vscode-harpoon.gotoEditor5"))
-k.set("n", "<leader>6", ac("vscode-harpoon.gotoEditor6"))
-k.set("n", "<leader>7", ac("vscode-harpoon.gotoEditor7"))
-k.set("n", "<leader>8", ac("vscode-harpoon.gotoEditor8"))
-k.set("n", "<leader>9", ac("vscode-harpoon.gotoEditor9"))
+-- pinned tabs
+k.set("n", "§1", ac("vscode-harpoon.gotoEditor1"))
+k.set("n", "$2", ac("vscode-harpoon.gotoEditor2"))
+k.set("n", "$3", ac("vscode-harpoon.gotoEditor3"))
+k.set("n", "$4", ac("vscode-harpoon.gotoEditor4"))
+k.set("n", "$5", ac("vscode-harpoon.gotoEditor5"))
+k.set("n", "$6", ac("vscode-harpoon.gotoEditor6"))
+k.set("n", "$7", ac("vscode-harpoon.gotoEditor7"))
+k.set("n", "$8", ac("vscode-harpoon.gotoEditor8"))
+k.set("n", "$9", ac("vscode-harpoon.gotoEditor9"))
 k.set("n", "<leader>ha", ac("vscode-harpoon.addEditor"))
 k.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"))
 k.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))

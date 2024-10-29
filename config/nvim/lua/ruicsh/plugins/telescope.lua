@@ -33,19 +33,18 @@ return {
 		-- see `:help telescope.builtin`
 		local k = vim.keymap
 		local builtin = require("telescope.builtin")
-		k.set("n", "<up>.", builtin.oldfiles, { desc = 'Telescope: find recent files ("." for repeat)' })
-		k.set("n", "<up>c", builtin.commands, { desc = "Telescope: [c]ommands" })
-		k.set("n", "<up>d", builtin.diagnostics, { desc = "Telescope: [d]iagnostics" })
-		k.set("n", "<up>f", builtin.find_files, { desc = "Telescope: [f]iles" })
-		k.set("n", "<up>g", builtin.live_grep, { desc = "Telescope: find word in workspace" })
-		k.set("n", "<up>h", builtin.help_tags, { desc = "Telescope: [h]elp" })
-		k.set("n", "<up>k", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
-		k.set("n", "<up>r", builtin.resume, { desc = "Telescope: [l]esume" })
-		k.set("n", "<up>t", builtin.builtin, { desc = "Telescope: select [t]elescope" })
-		k.set("n", "<up>w", builtin.grep_string, { desc = "Telescope: find current [w]ord" })
+		k.set("n", "<leader>,", builtin.oldfiles, { desc = "Telescope: find recent files)" })
+		k.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope: Files" })
+		k.set("n", "<leader>f", builtin.live_grep, { desc = "Telescope: [f]inde word in workspace" })
+		k.set("n", "<leader><s-f>", builtin.grep_string, { desc = "Telescope: Find current word" })
+		k.set("n", "<leader>.", builtin.resume, { desc = "Telescope: Resume last search" })
+		k.set("n", "<leader>nc", builtin.commands, { desc = "Telescope: [c]ommands" })
+		k.set("n", "<leader>nh", builtin.help_tags, { desc = "Telescope: [h]elp" })
+		k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
+		k.set("n", "<leader>ts", builtin.builtin, { desc = "Telescope: select [t]elescope" })
 
 		-- Slightly advanced example of overriding default behavior and theme
-		k.set("n", "<up>/", function()
+		k.set("n", "<leader>/", function()
 			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
@@ -55,7 +54,7 @@ return {
 
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys
-		k.set("n", "<leader>f/", function()
+		k.set("n", "<leader><c-f>", function()
 			builtin.live_grep({
 				grep_open_files = true,
 				prompt_title = "Live Grep in Open Files",
@@ -63,7 +62,7 @@ return {
 		end, { desc = "Telescope: [/] in Open Files" })
 
 		-- Shortcut for searching your Neovim configuration files
-		k.set("n", "<up>n", function()
+		k.set("n", "<leader>n,", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "Telescope: [N]eovim files" })
 	end,
