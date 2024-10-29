@@ -48,8 +48,8 @@
 - `§` list open files
 - `[b` previous opened file
 - `]b` next opened file
-- `<tab>` open previous recently used file
-- `<s-tab>` open next recently used file
+- `<bs>` open previous recently used file
+- `<s-bs>` open next recently used file
 - `<leader>bc` close file
 - `<leader>bC` close all files
 - `<leader>bo` close the other files

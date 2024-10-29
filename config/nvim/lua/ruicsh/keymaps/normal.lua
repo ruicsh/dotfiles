@@ -17,8 +17,8 @@ k.set("n", "U", "<C-r>", { desc = "Redo" })
 -- buffers
 k.set("n", "[b", "<cmd>bprev<cr>", { desc = "Buffers: Go to previous" })
 k.set("n", "]b", "<cmd>bnext<cr>", { desc = "Buffers: Go to next" })
-k.set("n", "<tab>", "<c-^>", { desc = "Buffers: Go to previous visited" })
-k.set("n", "<s-tab>", "<c-^>", { desc = "Buffers: Go to previous visited" }) -- for compatibility with vscode
+k.set("n", "<bs>", "<c-^>", { desc = "Buffers: Go to previous visited" })
+k.set("n", "<s-bs>", "<c-^>", { desc = "Buffers: Go to previous visited" }) -- for compatibility with vscode
 k.set("n", "<leader>bC", "<cmd>bufdo Bdelete<cr>", { desc = "Buffers: Close all" })
 k.set("n", "<leader>bc", "<cmd>Bdelete<cr>", { desc = "Buffers: Close" })
 k.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Buffers: Close all other" })
