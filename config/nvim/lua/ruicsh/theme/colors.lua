@@ -16,6 +16,7 @@ local colors = {
 	nord13 = "#ebcb8B",
 	nord14 = "#a3be8C",
 	nord15 = "#b48eaD",
+	stone1 = "#171717"
 }
 
 return colors

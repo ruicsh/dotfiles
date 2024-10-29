@@ -29,7 +29,7 @@ _.loadColorSet({
 	ModeMsg = { fg = c.nord4 },
 	MoreMsg = { fg = c.nord4 },
 	NonText = { fg = c.nord1 },
-	Normal = { fg = c.nord4, bg = "NONE" },
+	Normal = { fg = c.nord4, bg = c.stone1 },
 	NormalFloat = { fg = c.nord4, bg = "NONE" },
 	NormalMode = { fg = c.nord4, bg = "NONE", style = "reverse" },
 	Pmenu = { fg = c.nord4, bg = c.nord2 },
