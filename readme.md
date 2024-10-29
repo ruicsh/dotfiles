@@ -93,8 +93,7 @@
 - `<leader>F` find current word in workspace
 - `<leader><c-f>` find in open files
 - `<leader>tr` resume last search
-- `<leader>ss` search and replace 
-- `<leader>sw` search and replace current word
+- `<leader>sr` search and replace current word
 - `<leader>/` fuzzy find in document
 - `<leader>ts` select fuzzy finder to use _(only neovim)_
 

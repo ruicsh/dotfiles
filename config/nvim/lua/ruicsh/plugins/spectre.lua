@@ -5,20 +5,15 @@ return {
 	"nvim-pack/nvim-spectre",
 	keys = {
 		{
-			"<leader>ss",
-			"<esc><cmd>lua require('spectre').toggle()<cr>",
-			{ desc = "[s]earch and replace" },
-		},
-		{
-			"<leader>sw",
+			"<leader>sr",
 			"<cmd>lua require('spectre').open_file_search({ select_word = true })<cr>",
-			{ desc = "[s]earch current [w]ord" },
+			{ desc = "[s]earch and [r]eplace current word" },
 		},
 		{
-			"<leader>sw",
+			"<leader>sr",
 			"<esc><cmd>lua require('spectre').open_file_search()<cr>",
 			mode = { "v" },
-			{ desc = "[s]earch current [w]ord" },
+			{ desc = "[s]earch and [r]eplace current word" },
 		},
 	},
 	opts = {},
