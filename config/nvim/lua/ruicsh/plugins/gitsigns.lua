@@ -60,7 +60,6 @@ return {
 			map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
 			map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git: [p]review hunk" })
 			map("n", "<leader>gb", gitsigns.blame_line, { desc = "Git: toggle [b]lame" })
-			map("n", "<leader>gd", gitsigns.diffthis, { desc = "Git: [d]iff hunk" })
 			map("n", "<leader>gt", gitsigns.toggle_deleted, { desc = "Git: [t]oggle deleted" })
 
 			-- Text object

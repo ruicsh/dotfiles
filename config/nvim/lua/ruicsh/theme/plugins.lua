@@ -12,7 +12,7 @@ _.loadColorSet({
 	GitSignsDelete = { fg = c.nord11 },
 	GitSignsDeleteNr = { fg = c.nord11 },
 	GitSignsDeleteLn = { fg = c.nord11 },
-	GitSignsCurrentLineBlame = { fg = c.nord3_1, style = "bold" },
+	GitSignsCurrentLineBlame = { fg = c.nord3_500, style = "bold" },
 })
 
 -- Fugitive

@@ -5,7 +5,7 @@ _.loadColorSet({
 	["@attribute"] = { fg = c.nord7 },
 	["@boolean"] = { fg = c.nord9 },
 	["@character"] = { fg = c.nord14 },
-	["@comment"] = { fg = c.nord3_1 },
+	["@comment"] = { fg = c.nord3_500 },
 	["@conditional"] = { fg = c.nord9 },
 	["@constant"] = { fg = c.nord13 },
 	["@constant.builtin"] = { fg = c.nord7 },

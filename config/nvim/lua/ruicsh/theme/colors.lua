@@ -3,7 +3,7 @@ local colors = {
 	nord1 = "#3b4252",
 	nord2 = "#434c5e",
 	nord3 = "#4c566a",
-	nord3_1 = "#616e88",
+	nord3_500 = "#616e88",
 	nord4 = "#d8dee9",
 	nord5 = "#e5e9f0",
 	nord6 = "#eceff4",
@@ -12,11 +12,13 @@ local colors = {
 	nord9 = "#81a1c1",
 	nord10 = "#5e81aC",
 	nord11 = "#bf616A",
+	nord11_900 = "#3c181c",
 	nord12 = "#d08770",
 	nord13 = "#ebcb8B",
 	nord14 = "#a3be8C",
 	nord15 = "#b48eaD",
-	stone1 = "#171717"
+	neutral_900 = "#171717",
+	neutral_800 = "#262626",
 }
 
 return colors
