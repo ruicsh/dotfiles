@@ -80,10 +80,13 @@ local conf_autocomplete = function()
 		mapping = cmp.mapping.preset.insert({
 			-- `Enter` key to confirm completion
 			["<cr>"] = cmp.mapping.confirm({ select = false }),
-
 			-- trigger completion menu when cursor is inside a word
 			["<tab>"] = cmp_action.tab_complete(),
 			["<s-tab>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
+			["<c-j>"] = cmp.mapping.select_next_item(),
+			["<c-k>"] = cmp.mapping.select_prev_item(),
+			["<c-l>"] = cmp.mapping.confirm({ select = true }),
+			["<c-h>"] = cmp_action.toggle_completion({ modes = { "i" } }),
 		}),
 		preselect = "item",
 		completion = {

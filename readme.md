@@ -140,6 +140,16 @@
 - `<leader>td` go to source definition
 - `<leader>tr` rename file and update changes to connected files _(not vscode)_
 
+### Autocomplete
+
+- `<cr>` accept
+- `<tab>` go to next entry
+- `<s-tab>` go to previous entry
+- `<c-j>` go to next entry
+- `<c-k>` go to previous entry
+- `<c-l>` accept
+- `<c-h>` close
+
 ### Syntax _(not vscode)_
 
 - `[a` go to previous argument start _(not vscode)_
