@@ -5,6 +5,7 @@ local colors = {
 	nord3 = "#4c566a",
 	nord3_500 = "#616e88",
 	nord4 = "#d8dee9",
+	nord4_900 = "#b7c2d7",
 	nord5 = "#e5e9f0",
 	nord6 = "#eceff4",
 	nord7 = "#8fbcbb",

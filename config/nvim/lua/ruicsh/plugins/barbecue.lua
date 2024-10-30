@@ -8,10 +8,11 @@ return {
 	name = "barbecue",
 	opts = {
 		theme = {
-			normal = { fg = c.nord4 },
-			ellipsis = { fg = c.nord4 },
-			separator = { fg = c.nord4 },
-			dirname = { fg = c.nord4 },
+			normal = { fg = c.nord4_900 },
+			ellipsis = { fg = c.nord4_900 },
+			separator = { fg = c.nord4_900 },
+			basename = { fg = c.nord4 },
+			dirname = { fg = c.nord4_900 },
 		},
 	},
 
