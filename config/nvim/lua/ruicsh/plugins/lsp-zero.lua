@@ -20,8 +20,8 @@ local set_keymaps = function(event)
 	map("gi", telescope.lsp_implementations, "LSP: Jump to [i]mplementation")
 	map("go", telescope.lsp_type_definitions, "LSP: Jump to type definition")
 	map("gr", telescope.lsp_references, "LSP: List [r]eferences")
-	map("gs", lsp_document_symbols, "LSP: Document [s]ymbols")
-	map("gS", lsp_workspace_symbols, "LSP: Workspace [S]ymbols")
+	map("gy", lsp_document_symbols, "LSP: Document s[y]mbols")
+	map("gY", lsp_workspace_symbols, "LSP: Workspace s[Y]mbols")
 	map("<f2>", vim.lsp.buf.rename, "LSP: Rename symbol")
 end
 

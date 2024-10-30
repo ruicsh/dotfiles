@@ -3,7 +3,16 @@
 
 return {
 	"stevearc/aerial.nvim",
+	keys = {
+		{ "<leader>gy", "<cmd>AerialToggle!<cr>", { desc = "Aerial: Toggle" } },
+	},
 	opts = {
+		layout = {
+			placement = "edge",
+			resize_to_content = false,
+			width = 20,
+		},
+		attach_mode = "global",
 		on_attach = function(bufnr)
 			-- Jump forwards/backwards with '{' and '}'
 			vim.keymap.set("n", "{", "<cmd>AerialPrev<cr>", { buffer = bufnr, desc = "Jump to previous symbol" })
@@ -15,6 +24,7 @@ return {
 		},
 	},
 
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-tree/nvim-web-devicons",
