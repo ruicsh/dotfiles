@@ -74,6 +74,7 @@ k("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate file
 -- misc
 k("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
 k("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
-k("n", "<cr>", "<cmd>noh<cr><cr>", { silent = true }) -- remove search highlighting
+-- this remap also removes the default behavior of going down a line with <cr>
+k("n", "<cr>", "<cmd>noh<cr>", { silent = true }) -- remove search highlighting
 k("n", "J", "mzJ`z") -- keep cursor in place when joining lines
 k("n", "<c-\\>", "<cmd>terminal<cr>", { desc = "Open classic terminal" }) -- instead of using ToggleTerm

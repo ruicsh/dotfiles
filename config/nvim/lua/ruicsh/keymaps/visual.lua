@@ -15,4 +15,5 @@ k("v", "p", '"_dp') -- paste over currently selected text without yanking it
 k("v", "x", '"_x') -- don't yank on delete char under cursor
 
 -- misc
-k("v", "<cr>", ":noh<cr><cr>") -- remove search highlighting
+-- this remap also removes the default behavior of going down a line with <cr>
+k("v", "<cr>", "<cmd>noh<cr>") -- remove search highlighting
