@@ -36,13 +36,14 @@ return {
 					vim.wo.cursorline = true -- enable cursorline
 					vim.opt_local.foldenable = true -- enable folding
 				end,
-				view_enter = function()
+				view_enter = function(view)
 					vim.cmd(":SunglassesDisable") -- unshade all windows
 					vim.cmd(":Barbecue hide") -- hide breadcrumbs
 
+					local bufnr = view.buffer
 					-- keymaps set only for this buffer
-					vim.keymap.set("n", "<c-q>", "<cmd>DiffviewClose<cr>", { buffer = 0 }) -- use <c-q> to close,
-					vim.keymap.set("n", "cc", "<cmd>DiffviewClose<cr><cmd>vertical Git commit<cr>", { buffer = 0 }) -- use cc to commit
+					vim.keymap.set("n", "<c-q>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-q> to close,
+					vim.keymap.set("n", "cc", "<cmd>DiffviewClose<cr><cmd>vertical Git commit<cr>", { buffer = bufnr }) -- use cc to commit
 				end,
 				view_leave = function()
 					vim.cmd(":SunglassesEnable") -- bring back the shades

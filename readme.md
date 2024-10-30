@@ -189,6 +189,14 @@
 - `[c` previous change
 - `]c` next change
 
+### Diffview
+
+- `{` open diff for previous file 
+- `}` open diff for next file
+- `cc` commit
+- `s` stage file
+- `X` reset file
+
 ### Splits 
 
 - `|` switch splits
