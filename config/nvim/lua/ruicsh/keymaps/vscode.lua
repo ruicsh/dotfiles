@@ -90,22 +90,21 @@ k.set("n", "$6", ac("vscode-harpoon.gotoEditor6"))
 k.set("n", "$7", ac("vscode-harpoon.gotoEditor7"))
 k.set("n", "$8", ac("vscode-harpoon.gotoEditor8"))
 k.set("n", "$9", ac("vscode-harpoon.gotoEditor9"))
-k.set("n", "<leader>ha", ac("vscode-harpoon.addEditor"))
-k.set("n", "<leader>hh", ac("vscode-harpoon.editEditors"))
-k.set("n", "<leader>hn", ac("vscode-harpoon.navigateNextEditor"))
-k.set("n", "<leader>hp", ac("vscode-harpoon.navigatePreviousEditor"))
+k.set("n", "<leader>ja", ac("vscode-harpoon.addEditor"))
+k.set("n", "<leader>jh", ac("vscode-harpoon.editEditors"))
+k.set("n", "<leader>jn", ac("vscode-harpoon.navigateNextEditor"))
+k.set("n", "<leader>jp", ac("vscode-harpoon.navigatePreviousEditor"))
 
 -- git
-k.set({ "n", "x" }, "<leader>gg", ac("workbench.view.scm"))
--- k.set({ "n", "x" }, "<leader>gg", ac("fugitive.open")) -- while fugitive isn't ready
-k.set({ "n", "x" }, "<leader>gs", ac("git.stageSelectedRanges"))
-k.set({ "n", "x" }, "<leader>gu", ac("git.unstageSelectedRanges"))
-k.set({ "n", "x" }, "<leader>gr", ac("git.revertSelectedRanges"))
-k.set("n", "<leader>gS", ac("git.stage"))
-k.set("n", "<leader>gU", ac("git.unstage"))
-k.set("n", "<leader>gR", ac("workbench.action.files.revert"))
-k.set("n", "<leader>gb", ac("gitlens.toggleFileBlame"))
-k.set("n", "<leader>gp", ac("git.openChange"))
+k.set({ "n", "x" }, "<leader>dd", ac("workbench.view.scm"))
+k.set({ "n", "x" }, "<leader>ds", ac("git.stageSelectedRanges"))
+k.set({ "n", "x" }, "<leader>du", ac("git.unstageSelectedRanges"))
+k.set({ "n", "x" }, "<leader>dr", ac("git.revertSelectedRanges"))
+k.set("n", "<leader>dS", ac("git.stage"))
+k.set("n", "<leader>dU", ac("git.unstage"))
+k.set("n", "<leader>dR", ac("workbench.action.files.revert"))
+k.set("n", "<leader>db", ac("gitlens.toggleFileBlame"))
+k.set("n", "<leader>dp", ac("git.openChange"))
 k.set("n", "[c", ac("workbench.action.editor.previousChange"))
 k.set("n", "]c", ac("workbench.action.editor.nextChange"))
 
@@ -115,5 +114,5 @@ k.set("n", "<leader>a", "<nop>") -- while projectionist doesn't work on vscode
 -- [[ VISUAL MODE ]]
 
 -- native
-k.set("x", "<leader>s", ac("editor.action.sortLinesAscending"))
+k.set("x", "<leader>so", ac("editor.action.sortLinesAscending"))
 k.set("x", "<leader>sr", ac("actions.find"))

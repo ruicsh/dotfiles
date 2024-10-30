@@ -4,7 +4,7 @@
 return {
 	"sindrets/diffview.nvim",
 	keys = {
-		{ "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
+		{ "<leader>df", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
 	},
 	config = function()
 		local diffview = require("diffview")

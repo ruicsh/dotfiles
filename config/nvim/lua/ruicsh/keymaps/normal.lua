@@ -24,8 +24,8 @@ k.set("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Buffers: Close all other
 k.set("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Buffers: Exit" })
 
 -- git
-k.set("n", "<leader>gg", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
-k.set("n", "<leader>gh", "<cmd>AdvancedGitSearch<cr>", { desc = "Git: Find" })
+k.set("n", "<leader>dd", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
+k.set("n", "<leader>df", "<cmd>AdvancedGitSearch<cr>", { desc = "Git: Find" })
 
 -- lsp - typescript
 k.set("n", "<leader>to", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize imports" })

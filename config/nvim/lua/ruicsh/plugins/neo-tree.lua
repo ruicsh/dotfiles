@@ -5,7 +5,6 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	keys = {
 		{ "\\", "<cmd>Neotree toggle reveal<cr>" },
-		{ "<leader>gf", "<cmd>Neotree source=git_status<cr>" },
 	},
 	opts = {
 		close_if_last_window = true,
