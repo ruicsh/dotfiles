@@ -19,10 +19,6 @@ return {
 				["H"] = { "close_all_nodes", desc = "Explorer: Collapse all" },
 				["L"] = { "expand_all_nodes", desc = "Explorer: Expand all" },
 				["<c-q>"] = { "close_window", desc = "Explorer: Quit" },
-			},
-		},
-		filesystem = {
-			mappings = {
 				["[c"] = { "prev_git_modified", desc = "Explorer: Previous git change" },
 				["]c"] = { "next_git_modified", desc = "Explorer: Next git change" },
 			},
