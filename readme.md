@@ -74,10 +74,10 @@
 
 ### Insert mode navigation
 
-- `<c-a>` go to beginning of line
+- `<c-a>` jump to beginning of line
 - `<c-b>` go backwards one character
 - `<c-d>` delete character in front of cursor
-- `<c-e>` go to end of line
+- `<c-e>` jump to end of line
 - `<c-f>` move forward one character
 - `<c-j>` jump to line below
 - `<c-k>` jump to line above
@@ -124,9 +124,9 @@
 ### LSP
 
 - `K` display hover information for symbol
-- `gd` go to definition
-- `gi` go to implementation
-- `go` go to type definition
+- `gd` jump to definition
+- `gi` jump to implementation
+- `go` jump to type definition
 - `gr` list references
 - `gs` list symbols in document
 - `gS` list symbols in workspace
@@ -137,38 +137,40 @@
 - `<leader>to` organize imports
 - `<leader>ts` sort imports
 - `<leader>tu` remove unused imports
-- `<leader>td` go to source definition
+- `<leader>td` jump to source definition
 - `<leader>tr` rename file and update changes to connected files _(not vscode)_
 
 ### Autocomplete
 
 - `<cr>` accept
-- `<tab>` go to next entry
-- `<s-tab>` go to previous entry
-- `<c-j>` go to next entry
-- `<c-k>` go to previous entry
+- `<tab>` jump to next entry
+- `<s-tab>` jump to previous entry
+- `<c-j>` jump to next entry
+- `<c-k>` jump to previous entry
 - `<c-l>` accept
 - `<c-h>` close
 
 ### Syntax _(not vscode)_
 
-- `[a` go to previous argument start _(not vscode)_
-- `]a` go to next argument start _(not vscode)_
-- `[A` go to previous argument end _(not vscode)_
-- `]A` go to next argument end _(not vscode)_
-- `[d` go to previous block start _(not vscode)_
-- `]d` go to next block start _(not vscode)_
-- `[D` go to previous block end _(not vscode)_
-- `]D` go to next block end _(not vscode)_
-- `[f` go to previous function start _(not vscode)_
-- `]f` go to next function start _(not vscode)_
-- `[F` go to previous function end _(not vscode)_
-- `]F` go to next function end _(not vscode)_
+- `{` jump to previous symbol
+- `}` jumtp next symbol
+- `[a` jump to previous argument start _(not vscode)_
+- `]a` jump to next argument start _(not vscode)_
+- `[A` jump to previous argument end _(not vscode)_
+- `]A` jump to next argument end _(not vscode)_
+- `[d` jump to previous block start _(not vscode)_
+- `]d` jump to next block start _(not vscode)_
+- `[D` jump to previous block end _(not vscode)_
+- `]D` jump to next block end _(not vscode)_
+- `[f` jump to previous function start _(not vscode)_
+- `]f` jump to next function start _(not vscode)_
+- `[F` jump to previous function end _(not vscode)_
+- `]F` jump to next function end _(not vscode)_
 - `[n` increase node selection to parent node
 - `[n` start node selection
 - `]n` decrease node selection to child node 
-- `[r` go to previous symbol reference
-- `]r` go to next symbol reference
+- `[r` jump to previous symbol reference
+- `]r` jump to next symbol reference
 - `[t` jump upwards to context _(not vscode)_
 
 ### Git
@@ -210,23 +212,23 @@
 - `zC` close current fold recursively
 - `za` toggle fold
 - `zA` toggle fold recursively
-- `[z` go to parent fold
-- `zk` go to previous fold
-- `zj` go to next fold
+- `[z` jump to parent fold
+- `zk` jump to previous fold
+- `zj` jump to next fold
 
 ### Pinned tabs
 
-- `§1` go to file 1
-- `§2` go to file 2
-- `§3` go to file 3
-- `§4` go to file 4
-- `§5` go to file 5
-- `§6` go to file 6
-- `§7` go to file 7
-- `§8` go to file 8
-- `§9` go to file 9
-- `[§` go to previous pinned
-- `]§` go to next pinned
+- `§1` jump to file 1
+- `§2` jump to file 2
+- `§3` jump to file 3
+- `§4` jump to file 4
+- `§5` jump to file 5
+- `§6` jump to file 6
+- `§7` jump to file 7
+- `§8` jump to file 8
+- `§9` jump to file 9
+- `[§` jump to previous pinned
+- `]§` jump to next pinned
 
 ### Jumplist
 
