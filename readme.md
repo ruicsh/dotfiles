@@ -246,10 +246,10 @@
 
 ### Session management _(not vscode)_
 
-- `<leader>qs` load session for workspace
-- `<leader>qS` pick sessions
-- `<leader>ql` load last session
-- `<leader>qd` stop saving session
+- `<leader>ws` load session for workspace
+- `<leader>wS` pick sessions
+- `<leader>wl` load last session
+- `<leader>wd` stop saving session
 
 ### Application
 

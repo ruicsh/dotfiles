@@ -10,10 +10,10 @@ return {
 		end
 
 		return {
-			{ "<leader>qs", persistence.load, "Session: Load" },
-			{ "<leader>qS", persistence.select, "Session: Pick" },
-			{ "<leader>ql", load_last_session, "Session: Load last" },
-			{ "<leader>qd", persistence.stop, "Session: Stop saving" },
+			{ "<leader>ws", persistence.load, "Session: Load" },
+			{ "<leader>wS", persistence.select, "Session: Pick" },
+			{ "<leader>wl", load_last_session, "Session: Load last" },
+			{ "<leader>wd", persistence.stop, "Session: Stop saving" },
 		}
 	end,
 	opts = {},
