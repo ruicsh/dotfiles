@@ -10,6 +10,9 @@ return {
 			vim.keymap.set("n", "}", "<cmd>AerialNext<cr>", { buffer = bufnr, desc = "Jump to next symbol" })
 		end,
 		highlight_on_jump = false,
+		ignore = {
+			filetypes = { "DiffviewFiles" },
+		},
 	},
 
 	dependencies = {
