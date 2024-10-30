@@ -1,9 +1,8 @@
 local k = vim.keymap
 
 -- save/quit/exit
-k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Quick save" })
-k.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quick quit" })
-k.set("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quick exit" })
+k.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+k.set("n", "<c-q>", "<c-w>q", { desc = "Close window" })
 
 -- editing
 k.set("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
