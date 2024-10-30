@@ -64,35 +64,6 @@ return {
 		main = "nvim-treesitter.configs", -- sets main module to use for opts
 		event = { "bufreadpre", "bufnewfile" },
 		build = ":TSUpdate",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			"nvim-treesitter/nvim-treesitter-refactor",
-		},
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- syntax aware navigation
-		-- https://github.com/nvim-treesitter/nvim-treesitter-refactor
-		"nvim-treesitter/nvim-treesitter-refactor",
-		opts = {
-			refactor = {
-				navigation = {
-					enable = true,
-					keymaps = {
-						goto_definition = false,
-						list_definitions = false,
-						list_definitions_toc = false,
-						goto_next_usage = "]r",
-						goto_previous_usage = "[r",
-					},
-				},
-			},
-		},
-
-		main = "nvim-treesitter.configs",
-		lazy = true,
 		cond = function()
 			return not vim.g.vscode
 		end,
