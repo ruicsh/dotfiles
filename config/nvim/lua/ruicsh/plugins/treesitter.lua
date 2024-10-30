@@ -159,23 +159,6 @@ return {
 		end,
 	},
 
-	{
-		-- code context
-		-- https://github.com/nvim-treesitter/nvim-treesitter-context
-		"nvim-treesitter/nvim-treesitter-context",
-		config = function()
-			vim.keymap.set("n", "[t", function()
-				local ctx = require("treesitter-context")
-				ctx.go_to_context(vim.v.count1)
-			end, { silent = true, desc = "Syntax: Jump to con[t]ext" })
-		end,
-
-		event = "VeryLazy",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
 	{ -- auto-close/rename html tags
 		-- https://github.com/windwp/nvim-ts-autotag
 		"windwp/nvim-ts-autotag",
