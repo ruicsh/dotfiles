@@ -1,4 +1,4 @@
-local k = vim.keymap
+local k = vim.keymap.set
 
-k.set("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
-k.set("t", "<c-\\>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
+k("t", "<esc>", [[<c-\><c-n>]], { desc = "Terminal: Exit" })
+k("t", "<c-\\>", "<cmd>terminal<cr>", { desc = "Terminal: New" })
