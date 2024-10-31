@@ -3,9 +3,14 @@
 
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	main = "ibl",
-	opts = {},
+	opts = {
+		scope = {
+			show_start = false,
+			show_end = false,
+		},
+	},
 
+	main = "ibl",
 	cond = function()
 		return not vim.g.vscode
 	end,
