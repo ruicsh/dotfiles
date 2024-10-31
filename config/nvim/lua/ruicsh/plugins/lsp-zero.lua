@@ -1,3 +1,6 @@
+-- lsp
+-- https://github.com/VonHeikemen/lsp-zero.nvim
+
 -- set keymaps for lsp commands
 local set_keymaps = function(event)
 	local map = function(keys, func, desc, mode)
@@ -90,6 +93,7 @@ local conf_autocomplete = function()
 		}),
 		preselect = "item",
 		completion = {
+			autocomplete = false,
 			completeopt = "menu,menuone,noinsert",
 		},
 		snippet = {
@@ -152,8 +156,8 @@ return {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "pmizio/typescript-tools.nvim", opts = {} },
 	{ "onsails/lspkind.nvim" },
 }

@@ -143,13 +143,11 @@
 
 ### Autocomplete
 
+- `<tab>` open menu
 - `<cr>` accept
-- `<tab>` jump to next entry
-- `<s-tab>` jump to previous entry
-- `<c-j>` jump to next entry
-- `<c-k>` jump to previous entry
-- `<c-l>` accept
-- `<c-h>` close
+- `<tab>` select next entry
+- `<s-tab>` select previous entry
+- `<esc>` close menu
 
 ### Syntax _(not vscode)_
 
