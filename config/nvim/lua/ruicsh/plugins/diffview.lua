@@ -13,18 +13,9 @@ return {
 			enhanced_diff_hl = true,
 			keymaps = {
 				file_panel = {
-					{
-						"n",
-						"}",
-						actions.select_next_entry,
-						{ desc = "Open the diff for the next file" },
-					},
-					{
-						"n",
-						"{",
-						actions.select_prev_entry,
-						{ desc = "Open the diff for the previous file" },
-					},
+					{ "n", "<cr>", actions.focus_entry, { desc = "Open and focus the diff" } },
+					{ "n", "}", actions.select_next_entry, { desc = "Open the diff for the next file" } },
+					{ "n", "{", actions.select_prev_entry, { desc = "Open the diff for the previous file" } },
 				},
 			},
 			hooks = {

@@ -2,7 +2,7 @@ if not vim.g.vscode then
 	return
 end
 
-local k = vim.keymap
+local k = vim.keymap.set
 
 -- run vscode action
 local function ac(action)
