@@ -110,16 +110,9 @@
 ### Text objects
 
 - `a` function argument
-- `la` last function argument
-- `na` next function argument
-- `b` blocks
-- `lb` last block
-- `nb` next block
+- `d` blocks (if, while, for, ...)
+- `f` function
 - `q` quotes
-- `lq` last quote
-- `nq` next quote
-- `af` outer function
-- `if` inner function
 
 ### LSP
 

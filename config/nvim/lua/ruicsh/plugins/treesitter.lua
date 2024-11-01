@@ -124,7 +124,6 @@ return {
 		},
 
 		main = "nvim-treesitter.configs",
-		lazy = true,
 		cond = function()
 			return not vim.g.vscode
 		end,
