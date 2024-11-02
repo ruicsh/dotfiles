@@ -9,7 +9,7 @@ return {
 		end,
 	},
 
-	event = "BufReadPost",
+	event = { "BufReadPost" },
 	dependencies = {
 		"kevinhwang91/promise-async",
 	},

@@ -18,7 +18,7 @@ return {
 	end,
 	opts = {},
 
-	event = "BufReadPre",
+	event = { "BufReadPre" },
 	cond = function()
 		return not vim.g.vscode
 	end,

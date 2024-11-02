@@ -15,5 +15,6 @@ return {
 		},
 	},
 
+	event = { "BufReadPost" },
 	version = "*",
 }

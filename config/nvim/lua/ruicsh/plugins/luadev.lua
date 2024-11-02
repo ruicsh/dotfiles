@@ -4,7 +4,6 @@
 return {
 	{
 		"folke/lazydev.nvim",
-		ft = "lua",
 		opts = {
 			library = {
 				-- Load luvit types when the `vim.uv` word is found
@@ -12,6 +11,8 @@ return {
 			},
 		},
 
+		lazy = true,
+		ft = "lua",
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -21,6 +22,7 @@ return {
 		"Bilal2453/luvit-meta",
 
 		lazy = true,
+		ft = "lua",
 		cond = function()
 			return not vim.g.vscode
 		end,

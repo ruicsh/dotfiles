@@ -43,7 +43,6 @@ return {
 	},
 
 	event = { "BufWritePre" },
-	cmd = { "ConformInfo" },
 	cond = function()
 		return not vim.g.vscode
 	end,

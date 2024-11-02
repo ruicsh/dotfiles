@@ -12,6 +12,7 @@ return {
 		},
 	},
 
+	events = "VeryLazy",
 	dependencies = {
 		"anuvyklack/middleclass",
 	},

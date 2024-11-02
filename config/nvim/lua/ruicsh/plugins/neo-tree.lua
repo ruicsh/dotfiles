@@ -40,6 +40,7 @@ return {
 		},
 	},
 
+	cmd = { "Neotree" },
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",

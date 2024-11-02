@@ -11,6 +11,7 @@ return {
 	},
 
 	main = "ibl",
+	event = { "BufReadPost" },
 	cond = function()
 		return not vim.g.vscode
 	end,

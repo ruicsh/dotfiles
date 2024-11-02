@@ -147,17 +147,18 @@ return {
 			conf_autocomplete()
 		end,
 
+		event = { "BufReadPost" },
 		branch = "v4.x",
 		cond = function()
 			return not vim.g.vscode
 		end,
 	},
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
-	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "pmizio/typescript-tools.nvim", opts = {} },
-	{ "onsails/lspkind.nvim" },
+	{ "williamboman/mason.nvim", event = { "BufReadPost" } },
+	{ "williamboman/mason-lspconfig.nvim", event = { "BufReadPost" } },
+	{ "WhoIsSethDaniel/mason-tool-installer.nvim", event = { "BufReadPost" } },
+	{ "neovim/nvim-lspconfig", event = { "BufReadPost" } },
+	{ "hrsh7th/nvim-cmp", event = { "BufReadPost" } },
+	{ "hrsh7th/cmp-nvim-lsp", event = { "BufReadPost" } },
+	{ "pmizio/typescript-tools.nvim", opts = {}, event = { "BufReadPost" } },
+	{ "onsails/lspkind.nvim", event = { "BufReadPost" } },
 }

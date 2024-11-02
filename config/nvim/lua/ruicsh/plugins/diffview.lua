@@ -44,6 +44,7 @@ return {
 		})
 	end,
 
+	cmd = { "DiffviewOpen" },
 	cond = function()
 		return not vim.g.vscode
 	end,

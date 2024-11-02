@@ -29,5 +29,5 @@ return {
 		},
 	},
 
-	event = "VeryLazy",
+	event = { "BufReadPost" },
 }

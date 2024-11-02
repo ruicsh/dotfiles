@@ -3,5 +3,6 @@
 
 return {
 	"tpope/vim-rsi",
-}
 
+	event = { "BufReadPost" },
+}

@@ -8,6 +8,7 @@ return {
 		filter_percent = 0.35,
 	},
 
+	cmd = { "SunglassesToggle", "SunglassesEnable", "SunglassesDisable" },
 	cond = function()
 		return not vim.g.vscode
 	end,

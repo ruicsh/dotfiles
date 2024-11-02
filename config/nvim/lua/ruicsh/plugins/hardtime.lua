@@ -9,6 +9,7 @@ return {
 		max_insert_idle_ms = 10000,
 	},
 
+	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",

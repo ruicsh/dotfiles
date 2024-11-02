@@ -123,6 +123,7 @@ return {
 			},
 		},
 
+		event = { "BufReadPost" },
 		main = "nvim-treesitter.configs",
 		cond = function()
 			return not vim.g.vscode
@@ -142,8 +143,26 @@ return {
 			})
 		end,
 
+		event = { "BufReadPost" },
 		cond = function()
 			return not vim.g.vscode
 		end,
+	},
+
+	{ -- syntax aware join lines
+		-- https://github.com/Wansmer/treesj
+		"Wansmer/treesj",
+		keys = {
+			{ "<space>j", "<cmd>TSJToggle<cr>", desc = "TreeSJ: [j]oin toggle" },
+		},
+		opts = {
+			use_default_keymaps = false,
+			max_join_length = 150,
+		},
+
+		event = { "BufReadPost" },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 	},
 }

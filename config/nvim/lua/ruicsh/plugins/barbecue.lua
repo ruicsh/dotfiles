@@ -16,6 +16,7 @@ return {
 		},
 	},
 
+	cmd = { "Barbecue" },
 	version = "*",
 	dependencies = {
 		"SmiteshP/nvim-navic",

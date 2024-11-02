@@ -77,7 +77,7 @@ return {
 		end, { desc = "Telescope: [N]eovim files" })
 	end,
 
-	event = "VimEnter",
+	event = { "VeryLazy" },
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",

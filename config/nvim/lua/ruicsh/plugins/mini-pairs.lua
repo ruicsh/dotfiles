@@ -29,9 +29,9 @@ return {
 		},
 	},
 
+	event = { "BufReadPost" },
 	version = false,
 	cond = function()
 		return not vim.g.vscode
 	end,
 }
-

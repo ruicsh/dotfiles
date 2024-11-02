@@ -4,8 +4,8 @@
 return {
 	"moll/vim-bbye",
 
+	cmd = { "Bdelete" },
 	cond = function()
 		return not vim.g.vscode
 	end,
 }
-

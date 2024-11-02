@@ -13,4 +13,6 @@ return {
 			"t", -- Tab
 		},
 	},
+
+	event = { "BufReadPost" },
 }

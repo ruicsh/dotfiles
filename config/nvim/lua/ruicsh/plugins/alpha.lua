@@ -11,6 +11,7 @@ return {
 		require("alpha").setup(startify.config)
 	end,
 
+	event = "VimEnter",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
