@@ -1,5 +1,6 @@
 vim.opt.backup = false -- do not create backup files
 vim.opt.cursorline = true -- highlight current line
+vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
 vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
 vim.opt.guifont = "JetBrainsMono Nerd Font:h10" -- font family and size
 vim.opt.ignorecase = true -- ignore case on search patterns
@@ -9,10 +10,11 @@ vim.opt.mouse = "a" -- enable mouse support
 vim.opt.number = true -- show line numbers
 vim.opt.numberwidth = 5 -- more space on the gutter column
 vim.opt.relativenumber = true -- show relative line numbers
-vim.opt.scrolloff = 10 -- number of lines to keep above and below the cursor
+vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
 vim.opt.showtabline = 0 -- hide tabline
+vim.opt.signcolumn = "yes" -- enable the sign column to prevent the screen from jumping
 vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
 vim.opt.smartindent = true -- smart indent
 vim.opt.softtabstop = 2 -- number of spaces that a <Tab> key in the file counts for
@@ -23,6 +25,16 @@ vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
 vim.opt.termguicolors = true -- enable true colors
 vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
 vim.opt.wrap = false -- do not automatically wrap text
+
+-- fold settings
+-- These options were reccommended by nvim-ufo
+-- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.foldcolumn = "0"
+vim.opt.foldnestmax = 5
+vim.opt.foldtext = ""
 
 -- disable netrw in favor of nvim-tree/oil
 vim.g.loaded_netrw = 1

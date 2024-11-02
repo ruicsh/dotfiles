@@ -1,0 +1,7 @@
+require("ruicsh/keymaps/leader")
+require("ruicsh/keymaps/normal")
+require("ruicsh/keymaps/insert")
+require("ruicsh/keymaps/visual")
+require("ruicsh/keymaps/terminal")
+require("ruicsh/keymaps/command")
+require("ruicsh/keymaps/vscode")

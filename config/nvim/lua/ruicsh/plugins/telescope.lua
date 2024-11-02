@@ -18,6 +18,14 @@ return {
 				},
 				file_ignore_patterns = {
 					"node_modules",
+					".git",
+					".next",
+					"package-lock.json",
+					"yarn.lock",
+				},
+				hidden = true,
+				path_display = {
+					"filename_fist",
 				},
 			},
 			extensions = {

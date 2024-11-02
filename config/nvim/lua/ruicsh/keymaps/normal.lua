@@ -43,14 +43,23 @@ k("n", "<leader>s}", "V}k<esc><cmd>Sort<cr>}", { desc = "[S]ort: Paragrah" })
 k("n", '<leader>s"', 'vi"<esc><cmd>Sort<cr>', { desc = '[So]rt: Inside ["]' })
 
 -- center screen when moving
-k("n", "<c-b>", "<c-b>zz") -- scrolling up (page up)
-k("n", "<c-d>", "<c-d>zz") -- scrolling down (half page down)
-k("n", "<c-f>", "<c-f>zz") -- scrolling down (page down)
-k("n", "<c-i>", "<c-i>zz") -- moving to newer cursor position
-k("n", "<c-o>", "<c-o>zz") -- moving to older cursor position
-k("n", "<c-u>", "<c-u>zz") -- scrolling up (half page up)
-k("n", "N", "Nzz") -- center screen when moving to previous match
-k("n", "n", "Nzz") -- center screen when moving to next match
+k("n", "<c-b>", "<c-b>zz")
+k("n", "<c-d>", "<c-d>zz")
+k("n", "<c-f>", "<c-f>zz")
+k("n", "<c-u>", "<c-u>zz")
+k("n", "<c-d>", "<c-d>zz")
+k("n", "<c-i>", "<c-i>zz")
+k("n", "<c-o>", "<c-o>zz")
+k("n", "{", "{zz")
+k("n", "}", "}zz")
+k("n", "N", "Nzz")
+k("n", "n", "nzz")
+k("n", "G", "Gzz")
+k("n", "gg", "ggzz")
+k("n", "gd", "gdzz")
+k("n", "%", "%zz")
+k("n", "*", "*zz")
+k("n", "#", "#zz")
 
 -- splits
 k("n", "|", "<c-w>w", { desc = "Splits: Switch" })
