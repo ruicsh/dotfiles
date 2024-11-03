@@ -4,11 +4,17 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
+		local c = require("ruicsh.theme.colors")
 		local theme = require("lualine.themes.nord")
 		theme.normal.c.bg = "NONE"
+		theme.normal.x = { fg = c.nord3_500, bg = "NONE" }
 		theme.inactive.c.bg = "NONE"
 
+		local git_blame = require("gitblame")
+		vim.g.gitblame_display_virtual_text = 0 -- disable virtual text
+
 		local lualine = require("lualine")
+
 		lualine.setup({
 			options = {
 				theme = theme,
@@ -18,8 +24,10 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { "filename" },
-				lualine_x = { "filetype" },
-				lualine_y = { "progress" },
+				lualine_x = {
+					{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
+				},
+				lualine_y = { "filetype", "progress" },
 				lualine_z = { "location" },
 			},
 		})
