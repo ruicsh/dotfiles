@@ -1,6 +1,10 @@
 -- log statements
 -- https://github.com/andrewferrier/debugprint.nvim
 
+local js_conf = {
+	display_location = false,
+}
+
 return {
 	"andrewferrier/debugprint.nvim",
 	opts = {
@@ -26,6 +30,12 @@ return {
 		commands = {
 			toggle_comment_debug_prints = "ToggleCommentDebugPrints",
 			delete_debug_prints = "DeleteDebugPrints",
+		},
+		filetypes = {
+			["javascript"] = js_conf,
+			["javascriptreact"] = js_conf,
+			["typescript"] = js_conf,
+			["typescriptreact"] = js_conf,
 		},
 	},
 
