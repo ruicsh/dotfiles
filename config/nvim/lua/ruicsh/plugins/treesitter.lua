@@ -59,20 +59,6 @@ return {
 					node_decremental = "]n",
 				},
 			},
-		},
-
-		main = "nvim-treesitter.configs", -- sets main module to use for opts
-		event = { "bufreadpre", "bufnewfile" },
-		build = ":TSUpdate",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- syntax aware text objects
-		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		opts = {
 			textobjects = {
 				select = {
 					enable = true,
@@ -123,8 +109,18 @@ return {
 			},
 		},
 
-		event = { "BufReadPost" },
-		main = "nvim-treesitter.configs",
+		main = "nvim-treesitter.configs", -- sets main module to use for opts
+		event = { "BufReadPre", "BufNewFile" },
+		build = ":TSUpdate",
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
+
+	{ -- syntax aware text objects
+		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+		"nvim-treesitter/nvim-treesitter-textobjects",
+
 		cond = function()
 			return not vim.g.vscode
 		end,
