@@ -37,7 +37,7 @@ return {
 		},
 	},
 
-	event = "VeryLazy",
+	event = { "VeryLazy" },
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 	},

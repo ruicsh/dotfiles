@@ -14,5 +14,5 @@ return {
 		k.set("c", "<c-s>", flash.toggle, { desc = "Flash: Toggle" })
 	end,
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 }

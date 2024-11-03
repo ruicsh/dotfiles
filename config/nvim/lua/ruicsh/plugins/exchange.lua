@@ -4,5 +4,5 @@
 return {
 	"tommcdo/vim-exchange",
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 }

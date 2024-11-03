@@ -15,6 +15,6 @@ return {
 		},
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	version = "*",
 }

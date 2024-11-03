@@ -29,7 +29,7 @@ return {
 		},
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	version = false,
 	cond = function()
 		return not vim.g.vscode

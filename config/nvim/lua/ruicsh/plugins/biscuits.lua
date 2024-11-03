@@ -7,7 +7,7 @@ return {
 		cursor_line_only = true,
 	},
 
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},

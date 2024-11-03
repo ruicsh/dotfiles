@@ -39,7 +39,7 @@ return {
 			})
 		end,
 
-		event = "InsertEnter",
+		event = { "InsertEnter" },
 		dependencies = {
 			{ "VonHeikemen/lsp-zero.nvim", event = { "InsertEnter" } },
 			{ "hrsh7th/nvim-cmp", event = { "InsertEnter" } },

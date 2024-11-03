@@ -10,7 +10,7 @@ return {
 		virtual_text_column = 80,
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	cond = function()
 		return not vim.g.vscode
 	end,

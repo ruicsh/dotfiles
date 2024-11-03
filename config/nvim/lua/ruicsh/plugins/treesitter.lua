@@ -110,7 +110,7 @@ return {
 		},
 
 		main = "nvim-treesitter.configs", -- sets main module to use for opts
-		event = { "BufReadPre", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
 		build = ":TSUpdate",
 		cond = function()
 			return not vim.g.vscode
@@ -121,7 +121,7 @@ return {
 		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		"nvim-treesitter/nvim-treesitter-textobjects",
 
-		event = { "BufReadPre", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -140,7 +140,7 @@ return {
 			})
 		end,
 
-		event = { "BufReadPre", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -157,7 +157,7 @@ return {
 			max_join_length = 150,
 		},
 
-		event = { "BufReadPre", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},

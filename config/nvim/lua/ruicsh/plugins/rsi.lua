@@ -4,5 +4,5 @@
 return {
 	"tpope/vim-rsi",
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 }

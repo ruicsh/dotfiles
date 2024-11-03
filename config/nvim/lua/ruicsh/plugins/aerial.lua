@@ -24,7 +24,7 @@ return {
 		},
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-tree/nvim-web-devicons",

@@ -18,7 +18,7 @@ return {
 		k("n", "g#", [[g#<cmd>lua require('hlslens').start()<cr>]], kopts)
 	end,
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	cond = function()
 		return not vim.g.vscode
 	end,

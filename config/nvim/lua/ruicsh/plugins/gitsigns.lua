@@ -67,7 +67,7 @@ return {
 		end,
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	cond = function()
 		return not vim.g.vscode
 	end,

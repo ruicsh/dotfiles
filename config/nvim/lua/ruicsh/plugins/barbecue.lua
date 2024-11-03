@@ -16,7 +16,7 @@ return {
 		},
 	},
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	cmd = { "Barbecue" },
 	version = "*",
 	dependencies = {

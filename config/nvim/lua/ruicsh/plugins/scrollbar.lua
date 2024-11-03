@@ -14,7 +14,7 @@ return {
 		},
 	},
 
-	event = "VeryLazy",
+	event = { "VeryLazy" },
 	cond = function()
 		return not vim.g.vscode
 	end,

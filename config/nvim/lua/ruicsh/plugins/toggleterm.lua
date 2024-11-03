@@ -8,7 +8,7 @@ return {
 		direction = "float",
 	},
 
-	event = "VeryLazy",
+	event = { "VeryLazy" },
 	version = "*",
 	cond = function()
 		return not vim.g.vscode

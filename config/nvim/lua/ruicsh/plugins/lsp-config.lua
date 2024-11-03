@@ -85,13 +85,13 @@ return {
 			conf_lsp_servers()
 		end,
 
-		event = { "BufReadPost" },
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			{ "williamboman/mason.nvim", event = { "BufReadPost" } },
-			{ "williamboman/mason-lspconfig.nvim", event = { "BufReadPost" } },
-			{ "WhoIsSethDaniel/mason-tool-installer.nvim", event = { "BufReadPost" } },
-			{ "pmizio/typescript-tools.nvim", opts = {}, event = { "BufReadPost" } },
-			{ "onsails/lspkind.nvim", event = { "BufReadPost" } },
+			{ "williamboman/mason.nvim", event = { "BufReadPost", "BufNewFile" } },
+			{ "williamboman/mason-lspconfig.nvim", event = { "BufReadPost", "BufNewFile" } },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim", event = { "BufReadPost", "BufNewFile" } },
+			{ "pmizio/typescript-tools.nvim", opts = {}, event = { "BufReadPost", "BufNewFile" } },
+			{ "onsails/lspkind.nvim", event = { "BufReadPost", "BufNewFile" } },
 		},
 		cond = function()
 			return not vim.g.vscode

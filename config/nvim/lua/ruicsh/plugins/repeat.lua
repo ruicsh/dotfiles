@@ -4,5 +4,5 @@
 return {
 	"tpope/vim-repeat",
 
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 }
