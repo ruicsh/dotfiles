@@ -13,6 +13,15 @@ k("n", "[p", "<cmd>pu!<cr>==", { desc = "Paste on new line above" })
 k("n", "]p", "<cmd>pu<cr>==", { desc = "Paste on new line below" })
 k("n", "U", "<C-r>", { desc = "Redo" })
 
+-- tabs
+k("n", "<leader>ta", "<cmd>$tabnew<cr>", { desc = "Tabs: New" })
+k("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Tabs: Close" })
+k("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Tabs: Close all other" })
+k("n", "<leader>tn", "<cmd>tabn<cr>", { desc = "Tabs: Jump to previous" })
+k("n", "<leader>tp", "<cmd>tabp<cr>", { desc = "Tabs: Jump to next" })
+k("n", "<leader>tmp", "<cmd>-tabmove<cr>", { desc = "Tabs: Move current tab to before" })
+k("n", "<leader>tmn", "<cmd>+tabmove<cr>", { desc = "Tabs: Move current tab to after" })
+
 -- buffers
 k("n", "[b", "<cmd>bprev<cr>", { desc = "Buffers: Go to previous" })
 k("n", "]b", "<cmd>bnext<cr>", { desc = "Buffers: Go to next" })
