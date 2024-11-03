@@ -112,7 +112,8 @@
 - `a` function argument
 - `d` blocks (if, while, for, ...)
 - `f` function
-- `q` quotes
+- `q` quotes ("", '', ``)
+- `b` blocks ({}, (), [])
 
 ### LSP
 
@@ -144,8 +145,6 @@
 
 ### Syntax _(not vscode)_
 
-- `{` jump to previous symbol
-- `}` jumtp next symbol
 - `[a` jump to previous argument start _(not vscode)_
 - `]a` jump to next argument start _(not vscode)_
 - `[A` jump to previous argument end _(not vscode)_
@@ -192,8 +191,6 @@
 ### Splits 
 
 - `|` switch splits
-- `<c-w><` decrease split width
-- `<c-w>>` increase split width
 - `<c-w>[` move file to split on the left
 - `<c-w>]` move file to split on the right
 - `<c-w>m` maximize split
