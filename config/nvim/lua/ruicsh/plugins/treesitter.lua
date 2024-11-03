@@ -121,6 +121,7 @@ return {
 		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		"nvim-treesitter/nvim-treesitter-textobjects",
 
+		event = { "BufReadPre", "BufNewFile" },
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -139,7 +140,7 @@ return {
 			})
 		end,
 
-		event = { "BufReadPost" },
+		event = { "BufReadPre", "BufNewFile" },
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -156,7 +157,7 @@ return {
 			max_join_length = 150,
 		},
 
-		event = { "BufReadPost" },
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},
