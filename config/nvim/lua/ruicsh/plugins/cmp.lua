@@ -46,5 +46,8 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp", event = { "InsertEnter" } },
 			{ "hrsh7th/cmp-path", event = { "InsertEnter" } },
 		},
+		cond = function()
+			return not vim.g.vscode
+		end,
 	},
 }

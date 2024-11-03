@@ -93,5 +93,8 @@ return {
 			{ "pmizio/typescript-tools.nvim", opts = {}, event = { "BufReadPost" } },
 			{ "onsails/lspkind.nvim", event = { "BufReadPost" } },
 		},
+		cond = function()
+			return not vim.g.vscode
+		end,
 	},
 }
