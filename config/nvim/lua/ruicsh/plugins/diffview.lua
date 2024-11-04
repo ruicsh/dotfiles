@@ -9,6 +9,7 @@ return {
 	config = function()
 		local diffview = require("diffview")
 		local actions = require("diffview.actions")
+		local tint = require("tint")
 		diffview.setup({
 			enhanced_diff_hl = true,
 			keymaps = {
@@ -28,7 +29,7 @@ return {
 					vim.opt_local.foldenable = true -- enable folding
 				end,
 				view_enter = function(view)
-					vim.cmd(":SunglassesDisable") -- unshade all windows
+					tint.disable() -- don't tint diffviews
 					vim.cmd(":Barbecue hide") -- hide breadcrumbs
 
 					local bufnr = view.buffer
@@ -37,7 +38,7 @@ return {
 					vim.keymap.set("n", "cc", "<cmd>DiffviewClose<cr><cmd>vertical Git commit<cr>", { buffer = bufnr }) -- use cc to commit
 				end,
 				view_leave = function()
-					vim.cmd(":SunglassesEnable") -- bring back the shades
+					tint.enable() -- reenable tints
 					vim.cmd(":Barbecue show") -- show breadcrumbs
 				end,
 			},
