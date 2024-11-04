@@ -57,7 +57,6 @@
 
 ### Editing
 
-- `<c-a>` select all
 - `<c-l>` jump to end of line
 - `[<space>` add blank line above cursor
 - `]<space>` add blank line below cursor

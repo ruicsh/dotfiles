@@ -5,7 +5,6 @@ k("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 k("n", "<c-q>", "<c-w>q", { desc = "Close window" })
 
 -- editing
-k("n", "<c-a>", "gg<s-v>G", { desc = "Select [a]ll" })
 k("n", "Y", "y$", { desc = "[Y]ank to end of line" })
 k("n", "[<space>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>", { desc = "Put empty line above" })
 k("n", "]<space>", "<cmd>call append(line('.'),     repeat([''], v:count1))<cr>", { desc = "Put empty line below" })
