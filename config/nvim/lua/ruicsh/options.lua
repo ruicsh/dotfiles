@@ -9,6 +9,7 @@ vim.opt.linespace = 0 -- line height
 vim.opt.mouse = "a" -- enable mouse support
 vim.opt.number = true -- show line numbers
 vim.opt.numberwidth = 5 -- more space on the gutter column
+vim.opt.shortmess = "I" -- disable welcome message
 vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.sessionoptions = "buffers,curdir,folds,globals,help,tabpages,terminal,winsize,winpos"
