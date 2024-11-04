@@ -4,7 +4,7 @@
 return {
 	"levouh/tint.nvim",
 	opts = {
-		saturation = 0,
+		tint = -60,
 	},
 
 	event = { "VeryLazy" },

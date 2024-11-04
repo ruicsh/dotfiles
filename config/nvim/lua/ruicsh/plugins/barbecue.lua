@@ -17,6 +17,7 @@ return {
 	},
 
 	cmd = { "Barbecue" },
+	event = { "BufReadPost", "BufNewFile" },
 	version = "*",
 	dependencies = {
 		"SmiteshP/nvim-navic",

@@ -14,6 +14,13 @@ return {
 		}
 	end,
 	opts = {
+		routes = {
+			{
+				-- skip "file written messages", "file read"
+				filter = { event = "msg_show", kind = "" },
+				opts = { skip = true },
+			},
+		},
 		notify = {
 			enabled = false,
 		},
@@ -23,7 +30,7 @@ return {
 			},
 		},
 		messages = {
-			enabled = false,
+			enabled = true,
 		},
 		presets = {
 			lsp_doc_border = true,
