@@ -51,7 +51,7 @@ return {
 		k.set("n", "<leader>nc", builtin.commands, { desc = "Telescope: [c]ommands" })
 		k.set("n", "<leader>nh", builtin.help_tags, { desc = "Telescope: [h]elp" })
 		k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
-		k.set("n", "<leader>ts", builtin.builtin, { desc = "Telescope: select [t]elescope" })
+		k.set("n", "<leader>nt", builtin.builtin, { desc = "Telescope: select [t]elescope" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		k.set("n", "<leader>/", function()
@@ -95,7 +95,7 @@ return {
 			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
-		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		{ "nvim-tree/nvim-web-devicons" },
 		{ "aaronhallaert/advanced-git-search.nvim", cmd = { "AdvancedGitSearch" } },
 	},
 	cond = function()

@@ -95,7 +95,7 @@
 - `<leader>tr` resume last search
 - `<leader>sr` search and replace current word
 - `<leader>/` fuzzy find in document
-- `<leader>ts` select fuzzy finder to use _(only neovim)_
+- `<leader>nt` select fuzzy finder to use _(only neovim)_
 
 ### Sorting
 
