@@ -1,4 +1,4 @@
-require("ruicsh.settings")
+require("ruicsh.options")
 require("ruicsh.commands")
 require("ruicsh/keymaps")
 require("ruicsh/custom")
