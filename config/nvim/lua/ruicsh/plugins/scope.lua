@@ -3,6 +3,7 @@
 
 return {
 	"tiagovla/scope.nvim",
+	opts = {},
 
 	event = { "VimEnter" },
 	cond = function()

@@ -1,4 +1,4 @@
--- editor
+-- directory editor
 -- https://github.com/stevearc/oil.nvim
 
 return {
