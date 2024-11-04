@@ -1,4 +1,4 @@
--- buffers, marks and jumplist
+-- pinned and opened buffers
 -- https://github.com/gcmt/vessel.nvim
 
 return {
@@ -7,13 +7,14 @@ return {
 		{ "§", "<plug>(VesselViewBuffers)" },
 		{ "[§", "<plug>(VesselPinnedPrev)" },
 		{ "]§", "<plug>(VesselPinnedNext)" },
-		{ "<leader>j", "<plug>(VesselViewJumps)" },
-		{ "<leader>m", "<plug>(VesselViewMarks)" },
 	},
 	opts = {
 		create_commands = true,
 		buffers = {
 			view = "tree",
+			mappings = {
+				close = { "§" },
+			},
 		},
 	},
 
