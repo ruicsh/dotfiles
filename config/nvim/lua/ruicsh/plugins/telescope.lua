@@ -25,7 +25,7 @@ return {
 				},
 				hidden = true,
 				path_display = {
-					"filename_fist",
+					"smart",
 				},
 			},
 			extensions = {

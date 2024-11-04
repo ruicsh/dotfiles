@@ -10,6 +10,7 @@ local function set_keymaps(event)
 
 	local telescope = require("telescope.builtin")
 
+	-- when displaying the document/worspace symbols, only show these
 	local lsp_symbols = { "method", "function", "class" }
 	local function lsp_document_symbols()
 		telescope.lsp_document_symbols({ symbols = lsp_symbols })
