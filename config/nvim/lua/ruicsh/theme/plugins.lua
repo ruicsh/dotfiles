@@ -48,12 +48,6 @@ _.loadColorSet({
 	WhichKeyValue = { fg = c.nord7 },
 })
 
--- Indent Blankline
-_.loadColorSet({
-	IndentBlanklineChar = { fg = c.nord3 },
-	IndentBlanklineContextChar = { fg = c.nord10 },
-})
-
 -- Diff
 _.loadColorSet({
 	diffAdded = { fg = c.nord14 },
