@@ -2,7 +2,6 @@
 -- https://github.com/utilyre/barbecue.nvim
 
 local c = require("ruicsh.theme.colors")
-local g = require("ruicsh.globals")
 
 return {
 	"utilyre/barbecue.nvim",
@@ -17,7 +16,6 @@ return {
 		},
 	},
 
-	ft = g.ft_code,
 	cmd = { "Barbecue" },
 	version = "*",
 	dependencies = {

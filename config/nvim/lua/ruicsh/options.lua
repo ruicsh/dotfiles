@@ -12,7 +12,6 @@ vim.opt.numberwidth = 5 -- more space on the gutter column
 vim.opt.shortmess = "I" -- disable welcome message
 vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
-vim.opt.sessionoptions = "buffers,curdir,folds,globals,help,tabpages,terminal,winsize,winpos"
 vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
 vim.opt.showtabline = 2 -- show tabline
 vim.opt.signcolumn = "yes" -- enable the sign column to prevent the screen from jumping
