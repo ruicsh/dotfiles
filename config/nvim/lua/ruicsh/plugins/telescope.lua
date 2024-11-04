@@ -39,6 +39,7 @@ return {
 		pcall(telescope.load_extension, "fzf")
 		pcall(telescope.load_extension, "ui-select")
 		pcall(telescope.load_extension, "advanced_git_search")
+		pcall(telescope.load_extension, "projects")
 
 		-- see `:help telescope.builtin`
 		local k = vim.keymap
@@ -52,6 +53,7 @@ return {
 		k.set("n", "<leader>nh", builtin.help_tags, { desc = "Telescope: [h]elp" })
 		k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
 		k.set("n", "<leader>nt", builtin.builtin, { desc = "Telescope: select [t]elescope" })
+		k.set("n", "<leader>pp", telescope.extensions.projects.projects, { desc = "Projects" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		k.set("n", "<leader>/", function()
