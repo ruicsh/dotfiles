@@ -1,6 +1,8 @@
 -- autopairs
 -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
 
+local g = require("ruicsh.globals")
+
 return {
 	"echasnovski/mini.pairs",
 	opts = {
@@ -29,7 +31,7 @@ return {
 		},
 	},
 
-	event = { "BufReadPost", "BufNewFile" },
+	ft = g.ft_code,
 	version = false,
 	cond = function()
 		return not vim.g.vscode

@@ -1,5 +1,7 @@
--- parser
+-- code parser
 -- https://github.com/nvim-treesitter/nvim-treesitter
+
+local g = require("ruicsh.globals")
 
 return {
 	{
@@ -110,7 +112,7 @@ return {
 		},
 
 		main = "nvim-treesitter.configs", -- sets main module to use for opts
-		event = { "BufReadPost", "BufNewFile" },
+		ft = g.ft_code,
 		build = ":TSUpdate",
 		cond = function()
 			return not vim.g.vscode
@@ -121,7 +123,7 @@ return {
 		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		"nvim-treesitter/nvim-treesitter-textobjects",
 
-		event = { "BufReadPost", "BufNewFile" },
+		ft = g.ft_code,
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -140,7 +142,7 @@ return {
 			})
 		end,
 
-		event = { "BufReadPost", "BufNewFile" },
+		ft = g.ft_code,
 		cond = function()
 			return not vim.g.vscode
 		end,
@@ -157,7 +159,7 @@ return {
 			max_join_length = 150,
 		},
 
-		event = { "BufReadPost", "BufNewFile" },
+		ft = g.ft_code,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},

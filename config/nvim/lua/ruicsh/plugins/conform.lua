@@ -1,6 +1,8 @@
 -- formatter
 -- https://github.com/stevearc/conform.nvim
 
+local g = require("ruicsh.globals")
+
 return {
 	"stevearc/conform.nvim",
 	keys = {
@@ -42,6 +44,7 @@ return {
 		},
 	},
 
+	ft = g.ft_code,
 	event = { "BufWritePre" },
 	cond = function()
 		return not vim.g.vscode

@@ -1,6 +1,8 @@
 -- indent guides
 -- https://github.com/lukas-reineke/indent-blankline.nvim
 
+local g = require("ruicsh.globals")
+
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	opts = {
@@ -11,7 +13,7 @@ return {
 	},
 
 	main = "ibl",
-	event = { "BufReadPost", "BufNewFile" },
+	ft = g.ft_code,
 	cond = function()
 		return not vim.g.vscode
 	end,

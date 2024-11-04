@@ -1,6 +1,8 @@
 -- lsp config
 -- https://github.com/neovim/nvim-lspconfig
 
+local g = require("ruicsh.globals")
+
 -- set keymaps for lsp commands
 local function set_keymaps(event)
 	local map = function(keys, func, desc, mode)
@@ -86,13 +88,13 @@ return {
 			conf_lsp_servers()
 		end,
 
-		event = { "BufReadPost", "BufNewFile" },
+		ft = g.ft_code,
 		dependencies = {
-			{ "williamboman/mason.nvim", event = { "BufReadPost", "BufNewFile" } },
-			{ "williamboman/mason-lspconfig.nvim", event = { "BufReadPost", "BufNewFile" } },
-			{ "WhoIsSethDaniel/mason-tool-installer.nvim", event = { "BufReadPost", "BufNewFile" } },
-			{ "pmizio/typescript-tools.nvim", opts = {}, event = { "BufReadPost", "BufNewFile" } },
-			{ "onsails/lspkind.nvim", event = { "BufReadPost", "BufNewFile" } },
+			{ "williamboman/mason.nvim", ft = g.ft_code },
+			{ "williamboman/mason-lspconfig.nvim", ft = g.ft_code },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim", ft = g.ft_code },
+			{ "pmizio/typescript-tools.nvim", opts = {}, ft = { "typescript", "typescriptreact" } },
+			{ "onsails/lspkind.nvim", ft = g.ft_code },
 		},
 		cond = function()
 			return not vim.g.vscode

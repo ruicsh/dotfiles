@@ -1,13 +1,15 @@
 -- annotations context of the end of that AST node
 -- https://github.com/code-biscuits/nvim-biscuits
 
+local g = require("ruicsh.globals")
+
 return {
 	"code-biscuits/nvim-biscuits",
 	opts = {
 		cursor_line_only = true,
 	},
 
-	event = { "BufReadPost", "BufNewFile" },
+	ft = g.ft_code,
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},

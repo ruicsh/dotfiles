@@ -1,6 +1,8 @@
 -- folds
 -- https://github.com/kevinhwang91/nvim-ufo
 
+local g = require("ruicsh.globals")
+
 return {
 	"kevinhwang91/nvim-ufo",
 	opts = {
@@ -9,7 +11,7 @@ return {
 		end,
 	},
 
-	event = { "BufReadPost", "BufNewFile" },
+	ft = g.ft_code,
 	dependencies = {
 		"kevinhwang91/promise-async",
 	},

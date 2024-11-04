@@ -1,6 +1,8 @@
 -- log statements
 -- https://github.com/andrewferrier/debugprint.nvim
 
+local g = require("ruicsh.globals")
+
 local js_conf = {
 	display_location = false,
 }
@@ -39,5 +41,6 @@ return {
 		},
 	},
 
+	ft = g.ft_code,
 	event = { "BufReadPost", "BufNewFile" },
 }

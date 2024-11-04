@@ -1,6 +1,8 @@
 -- autocomplete
 -- https://github.com/hrsh7th/nvim-cmp
 
+local g = require("ruicsh.globals")
+
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -39,12 +41,13 @@ return {
 			})
 		end,
 
+		ft = g.ft_code,
 		event = { "InsertEnter" },
 		dependencies = {
-			{ "VonHeikemen/lsp-zero.nvim", event = { "InsertEnter" } },
-			{ "hrsh7th/nvim-cmp", event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-nvim-lsp", event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-path", event = { "InsertEnter" } },
+			{ "VonHeikemen/lsp-zero.nvim", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
 		},
 		cond = function()
 			return not vim.g.vscode
