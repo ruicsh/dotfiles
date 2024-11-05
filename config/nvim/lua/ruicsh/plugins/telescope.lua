@@ -24,8 +24,11 @@ return {
 					"yarn.lock",
 				},
 				hidden = true,
-				path_display = {
-					"smart",
+				path_display = { "smart" },
+			},
+			pickers = {
+				jumplist = {
+					path_display = { "tail" },
 				},
 			},
 			extensions = {
@@ -54,6 +57,7 @@ return {
 		k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
 		k.set("n", "<leader>nt", builtin.builtin, { desc = "Telescope: select [t]elescope" })
 		k.set("n", "<leader>pp", telescope.extensions.projects.projects, { desc = "Projects" })
+		k.set("n", "<leader>jj", builtin.jumplist, { desc = "Jumplist: Show" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		k.set("n", "<leader>/", function()
