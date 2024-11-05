@@ -26,11 +26,6 @@ return {
 				hidden = true,
 				path_display = { "smart" },
 			},
-			pickers = {
-				jumplist = {
-					path_display = { "tail" },
-				},
-			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
@@ -47,6 +42,11 @@ return {
 		-- see `:help telescope.builtin`
 		local k = vim.keymap
 		local builtin = require("telescope.builtin")
+
+		local function show_jumplist()
+			return builtin.jumplist({ show_line = false })
+		end
+
 		k.set("n", "<leader>,", builtin.oldfiles, { desc = "Telescope: find recent files)" })
 		k.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope: Files" })
 		k.set("n", "<leader>f", builtin.live_grep, { desc = "Telescope: [f]inde word in workspace" })
@@ -57,7 +57,7 @@ return {
 		k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
 		k.set("n", "<leader>nt", builtin.builtin, { desc = "Telescope: select [t]elescope" })
 		k.set("n", "<leader>pp", telescope.extensions.projects.projects, { desc = "Projects" })
-		k.set("n", "<leader>jj", builtin.jumplist, { desc = "Jumplist: Show" })
+		k.set("n", "<leader>jj", show_jumplist, { desc = "Jumplist: Show" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		k.set("n", "<leader>/", function()
