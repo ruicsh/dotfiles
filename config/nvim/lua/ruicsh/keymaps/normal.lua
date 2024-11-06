@@ -88,9 +88,12 @@ k("n", "zk", "zk%^") -- jump to start of previous fold
 -- alternate file (projectionist)
 k("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate file" })
 
--- misc
-k("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps on jumplist
-k("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps on jumplist
+-- jumplist
+k("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps
+k("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps
+k("n", "k", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'k'", { expr = true, noremap = true }) -- don't include small jumps
+k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'j'", { expr = true, noremap = true }) -- don't include small jumps
+
 -- this remap also removes the default behavior of going down a line with <cr>
 k("n", "<cr>", "<cmd>noh<cr>", { silent = true }) -- remove search highlighting
 k("n", "J", "mzJ`z") -- keep cursor in place when joining lines
