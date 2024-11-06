@@ -232,12 +232,10 @@
 - `<c-o>` jump to older position
 - `<c-i>` jump to newer position
 
-### Session management _(not vscode)_
+### Workspaces
 
-- `<leader>ws` load session for workspace
-- `<leader>wS` pick sessions
-- `<leader>wl` load last session
-- `<leader>wd` stop saving session
+- `<leader>pp` list workspaces
+
 
 ### Application
 
