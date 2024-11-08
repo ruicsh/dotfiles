@@ -10,7 +10,7 @@ _.loadColorSet({
 	["@constant"] = { fg = c.nord13 },
 	["@constant.builtin"] = { fg = c.nord7 },
 	["@constant.macro"] = { fg = c.nord7 },
-	["@constructor"] = { fg = c.nord9 },
+	["@constructor"] = { fg = c.nord7 },
 	["@diff.delta"] = { link = "DiffChange" },
 	["@diff.minus"] = { link = "DiffDelete" },
 	["@diff.plus"] = { link = "DiffAdd" },
@@ -60,7 +60,11 @@ _.loadColorSet({
 	["@text.title"] = { fg = c.nord10, bg = "NONE" },
 	["@text.underline"] = { fg = c.nord4, bg = "NONE", style = "underline" },
 	["@text.uri"] = { fg = c.nord14, style = "underline" },
-	["@type"] = { fg = c.nord9 },
-	["@type.builtin"] = { fg = c.nord9 },
+	["@type"] = { fg = c.nord4 },
+	["@type.builtin"] = { fg = c.nord7 },
 	["@variable"] = { fg = c.nord4 },
+	["@variable.builtin.typescript"] = { fg = c.nord9 },
+
+	["@lsp.type.class.typescript"] = { fg = c.nord7 },
+	["@lsp.type.interface.typescript"] = { fg = c.nord7 },
 })
