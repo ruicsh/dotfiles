@@ -48,8 +48,7 @@ return {
 
 		k.set("n", "<leader>,", builtin.oldfiles, { desc = "Telescope: find recent files)" })
 		k.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope: Files" })
-		k.set("n", "<leader>f", builtin.live_grep, { desc = "Telescope: [f]inde word in workspace" })
-		k.set("n", "<leader><s-f>", builtin.grep_string, { desc = "Telescope: Find current word" })
+		k.set("n", "<leader>f", builtin.live_grep, { desc = "Telescope: [f]ind word in workspace" })
 		k.set("n", "<leader>.", builtin.resume, { desc = "Telescope: Resume last search" })
 		k.set("n", "<leader>nc", builtin.commands, { desc = "Telescope: [c]ommands" })
 		k.set("n", "<leader>nh", builtin.help_tags, { desc = "Telescope: [h]elp" })

@@ -69,3 +69,8 @@ _.loadColorSet({
 	NeoTreeGitNew = { fg = c.nord14 },
 	NeoTreeGitUntracked = { fg = c.nord14 },
 })
+
+-- hlsearch
+_.loadColorSet({
+	HlSearchNear = { bg = c.nord10 },
+})

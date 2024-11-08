@@ -22,16 +22,16 @@
 - `d` delete
 - `x` cut
 - `p` paste
-- `L` expand all _(not vscode)_
+- `L` expand all 
 - `H` collapse all
-- `I` toggle filter: gitignore _(not vscode)_
+- `I` toggle filter: gitignore 
 - `<c-q>` close explorer
-- `[c` previous git change _(not vscode)_
-- `]c` next git change _(not vscode)_
-- `<` previous source _(not vscode)_
-- `>` next source _(not vscode)_
+- `[c` previous git change 
+- `]c` next git change
+- `<` previous source 
+- `>` next source
 
-### Directory explorer _(not vscode)_
+### Directory explorer 
 
 - `<enter>` open 
 - `<c-v>` open entry in vertical split
@@ -86,15 +86,8 @@
 
 ### Search
 
-- `s` jump to labelled search result
-- `S` jump to labelled treesiter node _(not vscode)_
+- `<leader>fr` find and replace in selection
 - `<leader>f` find in workspace
-- `<leader>F` find current word in workspace
-- `<leader><c-f>` find in open files
-- `<leader>tr` resume last search
-- `<leader>sr` search and replace current word
-- `<leader>/` fuzzy find in document
-- `<leader>nt` select fuzzy finder to use _(only neovim)_
 
 ### Sorting
 
@@ -132,7 +125,7 @@
 - `<leader>ts` sort imports
 - `<leader>tu` remove unused imports
 - `<leader>td` jump to source definition
-- `<leader>tr` rename file and update changes to connected files _(not vscode)_
+- `<leader>tr` rename file and update changes to connected files
 
 ### Autocomplete
 
@@ -142,26 +135,26 @@
 - `<s-tab>` select previous entry
 - `<esc>` close menu
 
-### Syntax _(not vscode)_
+### Syntax
 
-- `[a` jump to previous argument start _(not vscode)_
-- `]a` jump to next argument start _(not vscode)_
-- `[A` jump to previous argument end _(not vscode)_
-- `]A` jump to next argument end _(not vscode)_
-- `[d` jump to previous block start _(not vscode)_
-- `]d` jump to next block start _(not vscode)_
-- `[D` jump to previous block end _(not vscode)_
-- `]D` jump to next block end _(not vscode)_
-- `[f` jump to previous function start _(not vscode)_
-- `]f` jump to next function start _(not vscode)_
-- `[F` jump to previous function end _(not vscode)_
-- `]F` jump to next function end _(not vscode)_
+- `[a` jump to previous argument start
+- `]a` jump to next argument start
+- `[A` jump to previous argument end
+- `]A` jump to next argument end
+- `[d` jump to previous block start
+- `]d` jump to next block start
+- `[D` jump to previous block end
+- `]D` jump to next block end
+- `[f` jump to previous function start
+- `]f` jump to next function start
+- `[F` jump to previous function end
+- `]F` jump to next function end
 - `[n` increase node selection to parent node
 - `[n` start node selection
 - `]n` decrease node selection to child node 
 - `[r` jump to previous symbol reference
 - `]r` jump to next symbol reference
-- `[t` jump upwards to context _(not vscode)_
+- `[t` jump upwards to context
 
 ### Git
 
@@ -198,8 +191,8 @@
 
 ### Folds
 
-- `zr` decrement foldlevel _(not vscode)_
-- `zm` increment foldlevel _(not vscode)_
+- `zr` decrement foldlevel 
+- `zm` increment foldlevel
 - `zR` decrement foldlevel to zero
 - `zM` increment foldlevel to maximum
 - `zo` open current fold
@@ -236,7 +229,6 @@
 
 - `<leader>pp` list workspaces
 
-
 ### Application
 
 - `<leader>n,` search configuration / open settings
@@ -246,6 +238,7 @@
 - `<leader>nh` help
 - `<leader>nk` keyboard shortcuts
 - `<leader>nK` keyboard shortcuts (JSON) _(only vscode)_
+- `<leader>nt` select fuzzy finder to use _(only neovim)_
 - `<leader>vb` toggle sidebar visibility _(only vscode)_
 
 ## macOS keybindings

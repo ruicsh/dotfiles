@@ -114,16 +114,13 @@ return {
 		main = "nvim-treesitter.configs", -- sets main module to use for opts
 		ft = g.ft_code,
 		build = ":TSUpdate",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- syntax aware text objects
-		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		"nvim-treesitter/nvim-treesitter-textobjects",
-
-		ft = g.ft_code,
+		dependencies = {
+			{
+				-- syntax aware text objects
+				-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+				"nvim-treesitter/nvim-treesitter-textobjects",
+			},
+		},
 		cond = function()
 			return not vim.g.vscode
 		end,

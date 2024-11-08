@@ -3,6 +3,9 @@ local k = vim.keymap.set
 -- sort
 k("v", "<leader>so", "<esc><cmd>Sort<cr>", { desc = "[S]ort" })
 
+-- search and replace
+k("x", "fr", ":s/", { desc = "Find and replace within selection" })
+
 -- indent
 k("v", "<<", "<gv") -- keep visual selection after indenting
 k("v", ">>", ">gv") -- keep visual selection after indenting
