@@ -84,10 +84,12 @@
 - `<c-u>` delete before the cursor in current line
 - `<c-w>` delete word before
 
-### Search
+### Find & Replace
 
-- `<leader>fr` find and replace in selection
+- `/` find in document forward
+- `?` find in document backward
 - `<leader>f` find in workspace
+- `<leader>r` replace in selection/document/workspace
 
 ### Sorting
 
