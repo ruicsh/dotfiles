@@ -36,12 +36,13 @@ return {
 				end,
 			},
 		},
-		nesting_rules = {
-			["ts"] = { "css", "scss", "module.scss", "test.ts", "spec.ts", "html" },
-			["tsx"] = { "css", "scss", "module.scss", "test.ts", "spec.ts", "html" },
-			["package.json"] = {
-				pattern = "^package%.json",
-				files = { "package-lock.json", "yarn*" },
+		filesystem = {
+			filtered_items = {
+				visible = true,
+				hide_dotfiles = false,
+				hide_gitignored = false,
+				hide_hidden = false,
+				hide_by_pattern = { ".git" },
 			},
 		},
 	},

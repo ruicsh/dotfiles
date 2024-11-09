@@ -58,8 +58,6 @@ k("n", "<c-u>", "<c-u>zz")
 k("n", "<c-d>", "<c-d>zz")
 k("n", "<c-i>", "<c-i>zz")
 k("n", "<c-o>", "<c-o>zz")
-k("n", "{", "{zz")
-k("n", "}", "}zz")
 k("n", "N", "Nzz")
 k("n", "n", "nzz")
 k("n", "G", "Gzz")
@@ -69,9 +67,17 @@ k("n", "%", "%zz")
 k("n", "*", "*zz")
 k("n", "#", "#zz")
 
+-- jumplist
+k("n", "{", "<cmd>keepj normal!{zz<cr>") -- don't include paragraph jumps
+k("n", "}", "<cmd>keepj normal!}zz<cr>") -- don't include paragraph jumps
+k("n", "k", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'kzz'", { expr = true, noremap = true }) -- don't include small jumps
+k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'jzz'", { expr = true, noremap = true }) -- don't include small jumps
+
 -- splits
 k("n", "|", "<c-w>w", { desc = "Splits: Switch" })
 k("n", "<c-w>|", "<c-w>v", { desc = "Splits: Open vertical" })
+-- k("n", "<c-w>v", "<cmd>OpenOrReuseVerticalSplit<cr>", { desc = "Splits: Open vertical" })
+-- k("n", "<c-w>|", "<cmd>OpenOrReuseVerticalSplit<cr>", { desc = "Splits: Open vertical" })
 k("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Splits: Move file to the left" })
 k("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Splits: Move file to the right" })
 
@@ -87,12 +93,6 @@ k("n", "zk", "zk%^") -- jump to start of previous fold
 
 -- alternate file (projectionist)
 k("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate file" })
-
--- jumplist
-k("n", "{", "<cmd>keepj normal!{<cr>") -- don't include paragraph jumps
-k("n", "}", "<cmd>keepj normal!}<cr>") -- don't include paragraph jumps
-k("n", "k", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'k'", { expr = true, noremap = true }) -- don't include small jumps
-k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'j'", { expr = true, noremap = true }) -- don't include small jumps
 
 -- this remap also removes the default behavior of going down a line with <cr>
 k("n", "<cr>", "<cmd>noh<cr>", { silent = true }) -- remove search highlighting
