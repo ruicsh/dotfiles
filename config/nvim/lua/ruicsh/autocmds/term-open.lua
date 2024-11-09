@@ -11,9 +11,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		end
 	end,
 })
-
--- start git messages in insert mode
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "gitcommit", "gitrebase" },
-	command = "startinsert | 1",
-})

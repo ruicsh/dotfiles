@@ -1,7 +1,6 @@
 require("ruicsh.options")
-require("ruicsh.commands")
 require("ruicsh/keymaps")
-require("ruicsh/custom")
+require("ruicsh/autocmds")
 require("ruicsh/theme")
 
 -- [[ Install `lazy.nvim` plugin manager ]]

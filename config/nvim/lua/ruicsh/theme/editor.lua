@@ -62,7 +62,6 @@ _.loadColorSet({
 	VertSplit = { fg = c.nord2, bg = "NONE" },
 	Visual = { fg = "NONE", bg = c.nord2 },
 	VisualMode = { fg = c.nord9, bg = "NONE", style = "reverse" },
-	VisualNOS = { fg = "NONE", bg = c.nord2 },
 	WarningMsg = { fg = c.nord15 },
 	Warnings = { fg = c.nord15 },
 	WildMenu = { fg = c.nord12, bg = "NONE", style = "bold" },
