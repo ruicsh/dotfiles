@@ -2,6 +2,7 @@
 local ft_code = {
 	"css",
 	"html",
+	"htmlangular",
 	"javascript",
 	"javascriptreact",
 	"json",

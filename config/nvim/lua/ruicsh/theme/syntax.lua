@@ -63,8 +63,18 @@ _.loadColorSet({
 	["@type"] = { fg = c.nord4 },
 	["@type.builtin"] = { fg = c.nord7 },
 	["@variable"] = { fg = c.nord4 },
-	["@variable.builtin.typescript"] = { fg = c.nord9 },
 
 	["@lsp.type.class.typescript"] = { fg = c.nord7 },
 	["@lsp.type.interface.typescript"] = { fg = c.nord7 },
+
+	["@variable.builtin.typescript"] = { fg = c.nord9 },
+	["@attribute.typescript"] = { fg = c.nord11 },
+
+	["@type.scss"] = { fg = c.nord7 },
+	["@string.scss"] = { fg = c.nord9 },
+	["@keyword.import.scss"] = { fg = c.nord7 },
+
+	["@variable.angular"] = { fg = c.nord11 },
+	["@function.angular"] = { fg = c.nord7 },
+	["@keyword.angular"] = { fg = c.nord7 },
 })

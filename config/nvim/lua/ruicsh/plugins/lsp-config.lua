@@ -34,7 +34,9 @@ end
 -- install and configure lsp servers
 local function conf_lsp_servers()
 	local servers = {
-		angularls = {},
+		angularls = {
+			filetypes = { "htmlangular", "typescript" },
+		},
 		cssls = {},
 		cssmodules_ls = {},
 		html = {},
