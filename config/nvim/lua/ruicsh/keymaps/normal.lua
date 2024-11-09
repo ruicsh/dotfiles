@@ -70,8 +70,8 @@ k("n", "#", "#zz")
 -- jumplist
 k("n", "{", "<cmd>keepj normal!{zz<cr>") -- don't include paragraph jumps
 k("n", "}", "<cmd>keepj normal!}zz<cr>") -- don't include paragraph jumps
-k("n", "k", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'kzz'", { expr = true, noremap = true }) -- don't include small jumps
-k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'jzz'", { expr = true, noremap = true }) -- don't include small jumps
+k("n", "k", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'k'", { expr = true, noremap = true }) -- don't include small jumps
+k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'j'", { expr = true, noremap = true }) -- don't include small jumps
 
 -- splits
 k("n", "|", "<c-w>w", { desc = "Splits: Switch" })

@@ -2,7 +2,8 @@
 -- https://github.com/gcmt/vessel.nvim
 
 return {
-	"gcmt/vessel.nvim",
+	-- "gcmt/vessel.nvim",
+	"ruicsh/vessel.nvim",
 	keys = {
 		{ "§", "<plug>(VesselViewBuffers)" },
 		{ "[§", "<plug>(VesselPinnedPrev)" },
