@@ -3,7 +3,7 @@
 --
 
 return {
-	{ -- fuzzy finder
+	{ -- fuzzy finder (telescope.nvim)
 		-- https://github.com/nvim-telescope/telescope.nvim
 		"nvim-telescope/telescope.nvim",
 		config = function()

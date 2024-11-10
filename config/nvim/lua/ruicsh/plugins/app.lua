@@ -5,7 +5,7 @@
 local c = require("ruicsh.theme.colors")
 
 return {
-	{ -- sessions
+	{ -- sessions (auto-session)
 		-- https://github.com/rmagatti/auto-session
 		"rmagatti/auto-session",
 		opts = {},
@@ -16,7 +16,7 @@ return {
 		end,
 	},
 
-	{ -- load env variables from a .env file
+	{ -- load env variables from a .env file (dotenv)
 		-- https://github.com/ellisonleao/dotenv.nvim
 		"ellisonleao/dotenv.nvim",
 		config = function()
@@ -35,7 +35,7 @@ return {
 		event = { "VimEnter" },
 	},
 
-	{ -- notifications
+	{ -- notifications (fidget.nvim)
 		-- https://github.com/j-hui/fidget.nvim
 		"j-hui/fidget.nvim",
 		opts = {
@@ -53,7 +53,7 @@ return {
 		end,
 	},
 
-	{ -- breadcrumbs
+	{ -- breadcrumbs (barbecue.nvim)
 		-- https://github.com/utilyre/barbecue.nvim
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
@@ -76,7 +76,7 @@ return {
 		},
 	},
 
-	{ -- scrollbar
+	{ -- scrollbar (nvim-scrollbar)
 		-- https://github.com/petertriho/nvim-scrollbar
 		"petertriho/nvim-scrollbar",
 		opts = {
@@ -96,7 +96,7 @@ return {
 		end,
 	},
 
-	{ -- shortcuts cheatsheet
+	{ -- shortcuts cheatsheet (which-key.nvim)
 		-- https://github.com/folke/which-key.nvim
 		"folke/which-key.nvim",
 		opts = {
@@ -120,7 +120,7 @@ return {
 		end,
 	},
 
-	{ -- command line
+	{ -- command line (wilder.nvim)
 		-- https://github.com/gelguy/wilder.nvim
 		"gelguy/wilder.nvim",
 		config = function()
@@ -147,7 +147,7 @@ return {
 		end,
 	},
 
-	{ -- workspaces
+	{ -- workspaces (workspaces.nvim)
 		-- https://github.com/natecraddock/workspaces.nvim
 		"natecraddock/workspaces.nvim",
 		keys = {
@@ -168,7 +168,7 @@ return {
 		end,
 	},
 
-	{ -- terminal
+	{ -- terminal (toggleterm.nvim)
 		-- https://github.com/akinsho/toggleterm.nvim
 		"akinsho/toggleterm.nvim",
 		opts = {
@@ -183,7 +183,7 @@ return {
 		end,
 	},
 
-	{ -- status line
+	{ -- status line (lualine.nvim)
 		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		config = function()
@@ -233,7 +233,7 @@ return {
 		end,
 	},
 
-	{ -- auto-save
+	{ -- auto-save (auto-save.nvim)
 		-- https://github.com/pocco81/auto-save.nvim
 		"Pocco81/auto-save.nvim",
 		opts = {

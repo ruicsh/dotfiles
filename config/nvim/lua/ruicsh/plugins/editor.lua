@@ -5,7 +5,7 @@
 local g = require("ruicsh.globals")
 
 return {
-	{ -- move line/selection up/down
+	{ -- move line/selection up/down (mini.move.nvim)
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
 		"echasnovski/mini.move",
 		opts = {
@@ -24,7 +24,7 @@ return {
 		version = "*",
 	},
 
-	{ -- search results labels
+	{ -- search results labels (nvim-hlslens)
 		-- https://github.com/kevinhwang91/nvim-hlslens
 		"kevinhwang91/nvim-hlslens",
 		config = function()
@@ -50,28 +50,28 @@ return {
 		end,
 	},
 
-	{ -- text exchange operator
+	{ -- text exchange operator (vim-exchange)
 		-- https://github.com/tommcdo/vim-exchange
 		"tommcdo/vim-exchange",
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- repeat plugin keymaps
+	{ -- repeat plugin keymaps (vim-repeat)
 		-- https://github.com/tpope/vim-repeat
 		"tpope/vim-repeat",
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- insert mode navigation
+	{ -- insert mode navigation (vim-rsi)
 		-- https://github.com/tpope/vim-rsi
 		"tpope/vim-rsi",
 
 		event = { "InsertEnter" },
 	},
 
-	{ -- sort selection
+	{ -- sort selection (sort.nvim)
 		-- https://github.com/sQVe/sort.nvim
 		"sQVe/sort.nvim",
 		opts = {
@@ -88,7 +88,7 @@ return {
 		cmd = "Sort",
 	},
 
-	{ -- search/replace
+	{ -- search/replace (nvim-spectre)
 		-- https://github.com/nvim-pack/nvim-spectre
 		"nvim-pack/nvim-spectre",
 		keys = {
@@ -106,21 +106,21 @@ return {
 		end,
 	},
 
-	{ -- surroundings (brackets, quotes)
+	{ -- surroundings (brackets, quotes) (vim-surround)
 		-- https://github.com/tpope/vim-surround
 		"tpope/vim-surround",
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- additional text objects
+	{ -- additional text objects (targets.vim)
 		-- https://github.com/wellle/targets.vim
 		"wellle/targets.vim",
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- folds
+	{ -- folds (nvim-ufo)
 		-- https://github.com/kevinhwang91/nvim-ufo
 		"kevinhwang91/nvim-ufo",
 		opts = {
@@ -138,20 +138,12 @@ return {
 		end,
 	},
 
-	{ -- autopairs
+	{ -- autopairs (mini.pairs.nvim)
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
 		"echasnovski/mini.pairs",
 		opts = {
-			-- In which modes mappings from this `config` should be created
 			modes = { insert = true, command = false, terminal = false },
 
-			-- Global mappings. Each right hand side should be a pair information, a
-			-- table with at least these fields (see more in |MiniPairs.map|):
-			-- - <action> - one of 'open', 'close', 'closeopen'.
-			-- - <pair> - two character string for pair to be used.
-			-- By default pair is not inserted after `\`, quotes are not recognized by
-			-- `<CR>`, `'` does not insert pair after a letter.
-			-- Only parts of tables can be tweaked (others will use these defaults).
 			mappings = {
 				["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
 				["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },

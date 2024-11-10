@@ -3,7 +3,7 @@
 --
 
 return {
-	{ -- delete buffer
+	{ -- delete buffer (vim-bbye)
 		-- https://github.com/moll/vim-bbye
 		"moll/vim-bbye",
 
@@ -13,7 +13,7 @@ return {
 		end,
 	},
 
-	{ -- buffer auto-close
+	{ -- buffer auto-close (hbac.nvim)
 		-- https://github.com/axkirillov/hbac.nvim
 		"axkirillov/hbac.nvim",
 		opts = {
@@ -31,7 +31,7 @@ return {
 		end,
 	},
 
-	{ -- tab scoping
+	{ -- tab scoping (scope.nvim)
 		-- https://github.com/tiagovla/scope.nvim
 		"tiagovla/scope.nvim",
 		opts = {},
@@ -42,7 +42,7 @@ return {
 		end,
 	},
 
-	{ -- tabs
+	{ -- tabs (tabby.nvim)
 		-- https://github.com/nanozuki/tabby.nvim
 		"nanozuki/tabby.nvim",
 		config = function()
@@ -101,7 +101,7 @@ return {
 		},
 	},
 
-	{ -- pinned and opened buffers
+	{ -- pinned and opened buffers (vessel.nvim)
 		-- https://github.com/gcmt/vessel.nvim
 		-- "gcmt/vessel.nvim",
 		"ruicsh/vessel.nvim",
@@ -126,7 +126,7 @@ return {
 		end,
 	},
 
-	{ -- maximize/restore windows
+	{ -- maximize/restore windows (windows.nvim)
 		-- https://github.com/anuvyklack/windows.nvim
 		"anuvyklack/windows.nvim",
 		keys = {
@@ -147,7 +147,7 @@ return {
 		end,
 	},
 
-	{ -- dim inactive windows
+	{ -- dim inactive windows (tint.nvim)
 		-- https://github.com/levouh/tint.nvim
 		"levouh/tint.nvim",
 		opts = {

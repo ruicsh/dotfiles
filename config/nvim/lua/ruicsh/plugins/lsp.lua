@@ -78,7 +78,7 @@ local function conf_lsp_servers()
 end
 
 return {
-	{ -- config
+	{ -- config (nvim-lspconfig)
 		-- https://github.com/neovim/nvim-lspconfig
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -105,7 +105,7 @@ return {
 		end,
 	},
 
-	{ -- autocomplete
+	{ -- autocomplete (nvim-cmp)
 		-- https://github.com/hrsh7th/nvim-cmp
 		"hrsh7th/nvim-cmp",
 		config = function()
@@ -156,7 +156,7 @@ return {
 		end,
 	},
 
-	{ -- jump to reference
+	{ -- jump to reference (refjump.nvim)
 		-- https://github.com/mawkler/refjump.nvim
 		"mawkler/refjump.nvim",
 		opts = {
@@ -172,7 +172,7 @@ return {
 		end,
 	},
 
-	{ -- diagnostics
+	{ -- diagnostics (trouble.nvim)
 		-- https://github.com/folke/trouble.nvim
 		"folke/trouble.nvim",
 		keys = {
@@ -207,7 +207,7 @@ return {
 		end,
 	},
 
-	{ -- neovim apis
+	{ -- neovim apis (lazydev.nvim)
 		-- used for completion, annotations and signatures of Neovim apis
 		"folke/lazydev.nvim",
 		opts = {
@@ -224,7 +224,7 @@ return {
 		end,
 	},
 
-	{ -- type definitions for lua
+	{ -- type definitions for lua (luvit-meta)
 		"Bilal2453/luvit-meta",
 
 		lazy = true,

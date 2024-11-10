@@ -5,7 +5,7 @@
 local g = require("ruicsh.globals")
 
 return {
-	{ -- code parser
+	{ -- code parser (nvim-treesitter)
 		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -128,7 +128,7 @@ return {
 		end,
 	},
 
-	{ -- auto-close/rename html tags
+	{ -- auto-close/rename html tags (nvim-ts-autotag)
 		-- https://github.com/windwp/nvim-ts-autotag
 		"windwp/nvim-ts-autotag",
 		config = function()
@@ -147,7 +147,7 @@ return {
 		end,
 	},
 
-	{ -- syntax aware join lines
+	{ -- syntax aware join lines (treesj)
 		-- https://github.com/Wansmer/treesj
 		"Wansmer/treesj",
 		keys = {
@@ -164,7 +164,7 @@ return {
 		},
 	},
 
-	{ -- comments on embbeded languages (ex: html inside ts, css inside html)
+	{ -- comments on embbeded languages (ex: html inside ts, css inside html) (nvim-ts-context-commentstring)
 		-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		config = function()
@@ -187,7 +187,7 @@ return {
 		end,
 	},
 
-	{ -- annotations context of the end of that AST node
+	{ -- annotations context of the end of that AST node (nvim-biscuits)
 		-- https://github.com/code-biscuits/nvim-biscuits
 		"code-biscuits/nvim-biscuits",
 		opts = {

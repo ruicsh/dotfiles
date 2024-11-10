@@ -3,7 +3,7 @@
 --
 
 return {
-	{ -- git client
+	{ -- git client (vim-fugitive)
 		-- https://github.com/tpope/vim-fugitive
 		"tpope/vim-fugitive",
 
@@ -13,7 +13,7 @@ return {
 		end,
 	},
 
-	{ -- git blame
+	{ -- git blame (git-blame.nvim)
 		-- https://github.com/f-person/git-blame.nvim
 		"f-person/git-blame.nvim",
 		opts = {
@@ -30,7 +30,7 @@ return {
 		end,
 	},
 
-	{ -- merge conflicts
+	{ -- merge conflicts (git-conflict.nvim)
 		-- https://github.com/akinsho/git-conflict.nvim
 		"akinsho/git-conflict.nvim",
 		config = true,
@@ -42,7 +42,7 @@ return {
 		end,
 	},
 
-	{ -- diffview
+	{ -- diffview (diffview.nvim)
 		-- https://github.com/sindrets/diffview.nvim
 		"sindrets/diffview.nvim",
 		keys = {
@@ -103,7 +103,7 @@ return {
 		end,
 	},
 
-	{ -- gutter signs
+	{ -- gutter signs (gitsigns.nvim)
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		opts = {

@@ -4,12 +4,8 @@
 
 local g = require("ruicsh.globals")
 
-local debugprint_js_conf = {
-	display_location = false,
-}
-
 return {
-	{ -- formatter
+	{ -- formatter (conform.nvim)
 		-- https://github.com/stevearc/conform.nvim
 		"stevearc/conform.nvim",
 		keys = {
@@ -58,46 +54,53 @@ return {
 		end,
 	},
 
-	{ -- log statements
+	{ -- log statements (debugprint.nvim)
 		-- https://github.com/andrewferrier/debugprint.nvim
 		"andrewferrier/debugprint.nvim",
-		opts = {
-			print_tag = "ruic",
-			keymaps = {
-				normal = {
-					plain_below = "g?p",
-					plain_above = "g?P",
-					variable_below = "g?v",
-					variable_above = "g?V",
-					variable_below_alwaysprompt = nil,
-					variable_above_alwaysprompt = nil,
-					textobj_below = "g?o",
-					textobj_above = "g?O",
-					toggle_comment_debug_prints = nil,
-					delete_debug_prints = nil,
+		config = function()
+			local js_conf = {
+				display_location = false,
+			}
+
+			local debugprint = require("debugprint")
+			debugprint.setup({
+				print_tag = "ruic",
+				keymaps = {
+					normal = {
+						plain_below = "g?p",
+						plain_above = "g?P",
+						variable_below = "g?v",
+						variable_above = "g?V",
+						variable_below_alwaysprompt = nil,
+						variable_above_alwaysprompt = nil,
+						textobj_below = "g?o",
+						textobj_above = "g?O",
+						toggle_comment_debug_prints = nil,
+						delete_debug_prints = nil,
+					},
+					visual = {
+						variable_below = "g?v",
+						variable_above = "g?V",
+					},
 				},
-				visual = {
-					variable_below = "g?v",
-					variable_above = "g?V",
+				commands = {
+					toggle_comment_debug_prints = "ToggleCommentDebugPrints",
+					delete_debug_prints = "DeleteDebugPrints",
 				},
-			},
-			commands = {
-				toggle_comment_debug_prints = "ToggleCommentDebugPrints",
-				delete_debug_prints = "DeleteDebugPrints",
-			},
-			filetypes = {
-				["javascript"] = debugprint_js_conf,
-				["javascriptreact"] = debugprint_js_conf,
-				["typescript"] = debugprint_js_conf,
-				["typescriptreact"] = debugprint_js_conf,
-			},
-		},
+				filetypes = {
+					["javascript"] = js_conf,
+					["javascriptreact"] = js_conf,
+					["typescript"] = js_conf,
+					["typescriptreact"] = js_conf,
+				},
+			})
+		end,
 
 		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- indent guides
+	{ -- indent guides (indent-blankline.nvim)
 		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
 		opts = {
