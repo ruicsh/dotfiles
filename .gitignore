@@ -1,4 +1,5 @@
 .DS_Store
+.env
 Brewfile-mac.lock.json
 Brewfile.lock.json
 macos/.config/iterm2/AppSupport
