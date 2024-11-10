@@ -5,19 +5,20 @@
 local c = require("ruicsh.theme.colors")
 
 return {
-  { -- load env variables from a .env file (dotenv)
+	{ -- load env variables from a .env file (dotenv)
 		-- https://github.com/ellisonleao/dotenv.nvim
 		"ellisonleao/dotenv.nvim",
 		config = function()
 			local dotenv = require("dotenv")
 			dotenv.setup()
 
-			local init_file = vim.uv.fs_realpath(vim.fn.expand("~/.config/nvim/init.lua"))
-			local path = vim.fs.dirname(init_file)
-			local dotenv_file = vim.fs.joinpath(path, ".env")
+			local init = vim.fn.expand(vim.env.MYVIMRC)
+			local path = vim.uv.fs_realpath(init)
+			local dir = vim.fs.dirname(path)
+			local file = vim.fs.joinpath(dir, ".env")
 
-			if vim.fn.filereadable(dotenv_file) then
-				vim.cmd(":Dotenv " .. dotenv_file)
+			if vim.fn.filereadable(file) then
+				vim.cmd(":Dotenv " .. file)
 			end
 		end,
 
