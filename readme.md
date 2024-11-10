@@ -189,6 +189,15 @@
 - `s` stage file
 - `X` reset file
 
+### Merge Conflicts
+
+- `co` choose ours
+- `ct` choose theirs
+- `cb` choose both
+- `c0` choose none
+- `]x` jump to next conflict
+- `[x` jump to previous conflict
+
 ### Splits 
 
 - `|` switch splits
