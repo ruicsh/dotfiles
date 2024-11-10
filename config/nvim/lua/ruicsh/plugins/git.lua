@@ -1,3 +1,7 @@
+--
+-- Git
+--
+
 return {
 	{ -- git client
 		-- https://github.com/tpope/vim-fugitive

@@ -1,10 +1,12 @@
--- code parser
--- https://github.com/nvim-treesitter/nvim-treesitter
+--
+-- Treesitter
+--
 
 local g = require("ruicsh.globals")
 
 return {
-	{
+	{ -- code parser
+		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
@@ -182,6 +184,22 @@ return {
 						and require("ts_context_commentstring.internal").calculate_commentstring()
 					or original_get_option(filetype, option)
 			end
+		end,
+	},
+
+	{ -- annotations context of the end of that AST node
+		-- https://github.com/code-biscuits/nvim-biscuits
+		"code-biscuits/nvim-biscuits",
+		opts = {
+			cursor_line_only = true,
+		},
+
+		ft = g.ft_code,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		cond = function()
+			return not vim.g.vscode
 		end,
 	},
 }
