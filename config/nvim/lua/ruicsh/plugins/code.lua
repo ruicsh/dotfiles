@@ -37,13 +37,15 @@ return {
 				}
 			end,
 			formatters_by_ft = {
-				lua = { "stylua" },
-				json = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				htmlangular = { "prettier" },
 				javascript = { "prettier" },
+				json = { "prettier" },
+				lua = { "stylua" },
+				scss = { "prettier" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
-				css = { "prettier" },
-				scss = { "prettier" },
 			},
 		},
 
