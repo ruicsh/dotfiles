@@ -232,4 +232,17 @@ return {
 			return not vim.g.vscode
 		end,
 	},
+
+	{ -- auto-save
+		-- https://github.com/pocco81/auto-save.nvim
+		"Pocco81/auto-save.nvim",
+		opts = {
+			enabled = true,
+		},
+
+		event = { "VeryLazy" },
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
 }
