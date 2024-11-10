@@ -1,4 +1,5 @@
 vim.opt.backup = false -- do not create backup files
+vim.opt.cmdheight = 0 -- number of screen lines to use for command-line
 vim.opt.cursorline = true -- highlight current line
 vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
 vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
@@ -9,10 +10,10 @@ vim.opt.linespace = 0 -- line height
 vim.opt.mouse = "a" -- enable mouse support
 vim.opt.number = true -- show line numbers
 vim.opt.numberwidth = 5 -- more space on the gutter column
-vim.opt.shortmess = "I" -- disable welcome message
 vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
+vim.opt.shortmess = "IWcCSF" -- don't show messages
 vim.opt.showtabline = 2 -- show tabline
 vim.opt.signcolumn = "yes" -- enable the sign column to prevent the screen from jumping
 vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
