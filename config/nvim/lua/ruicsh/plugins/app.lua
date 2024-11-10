@@ -5,18 +5,7 @@
 local c = require("ruicsh.theme.colors")
 
 return {
-	{ -- sessions (auto-session)
-		-- https://github.com/rmagatti/auto-session
-		"rmagatti/auto-session",
-		opts = {},
-
-		event = { "VimEnter" },
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- load env variables from a .env file (dotenv)
+  { -- load env variables from a .env file (dotenv)
 		-- https://github.com/ellisonleao/dotenv.nvim
 		"ellisonleao/dotenv.nvim",
 		config = function()
@@ -156,10 +145,6 @@ return {
 		opts = {
 			cd_type = "tab",
 			auto_open = true,
-			hooks = {
-				open_pre = "SessionSave",
-				open = "SessionRestore",
-			},
 		},
 
 		event = { "VimEnter" },
@@ -187,7 +172,6 @@ return {
 		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			local c = require("ruicsh.theme.colors")
 			local theme = require("lualine.themes.nord")
 			theme.normal.c.bg = "NONE"
 			theme.normal.x = { fg = c.nord3_500, bg = "NONE" }
@@ -228,19 +212,6 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- auto-save (auto-save.nvim)
-		-- https://github.com/pocco81/auto-save.nvim
-		"Pocco81/auto-save.nvim",
-		opts = {
-			enabled = true,
-		},
-
-		event = { "VeryLazy" },
 		cond = function()
 			return not vim.g.vscode
 		end,

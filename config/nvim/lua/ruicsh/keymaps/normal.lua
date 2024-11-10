@@ -1,7 +1,7 @@
 local k = vim.keymap.set
 
 -- save/quit/exit
-k("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+k("n", "<leader>w", "<cmd>silent! write<cr>", { desc = "Save file" })
 k("n", "<c-q>", "<c-w>q", { desc = "Close window" })
 
 -- editing
