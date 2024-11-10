@@ -129,6 +129,13 @@
 - `<leader>td` jump to source definition
 - `<leader>tr` rename file and update changes to connected files
 
+### Diagnostics
+
+- `<leader>xx` open diagnostics for workspace
+- `<leader>xX` open diagnostics for buffer
+- `<leader>xL` open location list
+- `<leader>xQ` open quickfix list
+
 ### Autocomplete
 
 - `<tab>` open menu
