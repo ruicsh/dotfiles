@@ -90,9 +90,6 @@ k("n", "X", '"_X') -- don't yank on delete char before cursor
 -- folds
 k("n", "zk", "zk%^") -- jump to start of previous fold
 
--- alternate file (projectionist)
-k("n", "<leader>a", "<cmd>A<cr>", { desc = "Projectionist: Open [a]lternate file" })
-
 -- this remap also removes the default behavior of going down a line with <cr>
 k("n", "<cr>", "<cmd>noh<cr>", { silent = true }) -- remove search highlighting
 k("n", "J", "mzJ`z") -- keep cursor in place when joining lines
