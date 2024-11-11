@@ -75,9 +75,8 @@ k("n", "j", "(v:count > 5 ? \"m'\" .. v:count : '') .. 'j'", { expr = true, nore
 
 -- splits
 k("n", "|", "<c-w>w", { desc = "Splits: Switch" })
-k("n", "<c-w>|", "<c-w>v", { desc = "Splits: Open vertical" })
--- k("n", "<c-w>v", "<cmd>OpenOrReuseVerticalSplit<cr>", { desc = "Splits: Open vertical" })
--- k("n", "<c-w>|", "<cmd>OpenOrReuseVerticalSplit<cr>", { desc = "Splits: Open vertical" })
+k("n", "<c-w>v", "<cmd>SmartVerticalSplit<cr>", { desc = "Splits: Open vertical" })
+k("n", "<c-w>|", "<cmd>SmartVerticalSplit<cr>", { desc = "Splits: Open vertical" })
 k("n", "<c-w>[", "<c-w>x<c-w>w", { desc = "Splits: Move file to the left" })
 k("n", "<c-w>]", "<c-w>x<c-w>w", { desc = "Splits: Move file to the right" })
 
