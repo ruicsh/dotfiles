@@ -2,6 +2,8 @@ local c = require("ruicsh.theme.colors")
 local _ = require("ruicsh.theme.util")
 
 _.loadColorSet({
+	["@Special"] = { fg = c.nord13 },
+
 	["@attribute"] = { fg = c.nord7 },
 	["@boolean"] = { fg = c.nord9 },
 	["@character"] = { fg = c.nord14 },
@@ -74,7 +76,7 @@ _.loadColorSet({
 	["@string.scss"] = { fg = c.nord9 },
 	["@keyword.import.scss"] = { fg = c.nord7 },
 
-	["@variable.angular"] = { fg = c.nord11 },
-	["@function.angular"] = { fg = c.nord7 },
+	["@variable.angular"] = { fg = c.nord12 },
+	["@function.angular"] = { fg = c.nord12 },
 	["@keyword.angular"] = { fg = c.nord7 },
 })
