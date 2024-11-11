@@ -26,6 +26,7 @@ vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
 vim.opt.termguicolors = true -- enable true colors
 vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
 vim.opt.wrap = false -- do not automatically wrap text
+vim.opt.laststatus = 3
 
 -- fold settings
 -- These options were reccommended by nvim-ufo

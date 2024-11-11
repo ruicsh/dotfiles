@@ -7,5 +7,3 @@ k("i", "<c-v>", "<c-r>", { desc = "Paste" })
 k("i", "<c-j>", "<c-o>j", { desc = "Jump down a line" })
 k("i", "<c-k>", "<c-o>k", { desc = "Jump up a line" })
 k("i", "<c-r>", "<c-r>+", { desc = "Paste" })
-
-k({ "i", "c" }, "<c-l>", "<c-o>A", { desc = "Go to the end of the line" })

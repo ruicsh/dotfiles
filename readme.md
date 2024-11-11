@@ -57,7 +57,6 @@
 
 ### Editing
 
-- `<c-l>` jump to end of line
 - `[<space>` add blank line above cursor
 - `]<space>` add blank line below cursor
 - `[e` move line/selection above
@@ -74,10 +73,10 @@
 ### Insert mode navigation
 
 - `<c-a>` jump to beginning of line
-- `<c-b>` go backwards one character
+- `<c-b>` jump backwards one character
 - `<c-d>` delete character in front of cursor
 - `<c-e>` jump to end of line
-- `<c-f>` move forward one character
+- `<c-f>` jump forward one character
 - `<c-j>` jump to line below
 - `<c-k>` jump to line above
 - `<c-r>` paste from clipboard
