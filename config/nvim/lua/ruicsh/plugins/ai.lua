@@ -37,7 +37,9 @@ return {
 		"yetone/avante.nvim",
 		opts = {
 			provider = "claude",
-			auto_suggestions_provider = "copilot",
+			behavior = {
+				auto_suggestions = false,
+			},
 		},
 
 		event = "VeryLazy",
