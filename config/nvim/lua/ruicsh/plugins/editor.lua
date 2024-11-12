@@ -137,4 +137,12 @@ return {
 			return not vim.g.vscode
 		end,
 	},
+
+	{ -- move by subwords in camelCase (nvim-spider)
+		-- https://github.com/chrisgrieser/nvim-spider
+		"chrisgrieser/nvim-spider",
+
+		ft = g.ft_code,
+		event = { "BufReadPost", "BufNewFile" },
+	},
 }
