@@ -101,26 +101,23 @@ return {
 		},
 	},
 
-	{ -- pinned and opened buffers (vessel.nvim)
-		-- https://github.com/gcmt/vessel.nvim
-		-- "gcmt/vessel.nvim",
-		"ruicsh/vessel.nvim",
-		keys = {
-			{ "§", "<plug>(VesselViewBuffers)" },
-			{ "[§", "<plug>(VesselPinnedPrev)" },
-			{ "]§", "<plug>(VesselPinnedNext)" },
-		},
-		opts = {
-			create_commands = true,
-			buffers = {
-				view = "tree",
-				mappings = {
-					close = { "§" },
-				},
-			},
-		},
+	{ -- buffer manager (buffer_manager.nvim)
+		-- https://github.com/j-morano/buffer_manager.nvim
+		"j-morano/buffer_manager.nvim",
+		config = function()
+			local bm = require("buffer_manager")
+			bm.setup({
+				show_indicators = true,
+			})
 
-		event = { "BufReadPost", "BufNewFile" },
+			local bmui = require("buffer_manager.ui")
+			vim.keymap.set("n", "§", bmui.toggle_quick_menu, { noremap = true, silent = true })
+		end,
+
+		event = { "VimEnter" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
 		cond = function()
 			return not vim.g.vscode
 		end,

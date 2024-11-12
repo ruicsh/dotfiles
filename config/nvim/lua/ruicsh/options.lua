@@ -1,5 +1,4 @@
 vim.opt.backup = false -- do not create backup files
-vim.opt.cmdheight = 0 -- number of screen lines to use for command-line
 vim.opt.cursorline = true -- highlight current line
 vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
 vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
