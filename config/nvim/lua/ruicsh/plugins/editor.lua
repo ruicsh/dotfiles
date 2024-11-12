@@ -141,6 +141,12 @@ return {
 	{ -- move by subwords in camelCase (nvim-spider)
 		-- https://github.com/chrisgrieser/nvim-spider
 		"chrisgrieser/nvim-spider",
+		keys = {
+			{ "w", "<cmd>lua require('spider').motion('w')<cr>" },
+			{ "e", "<cmd>lua require('spider').motion('e')<cr>" },
+			{ "b", "<cmd>lua require('spider').motion('b')<cr>" },
+			{ "ge", "<cmd>lua require('spider').motion('ge')<cr>" },
+		},
 
 		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
