@@ -74,3 +74,8 @@ _.loadColorSet({
 _.loadColorSet({
 	HlSearchNear = { bg = c.nord10 },
 })
+
+-- avante
+_.loadColorSet({
+	AvanteInlineHint = { fg = c.nord3 },
+})
