@@ -118,4 +118,60 @@ return {
 			return not vim.g.vscode
 		end,
 	},
+
+	{ -- autopairs (mini.pairs.nvim)
+		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
+		"echasnovski/mini.pairs",
+		opts = {
+			modes = { insert = true, command = false, terminal = false },
+
+			mappings = {
+				["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
+				["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
+				["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
+
+				[")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
+				["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
+				["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
+
+				['"'] = { action = "closeopen", pair = '""', neigh_pattern = "[^\\].", register = { cr = false } },
+				["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },
+				["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
+			},
+		},
+
+		ft = g.ft_code,
+		version = false,
+	},
+
+	{ -- tab out of from parentheses, brackets, braces, quotes, etc. (tabout.nvim)
+		-- https://github.com/abecodes/tabout.nvim
+		"abecodes/tabout.nvim",
+		opt = {
+			tabkey = "<tab>",
+			backwards_tabkey = "<s-tab>",
+			act_as_tab = true,
+			act_as_shift_tab = false,
+			enable_backwards = true,
+			completion = true,
+			tabouts = {
+				{ open = "'", close = "'" },
+				{ open = '"', close = '"' },
+				{ open = "`", close = "`" },
+				{ open = "(", close = ")" },
+				{ open = "[", close = "]" },
+				{ open = "{", close = "}" },
+			},
+			ignore_beginning = true,
+			exclude = {},
+		},
+
+		ft = g.ft_code,
+		event = "InsertCharPre",
+		priority = 1000,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"hrsh7th/nvim-cmp",
+		},
+	},
 }

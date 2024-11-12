@@ -137,32 +137,4 @@ return {
 			return not vim.g.vscode
 		end,
 	},
-
-	{ -- autopairs (mini.pairs.nvim)
-		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
-		"echasnovski/mini.pairs",
-		opts = {
-			modes = { insert = true, command = false, terminal = false },
-
-			mappings = {
-				["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
-				["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
-				["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
-
-				[")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
-				["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
-				["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
-
-				['"'] = { action = "closeopen", pair = '""', neigh_pattern = "[^\\].", register = { cr = false } },
-				["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },
-				["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
-			},
-		},
-
-		ft = g.ft_code,
-		version = false,
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
 }
