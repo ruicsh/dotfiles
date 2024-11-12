@@ -13,24 +13,6 @@ return {
 		end,
 	},
 
-	{ -- buffer auto-close (hbac.nvim)
-		-- https://github.com/axkirillov/hbac.nvim
-		"axkirillov/hbac.nvim",
-		opts = {
-			autoclose = true,
-			threshold = 10,
-			close_command = function(bufnr)
-				vim.api.nvim_buf_delete(bufnr, {})
-			end,
-			close_buffers_with_windows = false,
-		},
-
-		event = { "BufReadPost", "BufNewFile" },
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
 	{ -- tab scoping (scope.nvim)
 		-- https://github.com/tiagovla/scope.nvim
 		"tiagovla/scope.nvim",
@@ -108,6 +90,7 @@ return {
 			local bm = require("buffer_manager")
 			bm.setup({
 				show_indicators = true,
+				short_file_names = true,
 			})
 
 			local bmui = require("buffer_manager.ui")
