@@ -16,10 +16,9 @@ return {
 			suggestion = {
 				auto_trigger = true,
 				keymap = {
-					accept = "<c-l>",
-					dismiss = "<c-h>",
-					next = "<c-n>",
-					prev = "<c-p>",
+					accept = "<tab>",
+					dismiss = "<esc>",
+					next = "<c-]>",
 				},
 			},
 		},

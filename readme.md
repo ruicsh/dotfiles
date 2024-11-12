@@ -137,11 +137,20 @@
 
 ### Autocomplete
 
-- `<tab>` open menu
 - `<cr>` accept
-- `<tab>` select next entry
-- `<s-tab>` select previous entry
-- `<esc>` close menu
+- `<c-n>` select next entry
+- `<c-p>` select previous entry
+- `<c-e>` close menu
+
+### AI code generation
+
+- `<tab>` accept suggestion
+- `<c-]>` next suggestion
+- `<esc>` dismiss suggestions
+- `<leader>aa` open chat panel
+- `<leader>ae` chat with selection
+- `A` apply all generated code
+- `a` apply hunk of generated code
 
 ### Syntax
 

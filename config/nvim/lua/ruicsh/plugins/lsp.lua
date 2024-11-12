@@ -110,17 +110,17 @@ return {
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
-			local cmp_action = require("lsp-zero").cmp_action()
 
 			cmp.setup({
 				mapping = cmp.mapping.preset.insert({
-					["<cr>"] = cmp.mapping.confirm({ select = false }),
-					["<tab>"] = cmp_action.tab_complete(),
-					["<s-tab>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
+					["<c-b>"] = cmp.mapping.scroll_docs(-4),
+					["<c-f>"] = cmp.mapping.scroll_docs(4),
+					["<c-space>"] = cmp.mapping.complete(),
+					["<c-e>"] = cmp.mapping.abort(),
+					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				preselect = "item",
 				completion = {
-					autocomplete = false,
 					completeopt = "menu,menuone,noinsert",
 				},
 				sources = {
@@ -146,7 +146,6 @@ return {
 		ft = g.ft_code,
 		event = { "InsertEnter" },
 		dependencies = {
-			{ "VonHeikemen/lsp-zero.nvim", ft = g.ft_code, event = { "InsertEnter" } },
 			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
 			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
 			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
