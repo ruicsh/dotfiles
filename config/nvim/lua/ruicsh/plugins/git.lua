@@ -51,7 +51,6 @@ return {
 		config = function()
 			local diffview = require("diffview")
 			local actions = require("diffview.actions")
-			local tint = require("tint")
 			diffview.setup({
 				enhanced_diff_hl = true,
 				keymaps = {
@@ -76,7 +75,7 @@ return {
 						vim.opt_local.foldenable = true -- enable folding
 					end,
 					view_enter = function(view)
-						tint.disable() -- don't tint diffviews
+						vim.cmd(":VimadeDisable") -- disable dimming windows
 						vim.cmd(":Barbecue hide") -- hide breadcrumbs
 
 						local bufnr = view.buffer
@@ -90,7 +89,7 @@ return {
 						) -- use cc to commit
 					end,
 					view_leave = function()
-						tint.enable() -- reenable tints
+						vim.cmd(":VimadeEnable") --reenable dimming windows
 						vim.cmd(":Barbecue show") -- show breadcrumbs
 					end,
 				},
