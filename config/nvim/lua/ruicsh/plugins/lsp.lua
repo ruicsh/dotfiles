@@ -27,6 +27,9 @@ local function set_keymaps(event)
 			show_line = false,
 		})
 	end
+	local function lsp_toggle_signature()
+		require("lsp_signature").toggle_float_win()
+	end
 
 	map("K", "<cmd>lua vim.lsp.buf.hover()<cr>", "LSP: Display hover for symbol")
 	map("gd", telescope.lsp_definitions, "LSP: Jump to [d]efinition")
@@ -36,6 +39,7 @@ local function set_keymaps(event)
 	map("gy", lsp_document_symbols, "LSP: Document s[y]mbols")
 	map("gY", lsp_workspace_symbols, "LSP: Workspace s[Y]mbols")
 	map("<f2>", vim.lsp.buf.rename, "LSP: Rename symbol")
+	map("ga", lsp_toggle_signature, "LSP: Toggle signature hints")
 end
 
 -- install and configure lsp servers
@@ -175,6 +179,24 @@ return {
 
 		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
+
+	{ -- signature hints (lsp_signature.nvim)
+		-- https://github.com/ray-x/lsp_signature.nvim
+		"ray-x/lsp_signature.nvim",
+		opts = {
+			bind = true,
+			hint_enable = false,
+			handler_opts = {
+				border = "rounded",
+			},
+		},
+
+		event = "InsertEnter",
+		ft = g.ft_code,
 		cond = function()
 			return not vim.g.vscode
 		end,
