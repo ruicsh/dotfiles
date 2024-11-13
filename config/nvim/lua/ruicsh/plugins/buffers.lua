@@ -137,11 +137,11 @@ return {
 		end,
 	},
 
-	{ -- dim inactive windows (tint.nvim)
-		-- https://github.com/levouh/tint.nvim
-		"levouh/tint.nvim",
+	{ -- dim inactive windows (vimade)
+		-- https://github.com/tadaa/vimade
+		"tadaa/vimade",
 		opts = {
-			tint = -60,
+			fadelevel = 0.4,
 		},
 
 		event = { "VeryLazy" },
