@@ -21,12 +21,18 @@ local function set_keymaps(event)
 	local function lsp_workspace_symbols()
 		telescope.lsp_workspace_symbols({ symbols = lsp_symbols })
 	end
+	local function lsp_references()
+		telescope.lsp_references({
+			include_declaration = false,
+			show_line = false,
+		})
+	end
 
 	map("K", "<cmd>lua vim.lsp.buf.hover()<cr>", "LSP: Display hover for symbol")
 	map("gd", telescope.lsp_definitions, "LSP: Jump to [d]efinition")
 	map("gi", telescope.lsp_implementations, "LSP: Jump to [i]mplementation")
 	map("go", telescope.lsp_type_definitions, "LSP: Jump to type definition")
-	map("gr", telescope.lsp_references, "LSP: List [r]eferences")
+	map("gr", lsp_references, "LSP: List [r]eferences")
 	map("gy", lsp_document_symbols, "LSP: Document s[y]mbols")
 	map("gY", lsp_workspace_symbols, "LSP: Workspace s[Y]mbols")
 	map("<f2>", vim.lsp.buf.rename, "LSP: Rename symbol")
