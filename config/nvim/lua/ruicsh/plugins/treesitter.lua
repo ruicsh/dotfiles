@@ -186,20 +186,4 @@ return {
 			end
 		end,
 	},
-
-	{ -- annotations context of the end of that AST node (nvim-biscuits)
-		-- https://github.com/code-biscuits/nvim-biscuits
-		"code-biscuits/nvim-biscuits",
-		opts = {
-			cursor_line_only = true,
-		},
-
-		ft = g.ft_code,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
 }

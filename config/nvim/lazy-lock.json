@@ -29,7 +29,6 @@
   "mini.pairs": { "branch": "main", "commit": "7e834c5937d95364cc1740e20d673afe2d034cdb" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "a77af2e764c5ed4038d27d1c463fa49cd4794e07" },
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
-  "nvim-biscuits": { "branch": "main", "commit": "ff1d12c8b47cd28723da593b2cfa2e98391d439a" },
   "nvim-cmp": { "branch": "main", "commit": "f17d9b4394027ff4442b298398dfcaab97e40c4f" },
   "nvim-hlslens": { "branch": "main", "commit": "07afd4dd14405ad14b142a501a3abea6ae44b21b" },
   "nvim-lspconfig": { "branch": "master", "commit": "d2d153a179ed59aa7134d7ebdf4d7dcb156efa22" },
