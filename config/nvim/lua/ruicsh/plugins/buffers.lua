@@ -91,9 +91,13 @@ return {
 			bm.setup({
 				show_indicators = true,
 				format_function = function(buf)
+					-- display the parent directory name and basename
 					local path = vim.fs.dirname(buf)
 					local parent = vim.fs.basename(path)
 					local basename = vim.fs.basename(buf)
+					if parent == "." then
+						return basename
+					end
 					return vim.fs.joinpath(parent, basename)
 				end,
 				width = 0.5,

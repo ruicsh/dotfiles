@@ -21,12 +21,36 @@ return {
 					},
 					file_ignore_patterns = {
 						"node_modules",
-						".git",
-						".next",
+						"\\.git",
+						"\\.next",
 						"package-lock.json",
 						"yarn.lock",
 					},
 					hidden = true,
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+						"-l",
+					},
+				},
+				pickers = {
+					live_grep = {
+						path_display = function(opts, filepath)
+							-- display the parent directory name and basename
+							local path = vim.fs.dirname(filepath)
+							local parent = vim.fs.basename(path)
+							local basename = vim.fs.basename(filepath)
+							if parent == "." then
+								return basename
+							end
+							return vim.fs.joinpath(parent, basename)
+						end,
+					},
 				},
 				extensions = {
 					["ui-select"] = {
