@@ -90,7 +90,13 @@ return {
 			local bm = require("buffer_manager")
 			bm.setup({
 				show_indicators = true,
-				short_file_names = true,
+				format_function = function(buf)
+					local path = vim.fs.dirname(buf)
+					local parent = vim.fs.basename(path)
+					local basename = vim.fs.basename(buf)
+					return vim.fs.joinpath(parent, basename)
+				end,
+				width = 0.5,
 			})
 
 			local bmui = require("buffer_manager.ui")
