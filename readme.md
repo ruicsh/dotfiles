@@ -48,8 +48,8 @@
 - `§` list open files
 - `[b` previous opened file
 - `]b` next opened file
-- `<bs>` open previous recently used file
-- `<s-bs>` open next recently used file
+- `<bs>` previous recently used file
+- `<s-bs>` next recently used file
 - `<leader>bc` close file
 - `<leader>bC` close all files
 - `<leader>bo` close the other files
@@ -63,9 +63,10 @@
 - `]e` move line/selection below
 - `[p` paste to new line above
 - `]p` paste to new line below
-- `cs` change surrounding character
-- `ds` delete surrounding character
-- `ys` insert surrounding character
+- `cs{target}{replacement}` change surrounding character
+- `ds{char}` delete surrounding character
+- `ys{motion}{char}` insert surrounding character
+- `S{char}` surround selection (visual mode)
 - `U` redo
 - `<leader>J` syntax aware join lines
 - `jj` exit to normal mode

@@ -99,9 +99,10 @@ return {
 		end,
 	},
 
-	{ -- surroundings (brackets, quotes) (vim-surround)
-		-- https://github.com/tpope/vim-surround
-		"tpope/vim-surround",
+	{ -- surrounding delimiter pairs (nvim-surround)
+		-- https://github.com/kylechui/nvim-surround
+		"kylechui/nvim-surround",
+		config = true,
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
