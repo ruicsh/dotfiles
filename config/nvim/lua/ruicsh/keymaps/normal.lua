@@ -32,8 +32,7 @@ k("n", "<leader>bo", "<cmd>bufdo bd<cr>", { desc = "Buffers: Close all other" })
 k("n", "<leader>bx", "<cmd>Bdelete!<cr>", { desc = "Buffers: Exit" })
 
 -- git
-k("n", "<leader>dd", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
-k("n", "<leader>df", "<cmd>AdvancedGitSearch<cr>", { desc = "Git: Find" })
+k("n", "<leader>hh", "<cmd>vertical Git<cr>", { desc = "Git: Status" })
 
 -- lsp - typescript
 k("n", "<leader>to", "<cmd>TSToolsOrganizeImports<cr>", { desc = "[T]ypeScript: [o]rganize imports" })

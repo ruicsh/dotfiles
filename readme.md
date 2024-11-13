@@ -175,17 +175,14 @@
 
 ### Git
 
-- `<leader>dd` status
-- `<leader>dh` search
-- `<leader>ds` stage hunk
-- `<leader>dr` reset hunk
-- `<leader>du` unstage hunk
-- `<leader>dS` stage file
-- `<leader>dR` reset file
-- `<leader>db` blame hunk
-- `<leader>dp` preview change
-- `<leader>df` open diff
-- `<leader>dt` toggle deleted
+- `<leader>hh` status
+- `<leader>hf` open diff
+- `<leader>hs` stage hunk
+- `<leader>hr` reset hunk
+- `<leader>hu` unstage hunk
+- `<leader>hS` stage file
+- `<leader>hR` reset file
+- `<leader>hp` preview change
 - `[c` previous change
 - `]c` next change
 

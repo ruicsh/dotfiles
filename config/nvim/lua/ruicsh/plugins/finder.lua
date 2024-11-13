@@ -38,7 +38,6 @@ return {
 			-- Enable Telescope extensions if they are installed
 			pcall(telescope.load_extension, "fzf")
 			pcall(telescope.load_extension, "ui-select")
-			pcall(telescope.load_extension, "advanced_git_search")
 			pcall(telescope.load_extension, "workspaces")
 
 			-- see `:help telescope.builtin`
@@ -102,7 +101,6 @@ return {
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 			{ "nvim-tree/nvim-web-devicons" },
-			{ "aaronhallaert/advanced-git-search.nvim", cmd = { "AdvancedGitSearch" } },
 			"natecraddock/workspaces.nvim",
 		},
 		cond = function()

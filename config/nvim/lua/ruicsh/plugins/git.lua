@@ -46,7 +46,7 @@ return {
 		-- https://github.com/sindrets/diffview.nvim
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>df", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
+			{ "<leader>hf", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
 		},
 		config = function()
 			local diffview = require("diffview")
@@ -103,7 +103,7 @@ return {
 		end,
 	},
 
-	{ -- gutter signs (gitsigns.nvim)
+	{ -- buffer integration (gitsigns.nvim)
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -150,20 +150,12 @@ return {
 				end, { desc = "Git: Jump to previous [c]hange" })
 
 				-- Actions
-				map("n", "<leader>ds", gitsigns.stage_hunk, { desc = "Git: [s]tage hunk" })
-				map("n", "<leader>dr", gitsigns.reset_hunk, { desc = "Git: [r]eset hunk" })
-				map("v", "<leader>ds", function()
-					gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, { desc = "Git: [s]tage hunk" })
-				map("v", "<leader>dr", function()
-					gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, { desc = "Git: [r]eset hunk" })
-				map("n", "<leader>dS", gitsigns.stage_buffer, { desc = "Git: [S]tage file" })
-				map("n", "<leader>du", gitsigns.undo_stage_hunk, { desc = "Git: [u]nstage hunk" })
-				map("n", "<leader>dR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
-				map("n", "<leader>dp", gitsigns.preview_hunk, { desc = "Git: [p]review hunk" })
-				map("n", "<leader>db", gitsigns.blame_line, { desc = "Git: toggle [b]lame" })
-				map("n", "<leader>dt", gitsigns.toggle_deleted, { desc = "Git: [t]oggle deleted" })
+				map({ "n", "v" }, "<leader>hs", gitsigns.stage_hunk, { desc = "Git: [s]tage hunk", buffer = bufnr })
+				map({ "n", "v" }, "<leader>hr", gitsigns.reset_hunk, { desc = "Git: [r]eset hunk", buffer = bufnr })
+				map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Git: [S]tage file" })
+				map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
+				map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Git: [u]nstage hunk" })
+				map("n", "<leader>hp", gitsigns.preview_hunk_inline, { desc = "Git: [p]review hunk" })
 
 				-- Text object
 				map({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>")
