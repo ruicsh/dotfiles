@@ -46,7 +46,7 @@ return {
 		-- https://github.com/sindrets/diffview.nvim
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>hf", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
+			{ "<leader>hd", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
 		},
 		config = function()
 			local diffview = require("diffview")

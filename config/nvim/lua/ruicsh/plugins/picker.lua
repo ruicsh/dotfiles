@@ -56,6 +56,7 @@ return {
 			k.set("n", "<leader>nh", builtin.help_tags, { desc = "Telescope: [h]elp" })
 			k.set("n", "<leader>nk", builtin.keymaps, { desc = "Telescope: [k]eymaps" })
 			k.set("n", "<leader>nt", builtin.builtin, { desc = "Telescope: select [t]elescope" })
+			k.set("n", "<leader>hf", builtin.git_status, { desc = "Git: list files" })
 			k.set("n", "<leader>jj", show_jumplist, { desc = "Jumplist: Show" })
 
 			-- Slightly advanced example of overriding default behavior and theme

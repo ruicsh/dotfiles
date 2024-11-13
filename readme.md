@@ -176,7 +176,8 @@
 ### Git
 
 - `<leader>hh` status
-- `<leader>hf` open diff
+- `<leader>hd` open diffview
+- `<leader>hf` list changed files
 - `<leader>hs` stage hunk
 - `<leader>hr` reset hunk
 - `<leader>hu` unstage hunk
