@@ -117,7 +117,6 @@
 - `gr` list references
 - `gy` list symbols in document
 - `gY` list symbols in workspace
-- `<leader>gy` toggle symbol navigator
 - `<f2>` rename symbol
 
 ### LSP - TypeScript

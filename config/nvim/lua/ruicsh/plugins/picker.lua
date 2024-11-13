@@ -2,6 +2,17 @@
 -- Finder (files, words, commands)
 --
 
+local function display_parent_basename(opts, filepath)
+	-- display the parent directory name and basename
+	local path = vim.fn.fnamemodify(filepath, ":p:h")
+	local parent = vim.fn.fnamemodify(path, ":t")
+	local basename = vim.fn.fnamemodify(filepath, ":t")
+	if parent == "." then
+		return basename
+	end
+	return parent .. "/" .. basename
+end
+
 return {
 	{ -- fuzzy finder (telescope.nvim)
 		-- https://github.com/nvim-telescope/telescope.nvim
@@ -30,16 +41,19 @@ return {
 				},
 				pickers = {
 					live_grep = {
-						path_display = function(opts, filepath)
-							-- display the parent directory name and basename
-							local path = vim.fs.dirname(filepath)
-							local parent = vim.fs.basename(path)
-							local basename = vim.fs.basename(filepath)
-							if parent == "." then
-								return basename
-							end
-							return vim.fs.joinpath(parent, basename)
-						end,
+						path_display = display_parent_basename,
+					},
+					lsp_definitions = {
+						path_display = display_parent_basename,
+					},
+					lsp_implementations = {
+						path_display = display_parent_basename,
+					},
+					lsp_type_definitions = {
+						path_display = display_parent_basename,
+					},
+					lsp_references = {
+						path_display = display_parent_basename,
 					},
 				},
 				extensions = {
