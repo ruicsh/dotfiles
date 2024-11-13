@@ -50,13 +50,6 @@ return {
 		end,
 	},
 
-	{ -- text exchange operator (vim-exchange)
-		-- https://github.com/tommcdo/vim-exchange
-		"tommcdo/vim-exchange",
-
-		event = { "BufReadPost", "BufNewFile" },
-	},
-
 	{ -- repeat plugin keymaps (vim-repeat)
 		-- https://github.com/tpope/vim-repeat
 		"tpope/vim-repeat",
@@ -150,5 +143,13 @@ return {
 
 		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
+	},
+
+	{ -- use jj to escape (better-escape.nvim)
+		-- https://github.com/max397574/better-escape.nvim
+		"max397574/better-escape.nvim",
+		config = true,
+
+		event = { "VimEnter" },
 	},
 }

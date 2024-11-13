@@ -8,3 +8,8 @@ vim.cmd.wincmd("=")
 
 -- close help window with <c-q>
 k("n", "<c-q>", "<c-w>q", { buffer = true, noremap = true, silent = true })
+
+-- better navigation
+-- https://vim.fandom.com/wiki/Learn_to_use_help#Simplify_help_navigation
+k("n", "<cr>", "<c-]>", { buffer = true, noremap = true, silent = true })
+k("n", "<bs>", "<c-T>", { buffer = true, noremap = true, silent = true })

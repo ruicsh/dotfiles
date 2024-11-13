@@ -115,7 +115,10 @@ return {
 				mapping = cmp.mapping.preset.insert({
 					["<c-b>"] = cmp.mapping.scroll_docs(-4),
 					["<c-f>"] = cmp.mapping.scroll_docs(4),
-					["<c-space>"] = cmp.mapping.complete(),
+					["<c-space>"] = cmp.mapping.complete({ mode = cmp.TriggerEvent.Insert }),
+					["<c-y>"] = cmp.mapping.confirm({ select = true }),
+					["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 					["<c-e>"] = cmp.mapping.abort(),
 					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
@@ -123,10 +126,10 @@ return {
 				completion = {
 					completeopt = "menu,menuone,noinsert",
 				},
-				sources = {
+				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "path" },
-				},
+				}),
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
@@ -206,8 +209,9 @@ return {
 		end,
 	},
 
-	{ -- neovim apis (lazydev.nvim)
+	{ -- neovim apis lsp (lazydev.nvim)
 		-- used for completion, annotations and signatures of Neovim apis
+		-- https://github.com/folke/lazydev.nvim
 		"folke/lazydev.nvim",
 		opts = {
 			library = {
@@ -215,16 +219,6 @@ return {
 				{ path = "luvit-meta/library", words = { "vim%.uv" } },
 			},
 		},
-
-		lazy = true,
-		ft = "lua",
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- type definitions for lua (luvit-meta)
-		"Bilal2453/luvit-meta",
 
 		lazy = true,
 		ft = "lua",

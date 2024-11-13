@@ -66,9 +66,9 @@
 - `cs` change surrounding character
 - `ds` delete surrounding character
 - `ys` insert surrounding character
-- `cx` exchange text
 - `U` redo
-- `<leader>j` syntax aware join lines
+- `<leader>J` syntax aware join lines
+- `jj` exit to normal mode
 
 ### Insert mode navigation
 
@@ -244,7 +244,7 @@
 
 ### Jumplist
 
-- `<leader>j` show jumplist
+- `<leader>jj` show jumplist
 - `<c-o>` jump to older position
 - `<c-i>` jump to newer position
 

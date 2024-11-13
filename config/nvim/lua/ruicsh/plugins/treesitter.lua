@@ -151,7 +151,7 @@ return {
 		-- https://github.com/Wansmer/treesj
 		"Wansmer/treesj",
 		keys = {
-			{ "<space>j", "<cmd>TSJToggle<cr>", desc = "TreeSJ: [j]oin toggle" },
+			{ "<leader>J", "<cmd>TSJToggle<cr>", desc = "TreeSJ: [j]oin toggle" },
 		},
 		opts = {
 			use_default_keymaps = false,
