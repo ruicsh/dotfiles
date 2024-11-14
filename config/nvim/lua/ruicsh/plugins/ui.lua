@@ -164,6 +164,8 @@ return {
 			local git_blame = require("gitblame")
 			vim.g.gitblame_display_virtual_text = 0 -- disable virtual text
 
+			local workspaces = require("workspaces")
+
 			local lualine = require("lualine")
 
 			lualine.setup({
@@ -173,13 +175,13 @@ return {
 				},
 				sections = {
 					lualine_a = { "mode" },
-					lualine_b = { "branch", "diff", "diagnostics" },
-					lualine_c = { "filename" },
+					lualine_b = { workspaces.name },
+					lualine_c = { "diagnostics", "filename" },
 					lualine_x = {
 						{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
 					},
-					lualine_y = { "filetype" },
-					lualine_z = { "location" },
+					lualine_y = { "diff" },
+					lualine_z = { "branch" },
 				},
 				inactive_sections = {
 					lualine_a = {},
