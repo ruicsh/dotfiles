@@ -57,9 +57,6 @@ return {
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- directory editor (oil.nvim)
@@ -112,8 +109,5 @@ return {
 		dependencies = {
 			{ "nvim-tree/nvim-web-devicons" },
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }

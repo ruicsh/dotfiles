@@ -51,9 +51,6 @@ return {
 
 		ft = g.ft_code,
 		event = { "BufWritePre" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- log statements (debugprint.nvim)
@@ -100,23 +97,6 @@ return {
 
 		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
-	},
-
-	{ -- indent guides (indent-blankline.nvim)
-		-- https://github.com/lukas-reineke/indent-blankline.nvim
-		"lukas-reineke/indent-blankline.nvim",
-		opts = {
-			scope = {
-				show_start = false,
-				show_end = false,
-			},
-		},
-
-		main = "ibl",
-		ft = g.ft_code,
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- autopairs (mini.pairs.nvim)
@@ -172,6 +152,56 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"hrsh7th/nvim-cmp",
+		},
+	},
+
+	{ -- autocomplete (nvim-cmp)
+		-- https://github.com/hrsh7th/nvim-cmp
+		"hrsh7th/nvim-cmp",
+		config = function()
+			local cmp = require("cmp")
+
+			cmp.setup({
+				mapping = cmp.mapping.preset.insert({
+					["<c-b>"] = cmp.mapping.scroll_docs(-4),
+					["<c-f>"] = cmp.mapping.scroll_docs(4),
+					["<c-space>"] = cmp.mapping.complete({ mode = cmp.TriggerEvent.Insert }),
+					["<c-y>"] = cmp.mapping.confirm({ select = true }),
+					["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<c-e>"] = cmp.mapping.abort(),
+					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				}),
+				preselect = "item",
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "path" },
+				}),
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
+				formatting = {
+					fields = { "abbr", "kind", "menu" },
+					format = require("lspkind").cmp_format({
+						mode = "symbol", -- show only symbol annotations
+						maxwidth = 50, -- prevent the popup from showing more than provided characters
+						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+					}),
+					expandable_indicator = true,
+				},
+			})
+		end,
+
+		ft = g.ft_code,
+		event = { "InsertEnter" },
+		dependencies = {
+			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
 		},
 	},
 }

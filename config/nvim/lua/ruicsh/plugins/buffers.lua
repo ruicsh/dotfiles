@@ -6,22 +6,14 @@ return {
 	{ -- delete buffer (vim-bbye)
 		-- https://github.com/moll/vim-bbye
 		"moll/vim-bbye",
-
 		cmd = { "Bdelete" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- tab scoping (scope.nvim)
 		-- https://github.com/tiagovla/scope.nvim
 		"tiagovla/scope.nvim",
 		opts = {},
-
 		event = { "VimEnter" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- tabs (tabby.nvim)
@@ -111,9 +103,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- maximize/restore windows (windows.nvim)
@@ -132,9 +121,6 @@ return {
 		dependencies = {
 			"anuvyklack/middleclass",
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- dim inactive windows (vimade)
@@ -145,8 +131,5 @@ return {
 		},
 
 		event = { "VeryLazy" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }

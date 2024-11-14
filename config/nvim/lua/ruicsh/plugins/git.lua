@@ -8,9 +8,6 @@ return {
 		"tpope/vim-fugitive",
 
 		cmd = "Git",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- git blame (git-blame.nvim)
@@ -25,9 +22,6 @@ return {
 		},
 
 		event = { "BufReadPost", "BufNewFile" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- merge conflicts (git-conflict.nvim)
@@ -37,9 +31,6 @@ return {
 
 		event = { "BufReadPost", "BufNewFile" },
 		version = "*",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- diffview (diffview.nvim)
@@ -97,9 +88,6 @@ return {
 		end,
 
 		cmd = { "DiffviewOpen" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- buffer integration (gitsigns.nvim)
@@ -162,8 +150,5 @@ return {
 		},
 
 		event = { "BufReadPost", "BufNewFile" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }

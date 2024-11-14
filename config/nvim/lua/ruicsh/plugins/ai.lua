@@ -26,9 +26,6 @@ return {
 		cmd = "Copilot",
 		event = { "InsertEnter" },
 		ft = g.ft_code,
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- cursor ide (avante.nvim)

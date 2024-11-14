@@ -3,6 +3,7 @@
 --
 
 local c = require("ruicsh.theme.colors")
+local g = require("ruicsh.globals")
 
 return {
 	{ -- load env variables from a .env file (dotenv)
@@ -38,9 +39,6 @@ return {
 		},
 
 		event = { "VeryLazy" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- breadcrumbs (barbecue.nvim)
@@ -81,9 +79,6 @@ return {
 		},
 
 		event = { "VeryLazy" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- shortcuts cheatsheet (which-key.nvim)
@@ -105,9 +100,6 @@ return {
 		},
 
 		event = { "VeryLazy" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- command line (wilder.nvim)
@@ -132,9 +124,6 @@ return {
 		end,
 
 		event = { "VeryLazy" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- workspaces (workspaces.nvim)
@@ -149,9 +138,6 @@ return {
 		},
 
 		event = { "VimEnter" },
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- terminal (toggleterm.nvim)
@@ -164,9 +150,6 @@ return {
 
 		event = { "VeryLazy" },
 		version = "*",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- status line (lualine.nvim)
@@ -213,8 +196,34 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
+	},
+
+	{ -- indent guides (indent-blankline.nvim)
+		-- https://github.com/lukas-reineke/indent-blankline.nvim
+		"lukas-reineke/indent-blankline.nvim",
+		opts = {
+			scope = {
+				show_start = false,
+				show_end = false,
+			},
+		},
+
+		main = "ibl",
+		event = { "BufReadPost", "BufNewFile" },
+	},
+
+	{ -- folds (nvim-ufo)
+		-- https://github.com/kevinhwang91/nvim-ufo
+		"kevinhwang91/nvim-ufo",
+		opts = {
+			provider_selector = function()
+				return { "treesitter", "indent" }
+			end,
+		},
+
+		ft = g.ft_code,
+		dependencies = {
+			"kevinhwang91/promise-async",
+		},
 	},
 }

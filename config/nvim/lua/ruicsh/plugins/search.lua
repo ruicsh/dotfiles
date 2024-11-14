@@ -127,8 +127,43 @@ return {
 			{ "nvim-tree/nvim-web-devicons" },
 			"natecraddock/workspaces.nvim",
 		},
-		cond = function()
-			return not vim.g.vscode
+	},
+
+	{ -- search/replace (nvim-spectre)
+		-- https://github.com/nvim-pack/nvim-spectre
+		"nvim-pack/nvim-spectre",
+		keys = {
+			{
+				"<leader>r",
+				"<cmd>lua require('spectre').open_file_search()<cr>",
+				{ desc = "[r]eplace" },
+			},
+		},
+		config = true,
+
+		event = { "BufReadPost", "BufNewFile" },
+	},
+
+	{ -- search results labels (nvim-hlslens)
+		-- https://github.com/kevinhwang91/nvim-hlslens
+		"kevinhwang91/nvim-hlslens",
+		config = function()
+			require("hlslens").setup({
+				nearest_only = true,
+			})
+			require("scrollbar.handlers.search").setup()
+
+			local k = vim.api.nvim_set_keymap
+			local kopts = { noremap = true, silent = true }
+
+			k("n", "n", [[<cmd>execute('normal! ' . v:count1 . 'n')<cr><cmd>lua require('hlslens').start()<cr>]], kopts)
+			k("n", "N", [[<cmd>execute('normal! ' . v:count1 . 'N')<cr><cmd>lua require('hlslens').start()<cr>]], kopts)
+			k("n", "*", [[*<cmd>lua require('hlslens').start()<cr>]], kopts)
+			k("n", "#", [[#<Cmd>lua require('hlslens').start()<cr>]], kopts)
+			k("n", "g*", [[g*<cmd>lua require('hlslens').start()<cr>]], kopts)
+			k("n", "g#", [[g#<cmd>lua require('hlslens').start()<cr>]], kopts)
 		end,
+
+		event = { "BufReadPost", "BufNewFile" },
 	},
 }

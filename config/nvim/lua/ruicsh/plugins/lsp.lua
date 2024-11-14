@@ -110,62 +110,6 @@ return {
 			{ "pmizio/typescript-tools.nvim", opts = {}, ft = { "typescript", "typescriptreact" } },
 			{ "onsails/lspkind.nvim", ft = g.ft_code },
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
-	},
-
-	{ -- autocomplete (nvim-cmp)
-		-- https://github.com/hrsh7th/nvim-cmp
-		"hrsh7th/nvim-cmp",
-		config = function()
-			local cmp = require("cmp")
-
-			cmp.setup({
-				mapping = cmp.mapping.preset.insert({
-					["<c-b>"] = cmp.mapping.scroll_docs(-4),
-					["<c-f>"] = cmp.mapping.scroll_docs(4),
-					["<c-space>"] = cmp.mapping.complete({ mode = cmp.TriggerEvent.Insert }),
-					["<c-y>"] = cmp.mapping.confirm({ select = true }),
-					["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<c-e>"] = cmp.mapping.abort(),
-					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-				}),
-				preselect = "item",
-				completion = {
-					completeopt = "menu,menuone,noinsert",
-				},
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "path" },
-				}),
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				formatting = {
-					fields = { "abbr", "kind", "menu" },
-					format = require("lspkind").cmp_format({
-						mode = "symbol", -- show only symbol annotations
-						maxwidth = 50, -- prevent the popup from showing more than provided characters
-						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-					}),
-					expandable_indicator = true,
-				},
-			})
-		end,
-
-		ft = g.ft_code,
-		event = { "InsertEnter" },
-		dependencies = {
-			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
-		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- jump to reference (refjump.nvim)
@@ -177,11 +121,8 @@ return {
 			},
 		},
 
-		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
-		cond = function()
-			return not vim.g.vscode
-		end,
+		ft = g.ft_code,
 	},
 
 	{ -- signature hints (lsp_signature.nvim)
@@ -195,11 +136,8 @@ return {
 			},
 		},
 
-		event = "InsertEnter",
+		event = { "InsertEnter" },
 		ft = g.ft_code,
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- diagnostics (trouble.nvim)
@@ -232,9 +170,6 @@ return {
 		},
 
 		cmd = "Trouble",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- neovim apis lsp (lazydev.nvim)
@@ -250,8 +185,5 @@ return {
 
 		lazy = true,
 		ft = "lua",
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 }

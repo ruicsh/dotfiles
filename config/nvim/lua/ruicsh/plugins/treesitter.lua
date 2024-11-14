@@ -117,15 +117,11 @@ return {
 		ft = g.ft_code,
 		build = ":TSUpdate",
 		dependencies = {
-			{
-				-- syntax aware text objects
+			{ -- syntax aware text objects
 				-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
 		},
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- auto-close/rename html tags (nvim-ts-autotag)
@@ -142,9 +138,6 @@ return {
 		end,
 
 		ft = g.ft_code,
-		cond = function()
-			return not vim.g.vscode
-		end,
 	},
 
 	{ -- syntax aware join lines (treesj)
@@ -185,5 +178,7 @@ return {
 					or original_get_option(filetype, option)
 			end
 		end,
+
+		ft = g.ft_code,
 	},
 }

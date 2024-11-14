@@ -44,6 +44,9 @@ k("n", "<leader>bo", ac("workbench.action.closeOtherEditors"))
 
 -- splits
 k("n", "|", ac("workbench.action.focusNextGroup"))
+k("n", "<c-w>v", ac("workbench.action.splitEditorRight"))
+k("n", "<c-w>|", ac("workbench.action.splitEditorRight"))
+k("n", "<c-w>s", ac("workbench.action.splitEditorDown"))
 k("n", "<c-w>m", ac("workbench.action.toggleMaximizeEditorGroup"))
 k("n", "<c-w>[", ac("workbench.action.moveEditorToLeftGroup"))
 k("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
@@ -51,11 +54,10 @@ k("n", "<c-w>]", ac("workbench.action.moveEditorToRightGroup"))
 -- lsp
 k("n", "go", ac("editor.action.goToTypeDefinition"))
 k("n", "gr", ac("references-view.findReferences"))
-k("n", "gs", ac("workbench.action.gotoSymbol"))
-k("n", "gS", ac("workbench.action.showAllSymbols"))
+k("n", "gy", ac("workbench.action.gotoSymbol"))
+k("n", "gY", ac("workbench.action.showAllSymbols"))
 k("n", "[r", ac("editor.action.wordHighlight.prev"))
 k("n", "]r", ac("editor.action.wordHighlight.next"))
-k("n", "<f4>", ac("editor.action.refactor"))
 
 -- lsp - typescript
 k("n", "<leader>to", ac("editor.action.organizeImports"))
