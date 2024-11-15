@@ -189,8 +189,8 @@
 
 ### Diffview
 
-- `{` open diff for previous file 
-- `}` open diff for next file
+- `<up>` open diff for previous file 
+- `<down>` open diff for next file
 - `cc` commit
 - `s` stage file
 - `X` reset file

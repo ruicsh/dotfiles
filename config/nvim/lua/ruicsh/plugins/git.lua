@@ -47,8 +47,10 @@ return {
 				keymaps = {
 					file_panel = {
 						{ "n", "<cr>", actions.focus_entry, { desc = "Open and focus the diff" } },
-						{ "n", "}", actions.select_next_entry, { desc = "Open the diff for the next file" } },
-						{ "n", "{", actions.select_prev_entry, { desc = "Open the diff for the previous file" } },
+						{ "n", "<down>", actions.select_next_entry, { desc = "Open the diff for the next file" } },
+						{ "n", "<up>", actions.select_prev_entry, { desc = "Open the diff for the previous file" } },
+						{ "n", "j", actions.select_next_entry, { desc = "Open the diff for the next file" } },
+						{ "n", "k", actions.select_prev_entry, { desc = "Open the diff for the previous file" } },
 					},
 				},
 				hooks = {
@@ -72,12 +74,13 @@ return {
 						local bufnr = view.buffer
 						-- keymaps set only for this buffer
 						vim.keymap.set("n", "<c-bs>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-bs> to close,
+						-- use cc to commit
 						vim.keymap.set(
 							"n",
 							"cc",
 							"<cmd>DiffviewClose<cr><cmd>vertical Git commit<cr>",
 							{ buffer = bufnr }
-						) -- use cc to commit
+						)
 					end,
 					view_leave = function()
 						vim.cmd(":VimadeEnable") --reenable dimming windows
