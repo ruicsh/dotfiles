@@ -182,4 +182,18 @@ return {
 
 		ft = g.ft_code,
 	},
+
+	{ -- jump to tag (jump-tag)
+		-- https://github.com/harrisoncramer/jump-tag
+		-- "harrisoncramer/jump-tag",
+		"ruicsh/jump-tag",
+		keys = {
+			{ "[t", "<cmd>lua require('jump-tag').jumpPrevSibling()<cr>", desc = "Jump to previous sibling tag" },
+			{ "]t", "<cmd>lua require('jump-tag').jumpNextSibling()<cr>", desc = "Jump to next sibling tag" },
+			{ "[T", "<cmd>lua require('jump-tag').jumpParent()<cr>", desc = "Jump to parent" },
+			{ "]T", "<cmd>lua require('jump-tag').jumpChild()<cr>", desc = "Jump to child" },
+		},
+
+		ft = { "html", "htmlangular", "typescript", "typescriptreact", "vue" },
+	},
 }
