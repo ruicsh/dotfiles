@@ -84,6 +84,20 @@
 - `<c-u>` delete before the cursor in current line
 - `<c-w>` delete word before
 
+### Text objects
+
+- `#` color in CSS
+- `S` word in camelCase, PascalCase, snake_case and kebab-case
+- `a` function argument
+- `c` class in CSS
+- `d` code blocks (if, while, for, ...)
+- `f` function
+- `k` key, left side of assignment
+- `o` brackets ({}, (), [])
+- `q` quotes ("", '', ``)
+- `v` value, right side of assignment
+- `x` HTML attribute
+
 ### Find & Replace
 
 - `/` find in document forward
@@ -100,14 +114,6 @@
 - `<leader>s'` sort inside ''
 - `<leader>s"` sort inside ""
 - `<leader>s}` sort paragraph
-
-### Text objects
-
-- `a` function argument
-- `d` blocks (if, while, for, ...)
-- `f` function
-- `q` quotes ("", '', ``)
-- `b` blocks ({}, (), [])
 
 ### LSP
 

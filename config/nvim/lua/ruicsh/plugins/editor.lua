@@ -62,13 +62,6 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- additional text objects (targets.vim)
-		-- https://github.com/wellle/targets.vim
-		"wellle/targets.vim",
-
-		event = { "BufReadPost", "BufNewFile" },
-	},
-
 	{ -- move by subwords in camelCase (nvim-spider)
 		-- https://github.com/chrisgrieser/nvim-spider
 		"chrisgrieser/nvim-spider",
@@ -89,5 +82,15 @@ return {
 		config = true,
 
 		event = { "VimEnter" },
+	},
+
+	{ -- various text objects (nvim-various-textobjs)
+		-- https://github.com/chrisgrieser/nvim-various-textobjs
+		"chrisgrieser/nvim-various-textobjs",
+		opts = {
+			useDefaultKeymaps = true,
+		},
+
+		event = { "BufReadPost", "BufNewFile" },
 	},
 }
