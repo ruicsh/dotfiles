@@ -5,6 +5,7 @@ vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
 vim.opt.guifont = "JetBrainsMono Nerd Font:h12" -- font family and size
 vim.opt.ignorecase = true -- ignore case on search patterns
 vim.opt.inccommand = "nosplit" -- show live preview of substitution
+vim.opt.laststatus = 3 -- always and only the last window
 vim.opt.linespace = 0 -- line height
 vim.opt.mouse = "a" -- enable mouse support
 vim.opt.number = true -- show line numbers
@@ -13,6 +14,9 @@ vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
 vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
 vim.opt.shortmess = "IWcCSF" -- don't show messages
+vim.opt.showcmd = false -- do not show command on last line
+vim.opt.showmatch = false -- do not show matching brackets
+vim.opt.showmode = false -- do not show mode on last line
 vim.opt.showtabline = 2 -- show tabline
 vim.opt.signcolumn = "yes" -- enable the sign column to prevent the screen from jumping
 vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
@@ -24,8 +28,7 @@ vim.opt.swapfile = false -- stop creating swp files
 vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
 vim.opt.termguicolors = true -- enable true colors
 vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
-vim.opt.wrap = false -- do not automatically wrap text
-vim.opt.laststatus = 3 -- always and only the last window
+vim.opt.wrap = false -- do not automatically wrap texts
 
 -- fold settings
 -- These options were reccommended by nvim-ufo
