@@ -17,9 +17,11 @@
         "Green Component": 0.83857882022857666
       },
       "Cursor Text Color": {
-        "Green Component": 0.74690163135528564,
-        "Red Component": 0.88014161586761475,
-        "Blue Component": 0.18040022253990173
+        "Red Component": 0,
+        "Color Space": "P3",
+        "Blue Component": 0,
+        "Alpha Component": 1,
+        "Green Component": 0
       },
       "Smart Cursor Color": false,
       "Prompt Before Closing 2": false,
@@ -245,9 +247,16 @@
         "Alpha Component": 0.7057952880859375,
         "Green Component": 0.23046499490737915
       },
-      "Tags": ["Dynamic"],
+      "Tags": [
+        "Dynamic"
+      ],
       "Custom Command": "No",
-      "Jobs to Ignore": ["rlogin", "ssh", "slogin", "telnet"],
+      "Jobs to Ignore": [
+        "rlogin",
+        "ssh",
+        "slogin",
+        "telnet"
+      ],
       "Use Non-ASCII Font": false,
       "Custom Directory": "No",
       "Use Selected Text Color (Light)": true,
