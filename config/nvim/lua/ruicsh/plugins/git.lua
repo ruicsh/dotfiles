@@ -37,7 +37,7 @@ return {
 		-- https://github.com/sindrets/diffview.nvim
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>hd", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open [d]iffview" } },
+			{ "<leader>hg", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open diffview" } },
 		},
 		config = function()
 			local diffview = require("diffview")
@@ -71,7 +71,7 @@ return {
 
 						local bufnr = view.buffer
 						-- keymaps set only for this buffer
-						vim.keymap.set("n", "<c-q>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-q> to close,
+						vim.keymap.set("n", "<c-bs>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-bs> to close,
 						vim.keymap.set(
 							"n",
 							"cc",

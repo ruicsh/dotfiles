@@ -25,7 +25,7 @@
 - `L` expand all 
 - `H` collapse all
 - `I` toggle filter: gitignore 
-- `<c-q>` close explorer
+- `<c-bs>` close explorer
 - `[c` previous git change 
 - `]c` next git change
 - `<` previous source 
@@ -41,7 +41,7 @@
 - `gs` change sort
 - `g.` toggle hidden
 - `g\` toggle trash
-- `<c-q>` close explorer
+- `<c-bs>` close explorer
 
 ### Opened files 
 
@@ -171,12 +171,11 @@
 - `]n` decrease node selection to child node 
 - `[r` jump to previous symbol reference
 - `]r` jump to next symbol reference
-- `[t` jump upwards to context
 
 ### Git
 
 - `<leader>hh` status
-- `<leader>hd` open diffview
+- `<leader>hg` open diffview
 - `<leader>hf` list changed files
 - `<leader>hs` stage hunk
 - `<leader>hr` reset hunk
@@ -186,6 +185,7 @@
 - `<leader>hp` preview change
 - `[c` previous change
 - `]c` next change
+- `<c-bs>` close panel
 
 ### Diffview
 
@@ -194,6 +194,7 @@
 - `cc` commit
 - `s` stage file
 - `X` reset file
+- `<c-bs>` close panel
 
 ### Merge Conflicts
 
@@ -210,7 +211,7 @@
 - `<c-w>[` move file to split on the left
 - `<c-w>]` move file to split on the right
 - `<c-w>m` maximize split
-- `<c-q>` quit split
+- `<c-bs>` quit split
 - `<c-w>v` split vertically
 
 ### Folds
@@ -228,20 +229,6 @@
 - `[z` jump to parent fold
 - `zk` jump to previous fold
 - `zj` jump to next fold
-
-### Pinned tabs
-
-- `§1` jump to file 1
-- `§2` jump to file 2
-- `§3` jump to file 3
-- `§4` jump to file 4
-- `§5` jump to file 5
-- `§6` jump to file 6
-- `§7` jump to file 7
-- `§8` jump to file 8
-- `§9` jump to file 9
-- `[§` jump to previous pinned
-- `]§` jump to next pinned
 
 ### Jumplist
 

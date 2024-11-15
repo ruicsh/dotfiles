@@ -1,4 +1,4 @@
 local k = vim.keymap.set
 
--- quit with <c-q>
-k("n", "<c-q>", "<plug>fugitive:gq", { noremap = true })
+-- quit with <c-bs>
+k("n", "<c-bs>", "<plug>fugitive:gq", { noremap = true, buffer = true })
