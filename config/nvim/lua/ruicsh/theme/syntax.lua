@@ -69,14 +69,25 @@ _.loadColorSet({
 	["@lsp.type.class.typescript"] = { fg = c.nord7 },
 	["@lsp.type.interface.typescript"] = { fg = c.nord7 },
 
-	["@variable.builtin.typescript"] = { fg = c.nord9 },
 	["@attribute.typescript"] = { fg = c.nord11 },
+	["@variable.builtin.typescript"] = { fg = c.nord9 },
 
-	["@type.scss"] = { fg = c.nord7 },
-	["@string.scss"] = { fg = c.nord9 },
-	["@keyword.import.scss"] = { fg = c.nord7 },
-
-	["@variable.angular"] = { fg = c.nord12 },
+	-- angular
 	["@function.angular"] = { fg = c.nord12 },
 	["@keyword.angular"] = { fg = c.nord7 },
+	["@variable.angular"] = { fg = c.nord12 },
+	["@none.angular"] = { fg = c.nord4 },
+
+	-- css
+	["@keyword.import.css"] = { fg = c.nord7 },
+	["@string.css"] = { fg = c.nord9 },
+	["@type.css"] = { fg = c.nord7 },
+
+	-- scss
+	["@keyword.import.scss"] = { fg = c.nord7 },
+	["@string.scss"] = { fg = c.nord9 },
+	["@type.scss"] = { fg = c.nord7 },
+
+	-- vue
+	["@none.vue"] = { fg = c.nord4 },
 })

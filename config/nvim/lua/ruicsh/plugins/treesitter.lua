@@ -41,6 +41,7 @@ return {
 				"tsx",
 				"typescript",
 				"vim",
+				"vue",
 				"yaml",
 			},
 			-- autoinstall languages that are not installed

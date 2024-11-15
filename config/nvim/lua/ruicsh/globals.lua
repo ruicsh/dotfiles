@@ -10,6 +10,7 @@ local ft_code = {
 	"markdown",
 	"typescript",
 	"typescriptreact",
+	"vue",
 }
 
 return {

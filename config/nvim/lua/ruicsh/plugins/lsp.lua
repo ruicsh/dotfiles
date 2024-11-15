@@ -44,6 +44,7 @@ end
 
 -- install and configure lsp servers
 local function conf_lsp_servers()
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 	local servers = {
 		angularls = {
 			filetypes = { "htmlangular", "typescript" },
@@ -61,7 +62,7 @@ local function conf_lsp_servers()
 				},
 			},
 		},
-		rust_analyzer = {},
+		vuels = {},
 	}
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()

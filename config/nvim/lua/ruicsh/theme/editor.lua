@@ -56,7 +56,7 @@ _.loadColorSet({
 	TabLineFill = { fg = c.nord4, bg = "NONE" },
 	Tabline = { fg = c.nord4, bg = c.nord1 },
 	TablineSel = { fg = c.nord1, bg = c.nord9 },
-	Title = { fg = c.nord14, bg = "NONE", style = "bold" },
+	Title = { fg = c.nord4, bg = "NONE", style = "bold" },
 	ToolbarButton = { fg = c.nord4, bg = "NONE", style = "bold" },
 	ToolbarLine = { fg = c.nord4, bg = c.nord1 },
 	VertSplit = { fg = c.nord2, bg = "NONE" },
