@@ -1,7 +1,7 @@
 require("ruicsh.options")
 require("ruicsh/keymaps")
 require("ruicsh/autocmds")
-require("ruicsh/custom")
+require("ruicsh/commands")
 
 vim.cmd.colorscheme("nordstone")
 
