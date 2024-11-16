@@ -2,7 +2,8 @@ require("ruicsh.options")
 require("ruicsh/keymaps")
 require("ruicsh/autocmds")
 require("ruicsh/custom")
-require("ruicsh/theme")
+
+vim.cmd.colorscheme("nordstone")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

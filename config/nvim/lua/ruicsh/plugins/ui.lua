@@ -2,7 +2,6 @@
 -- Application furniture
 --
 
-local c = require("ruicsh.theme.colors")
 local g = require("ruicsh.globals")
 
 return {
@@ -47,11 +46,11 @@ return {
 		name = "barbecue",
 		opts = {
 			theme = {
-				normal = { fg = c.nord4_900 },
-				ellipsis = { fg = c.nord4_900 },
-				separator = { fg = c.nord4_900 },
-				basename = { fg = c.nord4 },
-				dirname = { fg = c.nord4_900 },
+				normal = { link = "BarbecueNormal" },
+				ellipsis = { link = "BarbecueEllipsis" },
+				separator = { link = "BarbecueSeparator" },
+				basename = { link = "BarbecueBasename" },
+				dirname = { link = "BarbecueDirname" },
 			},
 		},
 
@@ -142,18 +141,35 @@ return {
 		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			local theme = require("lualine.themes.nord")
-			theme.normal.c.bg = "NONE"
-			theme.normal.x = { fg = c.nord3_500, bg = "NONE" }
-			theme.inactive.c.bg = "NONE"
-
 			local git_blame = require("gitblame")
 			vim.g.gitblame_display_virtual_text = 0 -- disable virtual text
 
 			local workspaces = require("workspaces")
 
-			local lualine = require("lualine")
+			local c = NordStoneColors
+			local theme = {
+				normal = {
+					a = { fg = c.nord1, bg = c.nord8, gui = "bold" },
+					b = { fg = c.nord5, bg = c.nord1 },
+					c = { fg = c.nord5, bg = "NONE" },
+				},
+				insert = {
+					a = { fg = c.nord1, bg = c.nord6, gui = "bold" },
+				},
+				visual = {
+					a = { fg = c.nord1, bg = c.nord7, gui = "bold" },
+				},
+				replace = {
+					a = { fg = c.nord1, bg = c.nord13, gui = "bold" },
+				},
+				inactive = {
+					a = { fg = c.nord1, bg = c.nord8, gui = "bold" },
+					b = { fg = c.nord5, bg = c.nord1 },
+					c = { fg = c.nord5, bg = "NONE" },
+				},
+			}
 
+			local lualine = require("lualine")
 			lualine.setup({
 				options = {
 					theme = theme,
