@@ -1,7 +1,8 @@
 local k = vim.keymap.set
 
--- save/quit/exit
+-- save changes
 k("n", "<leader>w", "<cmd>silent! write<cr>", { desc = "Save file" })
+k({ "s", "i", "n", "v" }, "<c-s>", "<esc>:w<cr>", { desc = "Exit insert mode and save changes." })
 
 -- editing
 k("n", "Y", "y$", { desc = "[Y]ank to end of line" })
