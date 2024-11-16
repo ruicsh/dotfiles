@@ -133,15 +133,10 @@ return {
 		-- https://github.com/nvim-pack/nvim-spectre
 		"nvim-pack/nvim-spectre",
 		keys = {
-			{
-				"<leader>r",
-				"<cmd>lua require('spectre').open_file_search()<cr>",
-				{ desc = "[r]eplace" },
-			},
+			{ "<leader>r", "<cmd>Spectre %<cr>", { desc = "[r]eplace" } },
 		},
-		config = true,
 
-		event = { "BufReadPost", "BufNewFile" },
+		cmd = "Spectre",
 	},
 
 	{ -- search results labels (nvim-hlslens)
