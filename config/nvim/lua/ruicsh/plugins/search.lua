@@ -146,8 +146,6 @@ return {
 			require("hlslens").setup({
 				nearest_only = true,
 			})
-			require("scrollbar.handlers.search").setup()
-
 			local k = vim.api.nvim_set_keymap
 			local kopts = { noremap = true, silent = true }
 

@@ -64,23 +64,6 @@ return {
 		},
 	},
 
-	{ -- scrollbar (nvim-scrollbar)
-		-- https://github.com/petertriho/nvim-scrollbar
-		"petertriho/nvim-scrollbar",
-		opts = {
-			handlers = {
-				cursor = true,
-				diagnostic = true,
-				gitsigns = true,
-				handle = true,
-				search = true,
-				ale = false,
-			},
-		},
-
-		event = { "VeryLazy" },
-	},
-
 	{ -- shortcuts cheatsheet (which-key.nvim)
 		-- https://github.com/folke/which-key.nvim
 		"folke/which-key.nvim",
