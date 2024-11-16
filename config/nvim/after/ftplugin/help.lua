@@ -6,9 +6,6 @@ vim.bo.bufhidden = "unload"
 vim.cmd.wincmd("L")
 vim.cmd.wincmd("=")
 
--- close help window with <c-]>
-k("n", "<c-]>", "<c-w>q", { buffer = true, noremap = true, silent = true })
-
 -- better navigation
 -- https://vim.fandom.com/wiki/Learn_to_use_help#Simplify_help_navigation
 k("n", "<cr>", "<c-]>", { buffer = true, noremap = true, silent = true })

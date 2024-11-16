@@ -2,7 +2,6 @@ local k = vim.keymap.set
 
 -- save/quit/exit
 k("n", "<leader>w", "<cmd>silent! write<cr>", { desc = "Save file" })
-k("n", "<c-]>", "<c-w>q", { desc = "Close split" })
 
 -- editing
 k("n", "Y", "y$", { desc = "[Y]ank to end of line" })
