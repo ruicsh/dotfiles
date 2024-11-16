@@ -123,7 +123,7 @@ return {
 			},
 		},
 
-		event = { "VimEnter" },
+		event = { "VeryLazy" },
 	},
 
 	{ -- terminal (toggleterm.nvim)
