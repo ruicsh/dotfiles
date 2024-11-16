@@ -214,17 +214,4 @@ return {
 			"kevinhwang91/promise-async",
 		},
 	},
-
-	{ -- centered window (stay-centered.nvim)
-		-- https://github.com/arnamak/stay-centered.nvim
-		"shortcuts/no-neck-pain.nvim",
-		opts = {
-			width = 140,
-			mappings = {
-				enabled = true,
-			},
-		},
-
-		event = { "BufReadPost", "BufNewFile" },
-	},
 }
