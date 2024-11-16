@@ -199,4 +199,23 @@ return {
 		event = { "BufRead" },
 		ft = g.ft_code,
 	},
+
+	{ -- github copilot (copilot.lua)
+		-- https://github.com/zbirenbaum/copilot.lua
+		"zbirenbaum/copilot.lua",
+		opts = {
+			suggestion = {
+				auto_trigger = true,
+				keymap = {
+					accept = "<tab>",
+					dismiss = "<c-]>",
+					next = "<c-j>",
+				},
+			},
+		},
+
+		cmd = "Copilot",
+		event = { "InsertEnter" },
+		ft = g.ft_code,
+	},
 }

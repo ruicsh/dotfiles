@@ -33,7 +33,6 @@ require("lazy").setup({
 	},
 	change_detection = { notify = false },
 	spec = {
-		{ import = "ruicsh.plugins.ai", cond = not vim.g.vscode },
 		{ import = "ruicsh.plugins.buffers", cond = not vim.g.vscode },
 		{ import = "ruicsh.plugins.coding", cond = not vim.g.vscode },
 		{ import = "ruicsh.plugins.editor" },
