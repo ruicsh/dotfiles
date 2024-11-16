@@ -63,23 +63,55 @@ return {
 		},
 	},
 
-	{ -- shortcuts cheatsheet (which-key.nvim)
-		-- https://github.com/folke/which-key.nvim
-		"folke/which-key.nvim",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
+	{ -- key clues (mini.clue)
+		-- https://github.com/echasnovski/mini.clue
+		"echasnovski/mini.clue",
+		config = function()
+			local miniclue = require("mini.clue")
+			miniclue.setup({
+				triggers = {
+					-- Leader triggers
+					{ mode = "n", keys = "<Leader>" },
+					{ mode = "x", keys = "<Leader>" },
+
+					-- Built-in completion
+					{ mode = "i", keys = "<C-x>" },
+
+					-- `g` key
+					{ mode = "n", keys = "g" },
+					{ mode = "x", keys = "g" },
+
+					-- Marks
+					{ mode = "n", keys = "'" },
+					{ mode = "n", keys = "`" },
+					{ mode = "x", keys = "'" },
+					{ mode = "x", keys = "`" },
+
+					-- Registers
+					{ mode = "n", keys = '"' },
+					{ mode = "x", keys = '"' },
+					{ mode = "i", keys = "<C-r>" },
+					{ mode = "c", keys = "<C-r>" },
+
+					-- Window commands
+					{ mode = "n", keys = "<C-w>" },
+
+					-- `z` key
+					{ mode = "n", keys = "z" },
+					{ mode = "x", keys = "z" },
+				},
+
+				clues = {
+					-- Enhance this by adding descriptions for <Leader> mapping groups
+					miniclue.gen_clues.builtin_completion(),
+					miniclue.gen_clues.g(),
+					miniclue.gen_clues.marks(),
+					miniclue.gen_clues.registers(),
+					miniclue.gen_clues.windows(),
+					miniclue.gen_clues.z(),
+				},
+			})
+		end,
 
 		event = { "VeryLazy" },
 	},
@@ -152,6 +184,7 @@ return {
 					a = { fg = c.nord1, bg = c.nord8, gui = "bold" },
 					b = { fg = c.nord5, bg = c.nord1 },
 					c = { fg = c.nord5, bg = "NONE" },
+					x = { fg = c.nord3_500, bg = "NONE" },
 				},
 				insert = {
 					a = { fg = c.nord1, bg = c.nord6, gui = "bold" },
