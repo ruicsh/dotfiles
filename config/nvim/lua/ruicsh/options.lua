@@ -1,38 +1,51 @@
+-- app
 vim.opt.backup = false -- do not create backup files
-vim.opt.cursorline = true -- highlight current line
-vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
-vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
+vim.opt.swapfile = false -- stop creating swp files
+
+-- gui
 vim.opt.guifont = "JetBrainsMono Nerd Font:h12" -- font family and size
-vim.opt.ignorecase = true -- ignore case on search patterns
-vim.opt.inccommand = "nosplit" -- show live preview of substitution
-vim.opt.laststatus = 0 -- always and only the last window
 vim.opt.linespace = 0 -- line height
 vim.opt.mouse = "a" -- enable mouse support
-vim.opt.number = true -- show line numbers
-vim.opt.numberwidth = 5 -- more space on the gutter column
-vim.opt.relativenumber = true -- show relative line numbers
-vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
-vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
-vim.opt.shortmess = "IWcCSF" -- don't show messages
-vim.opt.showcmd = false -- do not show command on last line
-vim.opt.showmatch = false -- do not show matching brackets
-vim.opt.showmode = false -- do not show mode on last line
-vim.opt.showtabline = 2 -- show tabline
-vim.opt.signcolumn = "yes" -- enable the sign column to prevent the screen from jumping
-vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
-vim.opt.smartindent = true -- smart indent
-vim.opt.softtabstop = 2 -- number of spaces that a <Tab> key in the file counts for
 vim.opt.splitbelow = true -- open a new horizontal split below
 vim.opt.splitright = true -- open a new vertical split to the right
-vim.opt.swapfile = false -- stop creating swp files
-vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
 vim.opt.termguicolors = true -- enable true colors
+
+-- editor
+vim.opt.cursorline = true -- highlight current line
+vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
+vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
+vim.opt.showmatch = false -- do not show matching brackets
+vim.opt.showtabline = 2 -- always show tabline
 vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
 vim.opt.wrap = false -- do not automatically wrap texts
 
--- fold settings
--- These options were reccommended by nvim-ufo
--- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+-- indents/tabstops
+vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
+vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
+vim.opt.smartindent = true -- smart indent
+vim.opt.softtabstop = 2 -- number of spaces that a <Tab> key in the file counts for
+vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
+
+-- search
+vim.opt.ignorecase = true -- ignore case on search patterns
+vim.opt.inccommand = "nosplit" -- show live preview of substitution
+vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
+
+-- gutter column
+vim.opt.number = true -- show line numbers
+vim.opt.numberwidth = 5 -- more space on the gutter column
+vim.opt.relativenumber = true -- show relative line numbers
+vim.opt.signcolumn = "yes" -- always showe to prevent the screen from jumping
+
+-- cleaner statusline
+vim.opt.laststatus = 0 -- never show statusline on inactive windows
+vim.opt.ruler = false -- do not show the line and column number of the cursor position
+vim.opt.shortmess = "AIWcCsSF" -- don't show messages
+vim.opt.showcmd = false -- do not show command on last line
+vim.opt.showmode = false -- do not show mode on last line
+
+-- folds
+-- see: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
@@ -40,12 +53,12 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldnestmax = 5
 vim.opt.foldtext = ""
 
--- disable netrw in favor of nvim-tree/oil
+-- disable netrw in favor of neo-tree/oil
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- clipboard (so that yank goes to OS clipboard)
--- Schedule the setting after `UiEnter` because it can increase startup-time.
+-- schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
