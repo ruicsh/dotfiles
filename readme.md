@@ -189,6 +189,7 @@
 - `<leader>hS` stage file
 - `<leader>hR` reset file
 - `<leader>hp` preview change
+- `<leader>hy` share file permalink
 - `[c` previous change
 - `]c` next change
 - `<c-]>` close panel
