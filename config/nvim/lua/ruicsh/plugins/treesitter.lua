@@ -141,23 +141,6 @@ return {
 		ft = g.ft_code,
 	},
 
-	{ -- syntax aware join lines (treesj)
-		-- https://github.com/Wansmer/treesj
-		"Wansmer/treesj",
-		keys = {
-			{ "<leader>J", "<cmd>TSJToggle<cr>", desc = "TreeSJ: [j]oin toggle" },
-		},
-		opts = {
-			use_default_keymaps = false,
-			max_join_length = 150,
-		},
-
-		ft = g.ft_code,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-	},
-
 	{ -- comments on embbeded languages (ex: html inside ts, css inside html) (nvim-ts-context-commentstring)
 		-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 		"JoosepAlviste/nvim-ts-context-commentstring",
