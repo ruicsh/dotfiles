@@ -1,3 +1,5 @@
 require("ruicsh/autocmds/buf-enter")
 require("ruicsh/autocmds/term-open")
 require("ruicsh/autocmds/text-yank-post")
+require("ruicsh/autocmds/user")
+require("ruicsh/autocmds/vim-enter")
