@@ -1,7 +1,0 @@
-require("ruicsh/autocmds/buf-enter")
-require("ruicsh/autocmds/buf-read-post")
-require("ruicsh/autocmds/close-shortcut")
-require("ruicsh/autocmds/term-open")
-require("ruicsh/autocmds/text-yank-post")
-require("ruicsh/autocmds/user")
-require("ruicsh/autocmds/vim-enter")

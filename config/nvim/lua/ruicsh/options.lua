@@ -1,3 +1,7 @@
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- app
 vim.opt.backup = false -- do not create backup files
 vim.opt.swapfile = false -- stop creating swp files
