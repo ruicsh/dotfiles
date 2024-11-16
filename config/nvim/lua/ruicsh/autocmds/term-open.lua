@@ -1,6 +1,5 @@
--- when starting a terminal
 vim.api.nvim_create_autocmd("TermOpen", {
-	pattern = "*",
+	group = vim.api.nvim_create_augroup("ruicsh/TermOpen", { clear = true }),
 	callback = function()
 		if vim.opt.buftype:get() == "terminal" then
 			-- don't show line numbers on terminal

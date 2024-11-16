@@ -1,6 +1,5 @@
--- Autocmds for BufEnter event
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*",
+	group = vim.api.nvim_create_augroup("ruicsh/BufEnter", { clear = true }),
 	callback = function()
 		-- do not auto-wrap comments
 		vim.opt.formatoptions:remove({ "c", "r", "o" })
