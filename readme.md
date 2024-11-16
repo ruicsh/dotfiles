@@ -25,7 +25,7 @@
 - `L` expand all 
 - `H` collapse all
 - `I` toggle filter: gitignore 
-- `<c-bs>` close explorer
+- `<c-]>` close explorer
 - `[c` previous git change 
 - `]c` next git change
 - `<` previous source 
@@ -41,7 +41,7 @@
 - `gs` change sort
 - `g.` toggle hidden
 - `g\` toggle trash
-- `<c-bs>` close explorer
+- `<c-]>` close explorer
 
 ### Opened files 
 
@@ -191,7 +191,7 @@
 - `<leader>hp` preview change
 - `[c` previous change
 - `]c` next change
-- `<c-bs>` close panel
+- `<c-]>` close panel
 
 ### Diffview
 
@@ -200,7 +200,7 @@
 - `cc` commit
 - `s` stage file
 - `X` reset file
-- `<c-bs>` close panel
+- `<c-]>` close panel
 
 ### Merge Conflicts
 
@@ -217,7 +217,7 @@
 - `<c-w>[` move file to split on the left
 - `<c-w>]` move file to split on the right
 - `<c-w>m` maximize split
-- `<c-bs>` quit split
+- `<c-]>` quit split
 - `<c-w>v` split vertically
 
 ### Folds

@@ -27,7 +27,7 @@ return {
 						i = {
 							["<c-k>"] = actions.move_selection_previous,
 							["<c-j>"] = actions.move_selection_next,
-							["<c-bs>"] = actions.close,
+							["<c-]>"] = actions.close,
 						},
 					},
 					file_ignore_patterns = {

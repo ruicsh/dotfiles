@@ -17,8 +17,8 @@ return {
 				auto_trigger = true,
 				keymap = {
 					accept = "<tab>",
-					dismiss = "<esc>",
-					next = "<c-]>",
+					dismiss = "<c-]>",
+					next = "<c-j>",
 				},
 			},
 		},

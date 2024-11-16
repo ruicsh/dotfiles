@@ -73,7 +73,7 @@ return {
 
 						local bufnr = view.buffer
 						-- keymaps set only for this buffer
-						vim.keymap.set("n", "<c-bs>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-bs> to close,
+						vim.keymap.set("n", "<c-]>", "<cmd>DiffviewClose<cr>", { buffer = bufnr }) -- use <c-]> to close,
 						-- use cc to commit
 						vim.keymap.set(
 							"n",
