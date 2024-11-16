@@ -205,4 +205,12 @@ return {
 			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
 		},
 	},
+
+	{ -- highlight matching words under cursor (vim-illuminate)
+		-- https://github.com/RRethy/vim-illuminate
+		"RRethy/vim-illuminate",
+
+		event = { "BufRead" },
+		ft = g.ft_code,
+	},
 }

@@ -79,3 +79,10 @@ _.loadColorSet({
 _.loadColorSet({
 	AvanteInlineHint = { fg = c.nord3 },
 })
+
+-- vim-iluminate
+_.loadColorSet({
+	IlluminatedWordText = { bg = c.nord2 },
+	IlluminatedWordRead = { bg = c.nord2 },
+	IlluminatedWordWrite = { bg = c.nord2 },
+})
