@@ -33,8 +33,8 @@ return {
 				vue = { "prettier" },
 			},
 			format_on_save = function()
-				-- stop if we disabled auto-formatting
-				if not vim.g.autoformat then
+				-- stop if we disabled formatting on save
+				if not vim.g.format_on_save then
 					return nil
 				end
 
@@ -43,13 +43,13 @@ return {
 					lsp_format = "fallback",
 				}
 			end,
-			init = function()
-				-- use conform for gq
-				vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-				-- start auto-formatting by default (and disable with my ToggleFormat command)
-				vim.g.autoformat = true
-			end,
 		},
+		init = function()
+			-- use conform for gq
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+			-- start auto-formatting by default (and disable with my ToggleFormat command)
+			vim.g.format_on_save = true
+		end,
 
 		ft = g.ft_code,
 		event = { "BufWritePre" },
