@@ -1,7 +1,10 @@
 local k = vim.keymap.set
+local opts = { noremap = true, buffer = true }
 
--- use <c-s> to save the commit message
-k("i", "<c-s>", "<esc><cmd>w<cr><c-w>q", { noremap = true, buffer = true })
+-- Use <c-s> to save the commit message.
+k("i", "<c-s>", "<esc><cmd>w<cr><c-w>q", opts)
 
-vim.opt.spell = true -- set spellcheck on
-vim.cmd("startinsert", { silent = true }) -- start on insert mode
+-- Set spellcheck on.
+vim.opt.spell = true
+-- Start on insert mode.
+vim.cmd("startinsert", { silent = true })

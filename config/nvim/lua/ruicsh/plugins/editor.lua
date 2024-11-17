@@ -3,7 +3,7 @@
 --
 
 return {
-	{ -- move line/selection up/down (mini.move.nvim)
+	{ -- Move line/selection up/down (mini.move.nvim).
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
 		"echasnovski/mini.move",
 		opts = {
@@ -21,21 +21,21 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- repeat plugin keymaps (vim-repeat)
+	{ -- Repeat plugin keymaps (vim-repeat).
 		-- https://github.com/tpope/vim-repeat
 		"tpope/vim-repeat",
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- insert mode navigation (vim-rsi)
+	{ -- Insert mode navigation (vim-rsi).
 		-- https://github.com/tpope/vim-rsi
 		"tpope/vim-rsi",
 
 		event = { "InsertEnter" },
 	},
 
-	{ -- sort selection (sort.nvim)
+	{ -- Sort selection (sort.nvim).
 		-- https://github.com/sQVe/sort.nvim
 		"sQVe/sort.nvim",
 		opts = {
@@ -52,7 +52,7 @@ return {
 		cmd = "Sort",
 	},
 
-	{ -- surrounding delimiter pairs (nvim-surround)
+	{ -- Surrounding delimiter pairs (nvim-surround).
 		-- https://github.com/kylechui/nvim-surround
 		"kylechui/nvim-surround",
 		config = true,
@@ -60,7 +60,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- move by subwords in camelCase (nvim-spider)
+	{ -- Move by subwords in camelCase (nvim-spider).
 		-- https://github.com/chrisgrieser/nvim-spider
 		"chrisgrieser/nvim-spider",
 		keys = {
@@ -73,7 +73,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- use jj to escape (better-escape.nvim)
+	{ -- Use jj to escape (better-escape.nvim).
 		-- https://github.com/max397574/better-escape.nvim
 		"max397574/better-escape.nvim",
 		config = true,
@@ -81,7 +81,7 @@ return {
 		event = { "VimEnter" },
 	},
 
-	{ -- various text objects (nvim-various-textobjs)
+	{ -- Various text objects (nvim-various-textobjs).
 		-- https://github.com/chrisgrieser/nvim-various-textobjs
 		"chrisgrieser/nvim-various-textobjs",
 		opts = {
@@ -91,7 +91,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- yank history (yanky.nvim)
+	{ -- Yank history (yanky.nvim).
 		-- https://github.com/gbprod/yanky.nvim
 		"gbprod/yanky.nvim",
 		keys = {
@@ -100,8 +100,8 @@ return {
 			{ "gp", "<Plug>(YankyGPutAfter)", { mode = { "n", "x" } } },
 			{ "gP", "<Plug>(YankyGPutBefore)", { mode = { "n", "x" } } },
 			{ "P", "<Plug>(YankyPutBefore)", { mode = { "n", "x" } } },
-			{ "]p", "<Plug>(YankyPutIncidentAfterLinewise)", { mode = "n" } },
-			{ "[p", "<Plug>(YankyPutIncidentBeforeLinewise)", { mode = "n" } },
+			{ "]p", "<Plug>(YankyPutIndentAfterLinewise)", { mode = "n" } },
+			{ "[p", "<Plug>(YankyPutIndentBeforeLinewise)", { mode = "n" } },
 
 			{ "<c-p>", "<Plug>(YankyPreviousEntry)", { mode = "n" } },
 			{ "<c-n>", "<Plug>(YankyNextEntry)", { mode = "n" } },

@@ -3,7 +3,7 @@
 --
 
 local function display_parent_basename(opts, filepath)
-	-- display the parent directory name and basename
+	-- Display the parent directory name and basename.
 	local path = vim.fn.fnamemodify(filepath, ":p:h")
 	local parent = vim.fn.fnamemodify(path, ":t")
 	local basename = vim.fn.fnamemodify(filepath, ":t")
@@ -14,7 +14,7 @@ local function display_parent_basename(opts, filepath)
 end
 
 return {
-	{ -- fuzzy finder (telescope.nvim)
+	{ -- Picker (telescope.nvim).
 		-- https://github.com/nvim-telescope/telescope.nvim
 		"nvim-telescope/telescope.nvim",
 		config = function()
@@ -62,12 +62,12 @@ return {
 				},
 			})
 
-			-- Enable Telescope extensions if they are installed
+			-- Enable Telescope extensions if they are installed.
 			pcall(telescope.load_extension, "fzf")
 			pcall(telescope.load_extension, "ui-select")
 			pcall(telescope.load_extension, "workspaces")
 
-			-- see `:help telescope.builtin`
+			-- See `:help telescope.builtin`.
 			local k = vim.keymap
 			local builtin = require("telescope.builtin")
 
@@ -86,7 +86,7 @@ return {
 			k.set("n", "<leader>hf", builtin.git_status, { desc = "Git: list files" })
 			k.set("n", "<leader>jj", show_jumplist, { desc = "Jumplist: Show" })
 
-			-- Slightly advanced example of overriding default behavior and theme
+			-- Slightly advanced example of overriding default behavior and theme.
 			k.set("n", "<leader>/", function()
 				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -96,7 +96,7 @@ return {
 			end, { desc = "Telescope: [/] Fuzzily search in current buffer" })
 
 			-- It's also possible to pass additional configuration options.
-			--  See `:help telescope.builtin.live_grep()` for information about particular keys
+			-- See `:help telescope.builtin.live_grep()` for information about particular keys.
 			k.set("n", "<leader><c-f>", function()
 				builtin.live_grep({
 					grep_open_files = true,
@@ -104,7 +104,7 @@ return {
 				})
 			end, { desc = "Telescope: [/] in Open Files" })
 
-			-- Shortcut for searching your Neovim configuration files
+			-- Shortcut for searching your Neovim configuration files.
 			k.set("n", "<leader>n,", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "Telescope: [N]eovim files" })
@@ -114,7 +114,7 @@ return {
 		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{ -- If encountering errors, see telescope-fzf-native README for installation instructions
+			{ -- If encountering errors, see telescope-fzf-native README for installation instructions.
 				-- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
@@ -128,7 +128,7 @@ return {
 		},
 	},
 
-	{ -- search/replace (nvim-spectre)
+	{ -- Search/replace (nvim-spectre).
 		-- https://github.com/nvim-pack/nvim-spectre
 		"nvim-pack/nvim-spectre",
 		keys = {
@@ -138,7 +138,7 @@ return {
 		cmd = "Spectre",
 	},
 
-	{ -- search results labels (nvim-hlslens)
+	{ -- Search results labels (nvim-hlslens).
 		-- https://github.com/kevinhwang91/nvim-hlslens
 		"kevinhwang91/nvim-hlslens",
 		config = function()

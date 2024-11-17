@@ -3,14 +3,14 @@
 --
 
 return {
-	{ -- git client (vim-fugitive)
+	{ -- Git client (vim-fugitive).
 		-- https://github.com/tpope/vim-fugitive
 		"tpope/vim-fugitive",
 
 		cmd = "Git",
 	},
 
-	{ -- git blame (git-blame.nvim)
+	{ -- Git blame (git-blame.nvim).
 		-- https://github.com/f-person/git-blame.nvim
 		"f-person/git-blame.nvim",
 		opts = {
@@ -24,7 +24,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- merge conflicts (git-conflict.nvim)
+	{ -- Merge conflicts (git-conflict.nvim).
 		-- https://github.com/akinsho/git-conflict.nvim
 		"akinsho/git-conflict.nvim",
 		config = true,
@@ -32,7 +32,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- diffview (diffview.nvim)
+	{ -- Diffview (diffview.nvim).
 		-- https://github.com/sindrets/diffview.nvim
 		"sindrets/diffview.nvim",
 		keys = {
@@ -59,19 +59,19 @@ return {
 						end)
 					end,
 					diff_buf_win_enter = function()
-						vim.wo.cursorline = false -- disable cursorline
-						vim.opt_local.foldenable = false -- disable folding
+						vim.wo.cursorline = false -- Disable cursorline.
+						vim.opt_local.foldenable = false -- Disable folding.
 					end,
 					diff_buf_win_leave = function()
-						vim.wo.cursorline = true -- enable cursorline
-						vim.opt_local.foldenable = true -- enable folding
+						vim.wo.cursorline = true -- Enable cursorline.
+						vim.opt_local.foldenable = true -- Enable folding.
 					end,
 					view_enter = function(view)
-						vim.cmd(":VimadeDisable") -- disable dimming windows
-						vim.cmd(":Barbecue hide") -- hide breadcrumbs
+						vim.cmd(":VimadeDisable") -- Disable dimming windows.
+						vim.cmd(":Barbecue hide") -- Hide breadcrumbs.
 
 						local bufnr = view.buffer
-						-- use cc to commit
+						-- Use cc to commit.
 						vim.keymap.set(
 							"n",
 							"cc",
@@ -80,8 +80,8 @@ return {
 						)
 					end,
 					view_leave = function()
-						vim.cmd(":VimadeEnable") --reenable dimming windows
-						vim.cmd(":Barbecue show") -- show breadcrumbs
+						vim.cmd(":VimadeEnable") -- Reenable dimming windows.
+						vim.cmd(":Barbecue show") -- Show breadcrumbs.
 					end,
 				},
 			})
@@ -90,7 +90,7 @@ return {
 		cmd = { "DiffviewOpen" },
 	},
 
-	{ -- buffer integration (gitsigns.nvim)
+	{ -- Buffer integration (gitsigns.nvim).
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -152,7 +152,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
-	{ -- shareable file links (gitlinker.nvim)
+	{ -- Shareable file links (gitlinker.nvim).
 		-- https://github.com/ruifm/gitlinker.nvim
 		"ruifm/gitlinker.nvim",
 		config = function()

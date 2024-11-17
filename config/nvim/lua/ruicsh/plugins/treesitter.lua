@@ -5,7 +5,7 @@
 local g = require("ruicsh/plugins/globals")
 
 return {
-	{ -- code parser (nvim-treesitter)
+	{ -- Code parser (nvim-treesitter).
 		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -44,7 +44,7 @@ return {
 				"vue",
 				"yaml",
 			},
-			-- autoinstall languages that are not installed
+			-- Autoinstall languages that are not installed.
 			auto_install = true,
 			highlight = {
 				enable = true,
@@ -114,36 +114,34 @@ return {
 			},
 		},
 
-		main = "nvim-treesitter.configs", -- sets main module to use for opts
-		event = { "BufReadPost", "BufNewFile" },
+		main = "nvim-treesitter.configs", -- Sets main module to use for opts.
 		ft = g.CodeFiletypes,
 		build = ":TSUpdate",
 		dependencies = {
-			{ -- syntax aware text objects
+			{ -- Syntax aware text objects.
 				-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
 		},
 	},
 
-	{ -- auto-close/rename html tags (nvim-ts-autotag)
+	{ -- Auto-close/rename html tags (nvim-ts-autotag).
 		-- https://github.com/windwp/nvim-ts-autotag
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup({
 				opts = {
-					enable_close = true, -- Auto close tags
-					enable_rename = true, -- Auto rename pairs of tags
-					enable_close_on_slash = true, -- Auto close on trailing </
+					enable_close = true, -- Auto close tags.
+					enable_rename = true, -- Auto rename pairs of tags.
+					enable_close_on_slash = true, -- Auto close on trailing </.
 				},
 			})
 		end,
 
-		event = { "BufReadPost", "BufNewFile" },
 		ft = { "html", "htmlangular", "typescript", "typescriptreact", "vue" },
 	},
 
-	{ -- comments on embbeded languages (ex: html inside ts, css inside html) (nvim-ts-context-commentstring)
+	{ -- Comments on embbeded languages (ex: html inside ts, css inside html) (nvim-ts-context-commentstring).
 		-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		config = function()
@@ -165,11 +163,10 @@ return {
 			end
 		end,
 
-		event = { "BufReadPost", "BufNewFile" },
 		ft = g.CodeFiletypes,
 	},
 
-	{ -- jump to tag (jump-tag)
+	{ -- Jump to tag (jump-tag).
 		-- https://github.com/harrisoncramer/jump-tag
 		-- "harrisoncramer/jump-tag",
 		"ruicsh/jump-tag",
@@ -180,7 +177,6 @@ return {
 			{ "]T", "<cmd>lua require('jump-tag').jumpChild()<cr>", desc = "Jump to child" },
 		},
 
-		event = { "BufReadPost", "BufNewFile" },
 		ft = { "html", "htmlangular", "typescript", "typescriptreact", "vue" },
 	},
 }

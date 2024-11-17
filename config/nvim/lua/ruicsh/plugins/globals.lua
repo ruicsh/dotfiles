@@ -1,4 +1,4 @@
--- code filetypes where to load code features (lsp, treesitter, ...)
+-- Code filetypes where to load code features (LSP, TreeSitter, ...).
 local CodingFiletypes = {
 	"css",
 	"dotenv",

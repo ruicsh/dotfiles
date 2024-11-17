@@ -1,54 +1,54 @@
--- leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Leader key
+vim.g.mapleader = " " -- Set leader key to space.
+vim.g.maplocalleader = " " -- Set local leader key to space.
 
--- app
-vim.opt.backup = false -- do not create backup files
-vim.opt.swapfile = false -- stop creating swp files
+-- App
+vim.opt.backup = false -- Do not create backup files.
+vim.opt.swapfile = false -- Stop creating swp files.
 
--- gui
-vim.opt.guifont = "JetBrainsMono Nerd Font:h12" -- font family and size
-vim.opt.linespace = 0 -- line height
-vim.opt.mouse = "a" -- enable mouse support
-vim.opt.splitbelow = true -- open a new horizontal split below
-vim.opt.splitright = true -- open a new vertical split to the right
-vim.opt.termguicolors = true -- enable true colors
+-- GUI
+vim.opt.guifont = "JetBrainsMono Nerd Font:h12" -- Font family and size.
+vim.opt.linespace = 0 -- Line height.
+vim.opt.mouse = "a" -- Enable mouse support.
+vim.opt.splitbelow = true -- Open a new horizontal split below.
+vim.opt.splitright = true -- Open a new vertical split to the right.
+vim.opt.termguicolors = true -- Enable true colors.
 
--- editor
-vim.opt.cursorline = true -- highlight current line
-vim.opt.fillchars:append({ diff = "╱" }) -- diffview deleted lines marker
-vim.opt.scrolloff = 8 -- number of lines to keep above and below the cursor
-vim.opt.showmatch = false -- do not show matching brackets
-vim.opt.showtabline = 2 -- always show tabline
-vim.opt.updatetime = 250 -- time in milliseconds to wait for CursorHold event
-vim.opt.wrap = false -- do not automatically wrap texts
+-- Editor
+vim.opt.cursorline = true -- Highlight current line.
+vim.opt.fillchars:append({ diff = "╱" }) -- Diffview deleted lines marker.
+vim.opt.scrolloff = 8 -- Number of lines to keep above and below the cursor.
+vim.opt.showmatch = false -- Do not show matching brackets.
+vim.opt.showtabline = 2 -- Always show tabline.
+vim.opt.updatetime = 250 -- Time in milliseconds to wait for CursorHold event.
+vim.opt.wrap = false -- Do not automatically wrap texts.
 
--- indents/tabstops
-vim.opt.expandtab = true -- in insert mode, use the correct number of spaces to insert a tab
-vim.opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent
-vim.opt.smartindent = true -- smart indent
-vim.opt.softtabstop = 2 -- number of spaces that a <Tab> key in the file counts for
-vim.opt.tabstop = 2 -- number of spaces that a <Tab> in the file counts for
+-- Indents/tabstops
+vim.opt.expandtab = true -- In insert mode, use the correct number of spaces to insert a tab.
+vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent.
+vim.opt.smartindent = true -- Smart indent.
+vim.opt.softtabstop = 2 -- Number of spaces that a <Tab> key in the file counts for.
+vim.opt.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
 
--- search
-vim.opt.ignorecase = true -- ignore case on search patterns
-vim.opt.inccommand = "nosplit" -- show live preview of substitution
-vim.opt.smartcase = true -- use case sensitive if keyword contains capital letters
+-- Search
+vim.opt.ignorecase = true -- Ignore case on search patterns.
+vim.opt.inccommand = "nosplit" -- Show live preview of substitution.
+vim.opt.smartcase = true -- Use case sensitive if keyword contains capital letters.
 
--- gutter column
-vim.opt.number = true -- show line numbers
-vim.opt.numberwidth = 5 -- more space on the gutter column
-vim.opt.relativenumber = true -- show relative line numbers
-vim.opt.signcolumn = "yes" -- always showe to prevent the screen from jumping
+-- Gutter column
+vim.opt.number = true -- Show line numbers.
+vim.opt.numberwidth = 5 -- More space on the gutter column.
+vim.opt.relativenumber = true -- Show relative line numbers.
+vim.opt.signcolumn = "yes" -- Always showe to prevent the screen from jumping.
 
--- cleaner statusline
-vim.opt.laststatus = 3 -- always show global statusline
-vim.opt.ruler = false -- do not show the line and column number of the cursor position
-vim.opt.shortmess = "AIWcCsSF" -- don't show messages
-vim.opt.showcmd = false -- do not show command on last line
-vim.opt.showmode = false -- do not show mode on last line
+-- Cleaner statusline
+vim.opt.laststatus = 3 -- Always show global statusline.
+vim.opt.ruler = false -- Do not show the line and column number of the cursor position.
+vim.opt.shortmess = "AIWcCsSF" -- Don't show messages.
+vim.opt.showcmd = false -- Do not show command on last line.
+vim.opt.showmode = false -- Do not show mode on last line.
 
--- folds
+-- Folds
 -- see: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
@@ -57,12 +57,12 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldnestmax = 5
 vim.opt.foldtext = ""
 
--- disable netrw in favor of neo-tree/oil
+-- Disable netrw in favor of neo-tree/oil.
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- clipboard (so that yank goes to OS clipboard)
--- schedule the setting after `UiEnter` because it can increase startup-time.
+-- Clipboard (so that yank goes to OS clipboard)
+-- Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
@@ -93,7 +93,7 @@ end
 
 -- [[ NEOVIDE ]]
 if vim.g.neovide then
-	-- turn off all animations
+	-- Turn off all animations.
 	vim.g.neovide_cursor_animate_command_line = false
 	vim.g.neovide_cursor_animate_in_insert_mode = false
 	vim.g.neovide_cursor_animation_length = 0.00

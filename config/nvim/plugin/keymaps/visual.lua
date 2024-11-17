@@ -1,22 +1,21 @@
 local k = vim.keymap.set
 
--- sort
+-- Sort
 k("v", "<leader>so", "<esc><cmd>Sort<cr>", { desc = "[S]ort" })
 
--- search and replace
+-- Search and replace
 k("x", "<leader>r", ":s/", { desc = "Replace within selection" })
 
--- indent
-k("v", "<<", "<gv") -- keep visual selection after indenting
-k("v", ">>", ">gv") -- keep visual selection after indenting
+-- Keep visual selection after indenting.
+k("v", "<<", "<gv")
+k("v", ">>", ">gv")
 
--- registers
-k("v", "P", '"_dP') -- paste over currently selected text without yanking it
-k("v", "X", '"_X') -- don't yank on delete char before cursor
-k("v", "c", '"_c') -- change selection without putting it into register
-k("v", "p", '"_dp') -- paste over currently selected text without yanking it
-k("v", "x", '"_x') -- don't yank on delete char under cursor
+-- Paste over currently selected text without yanking it.
+k("v", "P", '"_dP')
+k("v", "X", '"_X')
+k("v", "c", '"_c')
+k("v", "p", '"_dp')
+k("v", "x", '"_x')
 
--- misc
--- this remap also removes the default behavior of going down a line with <cr>
-k("v", "<cr>", "<cmd>noh<cr>") -- remove search highlighting
+-- Remove search highlighting.
+k("v", "<cr>", "<cmd>noh<cr>")

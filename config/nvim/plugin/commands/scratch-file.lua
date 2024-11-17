@@ -1,4 +1,4 @@
--- Open a scratch buffer with the command `:Scratch`
+-- Open a scratch buffer with the command `:Scratch`.
 vim.api.nvim_create_user_command("Scratch", function()
 	vim.cmd("vertical 60vsplit")
 	local buf = vim.api.nvim_get_current_buf()

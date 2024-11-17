@@ -4,7 +4,7 @@
 
 local g = require("ruicsh/plugins/globals")
 
--- set keymaps for lsp commands
+-- Set keymaps for LSP commands.
 local function set_keymaps(event)
 	local map = function(keys, func, desc, mode)
 		mode = mode or "n"
@@ -13,7 +13,7 @@ local function set_keymaps(event)
 
 	local telescope = require("telescope.builtin")
 
-	-- when displaying the document/worspace symbols, only show these
+	-- When displaying the document/worspace symbols, only show these.
 	local lsp_symbols = { "method", "function", "class" }
 	local function lsp_document_symbols()
 		telescope.lsp_document_symbols({ symbols = lsp_symbols })
@@ -42,7 +42,7 @@ local function set_keymaps(event)
 	map("ga", lsp_toggle_signature, "LSP: Toggle signature hints")
 end
 
--- install and configure lsp servers
+-- Install and configure lsp servers.
 local function conf_lsp_servers()
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 	local servers = {
@@ -73,7 +73,7 @@ local function conf_lsp_servers()
 
 	local ensure_installed = vim.tbl_keys(servers or {})
 	vim.list_extend(ensure_installed, {
-		"stylua", -- Used to format Lua code
+		"stylua", -- Used to format Lua code.
 	})
 	require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -89,7 +89,7 @@ local function conf_lsp_servers()
 end
 
 return {
-	{ -- config (nvim-lspconfig)
+	{ -- Config (nvim-lspconfig).
 		-- https://github.com/neovim/nvim-lspconfig
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -110,11 +110,11 @@ return {
 			{ "WhoIsSethDaniel/mason-tool-installer.nvim", ft = g.CodingFiletypes },
 			{ "pmizio/typescript-tools.nvim", opts = {}, ft = { "typescript", "typescriptreact" } },
 			{ "onsails/lspkind.nvim", ft = g.CodingFiletypes },
-			{ "nvim-telescope/telescope.nvim", ft = g.CodingFiletypes }
+			{ "nvim-telescope/telescope.nvim", ft = g.CodingFiletypes },
 		},
 	},
 
-	{ -- jump to reference (refjump.nvim)
+	{ -- Jump to reference (refjump.nvim).
 		-- https://github.com/mawkler/refjump.nvim
 		"mawkler/refjump.nvim",
 		opts = {
@@ -127,7 +127,7 @@ return {
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- signature hints (lsp_signature.nvim)
+	{ -- Signature hints (lsp_signature.nvim).
 		-- https://github.com/ray-x/lsp_signature.nvim
 		"ray-x/lsp_signature.nvim",
 		opts = {
@@ -142,7 +142,7 @@ return {
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- diagnostics (trouble.nvim)
+	{ -- Diagnostics (trouble.nvim).
 		-- https://github.com/folke/trouble.nvim
 		"folke/trouble.nvim",
 		keys = {
@@ -175,8 +175,8 @@ return {
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- neovim apis lsp (lazydev.nvim)
-		-- used for completion, annotations and signatures of Neovim apis
+	{ -- Neovim apis lsp (lazydev.nvim).
+		-- Used for completion, annotations and signatures of Neovim APIs.
 		-- https://github.com/folke/lazydev.nvim
 		"folke/lazydev.nvim",
 		opts = {

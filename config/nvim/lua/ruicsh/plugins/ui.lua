@@ -40,7 +40,7 @@ return {
 		event = { "VeryLazy" },
 	},
 
-	{ -- breadcrumbs (barbecue.nvim)
+	{ -- Breadcrumbs (barbecue.nvim)
 		-- https://github.com/utilyre/barbecue.nvim
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
@@ -63,46 +63,33 @@ return {
 		},
 	},
 
-	{ -- key clues (mini.clue)
+	{ -- Key clues (mini.clue).
 		-- https://github.com/echasnovski/mini.clue
 		"echasnovski/mini.clue",
 		config = function()
 			local miniclue = require("mini.clue")
 			miniclue.setup({
 				triggers = {
-					-- Leader triggers
 					{ mode = "n", keys = "<Leader>" },
 					{ mode = "x", keys = "<Leader>" },
-
-					-- Built-in completion
 					{ mode = "i", keys = "<C-x>" },
-
-					-- `g` key
 					{ mode = "n", keys = "g" },
 					{ mode = "x", keys = "g" },
-
-					-- Marks
 					{ mode = "n", keys = "'" },
 					{ mode = "n", keys = "`" },
 					{ mode = "x", keys = "'" },
 					{ mode = "x", keys = "`" },
-
-					-- Registers
 					{ mode = "n", keys = '"' },
 					{ mode = "x", keys = '"' },
 					{ mode = "i", keys = "<C-r>" },
 					{ mode = "c", keys = "<C-r>" },
-
-					-- Window commands
 					{ mode = "n", keys = "<C-w>" },
-
-					-- `z` key
 					{ mode = "n", keys = "z" },
 					{ mode = "x", keys = "z" },
 				},
 
 				clues = {
-					-- Enhance this by adding descriptions for <Leader> mapping groups
+					-- Enhance this by adding descriptions for <Leader> mapping groups.
 					miniclue.gen_clues.builtin_completion(),
 					miniclue.gen_clues.g(),
 					miniclue.gen_clues.marks(),
@@ -116,7 +103,7 @@ return {
 		event = { "VeryLazy" },
 	},
 
-	{ -- command line (wilder.nvim)
+	{ -- Command line (wilder.nvim).
 		-- https://github.com/gelguy/wilder.nvim
 		"gelguy/wilder.nvim",
 		config = function()
@@ -140,7 +127,7 @@ return {
 		event = { "VeryLazy" },
 	},
 
-	{ -- workspaces (workspaces.nvim)
+	{ -- Workspaces (workspaces.nvim).
 		-- https://github.com/natecraddock/workspaces.nvim
 		"natecraddock/workspaces.nvim",
 		keys = {
@@ -157,7 +144,7 @@ return {
 		event = { "VeryLazy" },
 	},
 
-	{ -- terminal (toggleterm.nvim)
+	{ -- Terminal (toggleterm.nvim).
 		-- https://github.com/akinsho/toggleterm.nvim
 		"akinsho/toggleterm.nvim",
 		opts = {
@@ -168,12 +155,12 @@ return {
 		event = { "VeryLazy" },
 	},
 
-	{ -- status line (lualine.nvim)
+	{ -- Status line (lualine.nvim).
 		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			local git_blame = require("gitblame")
-			vim.g.gitblame_display_virtual_text = 0 -- disable virtual text
+			vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text.
 
 			local workspaces = require("workspaces")
 
@@ -234,7 +221,7 @@ return {
 		},
 	},
 
-	{ -- indent guides (indent-blankline.nvim)
+	{ -- Indent guides (indent-blankline.nvim).
 		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
 		opts = {
@@ -245,11 +232,10 @@ return {
 		},
 
 		main = "ibl",
-		event = { "BufReadPost", "BufNewFile" },
 		ft = g.CodeFiletypes,
 	},
 
-	{ -- folds (nvim-ufo)
+	{ -- Folds (nvim-ufo).
 		-- https://github.com/kevinhwang91/nvim-ufo
 		"kevinhwang91/nvim-ufo",
 		opts = {
@@ -258,7 +244,6 @@ return {
 			end,
 		},
 
-		event = { "BufReadPost", "BufNewFile" },
 		ft = g.CodeFiletypes,
 		dependencies = {
 			"kevinhwang91/promise-async",

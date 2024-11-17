@@ -5,7 +5,7 @@
 local g = require("ruicsh/plugins/globals")
 
 return {
-	{ -- formatter (conform.nvim)
+	{ -- Formatter (conform.nvim).
 		-- https://github.com/stevearc/conform.nvim
 		"stevearc/conform.nvim",
 		keys = {
@@ -33,7 +33,7 @@ return {
 				vue = { "prettier" },
 			},
 			format_on_save = function()
-				-- stop if we disabled formatting on save
+				-- Stop if we disabled formatting on save.
 				if not vim.g.format_on_save then
 					return nil
 				end
@@ -45,17 +45,16 @@ return {
 			end,
 		},
 		init = function()
-			-- use conform for gq
+			-- Use conform for gq.
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-			-- start auto-formatting by default (and disable with my ToggleFormat command)
+			-- Start auto-formatting by default (and disable with my ToggleFormat command).
 			vim.g.format_on_save = true
 		end,
 
-		event = { "BufWritePre" },
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- log statements (debugprint.nvim)
+	{ -- Log statements (debugprint.nvim).
 		-- https://github.com/andrewferrier/debugprint.nvim
 		"andrewferrier/debugprint.nvim",
 		config = function()
@@ -97,53 +96,20 @@ return {
 			})
 		end,
 
-		event = { "BufReadPost", "BufNewFile" },
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- autopairs (nvim-autopairs)
+	{ -- Autopairs (nvim-autopairs).
 		-- https://github.com/windwp/nvim-autopairs
 		"windwp/nvim-autopairs",
 		opts = {
 			check_ts = true,
 		},
 
-		event = { "InsertEnter" },
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- tab out of from parentheses, brackets, braces, quotes, etc. (tabout.nvim)
-		-- https://github.com/abecodes/tabout.nvim
-		"abecodes/tabout.nvim",
-		opt = {
-			tabkey = "<tab>",
-			backwards_tabkey = "<s-tab>",
-			act_as_tab = true,
-			act_as_shift_tab = false,
-			enable_backwards = true,
-			completion = true,
-			tabouts = {
-				{ open = "'", close = "'" },
-				{ open = '"', close = '"' },
-				{ open = "`", close = "`" },
-				{ open = "(", close = ")" },
-				{ open = "[", close = "]" },
-				{ open = "{", close = "}" },
-			},
-			ignore_beginning = true,
-			exclude = {},
-		},
-
-		event = "InsertCharPre",
-		ft = g.CodingFiletypes,
-		priority = 1000,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"hrsh7th/nvim-cmp",
-		},
-	},
-
-	{ -- autocomplete (nvim-cmp)
+	{ -- Autocomplete (nvim-cmp).
 		-- https://github.com/hrsh7th/nvim-cmp
 		"hrsh7th/nvim-cmp",
 		config = function()
@@ -158,7 +124,8 @@ return {
 					["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 					["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 					["<c-e>"] = cmp.mapping.abort(),
-					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<cr>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				preselect = "item",
 				completion = {
@@ -175,16 +142,15 @@ return {
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = require("lspkind").cmp_format({
-						mode = "symbol", -- show only symbol annotations
-						maxwidth = 50, -- prevent the popup from showing more than provided characters
-						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+						mode = "symbol", -- Show only symbol annotations.
+						maxwidth = 50, -- Prevent the popup from showing more than provided characters.
+						ellipsis_char = "...", -- When popup menu exceed maxwidth, the truncated part would show ellipsis_char instead.
 					}),
 					expandable_indicator = true,
 				},
 			})
 		end,
 
-		event = { "InsertEnter" },
 		ft = g.CodingFiletypes,
 		dependencies = {
 			{ "hrsh7th/nvim-cmp", ft = g.CodingFiletypes, event = { "InsertEnter" } },
@@ -194,15 +160,14 @@ return {
 		},
 	},
 
-	{ -- highlight matching words under cursor (vim-illuminate)
+	{ -- Highlight matching words under cursor (vim-illuminate).
 		-- https://github.com/RRethy/vim-illuminate
 		"rrethy/vim-illuminate",
 
-		event = { "BufRead" },
 		ft = g.CodingFiletypes,
 	},
 
-	{ -- github copilot (copilot.lua)
+	{ -- GitHub Copilot (copilot.lua).
 		-- https://github.com/zbirenbaum/copilot.lua
 		"zbirenbaum/copilot.lua",
 		opts = {
@@ -216,7 +181,6 @@ return {
 		},
 
 		cmd = "Copilot",
-		event = { "InsertEnter" },
 		ft = g.CodingFiletypes,
 	},
 }

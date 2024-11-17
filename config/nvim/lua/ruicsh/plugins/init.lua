@@ -1,4 +1,4 @@
--- load lazy package manager
+-- Load lazy package manager.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -8,7 +8,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 
--- add lazy to the `runtimepath`, this allows us to `require` it
+-- Add lazy to the `runtimepath`, this allows us to `require` it.
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
