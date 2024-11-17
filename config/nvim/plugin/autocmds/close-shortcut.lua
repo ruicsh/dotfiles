@@ -54,7 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			actions.close(bufnr)
 		end
 
-		vim.keymap.set("i", CloseShortcut, close_telescope, { buffer = args.buf })
+		vim.keymap.set({ "i", "n" }, CloseShortcut, close_telescope, { buffer = args.buf })
 	end,
 })
 
