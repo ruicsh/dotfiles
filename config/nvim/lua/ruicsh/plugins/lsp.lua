@@ -2,7 +2,7 @@
 -- LSP
 --
 
-local g = require("ruicsh.globals")
+local g = require("ruicsh/plugins/globals")
 
 -- set keymaps for lsp commands
 local function set_keymaps(event)
@@ -103,7 +103,7 @@ return {
 			conf_lsp_servers()
 		end,
 
-		ft = g.ft_code,
+		ft = g.CodingFiletypes,
 		dependencies = {
 			{ "williamboman/mason.nvim", ft = g.ft_code },
 			{ "williamboman/mason-lspconfig.nvim", ft = g.ft_code },
@@ -123,7 +123,7 @@ return {
 		},
 
 		event = { "BufReadPost", "BufNewFile" },
-		ft = g.ft_code,
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- signature hints (lsp_signature.nvim)
@@ -138,7 +138,7 @@ return {
 		},
 
 		event = { "InsertEnter" },
-		ft = g.ft_code,
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- diagnostics (trouble.nvim)
@@ -171,6 +171,7 @@ return {
 		},
 
 		cmd = "Trouble",
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- neovim apis lsp (lazydev.nvim)

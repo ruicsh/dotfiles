@@ -2,8 +2,6 @@
 -- Text objects, motions and actions
 --
 
-local g = require("ruicsh.globals")
-
 return {
 	{ -- move line/selection up/down (mini.move.nvim)
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
@@ -21,7 +19,6 @@ return {
 		},
 
 		event = { "BufReadPost", "BufNewFile" },
-		version = "*",
 	},
 
 	{ -- repeat plugin keymaps (vim-repeat)
@@ -59,6 +56,7 @@ return {
 		-- https://github.com/kylechui/nvim-surround
 		"kylechui/nvim-surround",
 		config = true,
+
 		event = { "BufReadPost", "BufNewFile" },
 	},
 
@@ -72,7 +70,6 @@ return {
 			{ "ge", "<cmd>lua require('spider').motion('ge')<cr>" },
 		},
 
-		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
 	},
 

@@ -30,7 +30,6 @@ return {
 		config = true,
 
 		event = { "BufReadPost", "BufNewFile" },
-		version = "*",
 	},
 
 	{ -- diffview (diffview.nvim)

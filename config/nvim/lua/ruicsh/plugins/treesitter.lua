@@ -2,7 +2,7 @@
 -- Treesitter
 --
 
-local g = require("ruicsh.globals")
+local g = require("ruicsh/plugins/globals")
 
 return {
 	{ -- code parser (nvim-treesitter)
@@ -115,7 +115,8 @@ return {
 		},
 
 		main = "nvim-treesitter.configs", -- sets main module to use for opts
-		ft = g.ft_code,
+		event = { "BufReadPost", "BufNewFile" },
+		ft = g.CodeFiletypes,
 		build = ":TSUpdate",
 		dependencies = {
 			{ -- syntax aware text objects
@@ -138,7 +139,8 @@ return {
 			})
 		end,
 
-		ft = g.ft_code,
+		event = { "BufReadPost", "BufNewFile" },
+		ft = { "html", "htmlangular", "typescript", "typescriptreact", "vue" },
 	},
 
 	{ -- comments on embbeded languages (ex: html inside ts, css inside html) (nvim-ts-context-commentstring)
@@ -163,7 +165,8 @@ return {
 			end
 		end,
 
-		ft = g.ft_code,
+		event = { "BufReadPost", "BufNewFile" },
+		ft = g.CodeFiletypes,
 	},
 
 	{ -- jump to tag (jump-tag)
@@ -177,6 +180,7 @@ return {
 			{ "]T", "<cmd>lua require('jump-tag').jumpChild()<cr>", desc = "Jump to child" },
 		},
 
+		event = { "BufReadPost", "BufNewFile" },
 		ft = { "html", "htmlangular", "typescript", "typescriptreact", "vue" },
 	},
 }

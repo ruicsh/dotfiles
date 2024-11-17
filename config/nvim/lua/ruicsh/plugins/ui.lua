@@ -1,8 +1,8 @@
 --
--- Application furniture
+-- User interface
 --
 
-local g = require("ruicsh.globals")
+local g = require("ruicsh/plugins/globals")
 
 return {
 	{ -- load env variables from a .env file (dotenv)
@@ -56,7 +56,7 @@ return {
 
 		cmd = { "Barbecue" },
 		event = { "BufReadPost", "BufNewFile" },
-		version = "*",
+		ft = g.CodeFiletypes,
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons",
@@ -166,7 +166,6 @@ return {
 		},
 
 		event = { "VeryLazy" },
-		version = "*",
 	},
 
 	{ -- status line (lualine.nvim)
@@ -247,6 +246,7 @@ return {
 
 		main = "ibl",
 		event = { "BufReadPost", "BufNewFile" },
+		ft = g.CodeFiletypes,
 	},
 
 	{ -- folds (nvim-ufo)
@@ -258,7 +258,8 @@ return {
 			end,
 		},
 
-		ft = g.ft_code,
+		event = { "BufReadPost", "BufNewFile" },
+		ft = g.CodeFiletypes,
 		dependencies = {
 			"kevinhwang91/promise-async",
 		},

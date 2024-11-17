@@ -1,5 +1,5 @@
 -- code filetypes where to load code features (lsp, treesitter, ...)
-local ft_code = {
+local CodingFiletypes = {
 	"css",
 	"dotenv",
 	"html",
@@ -15,5 +15,5 @@ local ft_code = {
 }
 
 return {
-	ft_code = ft_code,
+	CodingFiletypes = CodingFiletypes,
 }

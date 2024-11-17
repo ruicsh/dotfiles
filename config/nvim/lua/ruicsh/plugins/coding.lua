@@ -2,7 +2,7 @@
 -- Code writing
 --
 
-local g = require("ruicsh.globals")
+local g = require("ruicsh/plugins/globals")
 
 return {
 	{ -- formatter (conform.nvim)
@@ -51,8 +51,8 @@ return {
 			vim.g.format_on_save = true
 		end,
 
-		ft = g.ft_code,
 		event = { "BufWritePre" },
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- log statements (debugprint.nvim)
@@ -97,8 +97,8 @@ return {
 			})
 		end,
 
-		ft = g.ft_code,
 		event = { "BufReadPost", "BufNewFile" },
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- autopairs (nvim-autopairs)
@@ -108,8 +108,8 @@ return {
 			check_ts = true,
 		},
 
-		ft = g.ft_code,
 		event = { "InsertEnter" },
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- tab out of from parentheses, brackets, braces, quotes, etc. (tabout.nvim)
@@ -134,8 +134,8 @@ return {
 			exclude = {},
 		},
 
-		ft = g.ft_code,
 		event = "InsertCharPre",
+		ft = g.CodingFiletypes,
 		priority = 1000,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
@@ -184,8 +184,8 @@ return {
 			})
 		end,
 
-		ft = g.ft_code,
 		event = { "InsertEnter" },
+		ft = g.CodingFiletypes,
 		dependencies = {
 			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
 			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
@@ -198,7 +198,7 @@ return {
 		"rrethy/vim-illuminate",
 
 		event = { "BufRead" },
-		ft = g.ft_code,
+		ft = g.CodingFiletypes,
 	},
 
 	{ -- github copilot (copilot.lua)
@@ -216,6 +216,6 @@ return {
 
 		cmd = "Copilot",
 		event = { "InsertEnter" },
-		ft = g.ft_code,
+		ft = g.CodingFiletypes,
 	},
 }

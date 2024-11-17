@@ -6,6 +6,7 @@ return {
 	{ -- delete buffer (vim-bbye)
 		-- https://github.com/moll/vim-bbye
 		"moll/vim-bbye",
+
 		cmd = { "Bdelete" },
 	},
 
@@ -13,6 +14,7 @@ return {
 		-- https://github.com/tiagovla/scope.nvim
 		"tiagovla/scope.nvim",
 		opts = {},
+
 		event = { "VimEnter" },
 	},
 
