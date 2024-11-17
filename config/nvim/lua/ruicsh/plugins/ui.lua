@@ -210,7 +210,7 @@ return {
 				sections = {
 					lualine_a = { "mode" },
 					lualine_b = { workspaces.name },
-					lualine_c = { "diagnostics", "filename" },
+					lualine_c = { "diagnostics", "filename", { "filetype", icon_only = true } },
 					lualine_x = {
 						{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
 					},

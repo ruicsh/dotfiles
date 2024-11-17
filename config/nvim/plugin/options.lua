@@ -42,7 +42,7 @@ vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.signcolumn = "yes" -- always showe to prevent the screen from jumping
 
 -- cleaner statusline
-vim.opt.laststatus = 0 -- never show statusline on inactive windows
+vim.opt.laststatus = 3 -- always show global statusline
 vim.opt.ruler = false -- do not show the line and column number of the cursor position
 vim.opt.shortmess = "AIWcCsSF" -- don't show messages
 vim.opt.showcmd = false -- do not show command on last line

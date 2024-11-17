@@ -9,5 +9,7 @@ vim.filetype.add({
 	},
 	pattern = {
 		["%.env%.[%w_.-]+"] = "config",
+		["**/__snapshots__/*.ts.snap"] = "jsonc",
+		["**/__snapshots__/*.js.snap"] = "jsonc",
 	},
 })

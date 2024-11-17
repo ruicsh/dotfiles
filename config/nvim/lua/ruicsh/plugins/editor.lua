@@ -101,7 +101,7 @@ return {
 			{ "gP", "<Plug>(YankyGPutBefore)", { mode = { "n", "x" } } },
 			{ "P", "<Plug>(YankyPutBefore)", { mode = { "n", "x" } } },
 			{ "]p", "<Plug>(YankyPutIncidentAfterLinewise)", { mode = "n" } },
-			{ "[p", "<Plug>(YankyPutIndentBeforeLinewise)", { mode = "n" } },
+			{ "[p", "<Plug>(YankyPutIncidentBeforeLinewise)", { mode = "n" } },
 
 			{ "<c-p>", "<Plug>(YankyPreviousEntry)", { mode = "n" } },
 			{ "<c-n>", "<Plug>(YankyNextEntry)", { mode = "n" } },

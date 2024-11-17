@@ -133,6 +133,7 @@ loadColorSet({
 	WarningMsg = { fg = c.nord15 },
 	Warnings = { fg = c.nord15 },
 	WildMenu = { fg = c.nord12, bg = "NONE", style = "bold" },
+	WinSeparator = { fg = c.nord2, bg = "NONE" },
 
 	healthError = { fg = c.nord11 },
 	healthSuccess = { fg = c.nord14 },
