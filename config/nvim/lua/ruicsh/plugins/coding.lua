@@ -195,7 +195,7 @@ return {
 
 	{ -- highlight matching words under cursor (vim-illuminate)
 		-- https://github.com/RRethy/vim-illuminate
-		"RRethy/vim-illuminate",
+		"rrethy/vim-illuminate",
 
 		event = { "BufRead" },
 		ft = g.ft_code,

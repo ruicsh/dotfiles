@@ -1,13 +1,13 @@
 vim.filetype.add({
 	extension = {
-		conf = "conf",
-		env = "dotenv",
+		conf = "config",
+		env = "config",
 	},
 	filename = {
-		[".env"] = "dotenv",
+		[".env"] = "config",
 		["tsconfig.json"] = "jsonc",
 	},
 	pattern = {
-		["%.env%.[%w_.-]+"] = "dotenv",
+		["%.env%.[%w_.-]+"] = "config",
 	},
 })

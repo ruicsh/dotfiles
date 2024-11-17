@@ -1,6 +1,7 @@
 -- code filetypes where to load code features (lsp, treesitter, ...)
 local ft_code = {
 	"css",
+	"dotenv",
 	"html",
 	"htmlangular",
 	"javascript",
