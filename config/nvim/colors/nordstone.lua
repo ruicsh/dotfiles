@@ -74,7 +74,7 @@ loadColorSet({
 	ColorColumn = { fg = "NONE", bg = "NONE" },
 	CommandMode = { fg = c.nord4, bg = "NONE", style = "reverse" },
 	Conceal = { fg = c.nord1 },
-	CurSearch = { fg = c.nord3_500, bg = "NONE" },
+	CurSearch = { fg = c.nord1, bg = c.nord8 },
 	Cursor = { fg = c.nord4, bg = "NONE", style = "reverse" },
 	CursorColumn = { fg = "NONE", bg = c.nord0 },
 	CursorIM = { fg = c.nord5, bg = "NONE", style = "reverse" },
@@ -91,7 +91,7 @@ loadColorSet({
 	FoldColumn = { fg = c.nord7 },
 	Folded = { fg = c.nord3_500, bg = "NONE", style = "italic" },
 	Function = { fg = c.nord8 },
-	IncSearch = { fg = c.nord6, bg = c.nord10 },
+	IncSearch = { fg = c.nord1, bg = c.nord8 },
 	InsertMode = { fg = c.nord14, bg = "NONE", style = "reverse" },
 	LineNr = { fg = c.nord3_500 },
 	MatchParen = { fg = c.nord15, bg = "NONE", style = "bold" },
@@ -108,7 +108,7 @@ loadColorSet({
 	Question = { fg = c.nord14 },
 	QuickFixLine = { fg = c.nord4, bg = "NONE", style = "reverse" },
 	ReplacelMode = { fg = c.nord11, bg = "NONE", style = "reverse" },
-	Search = { fg = c.nord4, bg = c.nord1 },
+	Search = { fg = c.nord1, bg = c.nord8 },
 	SignColumn = { fg = c.nord4, bg = "NONE" },
 	Special = { fg = c.nord7 },
 	SpecialKey = { fg = c.nord9 },
@@ -283,7 +283,8 @@ loadColorSet({
 
 -- hlsearch
 loadColorSet({
-	HlSearchNear = { bg = c.nord10 },
+	HlSearchLensNear = { fg = c.nord3_500, bg = "NONE" },
+	HlSearchLens = { fg = c.nord3_500, bg = "NONE" },
 })
 
 -- avante

@@ -187,9 +187,10 @@ return {
 		event = { "InsertEnter" },
 		ft = g.CodingFiletypes,
 		dependencies = {
-			{ "hrsh7th/nvim-cmp", ft = g.ft_code, event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-nvim-lsp", ft = g.ft_code, event = { "InsertEnter" } },
-			{ "hrsh7th/cmp-path", ft = g.ft_code, event = { "InsertEnter" } },
+			{ "hrsh7th/nvim-cmp", ft = g.CodingFiletypes, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-nvim-lsp", ft = g.CodingFiletypes, event = { "InsertEnter" } },
+			{ "hrsh7th/cmp-path", ft = g.CodingFiletypes, event = { "InsertEnter" } },
+			{ "onsails/lspkind.nvim", ft = g.CodingFiletypes },
 		},
 	},
 

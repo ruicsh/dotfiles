@@ -105,11 +105,12 @@ return {
 
 		ft = g.CodingFiletypes,
 		dependencies = {
-			{ "williamboman/mason.nvim", ft = g.ft_code },
-			{ "williamboman/mason-lspconfig.nvim", ft = g.ft_code },
-			{ "WhoIsSethDaniel/mason-tool-installer.nvim", ft = g.ft_code },
+			{ "williamboman/mason.nvim", ft = g.CodingFiletypes },
+			{ "williamboman/mason-lspconfig.nvim", ft = g.CodingFiletypes },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim", ft = g.CodingFiletypes },
 			{ "pmizio/typescript-tools.nvim", opts = {}, ft = { "typescript", "typescriptreact" } },
-			{ "onsails/lspkind.nvim", ft = g.ft_code },
+			{ "onsails/lspkind.nvim", ft = g.CodingFiletypes },
+			{ "nvim-telescope/telescope.nvim", ft = g.CodingFiletypes }
 		},
 	},
 
