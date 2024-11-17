@@ -17,6 +17,7 @@ vim.opt.termguicolors = true -- Enable true colors.
 -- Editor
 vim.opt.cursorline = true -- Highlight current line.
 vim.opt.fillchars:append({ diff = "╱" }) -- Diffview deleted lines marker.
+vim.opt.fillchars:append({ eob = " " }) -- End of buffer marker.
 vim.opt.scrolloff = 8 -- Number of lines to keep above and below the cursor.
 vim.opt.showmatch = false -- Do not show matching brackets.
 vim.opt.showtabline = 2 -- Always show tabline.
