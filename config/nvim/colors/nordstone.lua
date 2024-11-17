@@ -307,6 +307,12 @@ loadColorSet({
 	BarbecueDirname = { fg = c.nord4_900 },
 })
 
+-- yanky.nvim
+loadColorSet({
+	YankyPut = { link = "IncSearch" },
+	YankyYanked = { link = "IncSearch" },
+})
+
 ----
 -- Syntax
 ----

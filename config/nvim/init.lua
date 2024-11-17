@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- colorscheme
 vim.cmd.colorscheme("nordstone")
 

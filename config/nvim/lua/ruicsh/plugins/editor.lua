@@ -90,4 +90,28 @@ return {
 
 		event = { "BufReadPost", "BufNewFile" },
 	},
+
+	{ -- yank history (yanky.nvim)
+		-- https://github.com/gbprod/yanky.nvim
+		"gbprod/yanky.nvim",
+		keys = {
+			{ "p", "<Plug>(YankyPutAfter)", { mode = { "n", "x" } } },
+			{ "P", "<Plug>(YankyPutBefore)", { mode = { "n", "x" } } },
+			{ "gp", "<Plug>(YankyGPutAfter)", { mode = { "n", "x" } } },
+			{ "gP", "<Plug>(YankyGPutBefore)", { mode = { "n", "x" } } },
+			{ "P", "<Plug>(YankyPutBefore)", { mode = { "n", "x" } } },
+			{ "]p", "<Plug>(YankyPutIncidentAfterLinewise)", { mode = "n" } },
+			{ "[p", "<Plug>(YankyPutIndentBeforeLinewise)", { mode = "n" } },
+
+			{ "<c-p>", "<Plug>(YankyPreviousEntry)", { mode = "n" } },
+			{ "<c-n>", "<Plug>(YankyNextEntry)", { mode = "n" } },
+		},
+		opts = {
+			highlight = {
+				timer = 200,
+			},
+		},
+
+		event = { "BufReadPost", "BufNewFile" },
+	},
 }
