@@ -142,7 +142,7 @@ return {
 				map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Git: [S]tage file" })
 				map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Git: [R]eset file" })
 				map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Git: [u]nstage hunk" })
-				map("n", "<leader>hp", gitsigns.preview_hunk_inline, { desc = "Git: [p]review hunk" })
+				map("n", "<leader>hv", gitsigns.preview_hunk_inline, { desc = "Git: pre[v]iew hunk" })
 
 				-- Text object
 				map({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>")

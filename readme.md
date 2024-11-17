@@ -180,15 +180,17 @@
 
 ### Git
 
-- `<leader>hh` status
-- `<leader>hg` open diffview
 - `<leader>hf` list changed files
-- `<leader>hs` stage hunk
+- `<leader>hg` open diffview
+- `<leader>hh` status
+- `<leader>ho` push set-upstream origin HEAD
+- `<leader>hp` push
 - `<leader>hr` reset hunk
-- `<leader>hu` unstage hunk
-- `<leader>hS` stage file
 - `<leader>hR` reset file
-- `<leader>hp` preview change
+- `<leader>hs` stage hunk
+- `<leader>hS` stage file
+- `<leader>hu` unstage hunk
+- `<leader>hv` preview change
 - `<leader>hy` share file permalink
 - `[c` previous change
 - `]c` next change
