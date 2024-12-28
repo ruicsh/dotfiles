@@ -1,7 +1,6 @@
 # Fonts
-font-family = JetBrains Mono
+font-family = JetBrainsMono NFM SemiBold
 font-size = 12
-font-thicken = true
 
 # Theme
 background = #151618
