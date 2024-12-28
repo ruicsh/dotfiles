@@ -1,0 +1,31 @@
+# Fonts
+font-family = JetBrains Mono
+font-size = 12
+font-thicken = true
+
+# Theme
+background = #151618
+theme = nord
+
+# Mouse
+mouse-hide-while-typing = true
+
+# Window
+window-padding-balance = true
+window-title-font-family = JetBrains Mono
+
+# Icon
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = white
+macos-icon-screen-color = #151618
+
+# Quick terminal
+quick-terminal-position = top
+
+# App
+quit-after-last-window-closed = true
+
+# Keybindings
+keybind = super+§=toggle_quick_terminal
+
