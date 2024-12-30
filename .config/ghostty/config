@@ -1,6 +1,7 @@
 # Fonts
 font-family = JetBrainsMono NFM SemiBold
 font-size = 12
+adjust-cell-width = -10%
 
 # Theme
 background = #151618
