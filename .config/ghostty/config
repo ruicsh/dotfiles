@@ -10,9 +10,11 @@ theme = nord
 # Mouse
 mouse-hide-while-typing = true
 
-# Window
+# Appearance
 window-padding-balance = true
 window-title-font-family = JetBrains Mono
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
 
 # Icon
 macos-icon = custom-style
@@ -25,6 +27,11 @@ quick-terminal-position = top
 
 # App
 quit-after-last-window-closed = true
+
+# Extras
+shell-integration-features = true
+copy-on-select = true
+focus-follows-mouse = true
 
 # Keybindings
 keybind = super+§=toggle_quick_terminal
