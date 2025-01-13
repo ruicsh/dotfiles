@@ -1,6 +1,9 @@
-# Fonts
+# Font
 font-family = JetBrainsMono NFM SemiBold
 font-size = 12
+font-feature = -calt
+font-feature = -liga 
+font-feature = -dlig 
 adjust-cell-width = -10%
 
 # Theme
