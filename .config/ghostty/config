@@ -36,6 +36,7 @@ quit-after-last-window-closed = true
 shell-integration-features = true
 copy-on-select = true
 focus-follows-mouse = true
+macos-option-as-alt = left
 
 # Keybindings
 keybind = super+§=toggle_quick_terminal

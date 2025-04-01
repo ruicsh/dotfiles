@@ -1,0 +1,17 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "NordStone",
+  "workbench.iconTheme": "seti",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "window.density.editorTabHeight": "compact",
+  "breadcrumbs.enabled": false,
+  "editor.fontFamily": "'jetbrains mono', Monaco, 'Courier New', monospace",
+  "workbench.editor.showTabs": "none",
+  "editor.scrollbar.vertical": "hidden"
+}

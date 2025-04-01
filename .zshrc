@@ -54,23 +54,27 @@ z() {
 }
 
 # ALIASES
-alias c="code"
+# git
 alias g="git"
+# ls
 alias l='gls --group-directories-first --color=auto -lah'
-alias top="htop"
+# neovim
 alias v="nvim"
 alias vi="nvim"
+# npm
 alias n='npm'
 alias ni='npm install'
 alias nr='npm run'
 alias nu='npm uninstall'
 alias nw='npm --workspace'
-
+# ps
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
+# python
+alias p='python'
 
 # SUFFIX ALIASES
-alias -s {js,jsx,ts,tsx,json,css,scss,md}=code
+alias -s {js,jsx,ts,tsx,json,css,scss,md,py}=code
 
 # DIRCOLORS
 export CLICOLOR=YES
