@@ -8,7 +8,7 @@ adjust-cell-width = -10%
 
 # Theme
 cursor-color = #ebcb8b
-background = #151618
+background = #171717
 theme = nord
 
 # Mouse
