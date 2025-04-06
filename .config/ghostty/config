@@ -39,5 +39,4 @@ focus-follows-mouse = true
 macos-option-as-alt = left
 
 # Keybindings
-keybind = super+§=toggle_quick_terminal
 
