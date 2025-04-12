@@ -13,5 +13,6 @@
   "breadcrumbs.enabled": false,
   "editor.fontFamily": "'jetbrains mono', Monaco, 'Courier New', monospace",
   "workbench.editor.showTabs": "none",
-  "editor.scrollbar.vertical": "hidden"
+  "editor.scrollbar.vertical": "hidden",
+  "editor.fontSize": 11
 }
