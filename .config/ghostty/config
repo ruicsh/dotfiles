@@ -1,3 +1,4 @@
+# https://ghostty.org/docs/config/reference
 # Font
 font-family = JetBrainsMono NFM SemiBold
 font-size = 12
@@ -19,8 +20,8 @@ window-padding-balance = true
 window-title-font-family = JetBrains Mono
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
+maximize = true
 title = " "
-fullscreen = true
 
 # Icon
 macos-icon = custom-style

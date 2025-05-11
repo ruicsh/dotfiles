@@ -1,18 +1,22 @@
 {
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "NordStone",
-  "workbench.iconTheme": "seti",
+  "breadcrumbs.enabled": false,
+  "editor.detectIndentation": false,
+  "editor.foldingImportsByDefault": true,
+  "editor.foldingStrategy": "indentation",
+  "editor.fontFamily": "'jetbrains mono', Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.tabSize": 2,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "editor.minimap.enabled": false,
+  "vscode-neovim.logOutputToConsole": true,
   "window.density.editorTabHeight": "compact",
-  "breadcrumbs.enabled": false,
-  "editor.fontFamily": "'jetbrains mono', Monaco, 'Courier New', monospace",
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "NordStone",
   "workbench.editor.showTabs": "none",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.fontSize": 11
+  "workbench.iconTheme": "seti",
+  "workbench.startupEditor": "none"
 }
