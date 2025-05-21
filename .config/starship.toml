@@ -15,7 +15,7 @@ style = "fg:#81a1c1"
 
 [git_status]
 format = "[$ahead_behind$diverged$stashed$staged$untracked$modified$conflicted]($style)"
-style = "fg:#a3be8c"
+style = "fg:#8fbcbb"
 ahead="↑${count}"
 behind=" ↓${count}"
 conflicted = " ×${count}"
