@@ -32,6 +32,7 @@
     | less --RAW-CONTROL-CHARS --chop-long-lines    # tig inspired log
   pl = pull
   plr = pull --rebase
+  pls = "!git stash && git pull --rebase && git stash pop"
   ps = push
   psf = push --force-with-lease
   psu = push -u
