@@ -67,6 +67,8 @@ alias ni='npm install'
 alias nr='npm run'
 alias nu='npm uninstall'
 alias nw='npm --workspace'
+# opencode
+alias oc='opencode'
 # ps
 alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
