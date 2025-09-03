@@ -40,7 +40,8 @@
   rba = rebase --abort
   rbc = rebase --continue
   rbi = rebase --interactive
-  rbs = rebase --skip
+  rbk = rebase --skip
+  rbs = "!f() { git stash && git rebase \"$1\" && git stash pop; }; f"
   ro = restore
   rs = reset
   rt = remote -vv                     # List remote branches
@@ -56,7 +57,7 @@
   sofc = show --pretty="" --name-only # List files on commit
   sw = switch
   swc = switch -c
-  st = status --short --branch
+  st = status 
   
 
 [core]
