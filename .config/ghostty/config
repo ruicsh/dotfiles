@@ -20,6 +20,7 @@ window-padding-balance = true
 window-title-font-family = JetBrains Mono
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
+macos-window-shadow = false
 maximize = true
 title = " "
 
