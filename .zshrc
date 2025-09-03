@@ -78,6 +78,8 @@ alias p='python'
 # SUFFIX ALIASES
 alias -s {js,jsx,ts,tsx,json,css,scss,md,py}=code
 
+export EDITOR=nvim
+
 # DIRCOLORS
 export CLICOLOR=YES
 
@@ -97,6 +99,8 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # add installed gnu-sed instead of system's
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+# add mason.nvim binaries
+export PATH="~/.local/share/nvim/mason/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 
