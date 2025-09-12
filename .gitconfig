@@ -4,7 +4,7 @@
   ad = add
   br = branch
   brlg = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-  brD = branch --delete --force
+  brdd = branch --delete --force
   brd = branch --delete
   brdm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"    # Delete merged
   brm = branch -m
@@ -47,33 +47,26 @@
   rt = remote -vv                     # List remote branches
   rtdm = remote prune                 # Delete remote merged branches
   rta = remote add                    # Add new remote branch
-  sh = stash
-  shc = stash clear
-  shl = stash list
-  shp = stash pop
+  st = stash
+  stc = stash clear
+  stl = stash list
+  stp = stash pop
   shu = stash -u                      # include untracked files
   sl = shortlog -c -s                 # Show number of commits per author
   so = show
   sofc = show --pretty="" --name-only # List files on commit
+  ss = status 
   sw = switch
   swc = switch -c
-  st = status 
   
-
 [core]
   editor = nvim
 
 [diff]
 	tool = vimdiff
 
-[merge]
-  tool = vimdiff
-
 [difftool]
   prompt = false
-
-[init]
-	defaultBranch = main
 
 [fetch]
   prune = true                        # remove local branches that have been deleted upstream
@@ -83,3 +76,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[init]
+	defaultBranch = main
+
+[merge]
+  tool = vimdiff
+
