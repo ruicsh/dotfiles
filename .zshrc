@@ -57,7 +57,14 @@ z() {
 # git
 alias g="git"
 # ls
-alias l='gls --group-directories-first --color=auto -lah'
+alias l='eza \
+  --across \
+  --all \
+  --group-directories-first \
+  --long \
+  --no-permissions \
+  --no-user \
+  --time-style=default'
 # neovim
 alias v="nvim"
 alias vi="nvim"
@@ -111,4 +118,6 @@ eval "$(fnm env --use-on-cd)"
 
 # Created by `pipx` on 2024-05-24 09:53:02
 export PATH="$PATH:/Users/ruic/.local/bin"
+
+export EZA_CONFIG_DIR="$HOME/.config/eza"
 
