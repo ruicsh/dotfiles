@@ -25,6 +25,7 @@ brew 'shfmt'                  # shell script formatter
 brew 'starship'               # shell prompt
 brew 'stow'                   # symlink manager
 brew 'terraform'              # provisioning tool
+brew 'tmux'                   # terminal multiplexer 
 brew 'wallpaper'              # manage desktop wallpaper
 brew 'z'                      # jump around directories
 brew 'zsh'                    # shell

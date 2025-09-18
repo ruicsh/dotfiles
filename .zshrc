@@ -81,6 +81,8 @@ alias topcpu="ps aux | sort -n -r -k 3 | head -n 10"
 alias topmem="ps aux | sort -n -r -k 4 | head -n 10"
 # python
 alias p='python'
+# tmux
+alias t='tmux attach || tmux new'
 
 # SUFFIX ALIASES
 alias -s {js,jsx,ts,tsx,json,css,scss,md,py}=code
