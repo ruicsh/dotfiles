@@ -2,7 +2,7 @@
   alias = "!git config --get-regexp '^alias\\.' | fzf"  # search aliases
 
   ad = add
-  br = branch
+  br = "!git for-each-ref --format='%(if)%(HEAD)%(then)\\033[38;2;235;203;139m* %(refname:short)\\033[0m%(else)  \\033[38;2;216;222;233m%(refname:short)\\033[0m%(end)' refs/heads/ | while IFS= read -r line; do printf '%b\\n' \"$line\"; done"
   brdd = branch --delete --force
   brd = branch --delete
   brdm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"    # Delete merged
