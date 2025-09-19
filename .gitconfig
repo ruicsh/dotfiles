@@ -3,7 +3,6 @@
 
   ad = add
   br = branch
-  brlg = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   brdd = branch --delete --force
   brd = branch --delete
   brdm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"    # Delete merged
@@ -20,8 +19,10 @@
   cpc = cherry-pick --continue
   fe = fetch
   fep = fetch --prune
-  fm = "!f() { git log --pretty=format:'%C(dim blue)%h%Creset %C(bold blue)%cd%Creset %C(yellow)%d%Creset %s %C(bold blue)%an%Creset' --decorate --date=short --grep=$1; }; f" # Find commits per commits message
-  lg = !git log --color=always --pretty=format:'%C(dim blue)%h%Creset %C(bold blue)%cr%Creset %C(yellow)%d%Creset %s %C(bold blue)%an%Creset' --abbrev-commit \
+  lg = "!git log \
+    --color=always \
+    --pretty=format:'%C(#88c0d0)%h%Creset %C(#81a1c1)%cr%Creset %C(#ebcb8b)%d%Creset %s %C(#88c0d0)%an%Creset' \
+    --abbrev-commit \
     | sed 's/ ago//' \
     | sed -E 's/([0-9]+) seconds/\\1s/' \
     | sed -E 's/([0-9]+) minutes/\\1m/' \
@@ -29,7 +30,7 @@
     | sed -E 's/([0-9]+) days/\\1D/' \
     | sed -E 's/([0-9]+) weeks/\\1W/' \
     | sed -E 's/([0-9]+) months/\\1M/' \
-    | less --RAW-CONTROL-CHARS --chop-long-lines    # tig inspired log
+    | less --RAW-CONTROL-CHARS --chop-long-lines"
   pl = pull
   plr = pull --rebase
   pls = "!git stash && git pull --rebase && git stash pop"
@@ -51,7 +52,7 @@
   stc = stash clear
   stl = stash list
   stp = stash pop
-  shu = stash -u                      # include untracked files
+  stu = stash -u                      # include untracked files
   sl = shortlog -c -s                 # Show number of commits per author
   so = show
   sofc = show --pretty="" --name-only # List files on commit
@@ -83,3 +84,6 @@
 [merge]
   tool = vimdiff
 
+[user]
+	name = Rui Costa
+	email = ruicosta042@gmail.com
