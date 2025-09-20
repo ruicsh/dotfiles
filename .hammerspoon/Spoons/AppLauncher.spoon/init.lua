@@ -9,6 +9,8 @@ function obj:init()
 		{ syshyper, "1", "Firefox" },
 		{ syshyper, "2", "Ghostty" },
 		{ syshyper, "3", "Microsoft Teams" },
+		{ syshyper, "4", "" }, -- Reserve this for later
+		{ syshyper, "5", "" }, -- Reserve this for later
 	}
 
 	for i in ipairs(keysToApps) do
