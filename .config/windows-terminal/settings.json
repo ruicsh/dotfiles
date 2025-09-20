@@ -1,0 +1,110 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "$help": "https://aka.ms/terminal-documentation",
+  "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+  "profiles": {
+    "list": [
+      {
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "name": "Bash",
+        "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "startingDirectory": "c:\\code",
+        "icon": "\ue756",
+        "font": {
+          "face": "JetBrainsMonoNL NFM",
+          "size": 10
+        }
+      }
+    ]
+  },
+  "keybindings": [
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.DuplicatePaneRight",
+      "keys": "ctrl+shift+v"
+    },
+    {
+      "id": "Terminal.DuplicatePaneDown",
+      "keys": "ctrl+shift+s"
+    },
+    {
+      "id": "Terminal.OpenNewTab",
+      "keys": "ctrl+shift+c"
+    },
+    {
+      "id": "Terminal.NextTab",
+      "keys": "ctrl+shift+n"
+    },
+    {
+      "id": "Terminal.PrevTab",
+      "keys": "ctrl+shift+p"
+    },
+    {
+      "id": "Terminal.MoveFocusLeft",
+      "keys": "ctrl+shift+h"
+    },
+    {
+      "id": "Terminal.MoveFocusRight",
+      "keys": "ctrl+shift+l"
+    },
+    {
+      "id": "Terminal.MoveFocusUp",
+      "keys": "ctrl+shift+k"
+    },
+    {
+      "id": "Terminal.MoveFocusDown",
+      "keys": "ctrl+shift+j"
+    },
+    {
+      "id": "Terminal.ClosePane",
+      "keys": "ctrl+shift+x"
+    },
+    {
+      "id": "Terminal.CloseTab",
+      "keys": "ctrl+shift+q"
+    },
+    {
+      "id": "Terminal.SwitchToTab0",
+      "keys": "ctrl+shift+1"
+    },
+    {
+      "id": "Terminal.SwitchToTab1",
+      "keys": "ctrl+shift+2"
+    },
+    {
+      "id": "Terminal.SwitchToTab2",
+      "keys": "ctrl+shift+3"
+    },
+    {
+      "id": "Terminal.SwitchToTab3",
+      "keys": "ctrl+shift+4"
+    },
+    {
+      "id": "Terminal.SwitchToTab4",
+      "keys": "ctrl+shift+5"
+    },
+    {
+      "id": "Terminal.SwitchToTab5",
+      "keys": "ctrl+shift+6"
+    },
+    {
+      "id": "Terminal.SwitchToTab6",
+      "keys": "ctrl+shift+7"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+plus"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+minus"
+    }
+  ]
+}
