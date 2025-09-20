@@ -3,11 +3,12 @@ local obj = {}
 obj.__index = obj
 
 function obj:init()
-	local syshyper = { "ctrl", "alt", "shift", "cmd" }
+	local syshyper = { "cmd" }
 
 	local keysToApps = {
-		{ syshyper, "l", "Firefox" },
-		{ syshyper, ";", "Ghostty" },
+		{ syshyper, "1", "Firefox" },
+		{ syshyper, "2", "Ghostty" },
+		{ syshyper, "3", "Microsoft Teams" },
 	}
 
 	for i in ipairs(keysToApps) do
