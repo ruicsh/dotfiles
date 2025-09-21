@@ -36,3 +36,8 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `<` resize left
 - `>` resize right
 - `|` zoom
+
+### Copy mode
+
+- `v` begin selection
+- `y` yank selection
