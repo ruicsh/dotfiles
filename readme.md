@@ -12,6 +12,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `)` swap with right window
 - `a` switch to last window
 - `c` create window with current path
+- `<c-q>` close window
 
 ### Panes navigation
 
@@ -20,7 +21,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `k` focus pane above
 - `l` focus pane on the right
 - `q` close pane
-- `A` last pane
+- `<c-a>` last pane
 
 ### Panes splitting
 
