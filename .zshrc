@@ -123,3 +123,5 @@ export PATH="$PATH:/Users/ruic/.local/bin"
 
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 
+# Tmux auto-start
+source ~/.config/tmux/tmux-auto-start.sh
