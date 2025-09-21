@@ -1,6 +1,0 @@
-rupa/z
-starcraftman/zsh-git-prompt
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
-jeffreytse/zsh-vi-mode

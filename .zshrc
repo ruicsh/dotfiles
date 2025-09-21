@@ -6,16 +6,11 @@ unsetopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-# PLUGINS
-# clone antidote if necessary
-export ANTIDOTE_HOME=~/.cache/antidote
-[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
-# source antidote
-. ~/.antidote/antidote.zsh
-# generate and source plugins from ~/.zsh_plugins.txt
-antidote load
-
+# starship prompt
 eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh --cmd cd)"
 
 # SHELL COMPLETIONS
 autoload -Uz compinit
@@ -39,19 +34,10 @@ export FZF_DEFAULT_OPTS="
 --preview-window=:hidden
 --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
 "
-
 eval "$(fzf --zsh)"
 
 # tab display size
 tabs -2
-
-# z
-# like normal z when used with arguments but displays an fzf prompt when used without.
-unalias z 2>/dev/null
-z() {
-  [ $# -gt 0 ] && _z "$*" && return
-  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
-}
 
 # ALIASES
 # git
@@ -125,3 +111,4 @@ export EZA_CONFIG_DIR="$HOME/.config/eza"
 
 # Tmux auto-start
 source ~/.config/tmux/tmux-auto-start.sh
+
