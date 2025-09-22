@@ -21,4 +21,5 @@ OpenOrActivateApp(exe, exist, winTitle) {
 ^2::OpenOrActivateApp("wt.exe", "ahk_exe WindowsTerminal.exe", "Terminal")
 ^3::OpenOrActivateApp("ms-teams.exe", "ahk_exe ms-teams.exe", "Microsoft Teams")
 ^4::OpenOrActivateApp("olk.exe", "ahk_exe olk.exe", "Outlook")
+^+m::Run("wt.exe -- `"C:\Program Files\Git\bin\bash.exe`" -c `"~/.scripts/bookmarks.sh`"")
 
