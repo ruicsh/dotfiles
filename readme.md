@@ -40,5 +40,11 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ### Copy mode
 
+- `'` jump to mark
+- `/` search up
+- `?` search down
+- `{` jump up 6 lines
+- `}` jump down 6 lines
+- `m` set mark
 - `v` begin selection
 - `y` yank selection
