@@ -28,10 +28,21 @@ eval "$(direnv hook zsh)"
 
 # fzf
 export FZF_DEFAULT_OPTS="
+--bind one:accept
 --layout=reverse
 --info=inline
---height=80%
---preview-window=:hidden
+--color=\
+current-bg:#2e3440,\
+current-fg:#d8dee9,\
+current-hl:#88c0d0,\
+gutter:-1,\
+header-fg:#81a1c1,\
+hl:#88c0d0,\
+info:#8c97ad,\
+pointer:#d08770,\
+separator:#434c5e
+--highlight-line
+--preview-window=:hidden 
 --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
 "
 eval "$(fzf --zsh)"

@@ -10,7 +10,16 @@ fi
 # Format: "name","url"
 selection=$(awk -F, '{gsub(/"/, "", $1); print $1}' "$BOOKMARKS_FILE" | fzf \
   --bind one:accept \
-  --color=pointer:#88c0d0,gutter:-1,current-bg:#2e3440 \
+  --color=\
+current-bg:#2e3440,\
+current-fg:#d8dee9,\
+current-hl:#88c0d0,\
+gutter:-1,\
+header-fg:#81a1c1,\
+hl:#88c0d0,\
+info:#8c97ad,\
+pointer:#d08770,\
+separator:#434c5e\
   --cycle \
   --highlight-line \
   --layout=reverse \
