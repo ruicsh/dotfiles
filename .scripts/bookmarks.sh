@@ -7,16 +7,13 @@ if [[ ! -f "$BOOKMARKS_FILE" ]]; then
   exit 1
 fi
 
-# Format: "shortcut","name","url"
-binds=$(awk -F, '{gsub(/"/, "", $1); print "ctrl-" $1 ":execute-silent(open " $3 ")"}' "$BOOKMARKS_FILE" | paste -sd, -)
-selection=$(awk -F, '{gsub(/"/, "", $1); gsub(/"/, "", $2); print $1 " • " $2}' "$BOOKMARKS_FILE" | fzf \
-  --bind "$binds" \
+# Format: "name","url"
+selection=$(awk -F, '{gsub(/"/, "", $1); print $1}' "$BOOKMARKS_FILE" | fzf \
   --bind one:accept \
-  --bind space:jump,jump:accept \
   --color=pointer:#88c0d0,gutter:-1,current-bg:#2e3440 \
   --cycle \
   --highlight-line \
-  --jump-labels=asdf \
+  --layout=reverse \
   --prompt="Bookmarks> " \
   --scheme=history)
 
@@ -24,8 +21,12 @@ if [[ -z "$selection" ]]; then
   exit 0
 fi
 
-shortcut=$(echo "$selection" | awk -F'•' '{print $1}' | xargs)
-url=$(awk -F, -v sc="$shortcut" '{gsub(/"/, "", $1); gsub(/"/, "", $3); if ($1 == sc) print $3}' "$BOOKMARKS_FILE")
+name=$(echo "$selection" | awk -F'•' '{print $1}' | xargs)
+url=$(awk -F, -v nm="$name" '{gsub(/"/, "", $1); gsub(/"/, "", $2); if ($1 == nm) print $2}' "$BOOKMARKS_FILE")
 url=$(echo "$url" | sed -E 's/^"(.*)"$/\1/')
 
-open "$url"
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
+  cmd.exe /c "pushd C:\Windows && start msedge.exe $url && popd" > /dev/null 2>&1
+else
+  open "$url"
+fi
