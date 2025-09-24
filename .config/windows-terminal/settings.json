@@ -9,7 +9,17 @@
         "name": "Bash",
         "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
         "startingDirectory": "c:\\code",
-        "icon": "\ue756",
+        "icon": "\ue770",
+        "font": {
+          "face": "JetBrainsMonoNL NFM",
+          "size": 10
+        }
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "Command Prompt",
+        "commandline": "cmd.exe",
+        "startingDirectory": "c:\\code",
         "font": {
           "face": "JetBrainsMonoNL NFM",
           "size": 10
