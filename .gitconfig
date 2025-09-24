@@ -36,7 +36,7 @@
   pls = "!git stash && git pull --rebase && git stash pop"
   ps = push
   psf = push --force-with-lease
-  psu = push -u
+  psu = push -u origin HEAD
   rb = rebase
   rba = rebase --abort
   rbc = rebase --continue
