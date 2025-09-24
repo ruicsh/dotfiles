@@ -105,6 +105,68 @@
     {
       "id": null,
       "keys": "ctrl+minus"
+    },
+    {
+      "id": "User.closeTab.0",
+      "keys": "ctrl+shift+q"
+    },
+    {
+      "id": "User.togglePaneZoom",
+      "keys": "ctrl+shift+\\"
+    },
+    {
+      "id": "Terminal.MoveFocusPrevious",
+      "keys": "ctrl+shift+a"
+    },
+    {
+      "id": "Terminal.ResizePaneUp",
+      "keys": "ctrl+shift+plus"
+    },
+    {
+      "id": "Terminal.ResizePaneDown",
+      "keys": "ctrl+shift+minus"
+    },
+    {
+      "id": "Terminal.ResizePaneLeft",
+      "keys": "ctrl+shift+comma"
+    },
+    {
+      "id": "Terminal.ResizePaneRight",
+      "keys": "ctrl+shift+period"
+    },
+    {
+      "id": "User.moveTab.EF07D31B",
+      "keys": "ctrl+shift+alt+9"
+    },
+    {
+      "id": "User.moveTab.793E2350",
+      "keys": "ctrl+shift+alt+0"
+    }
+  ],
+  "actions": [
+    {
+      "id": "User.closeTab.0",
+      "command": {
+        "action": "closeTab"
+      }
+    },
+    {
+      "id": "User.togglePaneZoom",
+      "command": "togglePaneZoom"
+    },
+    {
+      "id": "User.moveTab.EF07D31B",
+      "command": {
+        "action": "moveTab",
+        "direction": "backward"
+      }
+    },
+    {
+      "id": "User.moveTab.793E2350",
+      "command": {
+        "action": "moveTab",
+        "direction": "forward"
+      }
     }
   ]
 }

@@ -48,3 +48,35 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `m` set mark
 - `v` begin selection
 - `y` yank selection
+
+## Windows Terminal
+
+### Tabs navigation
+
+- `<c-m-(>` swap with left window
+- `<c-m-)>` swap with right window
+- `<c-A>` switch to last window
+- `<c-C>` create window with current path
+- `<c-Q>` close window
+
+### Panes navigation
+
+- `<c-H>` focus pane on the left
+- `<c-J>` focus pane below
+- `<c-K>` focus pane above
+- `<c-L>` focus pane on the right
+- `<c-X>` close pane
+- `<c-A>` last pane
+
+### Panes splitting
+
+- `<c-S>` open horizontal pane
+- `<c-V>` open vertical pane
+
+### Panes resizing
+
+- `<c-+>` resize up
+- `<c-->` resize down
+- `<c-<>` resize left
+- `<c->>` resize right
+- `<c-|>` zoom
