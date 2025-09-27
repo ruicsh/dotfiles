@@ -9,10 +9,13 @@ $env.config.show_banner = false
 
 # Environment variables {{{
 $env.EDITOR = "nvim"
+$env.SHELL = "nu"
 # }}}
 
 # PATH {{{
 path add "/usr/local/bin" # Make sure user installed binaries override system's
+path add "/opt/homebrew/bin" # Homebrew (macOS)
+path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 # }}}
 
 # 3rd party commands {{{
@@ -88,7 +91,6 @@ alias c = clear
 alias cd = z
 alias f = fzf
 alias g = git
-alias t = tmux attach || tmux new
 alias v = nvim
 # }}}
 
