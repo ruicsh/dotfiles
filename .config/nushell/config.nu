@@ -38,6 +38,21 @@ $env.config = {
 }
 # }}}
 
+# Eza {{{
+def l [ ...args ] {
+  ^eza ...[
+    --across
+    --all
+    --group-directories-first
+    --long
+    --no-permissions
+    --no-user
+    --time-style=default
+    ...$args
+  ]
+}
+# }}}
+
 # Fzf {{{
 $env.FZF_DEFAULT_OPTS = "
   --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
@@ -77,7 +92,6 @@ alias c = clear
 alias cd = z
 alias f = fzf
 alias g = git
-alias l = ls
 alias v = nvim
 # }}}
 
