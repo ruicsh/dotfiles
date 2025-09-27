@@ -3,6 +3,7 @@ use std/util "path add"
 # Nushell config {{{
 
 $env.config.buffer_editor = "nvim"
+$env.config.table.mode = 'none'
 $env.config.show_banner = false
 
 # }}}
@@ -34,21 +35,6 @@ $env.config = {
       }
     }]
   }
-}
-# }}}
-
-# Eza {{{
-def l [ ...args ] {
-  ^eza ...[
-    --across
-    --all
-    --group-directories-first
-    --long
-    --no-permissions
-    --no-user
-    --time-style=default
-    ...$args
-  ]
 }
 # }}}
 
@@ -91,7 +77,13 @@ alias c = clear
 alias cd = z
 alias f = fzf
 alias g = git
+alias l = ls
 alias v = nvim
+# }}}
+
+# Theme {{{
+$env.LS_COLORS = "di=34:ln=36:so=35:pi=33:ex=32:bd=34;46:cd=34;43:su=37;41:sg=30;43:tw=30;42:ow=34;42"
+source theme-nord-alt.nu
 # }}}
 
 # vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
