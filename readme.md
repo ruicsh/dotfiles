@@ -8,20 +8,20 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ### Windows navigation
 
-- `(` swap with left window
-- `)` swap with right window
-- `a` switch to last window
 - `c` create window with current path
+- `<tab>` switch to last window
 - `<c-q>` close window
+- `<` swap with left window
+- `>` swap with right window
 
 ### Panes navigation
 
+- `a` last pane
 - `h` focus pane on the left
 - `j` focus pane below
 - `k` focus pane above
 - `l` focus pane on the right
 - `q` close pane
-- `<c-a>` last pane
 
 ### Panes splitting
 
@@ -53,20 +53,20 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ### Tabs navigation
 
-- `<c-m-(>` swap with left window
-- `<c-m-)>` swap with right window
-- `<c-A>` switch to last window
-- `<c-C>` create window with current path
-- `<c-Q>` close window
+- `<c-C>` create tab with current path
+- `<c-Q>` close tab
+- `<c-W>` switch to last tab
+- `<c-m-<>` swap with left tab
+- `<c-m->>` swap with right tab
 
 ### Panes navigation
 
+- `<c-A>` last pane
 - `<c-H>` focus pane on the left
 - `<c-J>` focus pane below
 - `<c-K>` focus pane above
 - `<c-L>` focus pane on the right
 - `<c-X>` close pane
-- `<c-A>` last pane
 
 ### Panes splitting
 
