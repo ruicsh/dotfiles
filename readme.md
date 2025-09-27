@@ -6,13 +6,11 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 - `<c-a>` prefix key
 
-### Windows navigation
+### Windows
 
 - `c` create window with current path
 - `<tab>` switch to last window
 - `<c-q>` close window
-- `<` swap with left window
-- `>` swap with right window
 
 ### Panes navigation
 
@@ -51,13 +49,11 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## Windows Terminal
 
-### Tabs navigation
+### Tabs
 
 - `<c-C>` create tab with current path
 - `<c-Q>` close tab
 - `<c-W>` switch to last tab
-- `<c-m-<>` swap with left tab
-- `<c-m->>` swap with right tab
 
 ### Panes navigation
 

@@ -143,14 +143,6 @@
     {
       "id": "Terminal.ResizePaneRight",
       "keys": "ctrl+shift+period"
-    },
-    {
-      "id": "User.moveTab.EF07D31B",
-      "keys": "ctrl+shift+alt+,"
-    },
-    {
-      "id": "User.moveTab.793E2350",
-      "keys": "ctrl+shift+alt+."
     }
   ],
   "actions": [
@@ -163,20 +155,6 @@
     {
       "id": "User.togglePaneZoom",
       "command": "togglePaneZoom"
-    },
-    {
-      "id": "User.moveTab.EF07D31B",
-      "command": {
-        "action": "moveTab",
-        "direction": "backward"
-      }
-    },
-    {
-      "id": "User.moveTab.793E2350",
-      "command": {
-        "action": "moveTab",
-        "direction": "forward"
-      }
     }
   ]
 }
