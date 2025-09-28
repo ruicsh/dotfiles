@@ -93,6 +93,7 @@ alias c = clear
 alias cd = z
 alias f = fzf
 alias g = git
+alias j = just
 alias v = nvim
 # }}}
 
