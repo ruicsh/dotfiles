@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   # Start or attach to a tmux session named "main"
