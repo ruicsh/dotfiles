@@ -17,6 +17,7 @@ $env.SHELL = "nu"
 path add "/usr/local/bin" # Make sure user installed binaries override system's
 path add "/opt/homebrew/bin" # Homebrew (macOS)
 path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
+path add $"($env.HOME)/.cargo/bin" # Rust binaries
 # }}}
 
 # 3rd party commands {{{
@@ -39,6 +40,8 @@ $env.config = {
 # }}}
 
 # Eza {{{
+$env.EZA_CONFIG_DIR = $"($env.HOME)/.config/eza"
+
 def l [ ...args ] {
   ^eza ...[
     --across
