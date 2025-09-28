@@ -44,7 +44,7 @@ $env.config = {
 # }}}
 
 # Eza {{{
-$env.EZA_CONFIG_DIR = $"($env.HOME)/.config/eza"
+$env.EZA_CONFIG_DIR = $"(if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME })/.config/eza"
 
 def l [ ...args ] {
   ^eza ...[
