@@ -66,14 +66,15 @@ $env.FZF_DEFAULT_OPTS = "
 # }}}
 
 # Starship  {{{
-# https://www.nushell.sh/book/3rdpartyprompts.html#starship
 $env.STARSHIP_SHELL = "nu"
 def create_left_prompt [] {
   starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
+
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = { || create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = ""
+
 # The prompt indicators are environmental variables that represent the state of the prompt
 $env.PROMPT_INDICATOR = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ": "
@@ -96,7 +97,17 @@ alias v = nvim
 # }}}
 
 # Theme {{{
-$env.LS_COLORS = "di=34:ln=36:so=35:pi=33:ex=32:bd=34;46:cd=34;43:su=37;41:sg=30;43:tw=30;42:ow=34;42"
+$env.LS_COLORS = (
+  try {
+    open ~/.dir_colors
+    | lines
+    | where { |l| $l =~ '^([A-Za-z0-9._-]+)=' }
+    | each { |l| $l | str trim | split row '=' | { key: $in.0, value: $in.1 } }
+    | each { |row| $"($row.key)=($row.value)" }
+    | str join ':'
+  } catch { '' }
+)
+
 source theme-nord-alt.nu
 # }}}
 
