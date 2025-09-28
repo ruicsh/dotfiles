@@ -31,7 +31,7 @@ export def main [] {
         shape_directory: '#eceff4'
         shape_external: '#eceff4'
         shape_external_resolved: '#b48ead'
-        shape_externalarg: { fg: '#434c5e' attr: 'b' }
+        shape_externalarg: { fg: '#b7becb' attr: 'b' }
         shape_filepath: '#eceff4'
         shape_flag: { fg: '#d8dee9' attr: 'b' }
         shape_float: { fg: '#d08770' attr: 'b' }
@@ -60,14 +60,14 @@ export def main [] {
         shape_vardecl: { fg: '#d8dee9' attr: 'u' }
         shape_variable: '#e5e9f0'
 
-        foreground: '#8fbcbb'
-        cursor: '#8fbcbb'
+        foreground: '#d8dee9'
+        cursor: '#d8dee9'
 
         empty: '#d8dee9'
-        header: { fg: '#8c97ad' attr: 'b' }
-        hints: '#bf616a'
+        header: { fg: '#b7becb' attr: 'b' }
+        hints: '#4c566a'
         leading_trailing_space_bg: { attr: 'n' }
-        row_index: { fg: '#434c5e' attr: 'b' }
+        row_index: { fg: '#b7becb' attr: 'b' }
         search_result: { fg: '#3b4252' bg: '#8fbcbb' }
         separator: '#8fbcbb'
     }
