@@ -3,8 +3,13 @@ use std/util "path add"
 # Nushell config {{{
 
 $env.config.buffer_editor = "nvim"
-$env.config.table.mode = 'none'
+$env.config.cursor_shape.vi_insert = "line"
+$env.config.cursor_shape.vi_normal = "block"
+$env.config.edit_mode = "vi"
+$env.config.ls.use_ls_colors = true
 $env.config.show_banner = false
+$env.config.table.index_mode = "auto"
+$env.config.table.mode = "none"
 
 # }}}
 
@@ -17,7 +22,6 @@ $env.SHELL = "nu"
 path add "/usr/local/bin" # Make sure user installed binaries override system's
 path add "/opt/homebrew/bin" # Homebrew (macOS)
 path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
-path add $"($env.HOME)/.cargo/bin" # Rust binaries
 # }}}
 
 # 3rd party commands {{{
@@ -97,10 +101,14 @@ alias cd = z
 alias f = fzf
 alias g = git
 alias j = just
+alias ls = ls -a # always show hidden files
 alias v = nvim
 # }}}
 
 # Theme {{{
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.PROMPT_INDICATOR_VI_INSERT = "" 
+
 $env.LS_COLORS = (
   try {
     open ~/.dir_colors
