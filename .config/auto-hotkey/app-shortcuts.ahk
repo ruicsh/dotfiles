@@ -10,6 +10,13 @@
 ; CONFIGURATION
 CHAT_APP := "teams"
 
+; SHORTCUTS
+^1::OpenOrActivateApp("msedge.exe", "ahk_exe msedge.exe", "Edge")
+^2::OpenOrActivateApp("wt.exe", "ahk_exe WindowsTerminal.exe", "Terminal")
+^3::OpenChatApp()
+^4::OpenOutlook()
+^+m::Run("wt.exe -- `"C:\Program Files\Git\bin\bash.exe`" -c `"~/.scripts/bookmarks.sh`"")
+
 ; Chat application configurations
 ChatApps := Map(
   "teams", {exe: "ms-teams.exe", exist: "ahk_exe ms-teams.exe", winTitle: "Microsoft Teams"},
@@ -17,6 +24,7 @@ ChatApps := Map(
   "symphony", {exe: "Symphony.exe", exist: "ahk_exe Symphony.exe", winTitle: "Symphony"}
 )
 
+; HELPERS
 OpenOrActivateApp(exe, exist, winTitle) {
   if WinExist(exist) {
     WinActivate
@@ -36,9 +44,39 @@ OpenChatApp() {
   }
 }
 
-^1::OpenOrActivateApp("msedge.exe", "ahk_exe msedge.exe", "Edge")
-^2::OpenOrActivateApp("wt.exe", "ahk_exe WindowsTerminal.exe", "Terminal")
-^3::OpenChatApp()
-^4::OpenOrActivateApp("olk.exe", "ahk_exe olk.exe", "Outlook")
-^+m::Run("wt.exe -- `"C:\Program Files\Git\bin\bash.exe`" -c `"~/.scripts/bookmarks.sh`"")
+OpenOutlook() {
+  outlook := FindOutlookExe()
+  OpenOrActivateApp(outlook.exe, outlook.exist, "Outlook")
+}
 
+FindOutlookExe() {
+  ; Common Outlook executable names to check
+  outlookExes := ["OUTLOOK.EXE", "olk.exe"]
+
+  for exe in outlookExes {
+    ; Check if process is running
+    if ProcessExist(exe) {
+      return { exe: exe, exist: "ahk_exe " . exe }
+    }
+  }
+
+  ; If not running, check common installation paths
+  officePaths := [
+    "C:\Program Files\Microsoft Office\root\Office16\",
+    "C:\Program Files (x86)\Microsoft Office\root\Office16\",
+    "C:\Program Files\Microsoft Office\Office16\",
+    "C:\Program Files (x86)\Microsoft Office\Office16\",
+  ]
+  
+  for path in officePaths {
+    for exe in outlookExes {
+      fullPath := path . exe
+      if FileExist(fullPath) {
+        return { exe: fullPath, exist: "ahk_exe " . exe }
+      }
+    }
+  }
+  
+  ; Default fallback
+  return { exe: "olk.exe", exist: "ahk_exe olk.exe" }
+}
