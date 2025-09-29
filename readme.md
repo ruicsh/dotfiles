@@ -9,8 +9,8 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 ### Windows
 
 - `c` create window with current path
-- `<tab>` switch to last window
-- `<c-q>` close window
+- `q` close window
+- `w` switch to last used window
 
 ### Panes navigation
 
@@ -19,7 +19,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `j` focus pane below
 - `k` focus pane above
 - `l` focus pane on the right
-- `q` close pane
+- `x` close pane
 
 ### Panes splitting
 
@@ -34,7 +34,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `-` resize down
 - `<` resize left
 - `>` resize right
-- `|` zoom
+- `|` toggle zoom
 
 ### Copy mode
 
@@ -53,7 +53,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 - `<c-C>` create tab with current path
 - `<c-Q>` close tab
-- `<c-W>` switch to last tab
+- `<c-W>` switch tab
 
 ### Panes navigation
 
@@ -75,4 +75,4 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `<c-->` resize down
 - `<c-<>` resize left
 - `<c->>` resize right
-- `<c-|>` zoom
+- `<c-|>` toggle zoom

@@ -6,6 +6,9 @@ unsetopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Disable the "last login" message
+touch ~/.hushlogin
+
 # Tmux auto-start
 source ~/.config/tmux/tmux-auto-start.sh
 

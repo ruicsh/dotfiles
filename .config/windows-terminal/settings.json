@@ -144,6 +144,10 @@
     {
       "id": "Terminal.ResizePaneRight",
       "keys": "ctrl+shift+period"
+    },
+    {
+      "id": "Terminal.NextTab",
+      "keys": "ctrl+shift+w"
     }
   ],
   "actions": [
