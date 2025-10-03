@@ -94,7 +94,7 @@ $env.PROMPT_MULTILINE_INDICATOR = "::: "
 # }}}
 
 # zoxide {{{
-source ($nu.config-path | path dirname | path join '.zoxide.nu')
+source $"($nu.cache-dir)/zoxide.nu"
 # }}}
 
 # }}}
