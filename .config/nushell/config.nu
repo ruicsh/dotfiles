@@ -16,6 +16,7 @@ $env.config.table.mode = "none"
 # Environment variables {{{
 $env.EDITOR = "nvim"
 $env.SHELL = "nu"
+$env.MANPAGER = "nvim +Man!"
 # }}}
 
 # PATH {{{
