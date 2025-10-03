@@ -26,6 +26,10 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 # 3rd party commands {{{
 
+# Carapace {{{
+source $"($nu.cache-dir)/carapace.nu"
+# }}}
+
 # direnv {{{
 $env.config = {
   hooks: {
