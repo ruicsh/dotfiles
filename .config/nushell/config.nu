@@ -115,14 +115,20 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_INDICATOR_VI_INSERT = "" 
 
 $env.LS_COLORS = (
-  try {
-    open ~/.dir_colors
+  open ~/.dir_colors
     | lines
-    | where { |l| $l =~ '^([A-Za-z0-9._-]+)=' }
-    | each { |l| $l | str trim | split row '=' | { key: $in.0, value: $in.1 } }
-    | each { |row| $"($row.key)=($row.value)" }
+    | each { |l| $l | str trim }
+    | where { |l| $l != "" and not ($l =~ '^#') and ($l =~ '\s') }
+    | each { |l|
+        let cols = $l | split row ' ';
+        if ($cols | length) == 2 {
+          $"($cols.0)=($cols.1)"
+        } else {
+          null
+        }
+      }
+    | compact
     | str join ':'
-  } catch { '' }
 )
 
 source theme-nord-alt.nu
