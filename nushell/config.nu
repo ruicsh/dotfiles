@@ -120,11 +120,11 @@ $env.LS_COLORS = (
   open ($nu.config-path | path dirname | path join ".dircolors")
     | lines
     | each { |l| $l | str trim }
-    | where { |l| $l != "" and not ($l =~ '^#') and ($l =~ '\s') }
+    | where { |l| $l != "" and not ($l =~ '^#') and not ($l =~ '^(COLOR|TERM)') }
     | each { |l|
-        let cols = $l | split row ' ';
-        if ($cols | length) == 2 {
-          $"($cols.0)=($cols.1)"
+        let parts = $l | split row ' ' | where { |p| $p != "" };
+        if ($parts | length) >= 2 {
+          $"($parts.0)=($parts.1)"
         } else {
           null
         }
