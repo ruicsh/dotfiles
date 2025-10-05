@@ -27,6 +27,8 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 # 3rd party commands {{{
 
+let home_dir = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
+
 # Atuin {{{
 source $"($nu.cache-dir)/atuin.nu"
 # }}}
@@ -70,15 +72,7 @@ def l [ ...args ] {
 # }}}
 
 # Fzf {{{
-$env.FZF_DEFAULT_OPTS = "
-  --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
-  --color=current-bg:#2e3440,current-fg:#d8dee9,current-hl:#88c0d0,gutter:-1,header-fg:#81a1c1,hl:#88c0d0,info:#8c97ad,pointer:#d08770,separator:#434c5e
-  --height=40%
-  --highlight-line
-  --info=inline
-  --layout=reverse
-  --preview-window=:hidden
-"
+$env.FZF_DEFAULT_OPTS_FILE = $"($home_dir)/.config/fzf/.fzfrc"
 # }}}
 
 # ripgrep {{{
