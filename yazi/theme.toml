@@ -14,7 +14,6 @@ perm_exec = { fg = "#d8dee9" }
 perm_read = { fg = "#d8dee9" }
 perm_type = { fg = "#81a1c1" }
 perm_write = { fg = "#d8dee9" }
-progress_normal = { fg = "#00ff00" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 

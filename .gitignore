@@ -1,4 +1,1 @@
-.config/nvim
-.config/nushell/history.txt
-.config/github-copilot
-.config/configstore
+nushell/history.txt
