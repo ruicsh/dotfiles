@@ -81,6 +81,10 @@ $env.FZF_DEFAULT_OPTS = "
 "
 # }}}
 
+# ripgrep {{{
+$env.RIPGREP_CONFIG_PATH = $"(if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME })/.config/ripgrep/.ripgreprc"
+# }}}
+
 # Starship  {{{
 $env.STARSHIP_SHELL = "nu"
 def create_left_prompt [] {
