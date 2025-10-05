@@ -55,7 +55,7 @@ $env.config = {
 # }}}
 
 # Eza {{{
-$env.EZA_CONFIG_DIR = $"(if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME })/.config/eza"
+$env.EZA_CONFIG_DIR = $"($home_dir)/.config/eza"
 
 def l [ ...args ] {
   ^eza ...[
@@ -76,7 +76,7 @@ $env.FZF_DEFAULT_OPTS_FILE = $"($home_dir)/.config/fzf/.fzfrc"
 # }}}
 
 # ripgrep {{{
-$env.RIPGREP_CONFIG_PATH = $"(if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME })/.config/ripgrep/.ripgreprc"
+$env.RIPGREP_CONFIG_PATH = $"($home_dir)/.config/ripgrep/.ripgreprc"
 # }}}
 
 # Starship  {{{
