@@ -4,14 +4,15 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## Terminal
 
-- [carapace](https://github.com/carapace-sh/carapace-bin) Completions
+- [atuin](https://github.com/atuinsh/atuin) Command history
+- [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
 - [eza](https://github.com/eza-community/eza) Alternative to `ls`
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder
 - [neovim](https://github.com/neovim/neovim) Editor
 - [nushell](https://github.com/nushell/nushell) Shell
 - [ouch](https://github.com/ouch-org/ouch) Archive manipulation
-- [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to grep
+- [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to `grep`
 - [starship](https://github.com/starship/starship) Prompt
 - [tmux](https://github.com/tmux/tmux) Multiplexer
 - [yazi](https://github.com/sxyazi/yazi) File manager

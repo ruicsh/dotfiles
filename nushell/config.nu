@@ -27,6 +27,10 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 # 3rd party commands {{{
 
+# Atuin {{{
+source $"($nu.cache-dir)/atuin.nu"
+# }}}
+
 # Carapace {{{
 source $"($nu.cache-dir)/carapace.nu"
 # }}}

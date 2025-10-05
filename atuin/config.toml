@@ -1,0 +1,9 @@
+filter_mode = "workspace"
+history_filter = [ "clear" ]
+inline_height = 30
+invert = true
+keymap_mode = "vim-insert"
+show_help = false
+show_tabs = false
+store_failed = false
+workspaces = true
