@@ -117,7 +117,7 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_INDICATOR_VI_INSERT = "" 
 
 $env.LS_COLORS = (
-  open ($nu.config-path | path dirname | path join "dircolors")
+  open ($nu.config-path | path dirname | path join ".dircolors")
     | lines
     | each { |l| $l | str trim }
     | where { |l| $l != "" and not ($l =~ '^#') and ($l =~ '\s') }
