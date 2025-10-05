@@ -1,0 +1,34 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+[mgr]
+border_style  = { fg = "#434c5e" }
+count_selected = { fg = "#2e3440" , bg = "#ebcb8b" }
+
+[tabs]
+active   = { fg = "#3b4252", bg = "#b7c2d7" }
+inactive = { fg = "#b7c2d7", bg = "#3b4252" }
+
+[status]
+overall = { fg = "#d8dee9"  }
+perm_exec = { fg = "#d8dee9" }
+perm_read = { fg = "#d8dee9" }
+perm_type = { fg = "#81a1c1" }
+perm_write = { fg = "#d8dee9" }
+progress_normal = { fg = "#00ff00" }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#2e3440", bg = "#88c0d0" }
+normal_alt = { fg = "#d8dee9", bg = "#3b4252" }
+select_main = { fg = "#2e3440", bg = "#ebcb8b" }
+select_alt = { fg = "#d8dee9", bg = "#3b4252" }
+unset_main = { fg = "#2e3440", bg = "#d08770" }
+unset_alt = { fg = "#d8dee9", bg = "#3b4252" }
+
+[help]
+on = { fg = "#88c0d0" }
+run = { fg = "#d8dee9" }
+desc = { fg = "#b7becb" }
+hovered = { fg = "#81a1c1", bg = "#2e3440" }
+footer = { fg = "#d8dee9", bg = "#3b4252" }

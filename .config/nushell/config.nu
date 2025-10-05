@@ -108,6 +108,7 @@ alias g = git
 alias j = just
 alias ls = ls -a # always show hidden files
 alias v = nvim
+alias y = yazi
 # }}}
 
 # Theme {{{
