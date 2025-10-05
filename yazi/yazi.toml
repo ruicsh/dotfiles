@@ -7,3 +7,21 @@ show_hidden = true
 show_symlink = true
 sort_dir_first = true
 sort_sensitive = true
+
+[opener]
+compress = [
+  { run = 'ouch compress "$@" archive.zip', desc = 'Compress (zip)' },
+  { run = 'ouch compress "$@" archive.tar.gz', desc = 'Compress (tar.gz)' },
+]
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', desc = "Edit", block = true },
+]
+extract = [
+  { run = 'ouch decompress "$1"', desc = "Extract here" },
+]
+reveal = []
+
+[open]
+append_rules = [
+  { name = "*", use = "compress" }
+]

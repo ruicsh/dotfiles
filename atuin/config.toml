@@ -1,5 +1,5 @@
 filter_mode = "workspace"
-history_filter = [ "clear" ]
+history_filter = [ "c", "clear" ]
 inline_height = 30
 invert = true
 keymap_mode = "vim-insert"
