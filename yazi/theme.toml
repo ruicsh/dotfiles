@@ -2,11 +2,31 @@
 
 [mgr]
 border_style  = { fg = "#434c5e" }
+count_copied = { fg = "#2e3440", bg = "#a3be8c" }
+count_cut = { fg = "#2e3440", bg = "#bf616a" }
 count_selected = { fg = "#2e3440" , bg = "#ebcb8b" }
+cwd = { fg = "#d8dee9" }
+find_keyword = { fg = "#ebcb8b" }
+hovered = { fg = "#3e3440", bg = "#81a1c1" }
+marker_copied = { fg = "#2e3440", bg = "#a3be8c" }
+marker_cut = { fg = "#2e3440", bg = "#bf616a" }
+marker_marked = { fg = "#2e3440", bg = "#4c566a" }
+marker_selected = { fg = "#2e3440", bg = "#ebcb8b" }
+preview_hovered = { }
 
 [tabs]
 active   = { fg = "#3b4252", bg = "#b7c2d7" }
 inactive = { fg = "#b7c2d7", bg = "#3b4252" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_alt = { fg = "#d8dee9", bg = "#3b4252" }
+normal_main = { fg = "#2e3440", bg = "#88c0d0" }
+select_alt = { fg = "#d8dee9", bg = "#3b4252" }
+select_main = { fg = "#2e3440", bg = "#ebcb8b" }
+unset_alt = { fg = "#d8dee9", bg = "#3b4252" }
+unset_main = { fg = "#2e3440", bg = "#d08770" }
 
 [status]
 overall = { fg = "#d8dee9"  }
@@ -17,17 +37,45 @@ perm_write = { fg = "#d8dee9" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-[mode]
-normal_main = { fg = "#2e3440", bg = "#88c0d0" }
-normal_alt = { fg = "#d8dee9", bg = "#3b4252" }
-select_main = { fg = "#2e3440", bg = "#ebcb8b" }
-select_alt = { fg = "#d8dee9", bg = "#3b4252" }
-unset_main = { fg = "#2e3440", bg = "#d08770" }
-unset_alt = { fg = "#d8dee9", bg = "#3b4252" }
+[confirm]
+border = { fg = "#434c5e" }
+btn_no = { fg = "#b7becb" }
+btn_yes = { fg = "#d8dee9" }
+content = { fg = "#d8dee9" }
+list = { fg = "#d8dee9" }
+title = { fg = "#ebcb8b" }
+
+[spot]
+border = { fg = "#434c5e" }
+tbl_cell = { fg = "#d8dee9", bg = "#3b4252" }
+tbl_col = { fg = "#d8dee9" }
+title = { fg = "#d8dee9" }
+
+[pick]
+border = { fg = "#81a1c1" }
+active = { fg = "#b48ead" }
+inactive = { fg = "#d8dee9"}
+
+[input]
+border = { fg = "#434c5e" }
+title = { fg = "#d8dee9" }
+value = { fg = "#d8dee9" }
+selected = { fg = "#2e3440", bg = "#ebcb8b" }
+
+[cmp]
+border = { fg = "#81a1c1" }
+active = { fg = "#b48ead" }
+inactive = { fg = "#d8dee9"}
 
 [help]
 on = { fg = "#88c0d0" }
 run = { fg = "#d8dee9" }
 desc = { fg = "#b7becb" }
 hovered = { fg = "#81a1c1", bg = "#2e3440" }
-footer = { fg = "#d8dee9", bg = "#3b4252" }
+footer = { fg = "#2e3440", bg = "#81a1c1" }
+
+[filetype]
+rules = [
+  { name = "*/", fg = "#81a1c1" }  # Directory
+]
+

@@ -68,7 +68,6 @@ def l [ ...args ] {
 # Fzf {{{
 $env.FZF_DEFAULT_OPTS = "
   --bind 'ctrl-c:execute-silent(echo {+} | pbcopy)'
-  --bind one:accept
   --color=current-bg:#2e3440,current-fg:#d8dee9,current-hl:#88c0d0,gutter:-1,header-fg:#81a1c1,hl:#88c0d0,info:#8c97ad,pointer:#d08770,separator:#434c5e
   --height=40%
   --highlight-line
