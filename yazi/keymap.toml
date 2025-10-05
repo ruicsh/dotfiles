@@ -37,7 +37,7 @@ prepend_keymap = [
 
   # Misc
   { on = [ "g", "?" ], run = "help", desc = "Help" },
-  { on = "!", run = 'shell "$SHELL" --block --confirm', desc = "Open a shell" },
+  { on = "!", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
 ]
 
 [spot]
