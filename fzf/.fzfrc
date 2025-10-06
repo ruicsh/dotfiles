@@ -3,4 +3,4 @@
 --highlight-line
 --info=inline
 --layout=reverse
---preview 'cat {}'
+--preview 'bat --color=always --line-range :30 --style=plain {}'

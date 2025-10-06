@@ -122,6 +122,7 @@ source $"($nu.cache-dir)/zoxide.nu"
 # }}}
 
 # Aliases {{{
+alias b = bat
 alias c = clear
 alias cd = z
 alias g = git
