@@ -4,7 +4,6 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## Terminal
 
-- [atuin](https://github.com/atuinsh/atuin) Command history
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
 - [eza](https://github.com/eza-community/eza) Alternative to `ls`
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`

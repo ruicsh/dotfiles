@@ -29,10 +29,6 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 let home_dir = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
 
-# Atuin {{{
-source $"($nu.cache-dir)/atuin.nu"
-# }}}
-
 # Carapace {{{
 source $"($nu.cache-dir)/carapace.nu"
 # }}}
