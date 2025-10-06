@@ -69,6 +69,29 @@ def l [ ...args ] {
 
 # Fzf {{{
 $env.FZF_DEFAULT_OPTS_FILE = $"($home_dir)/.config/fzf/.fzfrc"
+
+# fzf that copies the result to clipboard
+def f [ ...args ] {
+  let copy_cmd = if $nu.os-info.name == "windows" {
+    "clip"
+  } else if $nu.os-info.name == "linux" {
+    "xclip -selection clipboard"
+  } else {
+    "pbcopy"
+  }
+
+  let result = ^fzf ...$args
+
+  if $nu.os-info.name == "windows" {
+    $result | clip
+  } else if $nu.os-info.name == "linux" {
+    $result | xclip -selection clipboard
+  } else {
+    $result | pbcopy
+  }
+
+  $result
+}
 # }}}
 
 # ripgrep {{{
@@ -101,7 +124,6 @@ source $"($nu.cache-dir)/zoxide.nu"
 # Aliases {{{
 alias c = clear
 alias cd = z
-alias f = fzf
 alias g = git
 alias j = just
 alias ls = ls -a # always show hidden files
