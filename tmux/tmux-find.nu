@@ -6,7 +6,7 @@ source ~/.config/nushell/config.nu
 
 let dirs = ls ~/code | where type == "dir" | select name
 let choices = $dirs | each {|row| {name: ($row.name | path basename), path: $row.name}}
-let selected_name = ($choices | get name | to text | fzf)
+let selected_name = ($choices | get name | to text | fzf --preview-window=:hidden)
 let selected_path = ($choices | where name == $selected_name | get path)
 
 if ($selected_path == null or $selected_path == "") {
