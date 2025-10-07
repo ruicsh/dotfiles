@@ -1,5 +1,7 @@
 use std/util "path add"
 
+let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
+
 # Nushell config {{{
 
 $env.config.buffer_editor = "nvim"
@@ -17,6 +19,7 @@ $env.config.table.mode = "none"
 $env.EDITOR = "nvim"
 $env.SHELL = "nu"
 $env.MANPAGER = "nvim +Man!"
+$env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config"
 # }}}
 
 # PATH {{{
@@ -27,10 +30,8 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 # 3rd party commands {{{
 
-let home_dir = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
-
 # Bat {{{
-$env.BAT_CONFIG_DIR = $"($home_dir)/.config/bat"
+$env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
 # }}}
 
 # Carapace {{{
@@ -55,7 +56,7 @@ $env.config = {
 # }}}
 
 # Eza {{{
-$env.EZA_CONFIG_DIR = $"($home_dir)/.config/eza"
+$env.EZA_CONFIG_DIR = $"($HOME_DIR)/.config/eza"
 
 def l [ ...args ] {
   ^eza ...[
@@ -72,7 +73,7 @@ def l [ ...args ] {
 # }}}
 
 # Fzf {{{
-$env.FZF_DEFAULT_OPTS_FILE = $"($home_dir)/.config/fzf/.fzfrc"
+$env.FZF_DEFAULT_OPTS_FILE = $"($HOME_DIR)/.config/fzf/.fzfrc"
 
 # fzf that copies the result to clipboard
 def f [ ...args ] {
@@ -99,7 +100,7 @@ def f [ ...args ] {
 # }}}
 
 # ripgrep {{{
-$env.RIPGREP_CONFIG_PATH = $"($home_dir)/.config/ripgrep/.ripgreprc"
+$env.RIPGREP_CONFIG_PATH = $"($HOME_DIR)/.config/ripgrep/.ripgreprc"
 # }}}
 
 # Starship  {{{
