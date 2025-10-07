@@ -26,3 +26,10 @@ reveal = []
 append_rules = [
   { name = "*", use = "compress" }
 ]
+
+[plugin]
+prepend_previewers = [
+  { name = "*/", run = "folder", sync = true },
+  { name = "*", run = "bat"},
+]
+

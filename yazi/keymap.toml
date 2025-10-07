@@ -1,3 +1,5 @@
+# https://yazi-rs.github.io/docs/configuration/keymap
+
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [mgr]
@@ -9,9 +11,15 @@ prepend_keymap = [
   { on = [ "<c-p>" ], run = "arrow -1", desc = "Move cursor up" },
 
   # Navigation
-  { on = [ "<enter>" ], run = "enter", desc = "Enter directory" },
+  { on = [ "<enter>" ], run = "plugin smart-enter", desc = "Enter directory" },
   { on = "-", run = "leave", desc = "Go to the parent directory" },
   { on = "<backspace>", run = "back", desc = "Got to previous directory" },
+
+  # Editing
+  { on = "p", run = "plugin smart-paste", desc = "Paste into the hovered directory or CWD" },
+
+  # Filtering
+  { on = "F", run = "plugin smart-filter", desc = "Smart filter" },
 
   # Spotting
   { on = "K", run = "spot", desc = "Spot hovered file" },
