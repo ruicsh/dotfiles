@@ -29,6 +29,10 @@ path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
 
 let home_dir = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
 
+# Bat {{{
+$env.BAT_CONFIG_DIR = $"($home_dir)/.config/bat"
+# }}}
+
 # Carapace {{{
 source $"($nu.cache-dir)/carapace.nu"
 # }}}
