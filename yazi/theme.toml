@@ -1,3 +1,5 @@
+# https://yazi-rs.github.io/docs/configuration/theme
+
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 [mgr]
@@ -36,6 +38,12 @@ perm_type = { fg = "#81a1c1" }
 perm_write = { fg = "#d8dee9" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
+
+[which]
+cols = 1
+mask = { }
+desc = { fg = "#b7becb" }
+cand = { fg = "#88c0d0" }
 
 [confirm]
 border = { fg = "#434c5e" }
