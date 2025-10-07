@@ -18,7 +18,7 @@ preview_hovered = { }
 
 [tabs]
 active   = { fg = "#3b4252", bg = "#b7c2d7" }
-inactive = { fg = "#b7c2d7", bg = "#3b4252" }
+inactive = { fg = "#b7c2d7", bg = "#2e3440" }
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
