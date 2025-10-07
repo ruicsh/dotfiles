@@ -120,6 +120,15 @@ $env.PROMPT_INDICATOR_VI_NORMAL = "〉"
 $env.PROMPT_MULTILINE_INDICATOR = "::: "
 # }}}
 
+# yazi {{{
+# File detection
+$env.YAZI_FILE_ONE = if $nu.os-info.name == "windows" and ($"($env.PROGRAMFILES)\\Git\\usr\\bin\\file.exe" | path exists) {
+  $"($env.PROGRAMFILES)\\Git\\usr\\bin\\file.exe"
+} else {
+  "file"
+}
+# }}}
+
 # zoxide {{{
 source $"($nu.cache-dir)/zoxide.nu"
 # }}}
