@@ -2,21 +2,40 @@
 
 Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
-## Terminal
+## CLI
 
 - [bat](https://github.com/sharkdp/bat) Alternative to `cat`
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
+- [direnv](https://github.com/direnv/direnv) Load .env per directory
 - [eza](https://github.com/eza-community/eza) Alternative to `ls`
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder
+- [jq](https://github.com/jqlang/jq) JSON processor
+- [just](https://github.com/casey/just) Command runner
 - [neovim](https://github.com/neovim/neovim) Editor
 - [nushell](https://github.com/nushell/nushell) Shell
+- [opencode](https://github.com/sst/opencode) AI coding agent
 - [ouch](https://github.com/ouch-org/ouch) Archive manipulation
 - [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to `grep`
 - [starship](https://github.com/starship/starship) Prompt
 - [tmux](https://github.com/tmux/tmux) Multiplexer
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
+
+## macOS
+
+- [ghostty](https://github.com/ghostty-org/ghostty) Terminal
+- [hammerspoon](https://github.com/Hammerspoon/hammerspoon) OS automation
+
+## Linux
+
+- [xclip](https://github.com/astrand/xclip) X11 clipboard
+
+## Windows
+
+- [AutoHotkey](https://github.com/AutoHotkey/AutoHotkey) OS automation
+- [PowerToys](https://github.com/microsoft/PowerToys) OS customization
+- [Windows Terminal](https://github.com/microsoft/terminal) Terminal
 
 ## Keybinds
 
