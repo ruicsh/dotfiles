@@ -18,8 +18,8 @@ $env.config.table.mode = "none"
 # Environment variables {{{
 $env.EDITOR = "nvim"
 $env.SHELL = "nu"
-$env.MANPAGER = "nvim +Man!"
-$env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config"
+$env.MANPAGER = "nvim +Man!" # Use nvim for reading manpages
+$env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config" # XDG base directory for config files
 # }}}
 
 # PATH {{{
@@ -141,6 +141,7 @@ alias c = clear
 alias cd = z
 alias g = git
 alias ls = ls -a # always show hidden files
+alias nrt = npm run test
 alias v = nvim
 alias y = yazi
 # }}}
