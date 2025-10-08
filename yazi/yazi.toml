@@ -17,7 +17,7 @@ compress = [
   { run = 'ouch compress "$@" archive.tar.gz', desc = 'Compress (tar.gz)' },
 ]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "Edit", block = true },
+	{ run = 'nvim "$@"', desc = "Edit", block = true },
 ]
 extract = [
   { run = 'ouch decompress "$1"', desc = "Extract here" },
