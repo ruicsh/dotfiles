@@ -88,8 +88,6 @@ cask "ghostty"
 cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
-# Open-source screen recorder built with web technology
-cask "kap"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
