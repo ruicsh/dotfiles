@@ -1,4 +1,5 @@
 # https://yazi-rs.github.io/docs/configuration/yazi
+# https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/yazi-default.toml
 
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
@@ -43,7 +44,11 @@ rules = [
 ]
 
 [plugin]
-prepend_previewers = [
+previewers = [
+  { mime = "application/{json,ndjson}", run = "json" },
+  { name = "*.zip", run = "noop" },
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "noop" },
+  { mime = "application/{octet-stream,dosexec,ms-*}", run = "noop" }, # binary files - no preview
   { name = "*/", run = "folder", sync = true },
-  { name = "*", run = "bat"},
+  { name = "*", run = "bat" },
 ]
