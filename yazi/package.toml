@@ -8,10 +8,5 @@ use = "yazi-rs/plugins:smart-filter"
 rev = "d1c8baa"
 hash = "bcda8eeb3f4013bae156aecabfc745e8"
 
-[[plugin.deps]]
-use = "yazi-rs/plugins:smart-paste"
-rev = "d1c8baa"
-hash = "75fd60b2df7115e0a6ca31a6a804d320"
-
 [flavor]
 deps = []

@@ -1,4 +1,5 @@
 # https://yazi-rs.github.io/docs/configuration/keymap
+# https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/keymap-default.toml
 
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
@@ -15,10 +16,10 @@ prepend_keymap = [
   { on = "-", run = "leave", desc = "Go to the parent directory" },
   { on = "<backspace>", run = "back", desc = "Got to previous directory" },
 
-  # Editing
-  { on = "p", run = "plugin smart-paste", desc = "Paste into the hovered directory or CWD" },
+  # Operation
+  { on = ":", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
 
-  # Filtering
+  # Filter
   { on = "F", run = "plugin smart-filter", desc = "Smart filter" },
 
   # Spotting
@@ -45,7 +46,6 @@ prepend_keymap = [
 
   # Misc
   { on = [ "g", "?" ], run = "help", desc = "Help" },
-  { on = "!", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
 ]
 
 [spot]
