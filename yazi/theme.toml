@@ -83,6 +83,11 @@ border = { fg = "#81a1c1" }
 active = { fg = "#b48ead" }
 inactive = { fg = "#d8dee9"}
 
+[tasks]
+border = { fg = "#434c5e" }
+title = { fg = "#d8dee9" }
+hovered = { fg = "#3e3440", bg = "#81a1c1" }
+
 [help]
 on = { fg = "#88c0d0" }
 run = { fg = "#d8dee9" }
@@ -95,3 +100,4 @@ rules = [
   { name = "*/", fg = "#81a1c1" }  # Directory
 ]
 
+# vim: foldlevel=0:foldenable
