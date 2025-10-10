@@ -15,6 +15,8 @@ CHAT_APP := "teams"
 ^2::OpenOrActivateApp("wt.exe", "ahk_exe WindowsTerminal.exe", "Terminal")
 ^3::OpenChatApp()
 ^4::OpenOutlook()
+^9::Send("#e") ; Ctrl+9 to open File Explorer
+^0::Send("#s") ; Ctrl+0 to open Start Menu
 ^+m::Run("wt.exe -- `"C:\Program Files\Git\bin\bash.exe`" -c `"~/.scripts/bookmarks.sh`"")
 
 ; Chat application configurations
