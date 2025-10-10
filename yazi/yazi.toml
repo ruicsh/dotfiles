@@ -15,9 +15,10 @@ sort_sensitive = true
 [opener]
 compress = [
   { run = 'ouch compress "$@" archive.zip', desc = 'Compress (zip)', for = "unix" },
-  { run = 'ouch compress "%@" archive.zip', desc = 'Compress (zip)', for = "windows" },
+  { run = 'ouch compress "%*" archive.zip', desc = 'Compress (zip)', for = "windows" },
+
   { run = 'ouch compress "$@" archive.tar.gz', desc = 'Compress (tar.gz)', for = "unix" },
-  { run = 'ouch compress "%@" archive.tar.gz', desc = 'Compress (tar.gz)', for = "windows" },
+  { run = 'ouch compress "%*" archive.tar.gz', desc = 'Compress (tar.gz)', for = "windows" },
 ]
 edit = [
 	{ run = 'nvim "$@"', desc = "Edit", block = true, for = "unix" },
