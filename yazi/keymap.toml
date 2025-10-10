@@ -19,6 +19,12 @@ prepend_keymap = [
   # Operation
   { on = ":", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
 
+	# Copy
+  { on = [ "%", "%" ], run = "copy path",             desc = "Copy the file path" },
+  { on = [ "%", "d" ], run = "copy dirname",          desc = "Copy the directory path" },
+  { on = [ "%", "f" ], run = "copy filename",         desc = "Copy the filename" },
+  { on = [ "%", "n" ], run = "copy name_without_ext", desc = "Copy the filename without extension" },
+
   # Filter
   { on = "F", run = "plugin smart-filter", desc = "Smart filter" },
 
