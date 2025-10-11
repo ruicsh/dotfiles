@@ -24,6 +24,7 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## Cross-platform GUI
 
+- [flameshot](https://github.com/flameshot-org/flameshot) Screenshots
 - [oculante](https://github.com/woelper/oculante) Image viewer
 
 ## macOS
