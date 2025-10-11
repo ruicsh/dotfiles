@@ -8,5 +8,10 @@ use = "yazi-rs/plugins:smart-filter"
 rev = "d1c8baa"
 hash = "bcda8eeb3f4013bae156aecabfc745e8"
 
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "0742fff"
+hash = "2bd799b42b8e42b8ef100310be71f8d1"
+
 [flavor]
 deps = []

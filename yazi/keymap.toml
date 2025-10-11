@@ -18,6 +18,7 @@ prepend_keymap = [
 
   # Operation
   { on = ":", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
+  { on = "C", run = 'plugin ouch', desc = "Compress" },
 
 	# Copy
   { on = [ "%", "%" ], run = "copy path",             desc = "Copy the file path" },
