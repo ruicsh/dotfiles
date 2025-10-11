@@ -22,6 +22,10 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
 
+## Cross-platform GUI
+
+- [oculante](https://github.com/woelper/oculante) Image viewer
+
 ## macOS
 
 - [ghostty](https://github.com/ghostty-org/ghostty) Terminal

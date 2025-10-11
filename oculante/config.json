@@ -1,0 +1,158 @@
+{
+  "accent_color": [
+    136,
+    192,
+    208
+  ],
+  "background_color": [
+    30,
+    30,
+    30
+  ],
+  "vsync": true,
+  "force_redraw": false,
+  "shortcuts": {
+    "AlwaysOnTop": [
+      "T"
+    ],
+    "Fullscreen": [
+      "F"
+    ],
+    "InfoMode": [
+      "I"
+    ],
+    "EditMode": [
+      "E"
+    ],
+    "NextImage": [
+      "Right"
+    ],
+    "FirstImage": [
+      "Home"
+    ],
+    "LastImage": [
+      "End"
+    ],
+    "PreviousImage": [
+      "Left"
+    ],
+    "RedChannel": [
+      "R"
+    ],
+    "GreenChannel": [
+      "G"
+    ],
+    "BlueChannel": [
+      "B"
+    ],
+    "AlphaChannel": [
+      "A"
+    ],
+    "RGBChannel": [
+      "U"
+    ],
+    "RGBAChannel": [
+      "C"
+    ],
+    "ResetView": [
+      "V"
+    ],
+    "ZoomOut": [
+      "Minus"
+    ],
+    "ZoomIn": [
+      "Equals"
+    ],
+    "ZoomActualSize": [
+      "Key1"
+    ],
+    "ZoomDouble": [
+      "Key2"
+    ],
+    "ZoomThree": [
+      "Key3"
+    ],
+    "ZoomFour": [
+      "Key4"
+    ],
+    "ZoomFive": [
+      "Key5"
+    ],
+    "CompareNext": [
+      "C",
+      "LShift"
+    ],
+    "PanLeft": [
+      "LShift",
+      "Left"
+    ],
+    "PanRight": [
+      "LShift",
+      "Right"
+    ],
+    "PanUp": [
+      "LShift",
+      "Up"
+    ],
+    "PanDown": [
+      "Down",
+      "LShift"
+    ],
+    "DeleteFile": [
+      "Delete"
+    ],
+    "ClearImage": [
+      "Delete",
+      "LShift"
+    ],
+    "LosslessRotateRight": [
+      "RBracket"
+    ],
+    "LosslessRotateLeft": [
+      "LBracket"
+    ],
+    "Copy": [
+      "C",
+      "LWin"
+    ],
+    "Paste": [
+      "LWin",
+      "V"
+    ],
+    "Browse": [
+      "LWin",
+      "O"
+    ],
+    "Quit": [
+      "Q"
+    ],
+    "ZenMode": [
+      "Z"
+    ]
+  },
+  "keep_view": false,
+  "max_cache": 0,
+  "show_scrub_bar": false,
+  "wrap_folder": false,
+  "keep_edits": false,
+  "title_format": "{APP} | {VERSION} | {FULLPATH}",
+  "info_enabled": false,
+  "edit_enabled": false,
+  "show_checker_background": true,
+  "show_minimap": false,
+  "show_frame": false,
+  "svg_scale": 1.0,
+  "zen_mode": true,
+  "theme": "Dark",
+  "linear_mag_filter": false,
+  "linear_min_filter": true,
+  "use_mipmaps": true,
+  "fit_image_on_window_resize": false,
+  "zoom_multiplier": 1.0,
+  "borderless": true,
+  "min_window_size": [
+    100,
+    100
+  ],
+  "experimental_features": false
+}
