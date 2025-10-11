@@ -1,8 +1,8 @@
 # ~/.dotfiles
 
-Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
+Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
-## CLI
+## CLI (terminal)
 
 - [bat](https://github.com/sharkdp/bat) Alternative to `cat`
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
@@ -22,10 +22,12 @@ Neovim conf is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
 
-## Cross-platform GUI
+## Cross-platform (macOS/Windows)
 
 - [flameshot](https://github.com/flameshot-org/flameshot) Screenshots
+- [neovim](https://github.com/neovim/neovim) Code editor
 - [oculante](https://github.com/woelper/oculante) Image viewer
+- [vim](https://github.com/vim/vim) Text editor
 
 ## macOS
 

@@ -14,8 +14,10 @@ sort_sensitive = true
 
 [opener]
 edit = [
-	{ run = 'nvim "$@"', desc = "Edit", block = true, for = "unix" },
-  { run = 'nvim %*', desc = "Edit", block = true, for = "windows" },
+  { run = 'vim "$@"', desc = "Edit", block = true, for = "unix" },
+  { run = 'vim %*', desc = "Edit", block = true, for = "windows" },
+  { run = 'nvim "$@"', desc = "Edit with Neovim", block = true, for = "unix" },
+  { run = 'nvim %*', desc = "Edit with Neovim", block = true, for = "windows" },
 ]
 extract = [
   { run = 'ouch decompress --yes "$@"', desc = "Extract here", for = "unix" },
@@ -30,6 +32,7 @@ view = [
 [open]
 rules = [
 	{ name = "*/", use = [ "open" ] },
+  { name = "*.{txt,md}", use = [ "edit" ] },
 	{ mime = "text/*", use = [ "edit" ] },
 	{ mime = "image/*", use = [ "view" ] },
 	{ mime = "{audio,video}/*", use = [ "play" ] },
