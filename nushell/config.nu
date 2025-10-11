@@ -26,6 +26,7 @@ $env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config" # XDG base directory for config fi
 path add "/usr/local/bin" # Make sure user installed binaries override system's
 path add "/opt/homebrew/bin" # Homebrew (macOS)
 path add "/home/linuxbrew/.linuxbrew/bin" # Homebrew (linux)
+path add ($nu.config-path | path dirname | path join "scripts") # Custom scripts
 # }}}
 
 # 3rd party commands {{{
@@ -99,6 +100,11 @@ def f [ ...args ] {
 }
 # }}}
 
+# oculante {{{
+if $nu.os-info.name == "macos" {
+  path add "/Applications/Oculante.app/Contents/MacOS" # macOS
+}
+# }}}
 # ripgrep {{{
 $env.RIPGREP_CONFIG_PATH = $"($HOME_DIR)/.config/ripgrep/.ripgreprc"
 # }}}
