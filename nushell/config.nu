@@ -16,7 +16,7 @@ $env.config.table.mode = "none"
 # }}}
 
 # Environment variables {{{
-$env.EDITOR = "nvim"
+$env.EDITOR = "vim"
 $env.SHELL = "nu"
 $env.MANPAGER = "nvim +Man!" # Use nvim for reading manpages
 $env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config" # XDG base directory for config files
