@@ -26,9 +26,9 @@ extract = [
   { run = 'ouch decompress --yes %*', desc = "Extract here", for = "windows" },
 ]
 view = [
-  { run = 'open-in-windows-from-wsl.nu "$@"', desc = "View", for = "unix" }, # WSL
+  { run = 'oculante "$@"', desc = "View", for = "macos" },
   { run = 'oculante %*', desc = "View", for = "windows" },
-  { run = 'oculante -c "$@"', desc = "View", for = "macos" },
+  { run = 'open-in-windows-from-wsl.nu "$@"', desc = "View", for = "unix" }, # WSL
 ]
 
 [open]
