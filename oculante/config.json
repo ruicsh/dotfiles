@@ -84,19 +84,19 @@
     ],
     "PanLeft": [
       "LShift",
-      "Left"
+      "Right"
     ],
     "PanRight": [
       "LShift",
-      "Right"
+      "Left"
     ],
     "PanUp": [
-      "LShift",
-      "Up"
-    ],
-    "PanDown": [
       "Down",
       "LShift"
+    ],
+    "PanDown": [
+      "LShift",
+      "Up"
     ],
     "DeleteFile": [
       "Delete"
