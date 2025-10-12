@@ -5,7 +5,6 @@
   br = "!git for-each-ref --format='%(if)%(HEAD)%(then)\\033[38;2;136;192;208m* %(refname:short)\\033[0m%(else)  \\033[38;2;216;222;233m%(refname:short)\\033[0m%(end)' refs/heads/ | while IFS= read -r line; do printf '%b\\n' \"$line\"; done"
   brdd = branch --delete --force
   brd = branch --delete
-  brdm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"    # Delete merged
   brm = branch -m
   ch = checkout
   chb = checkout -b
@@ -15,10 +14,7 @@
   cman = commit --amend --no-edit
   cmm = commit --verbose --message
   cp = cherry-pick
-  cpa = cherry-pick --abort
-  cpc = cherry-pick --continue
   fe = fetch
-  fep = fetch --prune
   lg = "!git log \
     --color=always \
     --pretty=format:'%C(#88c0d0)%h%Creset %C(#81a1c1)%cr%Creset %C(#ebcb8b)%d%Creset %s %C(#88c0d0)%an%Creset' \
@@ -33,29 +29,17 @@
     | less --RAW-CONTROL-CHARS --chop-long-lines"
   pl = pull
   plr = pull --rebase
-  pls = "!git stash && git pull --rebase && git stash pop"
+  pls = "!git stash -u && git pull --rebase && git stash pop"
   ps = push
   psf = push --force-with-lease
   psu = push -u origin HEAD
   rb = rebase
-  rba = rebase --abort
-  rbc = rebase --continue
   rbi = rebase --interactive
-  rbk = rebase --skip
-  rbs = "!f() { git stash && git rebase \"$1\" && git stash pop; }; f"
-  ro = restore
+  rbs = "!f() { git stash -u && git rebase \"$1\" && git stash pop; }; f"
   rs = reset
-  rt = remote -vv                     # List remote branches
-  rtdm = remote prune                 # Delete remote merged branches
-  rta = remote add                    # Add new remote branch
-  st = stash
-  stc = stash clear
-  stl = stash list
-  stp = stash pop
-  stu = stash -u                      # include untracked files
-  sl = shortlog -c -s                 # Show number of commits per author
-  so = show
-  sofc = show --pretty="" --name-only # List files on commit
+  sh = stash -u                       # include untracked files
+  shp = stash pop
+  shc = stash clear
   ss = status 
   sw = switch
   swc = switch -c
