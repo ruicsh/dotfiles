@@ -36,24 +36,6 @@
     "PreviousImage": [
       "Left"
     ],
-    "RedChannel": [
-      "R"
-    ],
-    "GreenChannel": [
-      "G"
-    ],
-    "BlueChannel": [
-      "B"
-    ],
-    "AlphaChannel": [
-      "A"
-    ],
-    "RGBChannel": [
-      "U"
-    ],
-    "RGBAChannel": [
-      "C"
-    ],
     "ResetView": [
       "V"
     ],
@@ -83,20 +65,16 @@
       "LShift"
     ],
     "PanLeft": [
-      "LShift",
-      "Right"
+      "L"
     ],
     "PanRight": [
-      "LShift",
-      "Left"
+      "H"
     ],
     "PanUp": [
-      "Down",
-      "LShift"
+      "J"
     ],
     "PanDown": [
-      "LShift",
-      "Up"
+      "K"
     ],
     "DeleteFile": [
       "Delete"
@@ -136,7 +114,7 @@
   "wrap_folder": false,
   "keep_edits": false,
   "title_format": "{APP} | {VERSION} | {FULLPATH}",
-  "info_enabled": false,
+  "info_enabled": true,
   "edit_enabled": false,
   "show_checker_background": true,
   "show_minimap": false,
