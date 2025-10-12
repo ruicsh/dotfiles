@@ -2,6 +2,7 @@
 
 set background=dark
 highlight clear
+syntax on
 
 " Reset all highlights {{{
 for group in getcompletion('', 'highlight')
@@ -60,8 +61,8 @@ highlight SpellBad guifg=#BF616A gui=undercurl
 highlight SpellCap guifg=#8FBCBB guibg=NONE gui=undercurl
 highlight SpellLocal guifg=#81A1C1 guibg=NONE gui=undercurl
 highlight SpellRare guifg=#81A1C1 guibg=NONE gui=undercurl
-highlight StatusLine guifg=#D8DEE9 guibg=#4c566a
-highlight StatusLineNC guifg=#D8DEE9 guibg=#2E3440 
+highlight StatusLine guifg=#D8DEE9 guibg=#2E3440 
+highlight StatusLineNC guifg=#D8DEE9 guibg=NONE
 highlight StatusLineTerm guifg=#D8DEE9 guibg=NONE
 highlight StatusLineTermNC guifg=#D8DEE9 guibg=NONE
 highlight Substitute guifg=#2E3440 guibg=#BF616A
@@ -87,8 +88,14 @@ highlight healthWarning guifg=#E5E9F0
 
 " OPTIONS {{{
 
+" 1 important {{{
+set nocompatible
+" }}}
+
 " 2 moving around, searching and patterns {{{
+set incsearch
 set ignorecase 
+set path& | let &path .= "**"
 set smartcase
 set startofline
 set whichwrap=b,s,<,>,[,]
@@ -103,7 +110,7 @@ set breakindent
 set cmdheight=1
 set fillchars=vert:\│,foldopen:,foldclose:›,foldsep:\ ,fold:\ ,eob:\ 
 set list
-set listchars=tab:▸\ ,trail:·,extends:»,precedes:«,nbsp:␣
+set listchars=tab:>\ ,trail:·,extends:»,precedes:«,nbsp:+
 set lazyredraw 
 set number
 set numberwidth=5
@@ -120,34 +127,36 @@ set termguicolors
 " }}}
 
 " 6 multiple windows {{{
+set hidden
 set noequalalways
-set laststatus=3
+set laststatus=2
 set splitbelow
 set splitright
 " }}}
 
 " 7 multiple tab pages {{{
 set showtabline=0
+set tabpagemax=50
 " }}}
 
 " 9 using the mouse {{{
 set mouse="nic"
 " }}}
 
-" 10 messages and info {{{
+" 11 messages and info {{{
 set belloff=all
-set report=9999
-set noruler
-set shortmess=ACFISWacs
 set noshowcmd 
+set report=9999
+set ruler
+set shortmess=ACFISWacs
 set showmode
 " }}}
 
-" 11 selecting text {{{
+" 12 selecting text {{{
 set clipboard=unnamedplus
 " }}}
 
-" 12 editing text {{{
+" 13 editing text {{{
 set complete=.,]
 set completeopt=menu,menuone,noinsert,preview
 set formatoptions=/1bcjnpqt
@@ -156,15 +165,17 @@ set noshowmatch
 set noundofile
 " }}}
 
-" 13 tabs and editing {{{
+" 14 tabs and indenting {{{
+set autoindent
 set expandtab
+set shiftround
 set shiftwidth=2
 set smartindent
 set softtabstop=2
 set tabstop=2
 " }}}
 
-" 14 folding {{{
+" 15 folding {{{
 set foldcolumn=0
 set foldenable
 set foldlevel=999
@@ -173,31 +184,40 @@ set foldmethod=indent
 set foldopen=insert,mark,search,tag
 " }}}
 
-" 16 mapping {{{
+" 17 mapping {{{
 set timeout
 set timeoutlen=500
-set ttimeoutlen=10
+set ttimeout
+set ttimeoutlen=100
 " }}}
 
-" 17 reading and writing files {{{
-set autoread
-set nobackup
-" }}}
-
-" 18 the swap file {{{
+" 19 the swap file {{{
 set noswapfile
 " }}}
 
-" 20 executing external commands {{{
+" 20 reading and writing files {{{
+set autoread
+set history=1000
+set nobackup
+set nowritebackup
+set wildmenu
+" }}}
+
+" 21 executing external commands {{{
 let &shell = exepath('nu')
 " }}}
 
-" 24 various {{{
+" 23 language specific {{{
+set nolangremap
+" }}}
+
+" 25 various {{{
 set conceallevel=0
 set gdefault
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 set signcolumn=yes
 set viewoptions=cursor,folds
+set viminfo=
 " }}}
 
 " }}}
@@ -255,6 +275,11 @@ inoremap <C-S> <C-O>:silent! update<CR>
 xnoremap <C-S> :silent! update<CR>
 " }}}
 
+" }}}
+
+" Plugins {{{
+filetype plugin indent on
+runtime macros/matchit.vim
 " }}}
 
 " vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
