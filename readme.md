@@ -19,15 +19,14 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to `grep`
 - [starship](https://github.com/starship/starship) Prompt
 - [tmux](https://github.com/tmux/tmux) Multiplexer
+- [vim](https://github.com/vim/vim) Text editor
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
 
 ## Cross-platform (macOS/Windows)
 
 - [flameshot](https://github.com/flameshot-org/flameshot) Screenshots
-- [neovim](https://github.com/neovim/neovim) Code editor
 - [oculante](https://github.com/woelper/oculante) Image viewer
-- [vim](https://github.com/vim/vim) Text editor
 
 ## macOS
 
