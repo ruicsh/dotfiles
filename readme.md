@@ -10,7 +10,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder
 - [jq](https://github.com/jqlang/jq) JSON processor
-- [neovim](https://github.com/neovim/neovim) IDE
+- [neovim](https://github.com/neovim/neovim) Code editor
 - [mise](https://github.com/jdx/mise) dev tools, env vars, task runner
 - [nushell](https://github.com/nushell/nushell) Shell
 - [opencode](https://github.com/sst/opencode) AI coding agent
@@ -18,7 +18,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to `grep`
 - [starship](https://github.com/starship/starship) Prompt
 - [tmux](https://github.com/tmux/tmux) Multiplexer
-- [vim](https://github.com/vim/vim) Text editor
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
 

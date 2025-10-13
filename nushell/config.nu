@@ -137,8 +137,10 @@ alias g = git
 alias ls = ls -a # always show hidden files
 alias nrt = npm run test
 alias v = nvim
-alias vi = vim
 alias y = yazi
+
+# Use `vi` to open nvim with the vim configuration
+def vi [ ...args ] { with-env { NVIM_APPNAME: "vim" } { nvim ...$args } }
 # }}}
 
 # Theme {{{
