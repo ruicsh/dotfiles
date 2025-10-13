@@ -11,7 +11,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder
 - [jq](https://github.com/jqlang/jq) JSON processor
-- [just](https://github.com/casey/just) Command runner
 - [neovim](https://github.com/neovim/neovim) IDE
 - [mise](https://github.com/jdx/mise) dev tools, env vars, task runner
 - [nushell](https://github.com/nushell/nushell) Shell
