@@ -9,6 +9,9 @@ bindkey -v
 # Disable the "last login" message
 touch ~/.hushlogin
 
+# Load Mise
+eval "$(mise activate zsh)"
+
 # Tmux auto-start
 source ~/.config/tmux/tmux-auto-start.sh
 

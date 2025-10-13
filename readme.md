@@ -13,6 +13,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [jq](https://github.com/jqlang/jq) JSON processor
 - [just](https://github.com/casey/just) Command runner
 - [neovim](https://github.com/neovim/neovim) IDE
+- [mise](https://github.com/jdx/mise) dev tools, env vars, task runner
 - [nushell](https://github.com/nushell/nushell) Shell
 - [opencode](https://github.com/sst/opencode) AI coding agent
 - [ouch](https://github.com/ouch-org/ouch) Archive manipulation

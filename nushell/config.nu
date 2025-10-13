@@ -31,15 +31,15 @@ path add ($nu.config-path | path dirname | path join "scripts") # Custom scripts
 
 # 3rd party commands {{{
 
-# Bat {{{
+# Bat (`cat` alternative) {{{
 $env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
 # }}}
 
-# Carapace {{{
+# Carapace (shell completions) {{{
 source $"($nu.cache-dir)/carapace.nu"
 # }}}
 
-# direnv {{{
+# direnv (environment variables) {{{
 $env.config = {
   hooks: {
     pre_prompt: [{ ||
@@ -56,7 +56,7 @@ $env.config = {
 }
 # }}}
 
-# Eza {{{
+# Eza (`ls` alternative) {{{
 $env.EZA_CONFIG_DIR = $"($HOME_DIR)/.config/eza"
 
 def l [ ...args ] {
@@ -73,7 +73,7 @@ def l [ ...args ] {
 }
 # }}}
 
-# Fzf {{{
+# fzf (fuzzy finder) {{{
 $env.FZF_DEFAULT_OPTS_FILE = $"($HOME_DIR)/.config/fzf/.fzfrc"
 
 # fzf that copies the result to clipboard
@@ -100,16 +100,21 @@ def f [ ...args ] {
 }
 # }}}
 
-# oculante {{{
+# mise (package manager) {{{
+source $"($nu.cache-dir)/mise.nu"
+# }}}
+
+# oculante (image viewer) {{{
 if $nu.os-info.name == "macos" {
   path add "/Applications/Oculante.app/Contents/MacOS" # macOS
 }
 # }}}
-# ripgrep {{{
+
+# ripgrep (`grep` alternative) {{{
 $env.RIPGREP_CONFIG_PATH = $"($HOME_DIR)/.config/ripgrep/.ripgreprc"
 # }}}
 
-# Starship  {{{
+# Starship (prompt) {{{
 $env.STARSHIP_SHELL = "nu"
 def create_left_prompt [] {
   starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
@@ -126,7 +131,7 @@ $env.PROMPT_INDICATOR_VI_NORMAL = "〉"
 $env.PROMPT_MULTILINE_INDICATOR = "::: "
 # }}}
 
-# yazi {{{
+# yazi (file manager) {{{
 # File detection
 $env.YAZI_FILE_ONE = if $nu.os-info.name == "windows" and ($"($env.PROGRAMFILES)\\Git\\usr\\bin\\file.exe" | path exists) {
   $"($env.PROGRAMFILES)\\Git\\usr\\bin\\file.exe"
@@ -135,7 +140,7 @@ $env.YAZI_FILE_ONE = if $nu.os-info.name == "windows" and ($"($env.PROGRAMFILES)
 }
 # }}}
 
-# zoxide {{{
+# zoxide (`cd` alternative) {{{
 source $"($nu.cache-dir)/zoxide.nu"
 # }}}
 

@@ -51,6 +51,7 @@ rules = [
 previewers = [
   { name = "*/", run = "folder", sync = true },
   { mime = "text/*", run = "bat" },
+  { mime = "*/javascript", run = "bat" },
   { mime = "application/{json,ndjson}", run = "json" },
   { mime = "image/*", run = "image" },
   { name = "*.zip", run = "ouch" },
