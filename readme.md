@@ -76,6 +76,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `+` resize up
 - `-` resize down
 - `<` resize left
+- `=` next layout
 - `>` resize right
 - `|` toggle zoom
 
