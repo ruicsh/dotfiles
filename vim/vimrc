@@ -1,21 +1,6 @@
 " THEME {{{
 syntax on
 colorscheme nord
-
-" Highlight groups {{{
-highlight CursorLine guibg=#2E3440 gui=NONE cterm=NONE
-highlight Folded guifg=#81A1C1 guibg=NONE gui=italic
-highlight IncSearch guifg=#2E3440 guibg=#81A1C1
-highlight LineNr guifg=#4C566A
-highlight MatchParen guifg=#EBCB8B guibg=NONE gui=bold
-highlight Normal guifg=#D8DEE9 guibg=NONE
-highlight SignColumn guifg=#D8DEE9 guibg=NONE
-highlight StatusLine guifg=#D8DEE9 guibg=#2E3440 
-highlight VertSplit guifg=#3B4252 guibg=NONE
-highlight Visual guifg=#D8DEE9 guibg=#2E3440
-highlight WildMenu guifg=#81A1C1 guibg=NONE gui=bold
-" }}}
-
 " }}}
 
 " OPTIONS {{{
