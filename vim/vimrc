@@ -70,7 +70,7 @@ set showmode
 " }}}
 
 " 12 selecting text {{{
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 " }}}
 
 " 13 editing text {{{
