@@ -15,8 +15,6 @@ brew "nushell"
 brew "ouch"
 # Command-line interface for SQLite
 brew "sqlite"
-# Manage the desktop wallpaper
-brew "wallpaper"
 # Internet file retriever
 brew "wget"
 # UNIX shell (command interpreter)

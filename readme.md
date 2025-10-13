@@ -6,7 +6,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 - [bat](https://github.com/sharkdp/bat) Alternative to `cat`
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
-- [direnv](https://github.com/direnv/direnv) Load .env per directory
 - [eza](https://github.com/eza-community/eza) Alternative to `ls`
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder

@@ -39,23 +39,6 @@ $env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
 source $"($nu.cache-dir)/carapace.nu"
 # }}}
 
-# direnv (environment variables) {{{
-$env.config = {
-  hooks: {
-    pre_prompt: [{ ||
-      if (which direnv | is-empty) {
-        return
-      }
-
-      direnv export json | from json | default {} | load-env
-      if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
-        $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
-      }
-    }]
-  }
-}
-# }}}
-
 # Eza (`ls` alternative) {{{
 $env.EZA_CONFIG_DIR = $"($HOME_DIR)/.config/eza"
 
