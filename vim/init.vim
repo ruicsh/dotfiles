@@ -70,7 +70,22 @@ set showmode
 " }}}
 
 " 12 selecting text {{{
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamedplus
+" Use xclip if inside WSL
+if !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
+  let g:clipboard = {
+    \ 'name': 'xclip',
+    \ 'copy': {
+    \    '+': 'xclip -selection clipboard',
+    \    '*': 'xclip -selection primary',
+    \ },
+    \ 'paste': {
+    \    '+': 'xclip -selection clipboard -o',
+    \    '*': 'xclip -selection primary -o',
+    \ },
+    \ 'cache_enabled': 1,
+  \ }
+endif
 " }}}
 
 " 13 editing text {{{
