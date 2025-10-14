@@ -39,15 +39,18 @@ set wrap
 
 " 5 syntax, highlighting and spelling {{{
 set cursorline
+set cursorlineopt=screenline,number
 set hlsearch
+set spelloptions=camel
 set termguicolors
 " }}}
 
 " 6 multiple windows {{{
 set hidden
-set noequalalways
 set laststatus=2
+set noequalalways
 set splitbelow
+set splitkeep=cursor
 set splitright
 " }}}
 
@@ -92,6 +95,7 @@ endif
 set complete=.,]
 set completeopt=menu,menuone,noinsert,preview
 set formatoptions=/1bcjnpqt
+set infercase
 set pumheight=5
 set noshowmatch
 set noundofile
@@ -136,6 +140,7 @@ set wildmenu
 " }}}
 
 " 23 language specific {{{
+set iskeyword=@,48-57,_,192-255,-
 set nolangremap
 " }}}
 
