@@ -46,7 +46,7 @@
   swc = switch -c
   
 [core]
-  editor = nvim
+  editor = NVIM_APPNAME=vim nvim
 
 [diff]
 	tool = vimdiff

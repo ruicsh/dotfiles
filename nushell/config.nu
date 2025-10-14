@@ -4,7 +4,7 @@ let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME 
 
 # Nushell config {{{
 
-$env.config.buffer_editor = "nvim"
+$env.config.buffer_editor = "vim"
 $env.config.cursor_shape.vi_insert = "line"
 $env.config.cursor_shape.vi_normal = "block"
 $env.config.edit_mode = "vi"
