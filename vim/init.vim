@@ -120,10 +120,6 @@ set nowritebackup
 set wildmenu
 " }}}
 
-" 21 executing external commands {{{
-let &shell = exepath('nu')
-" }}}
-
 " 23 language specific {{{
 set nolangremap
 " }}}
@@ -194,7 +190,7 @@ xnoremap <C-S> :silent! update<CR>
 
 " }}}
 
-" Plugins {{{
+" PLUGINS {{{
 filetype plugin indent on
 runtime macros/matchit.vim
 
@@ -225,7 +221,7 @@ endfor
 
 " }}}
 
-" Auto commands {{{
+" AUTOCMDS {{{
 
 " Highlight on yank
 if has('nvim')
