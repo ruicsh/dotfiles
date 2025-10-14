@@ -222,6 +222,19 @@ endfor
 for provider in ['node', 'perl', 'python', 'python3', 'ruby']
   execute 'let g:loaded_' . provider . '_provider = 0'
 endfor
+
+" }}}
+
+" Auto commands {{{
+
+" Highlight on yank
+if has('nvim')
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup END
+endif
+
 " }}}
 
 " vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
