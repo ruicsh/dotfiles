@@ -197,6 +197,31 @@ xnoremap <C-S> :silent! update<CR>
 " Plugins {{{
 filetype plugin indent on
 runtime macros/matchit.vim
+
+" Disable unused built-in plugins
+for plugin in [
+      \ '2html_plugin',
+      \ 'getscript',
+      \ 'getscriptPlugin',
+      \ 'gzip',
+      \ 'netrw',
+      \ 'netrwPlugin',
+      \ 'rrhelper',
+      \ 'tar',
+      \ 'tarPlugin',
+      \ 'tutor_mode_plugin',
+      \ 'vimball',
+      \ 'vimballPlugin',
+      \ 'zip',
+      \ 'zipPlugin'
+      \ ]
+  execute 'let g:loaded_' . plugin . ' = 1'
+endfor
+
+" Disable unused remote plugin providers
+for provider in ['node', 'perl', 'python', 'python3', 'ruby']
+  execute 'let g:loaded_' . provider . '_provider = 0'
+endfor
 " }}}
 
 " vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
