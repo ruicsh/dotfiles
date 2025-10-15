@@ -73,9 +73,23 @@ set showmode
 " }}}
 
 " 12 selecting text {{{
-set clipboard=unnamedplus
+
+" Use win32yank if on Windows
+if has('win32') || has('win64')
+  let g:clipboard = {
+    \ 'name': 'win32yank-wsl',
+    \ 'copy': {
+    \    '+': 'win32yank.exe -i --crlf',
+    \    '*': 'win32yank.exe -i --crlf',
+    \ },
+    \ 'paste': {
+    \    '+': 'win32yank.exe -o --lf',
+    \    '*': 'win32yank.exe -o --lf',
+    \ },
+    \ 'cache_enabled': 1,
+  \ }
 " Use xclip if inside WSL
-if !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
+elseif !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
   let g:clipboard = {
     \ 'name': 'xclip',
     \ 'copy': {
@@ -89,6 +103,8 @@ if !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
     \ 'cache_enabled': 1,
   \ }
 endif
+
+set clipboard=unnamedplus
 " }}}
 
 " 13 editing text {{{
