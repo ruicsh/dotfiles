@@ -15,6 +15,7 @@ CHAT_APP := "teams"
 ^2::OpenOrActivateApp("wt.exe", "ahk_exe WindowsTerminal.exe", "Terminal")
 ^3::OpenChatApp()
 ^4::OpenOutlook()
+^8::Send("#r") ; Ctrl+8 to open Run dialog
 ^9::Send("#e") ; Ctrl+9 to open File Explorer
 ^0::Send("#s") ; Ctrl+0 to open Start Menu
 ^+x::Send("{PrintScreen}") ; Ctrl+Shift+x to take screenshot
