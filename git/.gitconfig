@@ -68,3 +68,7 @@
 
 [merge]
   tool = vimdiff
+
+[include]
+  path = .gitconfig.local
+
