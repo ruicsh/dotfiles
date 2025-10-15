@@ -16,8 +16,8 @@ max_height = 8192
 
 [opener]
 edit = [
-  { run = 'NVIM_APPNAME="vim" nvim "$@"', desc = "Edit", block = true, for = "unix" },
-  { run = 'set NVIM_APPNAME="vim"&& nvim %*', desc = "Edit", block = true, for = "windows" },
+  { run = 'NVIM_APPNAME=vim nvim "$@"', desc = "Edit", block = true, for = "unix" },
+  { run = 'set NVIM_APPNAME=vim&& nvim %*', desc = "Edit", block = true, for = "windows" },
   { run = 'nvim "$@"', desc = "Edit with Neovim", block = true, for = "unix" },
   { run = 'nvim %*', desc = "Edit with Neovim", block = true, for = "windows" },
 ]
