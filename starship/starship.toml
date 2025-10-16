@@ -1,3 +1,5 @@
+# https://starship.rs/config/
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -29,8 +31,10 @@ untracked=" ?${count}"
 disabled = false
 
 [directory]
-style = "fg:#5e81ac"
 format = "[» $path ]($style)"
+style = "fg:#5e81ac"
+truncate_to_repo = true
+truncation_length = 4
 
 [character]
 success_symbol = "[\\$](#88c0d0)"
