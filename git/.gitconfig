@@ -36,6 +36,7 @@
   rb = rebase
   rbi = rebase --interactive
   rbs = "!f() { git stash -u && git rebase \"$1\" && git stash pop; }; f"
+  rt = restore
   rs = reset
   sh = stash
   shu = stash -u # include untracked files
