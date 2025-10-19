@@ -39,23 +39,6 @@ $env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
 source $"($nu.cache-dir)/carapace.nu"
 # }}}
 
-# Eza (`ls` alternative) {{{
-$env.EZA_CONFIG_DIR = $"($HOME_DIR)/.config/eza"
-
-def l [ ...args ] {
-  ^eza ...[
-    --across
-    --all
-    --group-directories-first
-    --long
-    --no-permissions
-    --no-user
-    --time-style=default
-    ...$args
-  ]
-}
-# }}}
-
 # fzf (fuzzy finder) {{{
 $env.FZF_DEFAULT_OPTS_FILE = $"($HOME_DIR)/.config/fzf/.fzfrc"
 

@@ -1,13 +1,15 @@
+# https://mise.jdx.dev/configuration.html
+
 [tools]
 bat = "latest"
 carapace = "latest"
-eza = "latest"
 fd = "latest"
 fzf = "latest"
 jq = "latest"
+lsd = "latest"
 lua = "latest"
 neovim = "latest"
-node = "latest"
+node = "24"
 python = "latest"
 ripgrep = "latest"
 rust = "latest"
