@@ -1,12 +1,8 @@
-alias cat = bat
 alias c = clear
+alias cat = bat
 alias cd = z
 alias g = git
-
-alias ls = lsd
-alias l = ls -la
-alias lt = ls --tree
-
+alias l = lsd -la
 alias nrt = npm run test
 alias v = nvim
 alias y = yazi
