@@ -1,4 +1,4 @@
-.env
+.nvim.env
 nushell/history.txt
 yazi/state/
 oculante/config_volatile.json
