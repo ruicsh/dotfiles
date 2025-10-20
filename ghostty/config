@@ -35,7 +35,7 @@ macos-icon-screen-color = #151618
 quick-terminal-position = top
 
 # App
-fullscreen = true
+fullscreen = false
 quit-after-last-window-closed = true
 
 # Extras
