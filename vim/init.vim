@@ -175,7 +175,7 @@ set viminfo=
 
 " Leader {{{
 let g:mapleader=" "
-let g:maplocalleader="\\"
+let g:maplocalleader=","
 " }}}
 
 " Normal mode {{{
@@ -213,7 +213,10 @@ nnoremap cc "_cc
 nnoremap x "_x
 nnoremap X "_X
 
+" Toggle fold
 nnoremap <Tab> za
+" Enter visual block mode
+nnoremap <leader>v <c-v> 
 " }}}
 
 " Insert mode {{{
