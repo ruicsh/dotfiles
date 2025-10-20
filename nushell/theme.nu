@@ -1,3 +1,25 @@
+# https://www.nushell.sh/book/coloring_and_theming.html
+
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.PROMPT_INDICATOR_VI_INSERT = "" 
+
+$env.LS_COLORS = (
+  open ($nu.config-path | path dirname | path join ".dircolors")
+    | lines
+    | each { |l| $l | str trim }
+    | where { |l| $l != "" and not ($l =~ '^#') and not ($l =~ '^(COLOR|TERM)') }
+    | each { |l|
+        let parts = $l | split row ' ' | where { |p| $p != "" };
+        if ($parts | length) >= 2 {
+          $"($parts.0)=($parts.1)"
+        } else {
+          null
+        }
+      }
+    | compact
+    | str join ':'
+)
+
 # Retrieve the theme settings
 export def main [] {
     return {

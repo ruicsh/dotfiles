@@ -1,3 +1,17 @@
+let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
+
+$env.EDITOR = "vim"
+$env.SHELL = "nu"
+$env.MANPAGER = "env NVIM_APPNAME=vim nvim +Man!" # Use nvim for reading manpages
+$env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config" # XDG base directory for config files
+$env.BROWSER = if $nu.os-info.name == "windows" or ($env.WSL_DISTRO_NAME? | is-not-empty) {
+  "cmd.exe /c start"
+} else if $nu.os-info.name == "macos" {
+  "open"
+} else {
+  "xdg-open"
+}
+
 if not ($nu.cache-dir | path exists) {
   mkdir $nu.cache-dir
 }
