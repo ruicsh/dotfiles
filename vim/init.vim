@@ -88,20 +88,20 @@ if has('win32') || has('win64')
     \ },
     \ 'cache_enabled': 1,
   \ }
-" Use xclip if inside WSL
+" Use xclip if inside WSL `:h clipboard-wsl`
 elseif !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
   let g:clipboard = {
-    \ 'name': 'xclip',
-    \ 'copy': {
-    \    '+': 'xclip -selection clipboard',
-    \    '*': 'xclip -selection primary',
-    \ },
-    \ 'paste': {
-    \    '+': 'xclip -selection clipboard -o',
-    \    '*': 'xclip -selection primary -o',
-    \ },
-    \ 'cache_enabled': 1,
-  \ }
+    \   'name': 'WslClipboard',
+    \   'copy': {
+    \      '+': 'clip.exe',
+    \      '*': 'clip.exe',
+    \    },
+    \   'paste': {
+    \      '+': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \      '*': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \   },
+    \   'cache_enabled': 0,
+    \ }
 endif
 
 set clipboard=unnamedplus
