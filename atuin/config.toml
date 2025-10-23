@@ -1,0 +1,10 @@
+filter_mode = "workspace"
+history_filter = [ "^v$", "^l$" ]
+invert = true
+prefers_reduced_motion = true
+show_help = false
+show_tabs = false
+
+[theme]
+name = "nordstone"
+

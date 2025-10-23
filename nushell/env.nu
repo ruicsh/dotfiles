@@ -21,7 +21,12 @@ if not ($nu.cache-dir | path join 'mise.nu' | path exists) {
   mise activate nu | save --force $"($nu.cache-dir)/mise.nu"
 }
 
-# Carapace (completions)
+# atuin (history)
+if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
+  atuin init nu | save --force $"($nu.cache-dir)/atuin.nu"
+}
+
+# carapace (completions)
 if not ($nu.cache-dir | path join 'carapace.nu' | path exists) {
   carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 }

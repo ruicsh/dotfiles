@@ -1,6 +1,7 @@
 # https://mise.jdx.dev/configuration.html
 
 [tools]
+atuin = "latest"
 bat = "latest"
 carapace = "latest"
 fd = "latest"
