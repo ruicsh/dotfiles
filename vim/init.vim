@@ -225,6 +225,7 @@ inoremap <C-S> <C-O>:silent! update<CR>
 
 " Visual mode {{{
 xnoremap <C-S> :silent! update<CR>
+xnoremap <leader>s :'<,'>sort<CR
 " }}}
 
 " }}}
