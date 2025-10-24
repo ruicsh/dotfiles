@@ -1,9 +1,7 @@
 let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
 
 # atuin (history) {{{
-if $nu.os-info.name != "windows" { # atuin does not support Windows yet
-  source $"($nu.cache-dir)/atuin.nu"
-}
+source $"($nu.cache-dir)/atuin.nu"
 # }}}
 
 # bat (`cat` alternative) {{{

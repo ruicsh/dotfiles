@@ -22,9 +22,12 @@ if not ($nu.cache-dir | path join 'mise.nu' | path exists) {
 }
 
 # atuin (history)
-if $nu.os-info.name != "windows" { # atuin does not support Windows yet
-  if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
-    atuin init nu | save --force $"($nu.cache-dir)/atuin.nu"
+let atuin_path = ($nu.cache-dir | path join 'atuin.nu')
+if not ($atuin_path | path exists)  {
+  if $nu.os-info.name == "windows" { # atuin is not supported on Windows
+    touch $atuin_path # Create an empty file to avoid errors
+  } else {
+    atuin init nu | save --force $atuin_path
   }
 }
 
