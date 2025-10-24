@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 source ~/.config/nushell/config.nu
 
-# List directories in ~/code,  let user select one with fzf, 
+# List directories in ~/code, let user select one with fzf, 
 # and open a new tmux window in that directory
 
 let dirs = ls ~/code | where type == "dir" | select name

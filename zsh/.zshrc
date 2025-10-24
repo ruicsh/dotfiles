@@ -16,5 +16,5 @@ export SHELL=nu # Set nushell as default shell
 eval "$(mise activate zsh)"
 
 # Tmux auto-start
-source ~/.config/tmux/tmux-auto-start.sh
+source ~/.scripts/tmux-auto-start.sh
 

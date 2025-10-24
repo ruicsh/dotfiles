@@ -10,4 +10,4 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 eval "$(mise activate bash)"
 
 # Tmux auto-start
-source ~/.config/tmux/tmux-auto-start.sh
+source ~/.scripts/tmux-auto-start.sh
