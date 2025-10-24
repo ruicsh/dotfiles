@@ -4,6 +4,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## CLI (terminal)
 
+- [atuin](https://github.com/atuinsh/atuin) Shell history
 - [bat](https://github.com/sharkdp/bat) Alternative to `cat`
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
