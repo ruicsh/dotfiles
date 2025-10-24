@@ -196,8 +196,8 @@ nnoremap [p :put!<CR>==
 nnoremap ]p :put<CR>==
 
 " Move current line up/down
-nnoremap <A-Up> :move -2<CR>==
-nnoremap <A-Down> :move +1<CR>==
+nnoremap <A-j> :move .+1<CR>==
+nnoremap <A-k> :move .-2<CR>==
 
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z:delmarks z<CR>
@@ -215,17 +215,26 @@ nnoremap X "_X
 
 " Toggle fold
 nnoremap <Tab> za
+
 " Enter visual block mode
 nnoremap <leader>v <c-v> 
 " }}}
 
 " Insert mode {{{
 inoremap <C-S> <C-O>:silent! update<CR>
+
+" Move current line up/down
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
 " }}}
 
 " Visual mode {{{
 xnoremap <C-S> :silent! update<CR>
 xnoremap <leader>s :'<,'>sort<CR
+
+" Move selected lines up/down
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 " }}}
 
 " }}}
