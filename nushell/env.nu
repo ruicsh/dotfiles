@@ -22,8 +22,10 @@ if not ($nu.cache-dir | path join 'mise.nu' | path exists) {
 }
 
 # atuin (history)
-if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
-  atuin init nu | save --force $"($nu.cache-dir)/atuin.nu"
+if $nu.os-info.name != "windows" { # atuin does not support Windows yet
+  if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
+    atuin init nu | save --force $"($nu.cache-dir)/atuin.nu"
+  }
 }
 
 # carapace (completions)
