@@ -64,12 +64,16 @@
 	process = git-lfs filter-process
 	required = true
 
+[include]
+  path = .gitconfig.local
+
 [init]
 	defaultBranch = main
 
 [merge]
   tool = vimdiff
 
-[include]
-  path = .gitconfig.local
+[status]
+  short = true
+  relativePaths = false
 
