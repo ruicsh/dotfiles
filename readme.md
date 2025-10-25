@@ -27,6 +27,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 - [flameshot](https://github.com/flameshot-org/flameshot) Screenshots
 - [oculante](https://github.com/woelper/oculante) Image viewer
+- [vimium](https://github.com/philc/vimium) Browser vim keybinds
 
 ## macOS
 
