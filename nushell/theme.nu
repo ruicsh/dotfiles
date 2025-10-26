@@ -134,17 +134,37 @@ export def --env "completion menu colors" [] {
         }
         style: {
             text: "#d8dee9"
-            selected_text: { fg: "#d9dee9", bg: "#434c5e" }
+            selected_text: { fg: "#2e3440", bg: "#81a1c1" }
             description_text: "#8c97ad"
         }
     }]
 }
+
+# https://www.nushell.sh/book/line_editor.html#history-menu
+export def --env "history menu colors" [] {
+    $env.config.menus ++= [{
+        name: history_menu
+        only_buffer_difference: false 
+        marker: "? "
+        type: {
+            layout: list
+            page_size: 10
+        }
+        style: {
+            text: "#d8dee9"
+            selected_text: { fg: "#2e3440", bg: "#81a1c1" }
+            description_text: "#8c97ad"
+        }
+    }]
+}
+
 
 export module activate {
     export-env {
         set color_config
         update terminal
         completion menu colors
+        history menu colors
     }
 }
 
