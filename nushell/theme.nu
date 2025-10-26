@@ -120,10 +120,31 @@ export def "update terminal" [] {
     | print -n $"($in)\r"
 }
 
+# https://www.nushell.sh/book/line_editor.html#completion-menu
+export def --env "completion menu colors" [] {
+    $env.config.menus ++= [{
+        name: completion_menu
+        only_buffer_difference: false 
+        marker: ""
+        type: {
+            layout: columnar
+            columns: 4
+            col_width: 20
+            col_padding: 2
+        }
+        style: {
+            text: "#d8dee9"
+            selected_text: { fg: "#d9dee9", bg: "#434c5e" }
+            description_text: "#8c97ad"
+        }
+    }]
+}
+
 export module activate {
     export-env {
         set color_config
         update terminal
+        completion menu colors
     }
 }
 
