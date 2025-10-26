@@ -2,17 +2,18 @@
   alias = "!git config --get-regexp '^alias\\.' | fzf"  # search aliases
 
   ad = add
-  br = "!git for-each-ref --format='%(if)%(HEAD)%(then)\\033[38;2;136;192;208m* %(refname:short)\\033[0m%(else)  \\033[38;2;216;222;233m%(refname:short)\\033[0m%(end)' refs/heads/ | while IFS= read -r line; do printf '%b\\n' \"$line\"; done"
+  br = "!git for-each-ref \
+    --format='%(if)%(HEAD)%(then)\\033[38;2;136;192;208m* %(refname:short)\\033[0m \\033[38;2;208;135;112m%(upstream:short)\\033[0m \\033[38;2;183;190;203m%(contents:subject)\\033[0m%(else)  \\033[38;2;216;222;233m%(refname:short)\\033[0m \\033[38;2;208;135;112m%(upstream:short)\\033[0m \\033[38;2;183;190;203m%(contents:subject)\\033[0m%(end)' refs/heads/ \
+    | while IFS= read -r line; do printf '%b\\n' \"$line\"; done"
   brdd = branch --delete --force
   brd = branch --delete
-  brm = branch -m
+  brm = branch --move # rename branch
   ch = checkout
-  chb = checkout -b
   cl = clone
-  cm = commit --verbose
-  cma = commit --amend
-  cman = commit --amend --no-edit
-  cmm = commit --verbose --message
+  cc = commit
+  ca = commit --amend # amend the last commit and edit the message.
+  ce = commit --amend --no-edit # amend the last commit without editing the message.
+  cw = commit --amend --only --edit # reword the last commit
   cp = cherry-pick
   fe = fetch
   lg = "!git log \
@@ -27,25 +28,25 @@
     | sed -E 's/([0-9]+) weeks/\\1W/' \
     | sed -E 's/([0-9]+) months/\\1M/' \
     | less --RAW-CONTROL-CHARS --chop-long-lines"
+  me = merge
   pl = pull
-  plr = pull --rebase
-  pls = "!git stash -u && git pull --rebase && git stash pop"
   ps = push
   psf = push --force-with-lease
-  psu = push -u origin HEAD
   rb = rebase
   rbi = rebase --interactive
-  rbs = "!f() { git stash -u && git rebase \"$1\" && git stash pop; }; f"
   rt = restore
   rs = reset
-  sh = stash
-  shu = stash -u # include untracked files
+  sh = stash --include-untracked 
   shp = stash pop
   shc = stash clear
+  shs = stash show
   ss = status 
   sw = switch
-  swc = switch -c
+  swc = switch --create
   
+[commit]
+  verbose = true # show diff in commit message editor
+
 [core]
   editor = NVIM_APPNAME=vim nvim
 
@@ -56,7 +57,7 @@
   prompt = false
 
 [fetch]
-  prune = true                        # remove local branches that have been deleted upstream
+  prune = true # remove local branches that have been deleted upstream
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -71,9 +72,25 @@
 	defaultBranch = main
 
 [merge]
+  autoStash = true # stash local changes before merging
   tool = vimdiff
 
+[pull]
+  autoStash = true # stash local changes before pulling
+  rebase = true # use rebase instead of merge
+
+[push]
+  autoSetupRemote = true # set upstream on first push
+  default = simple # push current branch to the branch with the same name
+
+[rebase]
+  autoStash = true # stash local changes before rebasing
+
+[stash]
+  showIncludeUntracked = true # include untracked files in stash show
+  showPatch = true # show stash as a patch
+
 [status]
-  short = true
-  relativePaths = false
+  short = true # use short format
+  relativePaths = false # show paths relative to the repository root
 
