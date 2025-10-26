@@ -1,0 +1,12 @@
+[theme]
+name = "nordstone"
+
+[colors]
+AlertInfo = "#8c97ad"
+AlertWarn = "#d08770"
+AlertError = "#88c0d0"
+Annotation = "#4c566a"
+Base = "#d8dee9"
+Guidance = "#8c97ad"
+Important = "#81a1c1"
+Title = "#4c566a"

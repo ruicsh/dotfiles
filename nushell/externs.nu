@@ -1,5 +1,9 @@
 let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
 
+# atuin (history) {{{
+source $"($nu.cache-dir)/atuin.nu"
+# }}}
+
 # bat (`cat` alternative) {{{
 $env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
 # }}}
