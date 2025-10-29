@@ -42,6 +42,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 ## Windows
 
 - [AutoHotkey](https://github.com/AutoHotkey/AutoHotkey) OS automation
+- [MinGW-W64](https://github.com/niXman/mingw-builds-binaries) Build tools
 - [PowerToys](https://github.com/microsoft/PowerToys) OS customization
 - [Windows Terminal](https://github.com/microsoft/terminal) Terminal
 
