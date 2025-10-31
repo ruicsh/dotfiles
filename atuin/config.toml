@@ -1,6 +1,6 @@
 # https://docs.atuin.sh/configuration/config/
 
-filter_mode = "workspace"
+filter_mode = "directory"
 history_filter = [ "^v$", "^l$" ]
 inline_height = 10
 prefers_reduced_motion = true
