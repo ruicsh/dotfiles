@@ -15,6 +15,7 @@
   ce = commit --amend --no-edit # amend the last commit without editing the message.
   cw = commit --amend --only --edit # reword the last commit
   cp = cherry-pick
+  df = "!NO_NVIM_SESSION=1 nvim -c 'DiffviewOpen' $@" # open diffview (don't want to open one vim session per file like git difftool does)
   fe = fetch
   lg = "!git log \
     --color=always \
@@ -33,6 +34,8 @@
   ps = push
   psf = push --force-with-lease
   rb = rebase
+  rbc = rebase --continue
+  rba = rebase --abort
   rbi = rebase --interactive
   rt = restore
   rs = reset
@@ -51,10 +54,13 @@
   editor = NVIM_APPNAME=vim nvim
 
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 
 [difftool]
   prompt = false
+
+[difftool.nvimdiff]
+  cmd = NVIM_APPNAME=vim nvim -d "$LOCAL" "$REMOTE"
 
 [fetch]
   prune = true # remove local branches that have been deleted upstream
@@ -73,7 +79,7 @@
 
 [merge]
   autoStash = true # stash local changes before merging
-  tool = vimdiff
+  tool = nvimdiff
 
 [pull]
   autoStash = true # stash local changes before pulling

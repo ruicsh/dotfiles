@@ -25,7 +25,7 @@ set tagstack
 " 4 displaying text {{{
 set breakindent
 set cmdheight=1
-set fillchars=vert:\│,foldopen:,foldclose:›,foldsep:\ ,fold:\ ,eob:\ 
+set fillchars=vert:\│,foldopen:,foldclose:›,foldsep:\ ,fold:\ ,eob:\ ,diff:\ 
 set list
 set listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:+
 set lazyredraw 
@@ -205,6 +205,7 @@ nnoremap J mzJ`z:delmarks z<CR>
 " Save file
 nnoremap <C-S> :silent! update<CR>
 nnoremap q :quit<CR>
+nnoremap <c-q> :qa!<CR>
 
 " Don't store on register when changing text or deleting a character.
 nnoremap C "_C
@@ -237,6 +238,18 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 " }}}
 
+" Diff conflict resolution mappings
+augroup DiffConflictMaps
+  autocmd!
+  autocmd BufWinEnter * if &diff | call s:DiffConflictMaps() | endif
+augroup END
+
+function! s:DiffConflictMaps() abort
+  nnoremap <buffer> co :diffget LOCAL<CR>
+  nnoremap <buffer> ct :diffget REMOTE<CR>
+  nnoremap <buffer> cb :diffget LOCAL<CR>:diffget REMOTE<CR>
+  nnoremap <buffer> c0 :diffput<CR>
+endfunction
 " }}}
 
 " PLUGINS {{{

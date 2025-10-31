@@ -10,7 +10,6 @@ alias y = yazi
 
 # Use `vi` to open nvim with the vim configuration
 def vi [ ...args ] { with-env { NVIM_APPNAME: "vim" } { nvim ...$args } }
-# }}}
 
 alias .. = cd ..
 alias ... = cd ../..
