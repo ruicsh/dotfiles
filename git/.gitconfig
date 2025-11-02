@@ -15,7 +15,7 @@
   ce = commit --amend --no-edit # amend the last commit without editing the message.
   cw = commit --amend --only --edit # reword the last commit
   cp = cherry-pick
-  df = "!NO_NVIM_SESSION=1 nvim -c 'DiffviewOpen' $@" # open diffview (don't want to open one vim session per file like git difftool does)
+  df = "!NO_NVIM_SESSION=1 nvim -c 'DiffviewOpen' $@ -c 'tabonly'" # open diffview (don't want to open one vim session per file like git difftool does)
   fe = fetch
   lg = "!git log \
     --color=always \
