@@ -57,6 +57,8 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - `c` create window with current path
 - `q` close window
 - `w` switch to last used window
+- `S-Left` swap with previous window
+- `S-Right` swap with next window
 
 #### Panes navigation
 
