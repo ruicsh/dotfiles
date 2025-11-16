@@ -4,8 +4,8 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
-linemode = "size"
-ratio = [2, 3, 4]
+linemode = "size_and_mtime"
+ratio = [2, 3, 3]
 scrolloff = 3
 show_hidden = true
 sort_sensitive = true
