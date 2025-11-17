@@ -236,6 +236,10 @@ xnoremap <leader>s :'<,'>sort<CR
 " Move selected lines up/down
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Keep selection when indenting
+vnoremap < <gv
+vnoremap > >gv
 " }}}
 
 " Diff conflict resolution mappings
