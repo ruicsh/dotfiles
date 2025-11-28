@@ -50,7 +50,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ### Tmux
 
-- `<c-a>` prefix key
+- `<c-o>` prefix key
 
 #### Windows
 
