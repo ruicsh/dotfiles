@@ -1,6 +1,6 @@
 " THEME {{{
 syntax on
-colorscheme nord
+colorscheme nordstone
 " }}}
 
 " OPTIONS {{{
