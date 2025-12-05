@@ -215,7 +215,7 @@ hi link typescriptEnum Type
 hi link typescriptImport Keyword
 hi link typescriptExport Keyword
 hi link typescriptImportType Keyword
-hi link typescriptMember Identifier
+hi link typescriptMember Variable
 hi link typescriptTypeReference Type
 hi link typescriptIdentifierName Constant
 
