@@ -11,6 +11,7 @@ let s:nord1 = "#3B4252"
 let s:nord2 = "#434C5E"
 let s:nord3 = "#4C566A"
 let s:nord3_500 = "#616E88"
+let s:nord3_700 = "#8c97ad"
 let s:nord3_900 = "#b7becb"
 let s:nord4 = "#D8DEE9"
 let s:nord5 = "#E5E9F0"
@@ -154,7 +155,7 @@ call s:hi("Conditional", s:nord9, "", "", "")
 call s:hi("Constant", s:nord13, "", "", "")
 call s:hi("Decorator", s:nord12, "", "", "")
 call s:hi("Define", s:nord9, "", "", "")
-call s:hi("Delimiter", s:nord6, "", "", "")
+call s:hi("Delimiter", s:nord3_700, "", "", "")
 call s:hi("Exception", s:nord9, "", "", "")
 call s:hi("Float", s:nord15, "", "", "")
 call s:hi("Function", s:nord8, "", "", "")
