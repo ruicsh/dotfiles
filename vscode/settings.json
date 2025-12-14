@@ -1,0 +1,26 @@
+{
+  "breadcrumbs.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.minimap.enabled": false,
+  "editor.overviewRulerBorder": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.tabSize": 2,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "editorGroup.border": "#525252",
+    "editor.selectionBackground": "#3b4252"
+  },
+  "workbench.colorTheme": "NordStone",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.showTabs": "single",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.fontSize": 11
+}

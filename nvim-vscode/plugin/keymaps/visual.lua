@@ -1,0 +1,66 @@
+-- Visual mode keymaps `:h visual-index`
+
+-- Setup {{{
+--
+local function k(lhs, rhs, opts)
+	local options = vim.tbl_extend("force", { unique = true }, opts or {})
+	vim.keymap.set("x", lhs, rhs, options)
+end
+
+-- Remove any delay for these keys
+local disable_keys = { "<space>", "<leader>", "s" }
+for _, key in ipairs(disable_keys) do
+	k(key, "<nop>", { unique = false })
+end
+--
+-- }}}
+
+-- Navigation {{{
+--
+-- More deterministic short distance jumps
+-- https://nanotipsforvim.prose.sh/vertical-navigation-%E2%80%93-without-relative-line-numbers
+k("{", "6k")
+k("}", "6j")
+
+-- Use visual lines. `:h gk`
+k("k", [[ v:count > 0 ? 'k' : 'gk' ]], { expr = true })
+k("j", [[ v:count > 0 ? 'j' : 'gj' ]], { expr = true })
+
+--
+-- }}}
+
+-- Editing {{{
+--
+k("Y", "y$") -- Make Y behave like normal mode
+k("yy", "y") -- So that yanking has no delay (because of `yc`)
+
+-- Indent/dedent selection
+k(">", ">gv") -- Reselect after indent
+k("<", "<gv") -- Reselect after dedent
+
+-- http://www.kevinli.co/posts/2017-01-19-multiple-cursors-in-500-bytes-of-vimscript/
+local function replace_selection(direction)
+	vim.g.mc = vim.api.nvim_replace_termcodes("y/\\V<c-r>=escape(@\", '/')<cr><cr>", true, true, true)
+	return function()
+		return vim.g.mc .. "``cg" .. direction
+	end
+end
+k("cn", replace_selection("n"), { expr = true, desc = "Change selection (forward)" })
+k("cN", replace_selection("N"), { expr = true, desc = "Change selection (backward)" })
+
+-- Same behaviour for `I`/`A` as in normal mode
+-- https://www.reddit.com/r/neovim/comments/1k4efz8/comment/moelhto/
+k("<s-i>", function()
+	return vim.fn.mode() == "V" and "^<c-v><s-i>" or "<s-i>"
+end, { expr = true })
+k("<s-a>", function()
+	return vim.fn.mode() == "V" and "$<c-v><s-a>" or "<s-a>"
+end, { expr = true })
+
+-- Repeat last change across visual selection
+k(".", ":normal .<cr>", { desc = "Repeat last change" }) -- `:h .`
+
+--
+-- }}}
+
+-- vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
