@@ -1,8 +1,12 @@
 {
   "breadcrumbs.enabled": false,
   "chat.commandCenter.enabled": false,
+  "editor.fontFamily": "JetBrainsMono",
   "editor.formatOnSave": true,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.fontSize": 12,
+  "editor.lineHeight": 1.4,
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
   "editor.scrollbar.vertical": "hidden",
@@ -22,5 +26,4 @@
   "workbench.editor.showTabs": "single",
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
-  "editor.fontSize": 11
 }

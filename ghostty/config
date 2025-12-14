@@ -9,7 +9,7 @@ font-feature = -dlig
 adjust-cell-width = -10%
 
 # Theme
-cursor-color = #ebcb8b
+cursor-color = #ffffff
 background = #171717
 theme = nord
 
