@@ -5,6 +5,7 @@ alias g = git
 alias l = lsd -la
 alias m = mise
 alias nrt = npm run test
+alias nw = npm --workspace
 alias v = nvim
 alias y = yazi
 
