@@ -7,8 +7,9 @@ return {
 		local flash = require("flash")
 
 		local mappings = {
-			{ "s", flash.jump, "Jump", mode = { "n", "x", "o" } },
-			{ "<leader>V", flash.treesitter, "Treesitter", mode = { "n", "x", "o" } },
+			{ "s", flash.jump, "Jump", { mode = { "n", "x", "o" } } },
+			{ "r", flash.remote, "Remote", { mode = "o" } },
+			{ "<leader>V", flash.treesitter, "Treesitter", { mode = { "n", "x", "o" } } },
 		}
 
 		return vim.fn.get_lazy_keys_config(mappings, "Flash")
@@ -18,23 +19,24 @@ return {
 			backdrop = false,
 			matches = false,
 		},
+		label = {
+			uppercase = false,
+		},
 		labels = "asdfqwerzxcv", -- Limit labels to left side of the keyboard
 		modes = {
 			char = {
-				char_actions = function()
+				char_actions = function(motion)
 					return {
-						["F"] = "left",
-						["f"] = "right",
-						["T"] = "left",
-						["t"] = "right",
+						[motion:lower()] = "next",
+						[motion:upper()] = "prev",
 					}
 				end,
 				highlight = {
 					backdrop = false,
 				},
 				jump_labels = false,
-				multi_line = false,
 				keys = { "f", "F", "t", "T" },
+				multi_line = false,
 			},
 			treesitter = {
 				actions = {
@@ -45,9 +47,7 @@ return {
 			},
 		},
 		prompt = {
-			win_config = {
-				border = "none",
-			},
+			enabled = false,
 		},
 		search = {
 			wrap = true,
