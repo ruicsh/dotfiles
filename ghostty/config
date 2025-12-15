@@ -37,6 +37,7 @@ quick-terminal-position = top
 # App
 fullscreen = false
 quit-after-last-window-closed = true
+confirm-close-surface = false
 
 # Extras
 shell-integration-features = true
