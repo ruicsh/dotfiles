@@ -3,18 +3,14 @@
 
 return {
 	"rgroli/other.nvim",
-	keys = function()
-		local mappings = {
-			{ "==", "<cmd>:Other<cr>", "" },
-			{ "=<space>", "<cmd>:Other source<cr>", "" },
-			{ "=s", "<cmd>:Other style<cr>", "" },
-			{ "=b", "<cmd>:Other test<cr>", "" },
-			{ "=m", "<cmd>:Other template<cr>", "" },
-			{ "=y", "<cmd>:Other story<cr>", "" },
-		}
-
-		return vim.fn.get_lazy_keys_config(mappings, "Alternate")
-	end,
+	keys = {
+		{ "==", ":Other<cr>", desc = "Alternate: Other" },
+		{ "=<space>", ":Other source<cr>", desc = "Alternate: Other Source" },
+		{ "=s", ":Other style<cr>", desc = "Alternate: Other Style" },
+		{ "=b", ":Other test<cr>", desc = "Alternate: Other Test" },
+		{ "=m", ":Other template<cr>", desc = "Alternate: Other Template" },
+		{ "=y", ":Other story<cr>", desc = "Alternate: Other Story" },
+	},
 	opts = {
 		mappings = {
 			{ -- react (source)

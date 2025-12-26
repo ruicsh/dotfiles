@@ -6,13 +6,11 @@ return {
 	keys = function()
 		local flash = require("flash")
 
-		local mappings = {
-			{ "s", flash.jump, "Jump", { mode = { "n", "x", "o" } } },
-			{ "r", flash.remote, "Remote", { mode = "o" } },
-			{ "<leader>V", flash.treesitter, "Treesitter", { mode = { "n", "x", "o" } } },
+		return {
+			{ "s", flash.jump, desc = "Flash: Jump", mode = { "n", "x", "o" } },
+			{ "r", flash.remote, desc = "Flash: Remote", mode = "o" },
+			{ "<leader>V", flash.treesitter, desc = "Flash: Treesitter", mode = { "n", "x", "o" } },
 		}
-
-		return vim.fn.get_lazy_keys_config(mappings, "Flash")
 	end,
 	opts = {
 		highlight = {

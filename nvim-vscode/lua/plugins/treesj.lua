@@ -3,15 +3,9 @@
 
 return {
 	"Wansmer/treesj",
-	keys = function()
-		local treesj = require("treesj")
-
-		local mappings = {
-			{ "<leader>j", treesj.toggle, "Toggle split/join" },
-		}
-
-		return vim.fn.get_lazy_keys_config(mappings, "Treesj")
-	end,
+	keys = {
+		{ "<leader>j", ":TSJToggle", desc = "Toggle split/join" },
+	},
 	opts = {
 		use_default_keymaps = false,
 	},

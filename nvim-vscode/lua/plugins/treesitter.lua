@@ -81,14 +81,11 @@ return {
 				end
 			end
 
-			local mappings = {
-				{ "]f", go_to("next", "@function.outer"), "Next function" },
-				{ "[f", go_to("previous", "@function.outer"), "Previous function" },
-				{ "]a", go_to("next", "@parameter.inner"), "Next parameter" },
-				{ "[a", go_to("previous", "@parameter.inner"), "Previous parameter" },
+			return {
+				{ "]f", go_to("next", "@function.outer"), desc = "AST: Next function" },
+				{ "[f", go_to("previous", "@function.outer"), desc = "AST: Previous function" },
+				{ "]a", go_to("next", "@parameter.inner"), desc = "AST: Next parameter" },
 			}
-
-			return vim.fn.get_lazy_keys_config(mappings, "AST Goto")
 		end,
 		opts = {
 			move = {
@@ -110,11 +107,9 @@ return {
 				require("treesitter-context").go_to_context(vim.v.count1)
 			end
 
-			local mappings = {
-				{ "[s", jump_to_context, "Jump to previous context" },
+			return {
+				{ "[s", jump_to_context, desc = "AST: Jump to previous context" },
 			}
-
-			return vim.fn.get_lazy_keys_config(mappings, "AST")
 		end,
 		opts = {
 			max_lines = 5,
