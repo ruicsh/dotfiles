@@ -3,6 +3,7 @@
 [tools]
 atuin = "latest"
 bat = "latest"
+bun = "latest"
 carapace = "latest"
 fd = "latest"
 fzf = "latest"

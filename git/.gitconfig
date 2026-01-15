@@ -49,6 +49,7 @@
   
 [commit]
   verbose = true # show diff in commit message editor
+	gpgsign = false
 
 [core]
   editor = NVIM_APPNAME=vim nvim

@@ -7,6 +7,7 @@ alias m = mise
 alias nrt = npm run test
 alias nw = npm --workspace
 alias v = nvim
+alias gu = gituser
 
 # Use `vi` to open nvim with the vim configuration
 def vi [ ...args ] { with-env { NVIM_APPNAME: "vim" } { nvim ...$args } }

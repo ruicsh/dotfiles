@@ -5,6 +5,8 @@ brew "exiftool"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
+# Manage multiple git users on one machine
+brew "gituser"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
 # Polyglot runtime manager (asdf rust clone)
