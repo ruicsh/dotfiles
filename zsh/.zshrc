@@ -18,3 +18,5 @@ eval "$(mise activate zsh)"
 # Tmux auto-start
 source ~/.scripts/tmux-auto-start.sh
 
+# Set the prompt to show the current path 
+export PS1='%~ $ '
