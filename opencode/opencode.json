@@ -1,36 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/claude-sonnet-4.6",
+  "theme": "nordstone",
   "keybinds": {
-    "app_exit": "ctrl+c",
     "input_newline": "enter",
     "input_submit": "ctrl+s",
-    "leader": "ctrl+x",
-    "messages_copy": "ctrl+y",
-    "messages_first": "ctrl+h",
-    "messages_half_page_down": "ctrl+d",
-    "messages_half_page_up": "ctrl+u",
-    "messages_last": "ctrl+l",
+    "messages_page_up": "ctrl+b",
     "messages_page_down": "ctrl+f",
-    "messages_page_up": "ctrl+b"
-  },
-  "lsp": {
-    "lua": {
-      "command": [
-        "lua-language-server"
-      ],
-      "extensions": [
-        ".lua"
-      ]
-    },
-    "rust": {
-      "command": [
-        "rust-analyzer"
-      ],
-      "extensions": [
-        ".rs"
-      ]
-    }
-  },
-  "model": "github-copilot/gpt-4.1",
-  "theme": "system"
+  }
 }
