@@ -47,6 +47,10 @@
   ss = status 
   sw = switch
   swc = switch --create
+  wa = "!f() { git worktree add \"${2:-../${1##*/}}\" \"$1\"; }; f"
+  wab = "!f() { git worktree add -b \"$1\" \"../${1##*/}\" HEAD; }; f"
+  wl = worktree list
+  wd = worktree remove
   
 [commit]
   verbose = true # show diff in commit message editor
