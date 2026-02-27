@@ -2,10 +2,4 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "github-copilot/claude-sonnet-4.6",
   "theme": "nordstone",
-  "keybinds": {
-    "input_newline": "enter",
-    "input_submit": "ctrl+s",
-    "messages_page_up": "ctrl+b",
-    "messages_page_down": "ctrl+f",
-  }
 }
