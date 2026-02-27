@@ -112,11 +112,11 @@
       "light": "nord11"
     },
     "diffAddedBg": {
-      "dark": "#3B4252",
+      "dark": "neutral_900",
       "light": "#E5E9F0"
     },
     "diffRemovedBg": {
-      "dark": "#3B4252",
+      "dark": "neutral_900",
       "light": "#E5E9F0"
     },
     "diffContextBg": {
