@@ -9,7 +9,7 @@ bindkey -v
 # Disable the "last login" message
 touch ~/.hushlogin
 
-export EDITOR=vim # Set vim as default editor
+export EDITOR="NVIM_APPNAME=vim nvim" # Set nvim as default editor
 export SHELL=nu # Set nushell as default shell
 
 # Load Mise
