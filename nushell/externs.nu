@@ -1,11 +1,9 @@
-let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
-
 # atuin (history) {{{
 source $"($nu.cache-dir)/atuin.nu"
 # }}}
 
 # bat (`cat` alternative) {{{
-$env.BAT_CONFIG_DIR = $"($HOME_DIR)/.config/bat"
+$env.BAT_CONFIG_DIR = $"($env.HOME_DIR)/.config/bat"
 # }}}
 
 # carapace (shell completions) {{{
@@ -13,7 +11,7 @@ source $"($nu.cache-dir)/carapace.nu"
 # }}}
 
 # fzf (fuzzy finder) {{{
-$env.FZF_DEFAULT_OPTS_FILE = $"($HOME_DIR)/.config/fzf/.fzfrc"
+$env.FZF_DEFAULT_OPTS_FILE = $"($env.HOME_DIR)/.config/fzf/.fzfrc"
 
 # fzf that copies the result to clipboard
 def f [ ...args ] {
@@ -50,7 +48,7 @@ if $nu.os-info.name == "macos" {
 # }}}
 
 # ripgrep (`grep` alternative) {{{
-$env.RIPGREP_CONFIG_PATH = $"($HOME_DIR)/.config/ripgrep/.ripgreprc"
+$env.RIPGREP_CONFIG_PATH = $"($env.HOME_DIR)/.config/ripgrep/.ripgreprc"
 # }}}
 
 # starship (prompt) {{{
@@ -63,10 +61,7 @@ def create_left_prompt [] {
 $env.PROMPT_COMMAND = { || create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = ""
 
-# The prompt indicators are environmental variables that represent the state of the prompt
 $env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
 $env.PROMPT_MULTILINE_INDICATOR = "::: "
 # }}}
 
