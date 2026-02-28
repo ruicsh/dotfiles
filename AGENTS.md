@@ -13,23 +13,31 @@ Cross-platform: macOS (primary), Linux/WSL, and Windows.
 ```
 .scripts/       # Standalone utility scripts (Nushell, Bash)
 atuin/          # Shell history config
+auto-hotkey/    # Windows OS automation (AHK v2 scripts)
+bash/           # Linux/WSL bash shell bootstrapper
 bat/            # cat alternative config
 carapace/       # Shell completions
 fd/             # find alternative config
+flameshot/      # Screenshot tool config (Linux)
 fzf/            # Fuzzy finder config
 ghostty/        # Terminal emulator config (macOS)
 git/            # Git config and aliases
 hammerspoon/    # macOS window management and app launcher (Lua)
+homebrew-macos/ # Brewfile for macOS packages
 lsd/            # ls alternative config
 mise/           # Dev tool version manager (installs all CLI tools)
 nushell/        # Primary shell config (Nushell)
 nvim-vscode/    # Neovim config for VSCode integration (Lua, lazy.nvim)
+oculante/       # Image viewer config
 opencode/       # AI coding agent config
+power-toys/     # Windows PowerToys keyboard remapping
 ripgrep/        # grep alternative config
 starship/       # Prompt config (TOML)
 tmux/           # Terminal multiplexer config
 vim/            # Vim/Neovim minimal config (Vimscript)
+vimium/         # Browser vim keybindings config
 vscode/         # VSCode settings
+windows-terminal/ # Windows Terminal settings
 yazi/           # File manager config
 zsh/            # Zsh shell config (bootstraps into tmux + nushell)
 ```
