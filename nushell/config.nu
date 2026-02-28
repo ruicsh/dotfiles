@@ -9,6 +9,7 @@ $env.config.show_banner = false
 $env.config.table.index_mode = "auto"
 $env.config.table.mode = "none"
 
+source "env.nu"
 source "path.nu"
 source "externs.nu"
 source "aliases.nu"
