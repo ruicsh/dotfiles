@@ -56,13 +56,13 @@
   
 [commit]
   verbose = true # show diff in commit message editor
-	gpgsign = false
+  gpgsign = false
 
 [core]
   editor = NVIM_APPNAME=vim nvim
 
 [diff]
-	tool = nvimdiff
+  tool = nvimdiff
 
 [difftool]
   prompt = false
@@ -74,16 +74,16 @@
   prune = true # remove local branches that have been deleted upstream
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [include]
   path = .gitconfig.local
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [merge]
   autoStash = true # stash local changes before merging
