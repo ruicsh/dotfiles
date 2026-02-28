@@ -16,6 +16,9 @@ if not ($nu.cache-dir | path exists) {
   mkdir $nu.cache-dir
 }
 
+# opencode
+$env.OPENCODE_ENABLE_EXA = "1" # https://opencode.ai/docs/tools/#websearch
+
 # mise (package manager)
 if not ($nu.cache-dir | path join 'mise.nu' | path exists) {
   mise activate nu | save --force $"($nu.cache-dir)/mise.nu"
