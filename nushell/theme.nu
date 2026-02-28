@@ -67,7 +67,7 @@ export def main [] {
         shape_literal: '#d8dee9'
         shape_match_pattern: '#434c5e'
         shape_matching_brackets: { attr: 'u' }
-        shape_nothing: '##b7becb'
+        shape_nothing: '#b7becb'
         shape_operator: '#4c566a'
         shape_or: { fg: '#e5e9f0' attr: 'b' }
         shape_pipe: { fg: '#e5e9f0' attr: 'b' }

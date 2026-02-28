@@ -231,7 +231,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 
 " Visual mode {{{
 xnoremap <C-S> :silent! update<CR>
-xnoremap <leader>s :'<,'>sort<CR
+xnoremap <leader>s :'<,'>sort<CR>
 
 " Move selected lines up/down
 vnoremap <A-j> :m '>+1<CR>gv=gv

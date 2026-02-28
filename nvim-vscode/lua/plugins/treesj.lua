@@ -4,7 +4,7 @@
 return {
 	"Wansmer/treesj",
 	keys = {
-		{ "<leader>j", ":TSJToggle", desc = "Toggle split/join" },
+		{ "<leader>j", ":TSJToggle<cr>", desc = "Toggle split/join" },
 	},
 	opts = {
 		use_default_keymaps = false,
