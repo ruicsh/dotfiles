@@ -222,7 +222,7 @@ nnoremap <leader>v <c-v>
 " }}}
 
 " Insert mode {{{
-inoremap <C-S> <C-O>:silent! update<CR>
+inoremap <C-S> <C-O>:silent! update<CR><Esc>
 
 " Move current line up/down
 inoremap <A-j> <Esc>:m .+1<CR>==gi

@@ -1,6 +1,6 @@
 let HOME_DIR = if ($env.HOME? | is-empty) { $env.USERPROFILE } else { $env.HOME }
 
-$env.EDITOR = "vim"
+$env.EDITOR = "env NVIM_APPNAME=vim nvim"
 $env.SHELL = "nu"
 $env.MANPAGER = "env NVIM_APPNAME=vim nvim +Man!" # Use nvim for reading manpages
 $env.XDG_CONFIG_HOME = $"($HOME_DIR)/.config" # XDG base directory for config files
