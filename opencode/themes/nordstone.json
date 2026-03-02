@@ -16,15 +16,7 @@
     "nord12": "#D08770",
     "nord13": "#EBCB8B",
     "nord14": "#A3BE8C",
-    "nord15": "#B48EAD",
-    "neutral_900": "#171717",
-    "neutral_880": "#181818",
-    "neutral_850": "#1a1a1a",
-    "neutral_800": "#262626",
-    "neutral_700": "#404040",
-    "neutral_600": "#525252",
-    "neutral_500": "#71717a",
-    "neutral_400": "#a1a1aa"
+    "nord15": "#B48EAD"
   },
   "theme": {
     "primary": {
@@ -64,15 +56,15 @@
       "light": "nord1"
     },
     "background": {
-      "dark": "neutral_900",
+      "dark": "transparent",
       "light": "nord6"
     },
     "backgroundPanel": {
-      "dark": "neutral_900",
+      "dark": "transparent",
       "light": "nord5"
     },
     "backgroundElement": {
-      "dark": "neutral_900",
+      "dark": "transparent",
       "light": "nord4"
     },
     "border": {
@@ -120,7 +112,7 @@
       "light": "#E5E9F0"
     },
     "diffContextBg": {
-      "dark": "neutral_900",
+      "dark": "transparent",
       "light": "nord5"
     },
     "diffLineNumber": {
