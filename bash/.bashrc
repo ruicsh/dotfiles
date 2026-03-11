@@ -6,8 +6,5 @@ export SHELL=nu # Set nushell as default shell
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
-# Load Mise
-eval "$(mise activate bash)"
-
 # Tmux auto-start
 source ~/.scripts/tmux-auto-start.sh

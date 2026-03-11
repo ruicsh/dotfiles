@@ -4,7 +4,6 @@ alias cd = z
 alias g = git
 alias gu = gituser
 alias l = lsd -la
-alias m = mise
 alias nrt = npm run test
 alias nw = npm --workspace
 alias oc = opencode

@@ -19,11 +19,6 @@ if not ($nu.cache-dir | path exists) {
 # opencode
 $env.OPENCODE_ENABLE_EXA = "1" # https://opencode.ai/docs/tools/#websearch
 
-# mise (package manager)
-if not ($nu.cache-dir | path join 'mise.nu' | path exists) {
-  mise activate nu | save --force $"($nu.cache-dir)/mise.nu"
-}
-
 # atuin (history)
 if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
   atuin init nu --disable-up-arrow | save --force $"($nu.cache-dir)/atuin.nu"

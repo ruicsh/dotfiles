@@ -37,10 +37,6 @@ def f [ ...args ] {
 }
 # }}}
 
-# mise (package manager) {{{
-source $"($nu.cache-dir)/mise.nu"
-# }}}
-
 # oculante (image viewer) {{{
 if $nu.os-info.name == "macos" {
   path add "/Applications/Oculante.app/Contents/MacOS" # macOS
