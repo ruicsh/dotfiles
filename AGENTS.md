@@ -25,7 +25,6 @@ git/            # Git config and aliases
 hammerspoon/    # macOS window management and app launcher (Lua)
 homebrew-macos/ # Brewfile for macOS packages
 lsd/            # ls alternative config
-mise/           # Dev tool version manager (installs all CLI tools)
 nushell/        # Primary shell config (Nushell)
 nvim-vscode/    # Neovim config for VSCode integration (Lua, lazy.nvim)
 oculante/       # Image viewer config
@@ -38,6 +37,7 @@ vim/            # Vim/Neovim minimal config (Vimscript)
 vimium/         # Browser vim keybindings config
 vscode/         # VSCode settings
 windows-terminal/ # Windows Terminal settings
+winget/         # Windows package manager export
 yazi/           # File manager config
 zsh/            # Zsh shell config (bootstraps into tmux + nushell)
 ```
@@ -50,20 +50,11 @@ mirrors the repo to Bitbucket on push.
 
 ### Lua Formatting
 
-Lua files use `stylua` (installed via mise). Format with:
+Lua files use `stylua`. Format with:
 
 ```sh
 stylua <file>              # Format a single file
 stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
-```
-
-### Tool Installation
-
-All CLI tools are managed via [mise](https://mise.jdx.dev). See `mise/mise.toml`
-for the full tool list. Install everything with:
-
-```sh
-mise install
 ```
 
 ### Validating Configs
@@ -81,7 +72,7 @@ mise install
 | Lua        | `hammerspoon/`, `nvim-vscode/`    | `.lua`      |
 | Vimscript  | `vim/`                            | `.vim`      |
 | Bash/POSIX | `zsh/.zshrc`, `.scripts/*.sh`     | `.sh`       |
-| TOML       | `starship/`, `mise/`              | `.toml`     |
+| TOML       | `starship/`, `yazi/`, `atuin/`    | `.toml`     |
 | Tmux conf  | `tmux/`                           | `.conf`     |
 
 ## Code Style Guidelines
@@ -147,7 +138,7 @@ mise install
 
 - **Shebangs**: `#!/bin/sh` for POSIX, `#!/bin/bash` for Bash-specific.
 - **Quoting**: Always double-quote variables (`"$VAR"`).
-- **Style**: Minimal -- these scripts are short bootstrappers (zsh loads mise, then tmux auto-starts).
+- **Style**: Minimal -- these scripts are short bootstrappers (zsh loads tools via Homebrew/mise, then tmux auto-starts).
 
 ## Git Conventions
 
