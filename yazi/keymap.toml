@@ -41,7 +41,8 @@ prepend_keymap = [
   # Goto
   { on = "_", run = "cd ~", desc = "Go home" },
   { on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
-  { on = [ "g", "c" ], run = "cd ~/code", desc = "Go ~/code" },
+  { on = [ "g", "c" ], run = "cd ~/_code", desc = "Go ~/_code" },
+  { on = [ "g", "n" ], run = "cd ~/_notes", desc = "Go ~/_code" },
   { on = [ "g", "d" ], run = "cd ~/Downloads", desc = "Go ~/Downloads" },
   { on = [ "g", "f" ], run = "follow", desc = "Follow hovered symlink" },
 
