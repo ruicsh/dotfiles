@@ -4,22 +4,12 @@ alias cd = z
 alias g = git
 alias gu = gituser
 alias l = lsd -la
-alias nrt = npm run test
+alias ni = npm install
+alias nr = npm run
 alias nw = npm --workspace
 alias oc = opencode
 alias v = nvim
-
-# Open a session in opencode
-def "oc s" [] {
-  let session_id = if $nu.os-info.name == "windows" {
-    opencode session list | lines | to text | fzf --no-preview | str trim | split row ' ' | first
-  } else {
-    bash -c "opencode session list | fzf --no-preview" | str trim | split row ' ' | first
-  }
-  if $session_id != "" {
-    opencode -s $session_id
-  }
-}
+def vd [ ...args ] { with-env { NVIM_APPNAME: "nvim-dev" } { nvim ...$args } }
 
 # Use `vi` to open nvim with the vim configuration
 def vi [ ...args ] { with-env { NVIM_APPNAME: "vim" } { nvim ...$args } }

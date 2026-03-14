@@ -4,7 +4,7 @@ source ~/.config/nushell/config.nu
 # List directories in ~/code, let user select one with fzf, 
 # and open a new tmux window in that directory
 
-let dirs = ls ~/code | where type == "dir" | select name
+let dirs = ls ~/_code | where type == "dir" | select name
 let choices = $dirs | each {|row| {name: ($row.name | path basename), path: $row.name}}
 let selected_name = ($choices | get name | to text | fzf --height=100% --preview-window=:hidden)
 let selected_path = ($choices | where name == $selected_name | get path)
