@@ -47,8 +47,8 @@
   ss = status 
   sw = switch
   swc = switch --create
-  wa = "!f() { name=\"${1##*/}\"; dir=\"${2:-../${name:0:50}}\"; git worktree add \"$dir\" \"$1\"; }; f"
-  wab = "!f() { name=\"${1:0:50}\"; git worktree add -b \"$1\" \"../$name\" HEAD; }; f"
+  wa = "!f() { name=\"${1##*/}\"; dir=\"${2:-${name:0:50}}\"; git worktree add \"$dir\" \"$1\"; }; f"
+  wab = "!f() { name=\"${1:0:50}\"; git worktree add -b \"$1\" \"$name\" HEAD; }; f"
   wd = worktree remove
   wdd = worktree remove --force
   wl = worktree list
