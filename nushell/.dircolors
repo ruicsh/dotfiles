@@ -72,9 +72,14 @@ SETUID 38;5;60
 SETGID 38;5;60
 CAPABILITY 38;5;60
 
-STICKY_OTHER_WRITABLE 38;5;67
-OTHER_WRITABLE 38;5;67
-STICKY 38;5;67
+STICKY_OTHER_WRITABLE 34;04
+OTHER_WRITABLE 34;04
+STICKY 34;04
+
+# Short codes for lscolors library compatibility
+ow 34;04
+tw 34;04
+st 34;04
 
 #+-------------------+
 #+ Extension Pattern +
