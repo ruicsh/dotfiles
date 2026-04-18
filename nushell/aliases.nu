@@ -8,6 +8,7 @@ alias ni = npm install
 alias nr = npm run
 alias nw = npm --workspace
 alias oc = opencode
+alias py = uv run python
 alias v = nvim
 def vd [ ...args ] { with-env { NVIM_APPNAME: "nvim-dev" } { nvim ...$args } }
 
