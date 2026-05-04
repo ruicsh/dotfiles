@@ -18,6 +18,7 @@ if not ($nu.cache-dir | path exists) {
 
 # opencode
 $env.OPENCODE_ENABLE_EXA = "1" # https://opencode.ai/docs/tools/#websearch
+$env.OPENCODE_EXPERIMENTAL_LSP_TOOL = true # https://opencode.ai/docs/tools/#lsp-experimental
 
 # atuin (history)
 if not ($nu.cache-dir | path join 'atuin.nu' | path exists) {
