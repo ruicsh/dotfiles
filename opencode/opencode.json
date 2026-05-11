@@ -3,17 +3,5 @@
   "permission": {
     "lsp": "allow"
   },
-  "agent": {
-    "plan": {
-      "model": "opencode-go/glm-5.1"
-    },
-    "build": {
-      "model": "opencode-go/kimi-k2.6"
-    },
-    "execute": {
-      "model": "opencode-go/deepseek-v4-flash"
-    }
-  },
   "default_agent": "plan",
-  "instructions": ["~/.config/opencode/instructions/caveman.md"]
 }

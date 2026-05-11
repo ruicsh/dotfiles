@@ -4,6 +4,7 @@
 !tui.json
 !themes/
 !themes/**
+!agents/
 !agents/**
 !instructions/
 !instructions/**
