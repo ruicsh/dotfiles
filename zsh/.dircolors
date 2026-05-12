@@ -52,7 +52,6 @@ RESET 0
 
 FILE 00
 DIR 38;5;110
-di 38;5;110
 LINK 38;5;108
 MULTIHARDLINK 38;5;108
 
@@ -66,7 +65,6 @@ ORPHAN 38;5;131
 MISSING 38;5;131
 
 EXEC 38;5;73
-ex 38;5;73
 
 SETUID 38;5;60
 SETGID 38;5;60
@@ -75,11 +73,6 @@ CAPABILITY 38;5;60
 STICKY_OTHER_WRITABLE 34;04
 OTHER_WRITABLE 34;04
 STICKY 34;04
-
-# Short codes for lscolors library compatibility
-ow 34;04
-tw 34;04
-st 34;04
 
 #+-------------------+
 #+ Extension Pattern +
