@@ -21,7 +21,6 @@ local LANGUAGES = {
 	"luadoc",
 	"markdown",
 	"nginx",
-	"nu",
 	"powershell",
 	"python",
 	"regex",

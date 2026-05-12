@@ -28,7 +28,7 @@ extract = [
 view = [
   { run = 'oculante "$@"', desc = "View", for = "macos" },
   { run = 'oculante %*', desc = "View", for = "windows" },
-  { run = 'open-in-windows-from-wsl.nu "$@"', desc = "View", for = "unix" }, # WSL
+  { run = 'open-in-windows-from-wsl.sh "$@"', desc = "View", for = "unix" }, # WSL
 ]
 
 [open]

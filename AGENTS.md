@@ -11,7 +11,7 @@ Cross-platform: macOS (primary), Linux/WSL, and Windows.
 ## Directory Structure
 
 ```
-.scripts/       # Standalone utility scripts (Nushell, Bash)
+.scripts/       # Standalone utility scripts (Zsh, Bash)
 atuin/          # Shell history config
 auto-hotkey/    # Windows OS automation (AHK v2 scripts)
 bash/           # Linux/WSL bash shell bootstrapper
@@ -25,7 +25,7 @@ git/            # Git config and aliases
 hammerspoon/    # macOS window management and app launcher (Lua)
 homebrew-macos/ # Brewfile for macOS packages
 lsd/            # ls alternative config
-nushell/        # Primary shell config (Nushell)
+nushell/        # Retired — previously the primary shell config (kept for history.txt)
 nvim-vscode/    # Neovim config for VSCode integration (Lua, lazy.nvim)
 oculante/       # Image viewer config
 opencode/       # AI coding agent config
@@ -39,7 +39,7 @@ vscode/         # VSCode settings
 windows-terminal/ # Windows Terminal settings
 winget/         # Windows package manager export
 yazi/           # File manager config
-zsh/            # Zsh shell config (bootstraps into tmux + nushell)
+zsh/            # Primary shell config (Zsh)
 ```
 
 ## Build / Lint / Test Commands
@@ -59,7 +59,7 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 ### Validating Configs
 
-- **Nushell**: Open `nu` -- syntax errors surface immediately on startup.
+- **Zsh**: Spawn `zsh` — errors surface immediately on startup. Use `zsh -n ~/.zshrc` for syntax checking.
 - **Neovim (VSCode)**: Launch `nvim` with `NVIM_APPNAME=nvim-vscode` and check `:checkhealth`.
 - **Hammerspoon**: Auto-reloads on save via the `ReloadConfiguration` spoon; errors appear in the console.
 - **Tmux**: `tmux source-file ~/.config/tmux/tmux.conf` to reload; errors print to the terminal.
@@ -68,10 +68,10 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 | Language   | Location                          | Extension   |
 |------------|-----------------------------------|-------------|
-| Nushell    | `nushell/`, `.scripts/*.nu`       | `.nu`       |
+| Zsh        | `zsh/`, `.scripts/*.sh`           | `.zsh`, `.sh` |
 | Lua        | `hammerspoon/`, `nvim-vscode/`    | `.lua`      |
 | Vimscript  | `vim/`                            | `.vim`      |
-| Bash/POSIX | `zsh/.zshrc`, `.scripts/*.sh`     | `.sh`       |
+| Bash/POSIX | `.scripts/*.sh`                   | `.sh`       |
 | TOML       | `starship/`, `yazi/`, `atuin/`    | `.toml`     |
 | Tmux conf  | `tmux/`                           | `.conf`     |
 
@@ -87,17 +87,18 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
   # vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
   ```
 
-### Nushell (`.nu` files)
+### Zsh (`.zsh` files)
 
-- **Shebangs**: Use `#!/usr/bin/env nu` or `#!/usr/bin/env -S nu`.
-- **String quoting**: Double quotes for interpolation, single quotes are rare.
-- **Variables**: `let` for immutable bindings; `snake_case` names.
-- **Functions**: Use `def` with type annotations on params when appropriate. Use `def --env` only when the function needs to modify the environment.
-- **Comments**: `#` with a space after the hash. Block-style comments precede the code they describe.
-- **Cross-platform**: Check `$nu.os-info.name` for platform-specific logic ("windows", "macos", "linux"). Use `$env.WSL_DISTRO_NAME?` for WSL detection.
-- **Error handling**: Use `try { ... } catch { ... }` blocks; return early with descriptive `print` messages on failure.
-- **Imports**: `source` for loading other `.nu` files; `use std/util "path add"` for stdlib.
-- **Sections in externs.nu**: Organized with vim fold markers `# tool name {{{ ... # }}}`.
+- **Modular structure**: `zsh/.zshrc` is the main entry point; it sources `env.zsh`, `path.zsh`, `tools.zsh`, and `aliases.zsh`.
+- **Naming**: `snake_case` for variables and functions.
+- **Shell options**: Use `setopt` / `unsetopt` at the top of `.zshrc`.
+- **Aliases**: Simple commands use `alias`; complex logic uses zsh functions with `function name() { ... }` or `name() { ... }`.
+- **Quoting**: Always double-quote variables (`"$VAR"`).
+- **Cross-platform**: Use `case "$(uname -s)"` for platform detection; use `[ -n "$WSL_DISTRO_NAME" ]` for WSL detection.
+- **Error handling**: Use `set -euo pipefail` in standalone `.sh` scripts. Print errors to stderr with `print -u2`.
+- **PATH**: Use zsh's tied array: `typeset -U path` then `path+=(/path/to/add)`.
+- **Tool guards**: Wrap tool init (`eval "$(tool init zsh)"`) in `command -v` checks.
+- **Vim fold markers**: Used in keymap files and `.zshrc`: `# Section {{{ ... # }}}`.
 
 ### Lua (Neovim and Hammerspoon)
 
@@ -136,7 +137,7 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 ### Shell Scripts (Bash/Zsh)
 
-- **Shebangs**: `#!/bin/sh` for POSIX, `#!/bin/bash` for Bash-specific.
+- **Shebangs**: `#!/bin/sh` for POSIX, `#!/bin/bash` for Bash-specific, `#!/bin/zsh` for Zsh-specific (e.g., scripts using zsh glob qualifiers).
 - **Quoting**: Always double-quote variables (`"$VAR"`).
 - **Style**: Minimal -- these scripts are short bootstrappers (zsh loads tools via Homebrew/mise, then tmux auto-starts).
 
@@ -145,7 +146,7 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 - **Default branch**: `main`
 - **Commit message format**: `type(scope): description` (lowercase)
   - Types: `feat`, `fix`, `refactor`, `docs`, `chore`
-  - Scope: tool/directory name (e.g., `nushell`, `git`, `nvim-vscode`, `opencode`)
+  - Scope: tool/directory name (e.g., `nushell`, `zsh`, `git`, `nvim-vscode`, `opencode`)
   - Examples:
     - `feat(nushell) add opencode alias`
     - `fix(opencode): transparent background on diffs`
@@ -159,6 +160,6 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 - **No Cursor rules or Copilot instructions** exist in this repository.
 - **`.nvim.env`** is gitignored and contains per-repo Neovim env vars (e.g., `RESTORE_CHANGED_FILES_IGNORE`).
-- **Nord theme**: The color palette throughout (Ghostty, tmux, starship, Nushell, nvim-vscode) is based on [Nord](https://www.nordtheme.com/) with custom "NordStone" extensions. Color hex values are defined in `nvim-vscode/colors/nordstone.lua` and `nushell/theme.nu`.
+- **Nord theme**: The color palette throughout (Ghostty, tmux, starship, zsh, nvim-vscode) is based on [Nord](https://www.nordtheme.com/) with custom "NordStone" extensions. Color hex values are defined in `nvim-vscode/colors/nordstone.lua`.
 - **Symlink deployment**: Configs are expected to be symlinked to `~/.config/<tool>/` (the repo does not include an install script).
 - The main Neovim config is in a **separate repository**: https://github.com/ruicsh/nvim-config

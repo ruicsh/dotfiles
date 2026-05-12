@@ -1,19 +1,53 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-unsetopt autocd
+# zsh/.zshrc — Primary Zsh configuration
+# https://zsh.sourceforge.io/Doc/Release/Files.html
+
+# History {{{
+HISTFILE="$HOME/.histfile"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+# }}}
+
+# Editor & keybindings {{{
 bindkey -v
-# End of lines configured by zsh-newuser-install
+export KEYTIMEOUT=1 # Reduce vi mode switch delay
+# }}}
+
+# Shell options {{{
+setopt auto_cd # cd into directory by typing its name
+setopt auto_pushd # Push dirs onto stack automatically
+setopt pushd_ignore_dups
+setopt interactive_comments
+unsetopt beep
+unsetopt list_beep
+# }}}
 
 # Disable the "last login" message
 touch ~/.hushlogin
 
-export EDITOR="NVIM_APPNAME=vim nvim" # Set nvim as default editor
-export SHELL=nu # Set nushell as default shell
+# Completions {{{
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select # Navigate completions with arrow keys
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive matching
+# }}}
+
+# Load modular configs
+ZSHDIR="${ZDOTDIR:-$HOME}/.config/zsh"
+[ -f "$ZSHDIR/env.zsh" ] && source "$ZSHDIR/env.zsh"
+[ -f "$ZSHDIR/path.zsh" ] && source "$ZSHDIR/path.zsh"
+[ -f "$ZSHDIR/tools.zsh" ] && source "$ZSHDIR/tools.zsh"
+[ -f "$ZSHDIR/aliases.zsh" ] && source "$ZSHDIR/aliases.zsh"
+
+# LS_COLORS
+if command -v gdircolors >/dev/null 2>&1; then
+  eval "$(gdircolors -b "$ZSHDIR/.dircolors")"
+elif command -v dircolors >/dev/null 2>&1; then
+  eval "$(dircolors -b "$ZSHDIR/.dircolors")"
+fi
 
 # Tmux auto-start
-source ~/.scripts/tmux-auto-start.sh
+[ -f "$HOME/.scripts/tmux-auto-start.sh" ] && source "$HOME/.scripts/tmux-auto-start.sh"
 
-# Set the prompt to show the current path 
-export PS1='%~ $ '
+# vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0

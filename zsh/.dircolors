@@ -1,0 +1,109 @@
+COLOR tty
+
+TERM alacritty
+TERM alacritty-direct
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM dvtm
+TERM dvtm-256color
+TERM Eterm
+TERM eterm-color
+TERM fbterm
+TERM gnome
+TERM gnome-256color
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM konsole-256color
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM putty-256color
+TERM rxvt*
+TERM rxvt-unicode
+TERM rxvt-256color
+TERM rxvt-unicode256
+TERM screen*
+TERM screen-256color
+TERM st
+TERM st-256color
+TERM terminator
+TERM tmux*
+TERM tmux-256color
+TERM vt100
+TERM xterm*
+TERM xterm-color
+TERM xterm-88color
+TERM xterm-256color
+TERM xterm-kitty
+
+#+-----------------+
+#+ Global Defaults +
+#+-----------------+
+NORMAL 00
+RESET 0
+
+FILE 00
+DIR 38;5;110
+di 38;5;110
+LINK 38;5;108
+MULTIHARDLINK 38;5;108
+
+FIFO 38;5;108
+SOCK 38;5;222
+DOOR 38;5;108
+BLK 38;5;222
+CHR 38;5;222
+
+ORPHAN 38;5;131
+MISSING 38;5;131
+
+EXEC 38;5;73
+ex 38;5;73
+
+SETUID 38;5;60
+SETGID 38;5;60
+CAPABILITY 38;5;60
+
+STICKY_OTHER_WRITABLE 34;04
+OTHER_WRITABLE 34;04
+STICKY 34;04
+
+# Short codes for lscolors library compatibility
+ow 34;04
+tw 34;04
+st 34;04
+
+#+-------------------+
+#+ Extension Pattern +
+#+-------------------+
+
+#+--- Executables ---+
+.app 38;5;73
+.bat 38;5;73
+.btm 38;5;73
+.cmd 38;5;73
+.com 38;5;73
+.exe 38;5;73
+.reg 38;5;73
+
+#+--- Ignores ---+
+*~ 02;37
+.bak 02;37
+.BAK 02;37
+.log 02;37
+.log 02;37
+.old 02;37
+.OLD 02;37
+.orig 02;37
+.ORIG 02;37
+.swo 02;37
+.swp 02;37
+

@@ -17,7 +17,7 @@ prepend_keymap = [
   { on = "<enter>", run = "plugin smart-enter", desc = "Enter directory" },
 
   # Operation
-  { on = ":", run = 'shell "nu" --block --confirm', desc = "Open a shell" },
+  { on = ":", run = 'shell "zsh" --block --confirm', desc = "Open a shell" },
   { on = "C", run = 'plugin ouch', desc = "Compress" },
   { on = "l", run = 'link', desc = "Symlink of yanked files"},
   { on = "L", run = "hardlink", desc = "Hardlink yanked files" },
