@@ -8,6 +8,7 @@ path=(
   /home/linuxbrew/.linuxbrew/bin
   ./node_modules/.bin
   "$HOME/.scripts"
+  "$HOME/.local/bin"
   $path
 )
 export PATH
