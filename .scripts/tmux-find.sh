@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 # List directories in ~/_code, let user select one with fzf, open new tmux window
 
 set -euo pipefail
