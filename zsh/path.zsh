@@ -1,5 +1,4 @@
 # PATH configuration
-# Ported from nushell/path.nu
 
 typeset -U path
 path=(

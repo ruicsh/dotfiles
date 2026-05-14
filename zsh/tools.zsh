@@ -1,6 +1,25 @@
 # Tool-specific integrations
-# Ported from nushell/externs.nu
 
+# atuin (history search) {{{
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
+# }}}
+
+# carapace (zsh completions) {{{
+if command -v carapace >/dev/null 2>&1; then
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+  eval "$(carapace _carapace zsh)"
+fi
+# }}}
+
+# zoxide (smart cd) {{{
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+# }}}
+
+# fzf (fuzzy finder) {{{
 # fzf that copies the result to clipboard
 f() {
   local result copy_cmd
@@ -23,13 +42,18 @@ f() {
   fi
   printf '%s\n' "$result"
 }
+# }}}
 
-# oculante (image viewer)
+# oculante (image viewer) {{{
 if [[ "$(uname -s)" == "Darwin" ]]; then
   path+=(/Applications/Oculante.app/Contents/MacOS)
 fi
+# }}}
 
-# starship (prompt)
+# starship (prompt) {{{
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
+# }}}
+
+# vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0

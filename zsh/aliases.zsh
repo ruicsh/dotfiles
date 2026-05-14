@@ -1,5 +1,4 @@
 # Aliases and functions
-# Ported from nushell/aliases.nu
 
 # General
 alias c='clear'

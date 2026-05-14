@@ -1,5 +1,4 @@
 # Environment variables
-# Ported from nushell/env.nu
 
 export EDITOR="env NVIM_APPNAME=vim nvim"
 export MANPAGER="env NVIM_APPNAME=vim nvim +Man!"
@@ -43,16 +42,3 @@ case "$(uname -s)" in
     ;;
 esac
 
-# Tool integrations
-if command -v atuin >/dev/null 2>&1; then
-  eval "$(atuin init zsh --disable-up-arrow)"
-fi
-
-if command -v carapace >/dev/null 2>&1; then
-  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-  eval "$(carapace _carapace zsh)"
-fi
-
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
