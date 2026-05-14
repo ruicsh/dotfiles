@@ -7,7 +7,7 @@ path=(
   /opt/homebrew/bin
   /home/linuxbrew/.linuxbrew/bin
   ./node_modules/.bin
-  "$HOME/.scripts"
+  "$HOME/_scripts"
   "$HOME/.local/bin"
   $path
 )

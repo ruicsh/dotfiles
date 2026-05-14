@@ -11,7 +11,7 @@ Cross-platform: macOS (primary), Linux/WSL, and Windows.
 ## Directory Structure
 
 ```
-.scripts/       # Standalone utility scripts (Zsh, Bash)
+_scripts/       # Standalone utility scripts (Zsh, Bash)
 atuin/          # Shell history config
 auto-hotkey/    # Windows OS automation (AHK v2 scripts)
 bash/           # Linux/WSL bash shell bootstrapper
@@ -65,14 +65,14 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 ## Languages and File Types
 
-| Language   | Location                          | Extension   |
-|------------|-----------------------------------|-------------|
-| Zsh        | `zsh/`, `.scripts/*.sh`           | `.zsh`, `.sh` |
-| Lua        | `hammerspoon/`, `nvim-vscode/`    | `.lua`      |
-| Vimscript  | `vim/`                            | `.vim`      |
-| Bash/POSIX | `.scripts/*.sh`                   | `.sh`       |
-| TOML       | `starship/`, `yazi/`, `atuin/`    | `.toml`     |
-| Tmux conf  | `tmux/`                           | `.conf`     |
+| Language   | Location                       | Extension     |
+| ---------- | ------------------------------ | ------------- |
+| Zsh        | `zsh/`, `_scripts/*.sh`        | `.zsh`, `.sh` |
+| Lua        | `hammerspoon/`, `nvim-vscode/` | `.lua`        |
+| Vimscript  | `vim/`                         | `.vim`        |
+| Bash/POSIX | `_scripts/*.sh`                | `.sh`         |
+| TOML       | `starship/`, `yazi/`, `atuin/` | `.toml`       |
+| Tmux conf  | `tmux/`                        | `.conf`       |
 
 ## Code Style Guidelines
 

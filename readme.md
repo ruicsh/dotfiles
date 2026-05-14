@@ -22,6 +22,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [vim](https://github.com/vim/vim) Text editor
 - [yazi](https://github.com/sxyazi/yazi) File manager
 - [zoxide](https://github.com/ajeetdsouza/zoxide) Alternative to `cd`
+- [zsh](https://www.zsh.org/) Shell
 
 ## Cross-platform (macOS/Windows)
 

@@ -7,4 +7,4 @@ export SHELL=nu # Set nushell as default shell
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 # Tmux auto-start
-source ~/.scripts/tmux-auto-start.sh
+source ~/_scripts/tmux-auto-start.sh

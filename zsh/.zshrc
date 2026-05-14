@@ -48,6 +48,6 @@ elif command -v dircolors >/dev/null 2>&1; then
 fi
 
 # Tmux auto-start
-[ -f "$HOME/.scripts/tmux-auto-start.sh" ] && source "$HOME/.scripts/tmux-auto-start.sh"
+[ -f "$HOME/_scripts/tmux-auto-start.sh" ] && source "$HOME/_scripts/tmux-auto-start.sh"
 
 # vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
