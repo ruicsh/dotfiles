@@ -44,12 +44,6 @@ f() {
 }
 # }}}
 
-# oculante (image viewer) {{{
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  path+=(/Applications/Oculante.app/Contents/MacOS)
-fi
-# }}}
-
 # starship (prompt) {{{
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"

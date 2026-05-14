@@ -27,7 +27,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 ## Cross-platform (macOS/Windows)
 
 - [git](https://github.com/git/git) Version control
-- [oculante](https://github.com/woelper/oculante) Image viewer
 - [vimium](https://github.com/philc/vimium) Browser vim keybinds
 
 ## macOS

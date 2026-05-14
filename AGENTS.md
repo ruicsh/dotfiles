@@ -26,7 +26,6 @@ homebrew-macos/ # Brewfile for macOS packages
 lsd/            # ls alternative config
 nushell/        # Retired — previously the primary shell config (kept for history.txt)
 nvim-vscode/    # Neovim config for VSCode integration (Lua, lazy.nvim)
-oculante/       # Image viewer config
 opencode/       # AI coding agent config
 power-toys/     # Windows PowerToys keyboard remapping
 ripgrep/        # grep alternative config

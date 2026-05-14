@@ -37,12 +37,6 @@ def f [ ...args ] {
 }
 # }}}
 
-# oculante (image viewer) {{{
-if $nu.os-info.name == "macos" {
-  path add "/Applications/Oculante.app/Contents/MacOS" # macOS
-}
-# }}}
-
 # ripgrep (`grep` alternative) {{{
 $env.RIPGREP_CONFIG_PATH = $"($env.HOME_DIR)/.config/ripgrep/.ripgreprc"
 # }}}
