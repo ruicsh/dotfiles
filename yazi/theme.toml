@@ -1,7 +1,4 @@
 # https://yazi-rs.github.io/docs/configuration/theme
-
-"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
-
 [mgr]
 border_style  = { fg = "#434c5e" }
 count_copied = { fg = "#2e3440", bg = "#a3be8c" }
@@ -9,12 +6,14 @@ count_cut = { fg = "#2e3440", bg = "#bf616a" }
 count_selected = { fg = "#2e3440" , bg = "#ebcb8b" }
 cwd = { fg = "#d8dee9" }
 find_keyword = { fg = "#ebcb8b" }
-hovered = { fg = "#3e3440", bg = "#81a1c1" }
 marker_copied = { fg = "#2e3440", bg = "#a3be8c" }
 marker_cut = { fg = "#2e3440", bg = "#bf616a" }
 marker_marked = { fg = "#2e3440", bg = "#4c566a" }
 marker_selected = { fg = "#2e3440", bg = "#ebcb8b" }
-preview_hovered = { }
+
+[indicator]
+current = { fg = "#3e3440", bg = "#81a1c1" }
+preview = { }
 
 [tabs]
 active   = { fg = "#3b4252", bg = "#b7c2d7" }
@@ -97,7 +96,7 @@ footer = { fg = "#2e3440", bg = "#81a1c1" }
 
 [filetype]
 rules = [
-  { name = "*/", fg = "#81a1c1" }  # Directory
+  { url = "*/", fg = "#81a1c1" }  # Directory
 ]
 
 # vim: foldlevel=0:foldenable

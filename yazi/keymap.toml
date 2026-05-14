@@ -1,8 +1,5 @@
 # https://yazi-rs.github.io/docs/configuration/keymap
 # https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/keymap-default.toml
-
-"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
-
 [mgr]
 prepend_keymap = [
   # Hopping

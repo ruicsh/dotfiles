@@ -1,8 +1,5 @@
 # https://yazi-rs.github.io/docs/configuration/yazi
 # https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/yazi-default.toml
-
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
-
 [mgr]
 linemode = "size_and_mtime"
 ratio = [2, 3, 3]
@@ -31,28 +28,26 @@ view = [
 
 [open]
 rules = [
-  { name = "*/", use = [ "open", "reveal" ] },
-  { name = "*.{txt,md}", use = [ "edit", "reveal" ] },
+  { url = "*/", use = [ "open", "reveal" ] },
   { mime = "text/*", use = [ "edit", "reveal" ] },
   { mime = "image/*", use = [ "view", "reveal" ] },
   { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
-  { name = "*.zip", use = [ "extract", "reveal" ] },
   { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
   { mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
   { mime = "*/javascript", use = [ "edit", "reveal" ] },
   { mime = "inode/empty", use = [ "edit", "reveal" ] },
-  { mime = "vfs/*", use = "download" },
-  { mime = "*", use = [ "open", "reveal" ] },
+  { mime = "vfs/{absent,stale}", use = "download" },
+  { url = "*", use = [ "open", "reveal" ] },
 ]
 
 [plugin]
 previewers = [
-  { name = "*/", run = "folder", sync = true },
+  { url = "*/", run = "folder", sync = true },
   { mime = "text/*", run = "bat" },
   { mime = "*/javascript", run = "bat" },
   { mime = "application/{json,ndjson}", run = "json" },
   { mime = "image/*", run = "image" },
-  { name = "*.zip", run = "ouch" },
+  { url = "*.zip", run = "ouch" },
   { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "ouch" },
   { mime = "application/{octet-stream,dosexec,ms-*,microsoft.*}", run = "noop" }, # binary files - no preview
   { mime = "*", run = "file" },
