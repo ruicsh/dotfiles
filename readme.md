@@ -13,7 +13,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [lsd](https://github.com/lsd-rs/lsd) Alternative to `ls`
 - [mise](https://github.com/jdx/mise) dev tools, env vars, task runner
 - [neovim](https://github.com/neovim/neovim) Code editor
-- [nushell](https://github.com/nushell/nushell) Shell
 - [opencode](https://github.com/sst/opencode) AI coding agent
 - [ouch](https://github.com/ouch-org/ouch) Archive manipulation
 - [ripgrep](https://github.com/BurntSushi/ripgrep) Alternative to `grep`

@@ -14,7 +14,6 @@ Cross-platform: macOS (primary), Linux/WSL, and Windows.
 _scripts/       # Standalone utility scripts (Zsh, Bash)
 atuin/          # Shell history config
 auto-hotkey/    # Windows OS automation (AHK v2 scripts)
-bash/           # Linux/WSL bash shell bootstrapper
 bat/            # cat alternative config
 carapace/       # Shell completions
 fd/             # find alternative config
