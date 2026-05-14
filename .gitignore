@@ -1,6 +1,7 @@
 .DS_Store
 .nvim.env
 nvim-vscode/lazy-lock.json
+carapace/bridge/
 nushell/history.txt
 yazi/state/
 oculante/config_volatile.json

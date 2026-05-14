@@ -18,7 +18,6 @@ bash/           # Linux/WSL bash shell bootstrapper
 bat/            # cat alternative config
 carapace/       # Shell completions
 fd/             # find alternative config
-flameshot/      # Screenshot tool config (Linux)
 fzf/            # Fuzzy finder config
 ghostty/        # Terminal emulator config (macOS)
 git/            # Git config and aliases
