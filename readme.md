@@ -7,6 +7,7 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [atuin](https://github.com/atuinsh/atuin) Shell history
 - [bat](https://github.com/sharkdp/bat) Alternative to `cat`
 - [carapace](https://github.com/carapace-sh/carapace-bin) Command completion
+- [claude-code](https://claude.com/product/claude-code) AI coding agent
 - [fd](https://github.com/sharkdp/fd) Alternative to `find`
 - [fzf](https://github.com/junegunn/fzf) Fuzzy finder
 - [jq](https://github.com/jqlang/jq) JSON processor
