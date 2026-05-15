@@ -34,10 +34,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [ghostty](https://github.com/ghostty-org/ghostty) Terminal
 - [hammerspoon](https://github.com/Hammerspoon/hammerspoon) OS automation
 
-## Linux
-
-- [xclip](https://github.com/astrand/xclip) X11 clipboard
-
 ## Windows
 
 - [AutoHotkey](https://github.com/AutoHotkey/AutoHotkey) OS automation

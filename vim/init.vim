@@ -75,7 +75,7 @@ set showmode
 " 12 selecting text {{{
 
 " Use win32yank if on Windows
-if has('win32') || has('win64')
+if has('win32') || has('win64') || !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
   let g:clipboard = {
     \ 'name': 'win32yank-wsl',
     \ 'copy': {
@@ -88,20 +88,6 @@ if has('win32') || has('win64')
     \ },
     \ 'cache_enabled': 1,
   \ }
-" Use xclip if inside WSL `:h clipboard-wsl`
-elseif !empty($WSL_DISTRO_NAME) || !empty($WSL_INTEROP)
-  let g:clipboard = {
-    \   'name': 'xclip',
-    \   'copy': {
-    \     '+': 'xclip -selection clipboard',
-    \     '*': 'xclip -selection primary',
-    \   },
-    \   'paste': {
-    \     '+': 'xclip -selection clipboard -o',
-    \     '*': 'xclip -selection primary -o',
-    \   },
-    \   'cache_enabled': 1,
-    \ }
 endif
 
 set clipboard=unnamedplus
