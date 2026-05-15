@@ -8,5 +8,7 @@
   },
   "theme": "custom:nordstone",
   "editorMode": "vim",
-  "showTurnDuration": false
+  "showTurnDuration": false,
+  "tui": "fullscreen",
+  "viewMode": "focus"
 }
