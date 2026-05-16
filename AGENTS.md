@@ -23,7 +23,6 @@ git/            # Git config and aliases
 hammerspoon/    # macOS window management and app launcher (Lua)
 homebrew-macos/ # Brewfile for macOS packages
 lsd/            # ls alternative config
-nushell/        # Retired — previously the primary shell config (kept for history.txt)
 nvim-vscode/    # Neovim config for VSCode integration (Lua, lazy.nvim)
 opencode/       # AI coding agent config
 power-toys/     # Windows PowerToys keyboard remapping
@@ -76,7 +75,7 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 
 ### General
 
-- **Indentation**: 2 spaces everywhere (no tabs). Set in vim options and stylua.
+- **Indentation**: 2 spaces everywhere except Lua files, which use tabs (stylua default). Vim options enforce 2-space soft-tabs; stylua overrides for `.lua` files.
 - **Line endings**: LF (Unix).
 - **Trailing whitespace**: Avoid (vim `listchars` highlights trailing spaces).
 - **File modelines**: Config-heavy files end with a vim modeline for folding:
@@ -143,9 +142,8 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 - **Default branch**: `main`
 - **Commit message format**: `type(scope): description` (lowercase)
   - Types: `feat`, `fix`, `refactor`, `docs`, `chore`
-  - Scope: tool/directory name (e.g., `nushell`, `zsh`, `git`, `nvim-vscode`, `opencode`)
+  - Scope: tool/directory name (e.g., `zsh`, `git`, `nvim-vscode`, `opencode`)
   - Examples:
-    - `feat(nushell) add opencode alias`
     - `fix(opencode): transparent background on diffs`
     - `refactor: Use default keys config for lazy`
   - Note: colon after scope is used inconsistently (both `feat(git):` and `feat(git)` appear); either is acceptable.
@@ -159,4 +157,6 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 - **`.nvim.env`** is gitignored and contains per-repo Neovim env vars (e.g., `RESTORE_CHANGED_FILES_IGNORE`).
 - **Nord theme**: The color palette throughout (Ghostty, tmux, starship, zsh, nvim-vscode) is based on [Nord](https://www.nordtheme.com/) with custom "NordStone" extensions. Color hex values are defined in `nvim-vscode/colors/nordstone.lua`.
 - **Symlink deployment**: Configs are expected to be symlinked to `~/.config/<tool>/` (the repo does not include an install script).
+- **OpenCode config**: `opencode/opencode.json` sets `default_agent: "plan"` — sessions start in plan/read-only mode. Custom agents are defined in `opencode/agents/` (plan, build, build-2, review). When editing OpenCode's own config, load the `customize-opencode` skill.
+- **Generated files (gitignored)**: `carapace/bridge/`, `yazi/state/`, and `nvim-vscode/lazy-lock.json` are auto-generated — never commit them.
 - The main Neovim config is in a **separate repository**: https://github.com/ruicsh/nvim-config

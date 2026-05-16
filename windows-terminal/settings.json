@@ -1,7 +1,7 @@
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "$help": "https://aka.ms/terminal-documentation",
-  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "defaultProfile": "{9ac80cec-1684-4a60-999b-108f29738231}",
   "disableAnimations": true,
   "launchMode": "fullscreen",
   "showTabsInTitlebar": false,
@@ -23,16 +23,6 @@
           "size": 9
         },
         "pathTranslationStyle": "wsl"
-      },
-      {
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "name": "Nushell",
-        "background": "#171717",
-        "commandline": "%localappdata%\\Programs\\nu\\bin\\nu.exe",
-        "font": {
-          "face": "JetBrainsMonoNL NFM",
-          "size": 10
-        }
       },
       {
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
