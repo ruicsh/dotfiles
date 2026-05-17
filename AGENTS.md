@@ -11,7 +11,7 @@ Cross-platform: macOS (primary), Linux/WSL, and Windows.
 ## Directory Structure
 
 ```
-_scripts/       # Standalone utility scripts (Zsh, Bash)
+_scripts/       # Standalone utility scripts (Zsh)
 atuin/          # Shell history config
 auto-hotkey/    # Windows OS automation (AHK v2 scripts)
 bat/            # cat alternative config

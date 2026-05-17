@@ -2,9 +2,7 @@
 !.gitignore
 !opencode.json
 !tui.json
+!prompts/
+!prompts/**
 !themes/
 !themes/**
-!agents/
-!agents/**
-!instructions/
-!instructions/**
