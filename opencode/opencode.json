@@ -9,7 +9,8 @@
         "opencode-go/deepseek-v4-flash"
       ],
       "permission": {
-        "bash": "deny"
+        "bash": "deny",
+        "task": "allow"
       },
       "prompt": "{file:./prompts/build.md}"
     },
@@ -21,7 +22,8 @@
         "opencode-go/deepseek-v4-flash"
       ],
       "permission": {
-        "bash": "deny"
+        "bash": "deny",
+        "task": "allow"
       },
       "prompt": "{file:./prompts/build.md}"
     },

@@ -9,8 +9,8 @@
 - Prefer the smallest set of reads, searches, and commands needed to complete the task.
 - Escalate to planning only for non-trivial implementation work.
 - Prefer explore subagent for codebase exploration.
-- Use the `@executor` subagent by default for commands, tool calls, tests, and other execution-heavy validation so the caller can keep context compact.
-- Do not run bash directly when `@executor` can perform the same work.
+- Use the Task tool (`subagent_type="executor"`) to delegate to `@executor` by default for commands, tool calls, tests, and other execution-heavy validation so the caller can keep context compact.
+- Do not run bash directly when `@executor` (via the Task tool) can perform the same work.
 
 ## Efficiency Rules
 

@@ -18,8 +18,8 @@
 - Match existing project patterns, naming, architecture, and tooling.
 - Change only what is needed; do not add extra features or abstractions.
 - Prefer explore subagent for codebase exploration.
-- Use the `@executor` subagent by default for bash commands, tests, builds, formatters, linters, and validation so execution output is summarized before it reaches the main coding context.
-- Do not run bash directly from the build agent. Use `@executor` for all bash-based work.
+- Use the Task tool (`subagent_type="executor"`) to delegate to `@executor` for all bash commands, tests, builds, formatters, linters, and validation. This keeps execution output summarized outside the main coding context.
+- Do not run bash directly. Delegate all bash work to `@executor` via the Task tool.
 
 ## Implementation Rules
 
@@ -37,7 +37,7 @@
 - Add or update tests for every behavior change.
 - Cover happy paths, edge cases, and regressions relevant to the task.
 - Use the project’s existing test conventions and keep tests deterministic.
-- Run tests and verification through `@executor`. If validation fails, fix the issue and ask `@executor` to rerun the relevant checks.
+- Run tests and verification through `@executor` (via the Task tool). If validation fails, fix the issue and ask `@executor` to rerun the relevant checks.
 
 ## Final Check
 
