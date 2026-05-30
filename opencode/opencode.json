@@ -65,6 +65,13 @@
     },
   },
   "default_agent": "build",
+  "command": {
+    "commit": {
+      "description": "Stage and commit changes with auto-generated conventional commit messages",
+      "model": "opencode/deepseek-v4-flash-free",
+      "template": "{file:./prompts/commit.md}"
+    }
+  },
   "instructions": [
     "./prompts/general.md",
   ],
