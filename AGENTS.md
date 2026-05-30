@@ -157,6 +157,6 @@ stylua hammerspoon/ nvim-vscode/   # Format all Lua dirs
 - **`.nvim.env`** is gitignored and contains per-repo Neovim env vars (e.g., `RESTORE_CHANGED_FILES_IGNORE`).
 - **Nord theme**: The color palette throughout (Ghostty, tmux, starship, zsh, nvim-vscode) is based on [Nord](https://www.nordtheme.com/) with custom "NordStone" extensions. Color hex values are defined in `nvim-vscode/colors/nordstone.lua`.
 - **Symlink deployment**: Configs are expected to be symlinked to `~/.config/<tool>/` (the repo does not include an install script).
-- **OpenCode config**: `opencode/opencode.json` sets `default_agent: "plan"` — sessions start in plan/read-only mode. Custom agents are defined in `opencode/agents/` (plan, build, build-2, review). When editing OpenCode's own config, load the `customize-opencode` skill.
+- **OpenCode config**: `opencode/opencode.json` sets `default_agent: "build"` — sessions start with the primary coding agent. Custom agents are defined in `opencode.json` (plan, build, build2, explore, executor). When editing OpenCode's own config, load the `customize-opencode` skill.
 - **Generated files (gitignored)**: `carapace/bridge/`, `yazi/state/`, and `nvim-vscode/lazy-lock.json` are auto-generated — never commit them.
 - The main Neovim config is in a **separate repository**: https://github.com/ruicsh/nvim-config

@@ -34,7 +34,7 @@
         "opencode/minimax-m2.5-free",
         "opencode-go/deepseek-v4-flash"
       ],
-      "variant": "max",
+      "variant": "auto",
       "prompt": "{file:./prompts/explore.md}",
       "mode": "subagent",
     },
@@ -98,12 +98,24 @@
       "~/.gnupg/**": "deny",
       "~/.kube/**": "deny",
       "~/.docker/**": "deny",
-      "~/.config/gcloud/**": "deny"
+      "~/.config/gcloud/**": "deny",
+      ".env*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*.p12": "deny",
+      "*.jks": "deny",
+      "*credentials*": "deny"
     },
     "bash": {
       "rm *credentials*": "deny",
-      "rm *.env*": "deny"
-    }
+      "rm *.env*": "deny",
+      "rm -rf /": "deny",
+      "git push --force": "deny",
+      "curl * | sh": "deny",
+      "wget * | sh": "deny"
+    },
+    "websearch": "ask",
+    "webfetch": "ask"
   },
   "experimental": {
     "disable_paste_summary": true,

@@ -4,6 +4,8 @@
 !tui.json
 !prompts/
 !prompts/**
+!commands/
+!commands/**
 !skills/
 !skills/**
 !themes/
