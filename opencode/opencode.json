@@ -27,7 +27,11 @@
     },
     "explore": {
       "description": "Fast codebase exploration",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode/deepseek-v4-flash-free",
+      "fallback_models": [
+        "opencode/minimax-m2.5-free",
+        "opencode-go/deepseek-v4-flash"
+      ],
       "variant": "max",
       "prompt": "{file:./prompts/explore.md}",
       "mode": "subagent",
@@ -36,10 +40,8 @@
       "description": "Structured implementation planning",
       "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
-        "opencode-go/kimi-k2.6",
-        "opencode-go/mimo-v2.5-pro",
         "opencode/big-pickle",
-        "opencode-go/deepseek-v4-pro"
+        "opencode-go/mimo-v2.5-pro",
       ],
       "prompt": "{file:./prompts/plan.md}"
     },
@@ -53,23 +55,18 @@
       "mode": "subagent",
       "prompt": "{file:./prompts/executor.md}"
     },
-    "review": {
-      "description": "Automated review agent",
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        "opencode-go/kimi-k2.6"
-      ],
-      "variant": "max",
-      "mode": "all",
-      "prompt": "{file:./prompts/review.md}"
-    },
   },
   "default_agent": "build",
   "command": {
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode/deepseek-v4-flash-free",
-      "template": "{file:./prompts/commit.md}"
+      "template": "{file:./commands/commit.md}"
+    },
+    "review": {
+      "description": "Automated review agent",
+      "model": "opencode/big-pickle",
+      "template": "{file:./commands/review.md}"
     }
   },
   "instructions": [
