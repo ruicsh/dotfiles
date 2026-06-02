@@ -61,6 +61,7 @@
 
 [core]
   editor = NVIM_APPNAME=vim nvim
+  excludesFile = ~/.config/git/ignore
 
 [diff]
   tool = nvimdiff
