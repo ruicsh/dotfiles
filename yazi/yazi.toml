@@ -43,8 +43,8 @@ rules = [
 [plugin]
 previewers = [
   { url = "*/", run = "folder", sync = true },
-  { mime = "text/*", run = "bat" },
-  { mime = "*/javascript", run = "bat" },
+  { mime = "text/*", run = "code" },
+  { mime = "*/javascript", run = "code" },
   { mime = "application/{json,ndjson}", run = "json" },
   { mime = "image/*", run = "image" },
   { url = "*.zip", run = "ouch" },
