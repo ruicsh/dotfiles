@@ -27,6 +27,13 @@ unsetopt list_beep
 # Disable the "last login" message
 touch ~/.hushlogin
 
+# fpath (ensure Homebrew zsh functions are discoverable) {{{
+typeset -U fpath
+if command -v brew >/dev/null 2>&1; then
+  fpath=("$(brew --prefix)/share/zsh/functions" $fpath)
+fi
+# }}}
+
 # Completions {{{
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select # Navigate completions with arrow keys
