@@ -4,23 +4,6 @@
     "build": {
       "description": "Primary coding agent that delegates command execution to @executor",
       "model": "github-copilot/gemini-3-flash-preview",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "opencode-go/deepseek-v4-flash"
-      ],
-      "permission": {
-        "bash": "deny",
-        "task": "allow"
-      },
-      "prompt": "{file:./prompts/build.md}"
-    },
-    "build2": {
-      "description": "Secondary coding agent that delegates command execution to @executor",
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "opencode-go/deepseek-v4-flash"
-      ],
       "permission": {
         "bash": "deny",
         "task": "allow"
@@ -29,11 +12,7 @@
     },
     "explore": {
       "description": "Fast codebase exploration",
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "opencode-go/deepseek-v4-flash"
-      ],
+      "model": "opencode-go/deepseek-v4-flash",
       "variant": "auto",
       "prompt": "{file:./prompts/explore.md}",
       "mode": "subagent",
@@ -41,28 +20,20 @@
     "plan": {
       "description": "Structured implementation planning",
       "model": "opencode-go/deepseek-v4-pro",
-      "fallback_models": [
-        "opencode/big-pickle",
-        "opencode-go/mimo-v2.5-pro",
-      ],
       "prompt": "{file:./prompts/plan.md}"
     },
     "executor": {
       "description": "Default execution subagent for bash commands, tests, builds, and validation",
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "opencode-go/deepseek-v4-flash"
-      ],
+      "model": "opencode-go/deepseek-v4-flash",
       "mode": "subagent",
       "prompt": "{file:./prompts/executor.md}"
     },
   },
-  "default_agent": "build",
+  "default_agent": "plan",
   "command": {
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
-      "model": "opencode/deepseek-v4-flash-free",
+      "model": "opencode-go/deepseek-v4-flash",
       "template": "{file:./commands/commit.md}"
     },
     "review": {
