@@ -3,7 +3,7 @@
   "agent": {
     "default": {
       "description": "General-purpose agent for all tasks",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-pro",
     },
     "explore": {
       "description": "Fast codebase exploration",
@@ -22,6 +22,9 @@
       "description": "Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
       "model": "opencode-go/mimo-v2.5-pro",
       "mode": "subagent"
+    },
+    "plan": {
+      "model": "opencode-go/deepseek-v4-pro"
     },
     "security-auditor": {
       "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
