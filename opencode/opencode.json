@@ -28,6 +28,18 @@
       "mode": "subagent",
       "prompt": "{file:./prompts/executor.md}"
     },
+    "code-reviewer": {
+      "description": "Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
+      "mode": "subagent"
+    },
+    "security-auditor": {
+      "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
+      "mode": "subagent"
+    },
+    "test-engineer": {
+      "description": "QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.",
+      "mode": "subagent"
+    }
   },
   "default_agent": "plan",
   "command": {
@@ -37,9 +49,39 @@
       "template": "{file:./commands/commit.md}"
     },
     "review": {
-      "description": "Automated review agent",
+      "description": "Conduct a five-axis code review — correctness, readability, architecture, security, performance",
       "model": "opencode/big-pickle",
       "template": "{file:./commands/review.md}"
+    },
+    "plan": {
+      "description": "Break work into small verifiable tasks with acceptance criteria and dependency ordering",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "{file:./commands/plan.md}"
+    },
+    "build": {
+      "description": "Implement tasks incrementally — build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
+      "model": "github-copilot/gemini-3-flash-preview",
+      "template": "{file:./commands/build.md}"
+    },
+    "ship": {
+      "description": "Run the pre-launch checklist via parallel fan-out to specialist personas, then synthesize a go/no-go decision",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "{file:./commands/ship.md}"
+    },
+    "test": {
+      "description": "Run TDD workflow — write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
+      "model": "github-copilot/gemini-3-flash-preview",
+      "template": "{file:./commands/test.md}"
+    },
+    "spec": {
+      "description": "Start spec-driven development — write a structured specification before writing code",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "{file:./commands/spec.md}"
+    },
+    "simplify": {
+      "description": "Simplify code for clarity and maintainability — reduce complexity without changing behavior",
+      "model": "opencode-go/deepseek-v4-flash",
+      "template": "{file:./commands/code-simplify.md}"
     }
   },
   "instructions": [

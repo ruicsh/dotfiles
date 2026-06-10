@@ -1,4 +1,4 @@
-# Agent-skills symlinks (managed by sync-opencode-skills.sh)
+# Agent-skills symlinks (managed by sync-agent-skills.sh)
 # Ignore everything except local skills and this file
 *
 !.gitignore
