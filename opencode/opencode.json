@@ -1,14 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "agent": {
-    "build": {
-      "description": "Primary coding agent that delegates command execution to @executor",
-      "model": "github-copilot/gemini-3-flash-preview",
-      "permission": {
-        "bash": "deny",
-        "task": "allow"
-      },
-      "prompt": "{file:./prompts/build.md}"
+    "default": {
+      "description": "General-purpose agent for all tasks",
+      "model": "opencode-go/deepseek-v4-flash",
     },
     "explore": {
       "description": "Fast codebase exploration",
@@ -16,11 +11,6 @@
       "variant": "auto",
       "prompt": "{file:./prompts/explore.md}",
       "mode": "subagent",
-    },
-    "plan": {
-      "description": "Structured implementation planning",
-      "model": "opencode-go/deepseek-v4-pro",
-      "prompt": "{file:./prompts/plan.md}"
     },
     "executor": {
       "description": "Default execution subagent for bash commands, tests, builds, and validation",
@@ -30,21 +20,21 @@
     },
     "code-reviewer": {
       "description": "Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
       "mode": "subagent"
     },
     "security-auditor": {
       "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
       "mode": "subagent"
     },
     "test-engineer": {
       "description": "QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/mimo-v2.5",
       "mode": "subagent"
     }
   },
-  "default_agent": "plan",
+  "default_agent": "default",
   "command": {
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
@@ -75,6 +65,16 @@
       "description": "Run TDD workflow — write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
       "model": "github-copilot/gemini-3-flash-preview",
       "template": "{file:./commands/test.md}"
+    },
+    "analyst": {
+      "description": "Elicit and document project requirements through structured discovery, producing REQUIREMENTS.md",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "{file:./commands/analyst.md}"
+    },
+    "architect": {
+      "description": "Design the solution architecture and produce ARCHITECTURE.md from REQUIREMENTS.md",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "{file:./commands/architect.md}"
     },
     "spec": {
       "description": "Start spec-driven development — write a structured specification before writing code",
