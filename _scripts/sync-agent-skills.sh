@@ -196,11 +196,83 @@ for cmd_file in "$COMMANDS_SOURCE"/*.md; do
   c_created=$((c_created + 1))
 done
 
+# --- Register new subagents ---
+r_created=0; r_skipped=0
+OPENCODE_JSON="$DOTFILES/opencode.json"
+
+if [ -f "$OPENCODE_JSON" ] && command -v python3 >/dev/null 2>&1; then
+  echo "" >&2
+  echo "--- Registering Subagents ---" >&2
+  
+  # Extract existing agent keys to avoid redundant Python calls
+  existing_agents=$(python3 -c 'import json, sys; data = json.load(sys.stdin); print("\n".join(data.get("agent", {}).keys()))' < "$OPENCODE_JSON" 2>/dev/null || echo "")
+
+  for agent_file in "$AGENTS_TARGET"/*.md; do
+    [ -f "$agent_file" ] || continue
+    agent_filename=$(basename "$agent_file")
+    [ "$agent_filename" = "README.md" ] && continue
+    
+    agent_id="${agent_filename%.md}"
+    
+    # Skip if already in opencode.json
+    if echo "$existing_agents" | grep -q "^$agent_id$"; then
+      continue
+    fi
+    
+    # Extract metadata from YAML
+    name=$(grep "^name:" "$agent_file" | head -1 | sed 's/name:[[:space:]]*//' | sed 's/^"//;s/"$//;s/^\x27//;s/\x27$//' || echo "")
+    description=$(grep "^description:" "$agent_file" | head -1 | sed 's/description:[[:space:]]*//' | sed 's/^"//;s/"$//;s/^\x27//;s/\x27$//' || echo "")
+    
+    [ -z "$name" ] && name="$agent_id"
+    
+    echo "  Registering: $agent_id ..." >&2
+    
+    python3 - <<PYTHON_EOF
+import json
+import sys
+
+file_path = "$OPENCODE_JSON"
+agent_name = "$agent_id"
+description = "$description"
+model = "opencode-go/mimo-v2.5-pro"
+
+try:
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    
+    if "agent" not in data:
+        data["agent"] = {}
+        
+    data["agent"][agent_name] = {
+        "description": description,
+        "model": model,
+        "mode": "subagent"
+    }
+    
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=2, sort_keys=False)
+        f.write('\n')
+    sys.exit(0)
+except Exception as e:
+    print(f"Error: {e}", file=sys.stderr)
+    sys.exit(1)
+PYTHON_EOF
+
+    if [ $? -eq 0 ]; then
+      r_created=$((r_created + 1))
+    else
+      r_skipped=$((r_skipped + 1))
+    fi
+  done
+fi
+
 # --- Summary ---
 echo "" >&2
 echo "Done." >&2
 echo "  Skills:   $created linked/updated, $already already linked, $skipped skipped (local)." >&2
 echo "  Agents:   $a_created linked/updated, $a_already already linked, $a_skipped skipped." >&2
 echo "  Commands: $c_created generated." >&2
+[ $r_created -gt 0 ] && echo "  Reg:      $r_created new subagents registered in opencode.json." >&2
+[ $r_skipped -gt 0 ] && echo "  Reg:      $r_skipped registrations failed." >&2
 echo "" >&2
 echo "  ⚡ Restart your OpenCode session to pick up new commands and agents." >&2

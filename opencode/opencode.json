@@ -6,7 +6,7 @@
       "model": "opencode-go/deepseek-v4-flash",
       "variant": "auto",
       "prompt": "{file:./prompts/explore.md}",
-      "mode": "subagent",
+      "mode": "subagent"
     },
     "executor": {
       "description": "Default execution subagent for bash commands, tests, builds, and validation",
@@ -15,7 +15,7 @@
       "prompt": "{file:./prompts/executor.md}"
     },
     "code-reviewer": {
-      "description": "Senior code reviewer that evaluates changes across five dimensions — correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
+      "description": "Senior code reviewer that evaluates changes across five dimensions \u2014 correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
       "model": "opencode-go/mimo-v2.5-pro",
       "mode": "subagent"
     },
@@ -34,6 +34,11 @@
       "description": "QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.",
       "model": "opencode-go/mimo-v2.5",
       "mode": "subagent"
+    },
+    "web-performance-auditor": {
+      "description": "Web performance engineer focused on Core Web Vitals, loading, rendering, and network optimization. Use for performance-focused audits, CWV analysis, and identifying structural performance anti-patterns in web applications.",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "mode": "subagent"
     }
   },
   "default_agent": "plan",
@@ -44,7 +49,7 @@
       "template": "{file:./commands/commit.md}"
     },
     "review": {
-      "description": "Conduct a five-axis code review — correctness, readability, architecture, security, performance",
+      "description": "Conduct a five-axis code review \u2014 correctness, readability, architecture, security, performance",
       "model": "opencode/big-pickle",
       "template": "{file:./commands/review.md}"
     },
@@ -54,7 +59,7 @@
       "template": "{file:./commands/plan.md}"
     },
     "build": {
-      "description": "Implement tasks incrementally — build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
+      "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
       "model": "github-copilot/gemini-3-flash-preview",
       "template": "{file:./commands/build.md}"
     },
@@ -64,7 +69,7 @@
       "template": "{file:./commands/ship.md}"
     },
     "test": {
-      "description": "Run TDD workflow — write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
+      "description": "Run TDD workflow \u2014 write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
       "model": "github-copilot/gemini-3-flash-preview",
       "template": "{file:./commands/test.md}"
     },
@@ -79,18 +84,18 @@
       "template": "{file:./commands/architect.md}"
     },
     "spec": {
-      "description": "Start spec-driven development — write a structured specification before writing code",
+      "description": "Start spec-driven development \u2014 write a structured specification before writing code",
       "model": "opencode-go/deepseek-v4-pro",
       "template": "{file:./commands/spec.md}"
     },
     "simplify": {
-      "description": "Simplify code for clarity and maintainability — reduce complexity without changing behavior",
+      "description": "Simplify code for clarity and maintainability \u2014 reduce complexity without changing behavior",
       "model": "opencode-go/deepseek-v4-flash",
       "template": "{file:./commands/code-simplify.md}"
     }
   },
   "instructions": [
-    "./prompts/general.md",
+    "./prompts/general.md"
   ],
   "permission": {
     "lsp": "allow",
@@ -136,6 +141,6 @@
     "webfetch": "ask"
   },
   "experimental": {
-    "disable_paste_summary": true,
-  },
+    "disable_paste_summary": true
+  }
 }
