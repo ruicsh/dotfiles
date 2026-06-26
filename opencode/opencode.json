@@ -41,7 +41,7 @@
       "mode": "subagent"
     }
   },
-  "default_agent": "plan",
+  "default_agent": "build",
   "command": {
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
@@ -60,7 +60,7 @@
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
-      "model": "github-copilot/gemini-3-flash-preview",
+      "model": "opencode-go/deepseek-v4-flash",
       "template": "{file:./commands/build.md}"
     },
     "ship": {
@@ -70,7 +70,7 @@
     },
     "test": {
       "description": "Run TDD workflow \u2014 write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
-      "model": "github-copilot/gemini-3-flash-preview",
+      "model": "opencode-go/deepseek-v4-flash",
       "template": "{file:./commands/test.md}"
     },
     "analyst": {
