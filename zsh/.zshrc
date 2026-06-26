@@ -58,3 +58,4 @@ fi
 [ -f "$HOME/_scripts/tmux-auto-start.sh" ] && source "$HOME/_scripts/tmux-auto-start.sh"
 
 # vim: foldmethod=marker:foldmarker={{{,}}}:foldlevel=0
+eval "$(direnv hook zsh)"
