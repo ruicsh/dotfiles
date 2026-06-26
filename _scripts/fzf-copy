@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+# Copy stdin to clipboard — OS-agnostic (macOS, Linux, WSL)
+
+set -euo pipefail
+
+local copy_cmd
+case "$(uname -s)" in
+  Darwin)
+    copy_cmd="pbcopy"
+    ;;
+  Linux)
+    if [ -n "${WSL_DISTRO_NAME:-}" ]; then
+      copy_cmd="clip.exe"
+    else
+      copy_cmd="xclip -selection clipboard"
+    fi
+    ;;
+  *)
+    print -u2 "fzf-copy: unsupported OS ($(uname -s))"
+    exit 1
+    ;;
+esac
+
+cat /dev/stdin | eval "$copy_cmd"

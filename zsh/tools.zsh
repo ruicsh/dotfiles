@@ -1,5 +1,12 @@
 # Tool-specific integrations
 
+# fzf (fuzzy finder) {{{
+# Source fzf key bindings (CTRL-T, CTRL-R, ALT-C)
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
+# }}}
+
 # atuin (history search) {{{
 if command -v atuin >/dev/null 2>&1; then
   eval "$(atuin init zsh --disable-up-arrow)"
@@ -17,31 +24,6 @@ fi
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
-# }}}
-
-# fzf (fuzzy finder) {{{
-# fzf that copies the result to clipboard
-f() {
-  local result copy_cmd
-  case "$(uname -s)" in
-    Darwin)
-      copy_cmd="pbcopy"
-      ;;
-    Linux)
-      if [ -n "$WSL_DISTRO_NAME" ]; then
-        copy_cmd="clip.exe"
-      else
-        copy_cmd="xclip -selection clipboard"
-      fi
-      ;;
-  esac
-
-  result="$(fzf "$@")"
-  if [ -n "$result" ]; then
-    printf '%s' "$result" | $copy_cmd
-  fi
-  printf '%s\n' "$result"
-}
 # }}}
 
 # starship (prompt) {{{
