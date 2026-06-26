@@ -3,6 +3,5 @@
 --highlight-line
 --info=inline
 --layout=reverse
---preview-window=border-left
---preview='if [ -d {} ]; then lsd --color=always --tree --depth 1 {}; else bat --color=always --line-range :30 --style=plain {}; fi'
+--preview-window=:hidden
 --bind='ctrl-y:execute-silent(echo {} | $HOME/_scripts/fzf-copy)+abort'
