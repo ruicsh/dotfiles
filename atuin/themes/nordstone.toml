@@ -2,11 +2,12 @@
 name = "nordstone"
 
 [colors]
+AlertError = "#88c0d0"
 AlertInfo = "#8c97ad"
 AlertWarn = "#d08770"
-AlertError = "#88c0d0"
 Annotation = "#4c566a"
 Base = "#d8dee9"
 Guidance = "#8c97ad"
 Important = "#81a1c1"
+SyntaxCommand = "#a3be8c"
 Title = "#4c566a"
