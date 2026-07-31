@@ -20,10 +20,12 @@
       "mode": "subagent"
     },
     "build": {
-      "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-flash",
+      "color": "#81A1C1"
     },
     "plan": {
-      "model": "opencode-go/deepseek-v4-pro"
+      "model": "opencode-go/deepseek-v4-pro",
+      "color": "#A3BE8C"
     },
     "security-auditor": {
       "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
@@ -39,6 +41,19 @@
       "description": "Web performance engineer focused on Core Web Vitals, loading, rendering, and network optimization. Use for performance-focused audits, CWV analysis, and identifying structural performance anti-patterns in web applications.",
       "model": "opencode-go/mimo-v2.5-pro",
       "mode": "subagent"
+    },
+    "chat": {
+      "description": "Semantic web search — like Google, in your terminal",
+      "model": "opencode/big-pickle",
+      "color": "#EBCB8B",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny",
+        "websearch": "allow",
+        "webfetch": "allow",
+        "read": "allow",
+        "question": "allow"
+      }
     }
   },
   "default_agent": "build",
