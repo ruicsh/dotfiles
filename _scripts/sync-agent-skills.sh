@@ -10,8 +10,9 @@
 # all three become globally available to OpenCode in every project.
 #
 # Usage:
-#   sync-agent-skills.sh          # Clone (if needed), pull, and sync all
+#   sync-agent-skills.sh            # Clone (if needed), pull, and sync all
 #   sync-agent-skills.sh --no-pull  # Skip git pull, use cached repo
+#   sync-agent-skills.sh --links-only  # Only refresh symlinks (no command/agent generation)
 #
 # Env vars:
 #   SKILLS_REPO     Override clone path (default: ~/.local/share/opencode/agent-skills)
@@ -35,11 +36,13 @@ SKILLS_TARGET="$DOTFILES/skills"
 
 # --- Flags ---
 DO_PULL=true
+DO_DEFINITIONS=true
 for arg in "$@"; do
   case "$arg" in
     --no-pull) DO_PULL=false ;;
+    --links-only) DO_DEFINITIONS=false ;;
     -h|--help)
-      echo "Usage: $SCRIPT_NAME [--no-pull]"
+      echo "Usage: $SCRIPT_NAME [--no-pull] [--links-only]"
       echo ""
       echo "Clones addyosmani/agent-skills repo (if missing) and syncs all"
       echo "three resource types into dotfiles/opencode/:"
@@ -48,7 +51,9 @@ for arg in "$@"; do
       echo "  Agents/   → agents/   (symlinks)"
       echo "  Commands/ → commands/ (adapted copies)"
       echo ""
-      echo "  --no-pull    Skip git pull if repo already exists"
+      echo "  --no-pull      Skip git pull if repo already exists"
+      echo "  --links-only   Only refresh skills/agents symlinks; skip command"
+      echo "                 generation and subagent registration"
       exit 0
       ;;
     *)
@@ -155,8 +160,12 @@ for agent_file in "$AGENTS_SOURCE"/*.md; do
   fi
 done
 
-# --- Generate adapted commands ---
+# --- Counters (initialized here so the summary also works with --links-only) ---
 c_created=0; c_already=0
+r_created=0; r_skipped=0
+
+# --- Generate adapted commands (skipped with --links-only) ---
+if [ "$DO_DEFINITIONS" = true ]; then
 
 echo "" >&2
 echo "--- Commands ---" >&2
@@ -196,16 +205,17 @@ for cmd_file in "$COMMANDS_SOURCE"/*.md; do
   c_created=$((c_created + 1))
 done
 
-# --- Register new subagents ---
-r_created=0; r_skipped=0
+fi
+
+# --- Register new subagents (skipped with --links-only) ---
 OPENCODE_JSON="$DOTFILES/opencode.json"
 
-if [ -f "$OPENCODE_JSON" ] && command -v python3 >/dev/null 2>&1; then
+if [ "$DO_DEFINITIONS" = true ] && [ -f "$OPENCODE_JSON" ] && command -v python3 >/dev/null 2>&1; then
   echo "" >&2
   echo "--- Registering Subagents ---" >&2
   
   # Extract existing agent keys to avoid redundant Python calls
-  existing_agents=$(python3 -c 'import json, sys; data = json.load(sys.stdin); print("\n".join(data.get("agent", {}).keys()))' < "$OPENCODE_JSON" 2>/dev/null || echo "")
+  existing_agents=$(python3 -c 'import json, sys; data = json.load(sys.stdin); print("\n".join(data.get("agents", {}).keys()))' < "$OPENCODE_JSON" 2>/dev/null || echo "")
 
   for agent_file in "$AGENTS_TARGET"/*.md; do
     [ -f "$agent_file" ] || continue
@@ -240,10 +250,10 @@ try:
     with open(file_path, 'r') as f:
         data = json.load(f)
     
-    if "agent" not in data:
-        data["agent"] = {}
+    if "agents" not in data:
+        data["agents"] = {}
         
-    data["agent"][agent_name] = {
+    data["agents"][agent_name] = {
         "description": description,
         "model": model,
         "mode": "subagent"
@@ -272,6 +282,9 @@ echo "Done." >&2
 echo "  Skills:   $created linked/updated, $already already linked, $skipped skipped (local)." >&2
 echo "  Agents:   $a_created linked/updated, $a_already already linked, $a_skipped skipped." >&2
 echo "  Commands: $c_created generated." >&2
+if [ "$DO_DEFINITIONS" = false ]; then
+  echo "  (--links-only: command generation and subagent registration skipped)" >&2
+fi
 [ $r_created -gt 0 ] && echo "  Reg:      $r_created new subagents registered in opencode.json." >&2
 [ $r_skipped -gt 0 ] && echo "  Reg:      $r_skipped registrations failed." >&2
 echo "" >&2
