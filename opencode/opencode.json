@@ -26,6 +26,134 @@
       "model": "opencode-go/deepseek-v4-pro",
       "color": "#A3BE8C"
     },
+    "review": {
+      "description": "Read-only senior code reviewer. Evaluates changes across five dimensions \u2014 correctness, readability, architecture, security, and performance \u2014 and reports findings with file:line references. Cannot edit files or mutate repository state.",
+      "model": "opencode/big-pickle",
+      "color": "#d08770",
+      "system": "{file:./prompts/review.md}",
+      "permissions": [
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git add*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git commit*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git push*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git apply*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git merge*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git rebase*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git cherry-pick*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git tag*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git rm*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git mv*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "rm *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "mv *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "cp *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "sed -i*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "truncate *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tee *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "touch *",
+          "effect": "deny"
+        }
+      ]
+    },
     "security-auditor": {
       "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
       "model": "opencode-go/mimo-v2.5-pro",

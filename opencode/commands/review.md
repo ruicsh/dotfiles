@@ -4,6 +4,9 @@ description: Conduct a five-axis code review — correctness, readability, archi
 
 Invoke the code-review-and-quality skill.
 
+Review only — do not edit, stage, commit, or otherwise modify files. Report findings and let
+the user apply fixes.
+
 Review the current changes (staged or recent commits) across all five axes:
 
 1. **Correctness** — Does it match the spec? Edge cases handled? Tests adequate?
