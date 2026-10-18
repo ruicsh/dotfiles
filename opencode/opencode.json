@@ -99,41 +99,185 @@
     "./prompts/general.md"
   ],
   "permissions": [
-    { "action": "external_directory", "resource": "*", "effect": "ask" },
-    { "action": "read", "resource": "~/.ssh/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.gnupg/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.aws/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.azure/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.kube/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.docker/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.config/gcloud/**", "effect": "deny" },
-    { "action": "read", "resource": ".env*", "effect": "deny" },
-    { "action": "read", "resource": "*.pem", "effect": "deny" },
-    { "action": "read", "resource": "*.key", "effect": "deny" },
-    { "action": "read", "resource": "*.p12", "effect": "deny" },
-    { "action": "read", "resource": "*.jks", "effect": "deny" },
-    { "action": "read", "resource": "*credentials*", "effect": "deny" },
-    { "action": "edit", "resource": "~/.ssh/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.gnupg/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.aws/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.azure/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.kube/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.docker/**", "effect": "deny" },
-    { "action": "edit", "resource": "~/.config/gcloud/**", "effect": "deny" },
-    { "action": "edit", "resource": ".env*", "effect": "deny" },
-    { "action": "edit", "resource": "*.pem", "effect": "deny" },
-    { "action": "edit", "resource": "*.key", "effect": "deny" },
-    { "action": "edit", "resource": "*.p12", "effect": "deny" },
-    { "action": "edit", "resource": "*.jks", "effect": "deny" },
-    { "action": "edit", "resource": "*credentials*", "effect": "deny" },
-    { "action": "shell", "resource": "rm *credentials*", "effect": "deny" },
-    { "action": "shell", "resource": "rm *.env*", "effect": "deny" },
-    { "action": "shell", "resource": "rm -rf /", "effect": "deny" },
-    { "action": "shell", "resource": "git push*--force*", "effect": "deny" },
-    { "action": "shell", "resource": "git push* -f*", "effect": "deny" },
-    { "action": "shell", "resource": "curl*|*sh", "effect": "deny" },
-    { "action": "shell", "resource": "wget*|*sh", "effect": "deny" },
-    { "action": "websearch", "resource": "*", "effect": "ask" },
-    { "action": "webfetch", "resource": "*", "effect": "ask" }
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "~/.ssh/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.gnupg/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.aws/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.azure/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.kube/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.docker/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.config/gcloud/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".env*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.pem",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.key",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.p12",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.jks",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.ssh/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.gnupg/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.aws/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.azure/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.kube/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.docker/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.config/gcloud/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": ".env*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.pem",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.key",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.p12",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.jks",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm *credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm *.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf /",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push*--force*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push* -f*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "curl*|*sh",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "wget*|*sh",
+      "effect": "deny"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "webfetch",
+      "resource": "*",
+      "effect": "ask"
+    }
   ]
 }
