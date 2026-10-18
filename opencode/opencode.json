@@ -1,18 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "agent": {
+  "agents": {
     "explore": {
       "description": "Fast codebase exploration",
-      "model": "opencode-go/deepseek-v4-flash",
-      "variant": "auto",
-      "prompt": "{file:./prompts/explore.md}",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "system": "{file:./prompts/explore.md}",
       "mode": "subagent"
     },
     "executor": {
       "description": "Default execution subagent for bash commands, tests, builds, and validation",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4.1-flash",
       "mode": "subagent",
-      "prompt": "{file:./prompts/executor.md}"
+      "system": "{file:./prompts/executor.md}"
     },
     "code-reviewer": {
       "description": "Senior code reviewer that evaluates changes across five dimensions \u2014 correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
@@ -44,7 +43,7 @@
     }
   },
   "default_agent": "build",
-  "command": {
+  "commands": {
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
@@ -62,7 +61,7 @@
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4.1-flash",
       "template": "{file:./commands/build.md}"
     },
     "ship": {
@@ -72,7 +71,7 @@
     },
     "test": {
       "description": "Run TDD workflow \u2014 write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4.1-flash",
       "template": "{file:./commands/test.md}"
     },
     "analyst": {
@@ -92,57 +91,49 @@
     },
     "simplify": {
       "description": "Simplify code for clarity and maintainability \u2014 reduce complexity without changing behavior",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4.1-flash",
       "template": "{file:./commands/code-simplify.md}"
     }
   },
   "instructions": [
     "./prompts/general.md"
   ],
-  "permission": {
-    "lsp": "allow",
-    "read": {
-      "~/.ssh/**": "deny",
-      "~/.gnupg/**": "deny",
-      "~/.aws/**": "deny",
-      "~/.azure/**": "deny",
-      "~/.kube/**": "deny",
-      "~/.docker/**": "deny",
-      "~/.config/gcloud/**": "deny",
-      ".env*": "deny",
-      "*.pem": "deny",
-      "*.key": "deny",
-      "*.p12": "deny",
-      "*.jks": "deny",
-      "*credentials*": "deny"
-    },
-    "edit": {
-      "~/.aws/**": "deny",
-      "~/.azure/**": "deny",
-      "~/.ssh/**": "deny",
-      "~/.gnupg/**": "deny",
-      "~/.kube/**": "deny",
-      "~/.docker/**": "deny",
-      "~/.config/gcloud/**": "deny",
-      ".env*": "deny",
-      "*.pem": "deny",
-      "*.key": "deny",
-      "*.p12": "deny",
-      "*.jks": "deny",
-      "*credentials*": "deny"
-    },
-    "bash": {
-      "rm *credentials*": "deny",
-      "rm *.env*": "deny",
-      "rm -rf /": "deny",
-      "git push --force": "deny",
-      "curl * | sh": "deny",
-      "wget * | sh": "deny"
-    },
-    "websearch": "ask",
-    "webfetch": "ask"
-  },
-  "experimental": {
-    "disable_paste_summary": true
-  }
+  "permissions": [
+    { "action": "external_directory", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "~/.ssh/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.gnupg/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.aws/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.azure/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.kube/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.docker/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.config/gcloud/**", "effect": "deny" },
+    { "action": "read", "resource": ".env*", "effect": "deny" },
+    { "action": "read", "resource": "*.pem", "effect": "deny" },
+    { "action": "read", "resource": "*.key", "effect": "deny" },
+    { "action": "read", "resource": "*.p12", "effect": "deny" },
+    { "action": "read", "resource": "*.jks", "effect": "deny" },
+    { "action": "read", "resource": "*credentials*", "effect": "deny" },
+    { "action": "edit", "resource": "~/.ssh/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.gnupg/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.aws/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.azure/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.kube/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.docker/**", "effect": "deny" },
+    { "action": "edit", "resource": "~/.config/gcloud/**", "effect": "deny" },
+    { "action": "edit", "resource": ".env*", "effect": "deny" },
+    { "action": "edit", "resource": "*.pem", "effect": "deny" },
+    { "action": "edit", "resource": "*.key", "effect": "deny" },
+    { "action": "edit", "resource": "*.p12", "effect": "deny" },
+    { "action": "edit", "resource": "*.jks", "effect": "deny" },
+    { "action": "edit", "resource": "*credentials*", "effect": "deny" },
+    { "action": "shell", "resource": "rm *credentials*", "effect": "deny" },
+    { "action": "shell", "resource": "rm *.env*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf /", "effect": "deny" },
+    { "action": "shell", "resource": "git push*--force*", "effect": "deny" },
+    { "action": "shell", "resource": "git push* -f*", "effect": "deny" },
+    { "action": "shell", "resource": "curl*|*sh", "effect": "deny" },
+    { "action": "shell", "resource": "wget*|*sh", "effect": "deny" },
+    { "action": "websearch", "resource": "*", "effect": "ask" },
+    { "action": "webfetch", "resource": "*", "effect": "ask" }
+  ]
 }
