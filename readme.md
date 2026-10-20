@@ -46,115 +46,19 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ### Installation
 
-Symlink the profile entry point. PowerShell 7 reads `$PROFILE` from
-`Documents\PowerShell`; Windows PowerShell 5.1 uses `Documents\WindowsPowerShell`.
+Symlink the profile entry point. PowerShell 7 reads `$PROFILE` from `Documents\PowerShell`;
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\Documents\PowerShell" | Out-Null
-New-Item -ItemType SymbolicLink `
+New-Item -ItemType HardLink `
   -Path "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" `
   -Target "$HOME\dotfiles\powershell\Microsoft.PowerShell_profile.ps1"
 ```
 
-If only the entry point is linked, it falls back to `~\.config\powershell` for the
-module files. To make the whole directory available there, use a junction — unlike
-a directory symlink, a junction does not require Developer Mode or elevation (its
-target must be on a local volume):
+Symlink the directory with the modules:
 
 ```powershell
 New-Item -ItemType Junction `
   -Path "$HOME\.config\powershell" `
   -Target "$HOME\dotfiles\powershell"
 ```
-
-Then start a new shell. `~/_scripts`, `~\.local\bin`, and `~\.cargo\bin` are added
-to `PATH` automatically.
-
-### Keybinds
-
-- `Ctrl+d` — delete char or exit
-- `Ctrl+t` — insert a path picked with `fzf`
-- Vi editing mode is enabled with the cursor changing shape per mode
-
-History search (`atuin`) and smart `cd` (`zoxide`) replace the up-arrow and `cd`
-built-ins.
-
-## Keybinds
-
-### Tmux
-
-- `<c-o>` prefix key
-
-#### Windows
-
-- `c` create window with current path
-- `q` close window
-- `w` switch to last used window
-- `S-Left` swap with previous window
-- `S-Right` swap with next window
-
-#### Panes navigation
-
-- `a` last pane
-- `h` focus pane on the left
-- `j` focus pane below
-- `k` focus pane above
-- `l` focus pane on the right
-- `x` close pane
-
-#### Panes splitting
-
-- `s` open horizontal pane
-- `v` open vertical pane
-- `S` open full width horizontal pane
-- `V` open full height vertical pane
-
-#### Panes resizing
-
-- `+` resize up
-- `-` resize down
-- `<` resize left
-- `=` next layout
-- `>` resize right
-- `|` toggle zoom
-
-#### Copy mode
-
-- `'` jump to mark
-- `/` search up
-- `?` search down
-- `{` jump up 6 lines
-- `}` jump down 6 lines
-- `m` set mark
-- `v` begin selection
-- `y` yank selection
-
-### Windows Terminal
-
-#### Tabs
-
-- `<c-C>` create tab with current path
-- `<c-Q>` close tab
-- `<c-W>` switch tab
-
-#### Panes navigation
-
-- `<c-A>` last pane
-- `<c-H>` focus pane on the left
-- `<c-J>` focus pane below
-- `<c-K>` focus pane above
-- `<c-L>` focus pane on the right
-- `<c-X>` close pane
-
-#### Panes splitting
-
-- `<c-S>` open horizontal pane
-- `<c-V>` open vertical pane
-
-#### Panes resizing
-
-- `<c-+>` resize up
-- `<c-->` resize down
-- `<c-<>` resize left
-- `<c->>` resize right
-- `<c-|>` toggle zoom
