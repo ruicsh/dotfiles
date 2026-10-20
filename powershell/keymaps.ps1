@@ -10,6 +10,13 @@ if ((Get-Module PSReadLine).Version -ge [version]'2.2.0') {
 # Keymaps
 Set-PSReadLineKeyHandler -Chord Ctrl+d -Function DeleteCharOrExit
 
+# Ctrl+[ is Escape on Unix, but Windows reports it as Ctrl+Oem4 (US layout),
+# so PSReadLine needs an explicit binding to enter Vi command mode.
+Set-PSReadLineKeyHandler -Chord Ctrl+Oem4 -Function ViCommandMode
+
+# Keep Ctrl+[ from printing "^[" when already in command mode
+Set-PSReadLineKeyHandler -Chord Ctrl+Oem4 -Function Abort -ViMode Command
+
 # Optional:
 # Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView
 # Set-PSReadLineKeyHandler -Chord 'Shift+Enter' -Function AddLine
