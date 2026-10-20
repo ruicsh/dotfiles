@@ -2,7 +2,7 @@
 
 # fzf: bind Ctrl+t
 if (Get-Command fzf -ErrorAction SilentlyContinue) {
-  Set-PSReadLineKeyHandler -Chord 'Ctrl+t' -ViMode Insert -ScriptBlock {
+  Set-PSReadLineKeyHandler -Chord 'Ctrl+t' {
     $selection = fzf
     if ($selection) {
       $escapedSelection = $selection.Replace("'", "''")
