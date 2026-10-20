@@ -16,12 +16,6 @@ if (Get-Command atuin -ErrorAction SilentlyContinue) {
   atuin init powershell --disable-up-arrow | Out-String | Invoke-Expression
 }
 
-# carapace (completions)
-if (Get-Command carapace -ErrorAction SilentlyContinue) {
-  $env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
-  carapace _carapace powershell | Out-String | Invoke-Expression
-}
-
 # zoxide (smart cd)
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
   zoxide init powershell --cmd cd | Out-String | Invoke-Expression
