@@ -38,8 +38,63 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 - [AutoHotkey](https://github.com/AutoHotkey/AutoHotkey) OS automation
 - [MinGW-W64](https://github.com/niXman/mingw-builds-binaries) Build tools
+- [PowerShell](https://github.com/PowerShell/PowerShell) Shell
 - [PowerToys](https://github.com/microsoft/PowerToys) OS customization
 - [Windows Terminal](https://github.com/microsoft/terminal) Terminal
+
+## PowerShell (Windows)
+
+The `powershell/` config mirrors the zsh setup for [PowerShell 7](https://github.com/PowerShell/PowerShell)
+on Windows. It is split into the same modules as `zsh/` and loaded by
+`Microsoft.PowerShell_profile.ps1`:
+
+- `env.ps1` — environment variables, `PATH`, Nord `LS_COLORS`/`$PSStyle` colors
+- `keymaps.ps1` — PSReadLine Vi mode and key bindings
+- `tools.ps1` — `fzf`, `atuin`, `zoxide`, and `starship` integrations
+- `aliases.ps1` — aliases and functions (`l`, `v`, `cat`, `y`, navigation, ...)
+
+### Requirements
+
+- PowerShell 7.2+ (for `$PSStyle` file colors) and PSReadLine 2.2+
+- The CLI tools used by the config: `bat`, `fzf`, `lsd`, `neovim`, `yazi`,
+  `atuin`, `zoxide`, and `starship` — install with `winget` (see `winget/`)
+- Developer Mode enabled (or an elevated shell) to create the profile symlink;
+  directory junctions need neither
+
+### Installation
+
+Symlink the profile entry point. PowerShell 7 reads `$PROFILE` from
+`Documents\PowerShell`; Windows PowerShell 5.1 uses `Documents\WindowsPowerShell`.
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\Documents\PowerShell" | Out-Null
+New-Item -ItemType SymbolicLink `
+  -Path "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" `
+  -Target "$HOME\dotfiles\powershell\Microsoft.PowerShell_profile.ps1"
+```
+
+If only the entry point is linked, it falls back to `~\.config\powershell` for the
+module files. To make the whole directory available there, use a junction — unlike
+a directory symlink, a junction does not require Developer Mode or elevation (its
+target must be on a local volume):
+
+```powershell
+New-Item -ItemType Junction `
+  -Path "$HOME\.config\powershell" `
+  -Target "$HOME\dotfiles\powershell"
+```
+
+Then start a new shell. `~/_scripts`, `~\.local\bin`, and `~\.cargo\bin` are added
+to `PATH` automatically.
+
+### Keybinds
+
+- `Ctrl+d` — delete char or exit
+- `Ctrl+t` — insert a path picked with `fzf`
+- Vi editing mode is enabled with the cursor changing shape per mode
+
+History search (`atuin`) and smart `cd` (`zoxide`) replace the up-arrow and `cd`
+built-ins.
 
 ## Keybinds
 
