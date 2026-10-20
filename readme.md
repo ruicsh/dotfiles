@@ -44,23 +44,6 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 
 ## PowerShell (Windows)
 
-The `powershell/` config mirrors the zsh setup for [PowerShell 7](https://github.com/PowerShell/PowerShell)
-on Windows. It is split into the same modules as `zsh/` and loaded by
-`Microsoft.PowerShell_profile.ps1`:
-
-- `env.ps1` — environment variables, `PATH`, Nord `LS_COLORS`/`$PSStyle` colors
-- `keymaps.ps1` — PSReadLine Vi mode and key bindings
-- `tools.ps1` — `fzf`, `atuin`, `zoxide`, and `starship` integrations
-- `aliases.ps1` — aliases and functions (`l`, `v`, `cat`, `y`, navigation, ...)
-
-### Requirements
-
-- PowerShell 7.2+ (for `$PSStyle` file colors) and PSReadLine 2.2+
-- The CLI tools used by the config: `bat`, `fzf`, `lsd`, `neovim`, `yazi`,
-  `atuin`, `zoxide`, and `starship` — install with `winget` (see `winget/`)
-- Developer Mode enabled (or an elevated shell) to create the profile symlink;
-  directory junctions need neither
-
 ### Installation
 
 Symlink the profile entry point. PowerShell 7 reads `$PROFILE` from
