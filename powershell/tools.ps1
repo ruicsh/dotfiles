@@ -1,11 +1,14 @@
 # Tool-specific integrations
 
-# fzf (PSFzf provides Ctrl+t/Ctrl+r; install with:
-#   Install-Module PSFzf -Scope CurrentUser)
-# Load before atuin so atuin keeps Ctrl+R, matching zsh's load order.
-if (Get-Module -ListAvailable PSFzf) {
-  Import-Module PSFzf
-  Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+# fzf: bind Ctrl+t
+if (Get-Command fzf -ErrorAction SilentlyContinue) {
+  Set-PSReadLineKeyHandler -Chord 'Ctrl+t' -ViMode Insert -ScriptBlock {
+    $selection = fzf
+    if ($selection) {
+      $escapedSelection = $selection.Replace("'", "''")
+      [Microsoft.PowerShell.PSConsoleReadLine]::Insert("'$escapedSelection'")
+    }
+  }
 }
 
 # atuin (history search)
