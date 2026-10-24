@@ -13,13 +13,22 @@ You are a git commit assistant. The user wants to commit their current working t
      Do NOT lump everything into one commit if they clearly belong to different scopes or purposes.
 
 4. **Stage and commit per group** — For each logical group:
-   a. Stage the relevant files with `git add <files>`
-   b. Generate a commit message in the format `type(scope): description` (lowercase)
-   - Types: `feat`, `fix`, `refactor`, `docs`, `chore`
-   - Scope: the tool/directory name (e.g. `zsh`, `git`, `hammerspoon`, `nvim-vscode`, `opencode`)
-   - Description: short imperative sentence, no period
-   - Example: `feat(zsh): add fzf integration for git log`
-     c. Commit with `git commit -m "..."`
+   - **Stage** the relevant files with `git add <files>`.
+   - **Write the message** as `type(scope): description`, lowercase, following the Conventional Commits standard.
+     - **Types**
+       - `build` — changes to the build system or external dependencies (example scopes: gulp, broccoli, npm)
+       - `ci` — changes to CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+       - `docs` — documentation only changes
+       - `feat` — a new feature
+       - `fix` — a bug fix
+       - `perf` — a code change that improves performance
+       - `refactor` — a code change that neither fixes a bug nor adds a feature
+       - `style` — changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
+       - `test` — adding missing tests or correcting existing tests
+     - **Scope** — the tool/directory/module name (e.g. `zsh`, `git`, `hammerspoon`, `db`, `api`)
+     - **Description** — short imperative sentence, no period
+     - **Example** — `feat(zsh): add fzf integration for git log`
+   - **Commit** with `git commit -m "..."`.
 
 5. **Report** — After all commits, tell the user:
    - How many commits were created
