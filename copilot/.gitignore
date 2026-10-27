@@ -1,0 +1,22 @@
+# Ignore all Copilot CLI runtime state by default.
+# Only user-managed configuration belongs in source control.
+*
+!.gitignore
+
+# Skills
+!skills/
+!skills/**
+
+# User configuration
+!settings.json
+!copilot-instructions.md
+!instructions/
+!instructions/**
+!agents/
+!agents/**
+!hooks/
+!hooks/**
+!extensions/
+!extensions/**
+!providers.json
+!lsp-config.json
