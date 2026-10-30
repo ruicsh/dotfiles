@@ -1,37 +1,25 @@
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "$help": "https://aka.ms/terminal-documentation",
-  "defaultProfile": "{9ac80cec-1684-4a60-999b-108f29738231}",
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
   "disableAnimations": true,
   "theme": "dark",
   "copyFormatting": false,
   "copyOnSelect": true,
   "profiles": {
     "defaults": {
-      "suppressApplicationTitle": true,
-      "tabTitle": "Terminal"
+      "font": {
+        "face": "JetBrainsMonoNL NFM",
+        "size": 10
+      }
     },
     "list": [
       {
-        "guid": "{9ac80cec-1684-4a60-999b-108f29738231}",
-        "name": "WSL",
-        "background": "#171717",
-        "commandline": "C:\\Windows\\system32\\wsl.exe --distribution-id {5f6d3759-dcd0-4968-bb4f-6cd790aee47d} --cd ~",
-        "font": {
-          "face": "JetBrainsMonoNL NFM",
-          "size": 9
-        },
-        "pathTranslationStyle": "wsl"
-      },
-      {
-        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "name": "Command Prompt",
-        "background": "#171717",
-        "commandline": "cmd.exe",
-        "font": {
-          "face": "JetBrainsMonoNL NFM",
-          "size": 10
-        }
+        "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore"
       }
     ]
   },
