@@ -1,0 +1,18 @@
+{
+  "banner": "never",
+  "includeCoAuthoredBy": false,
+  "compactPaste": false,
+  "mergeStrategy": "rebase",
+  "pinnedPrompts": true,
+  "showTipsOnStartup": false,
+  "footer": {
+    "showAgent": true,
+    "showCiStatus": false,
+    "showDirectory": false,
+    "showModelEffort": true,
+    "showBranch": false,
+    "showQuota": true,
+    "showContextWindow": true,
+    "showAiUsed": true
+  }
+}
