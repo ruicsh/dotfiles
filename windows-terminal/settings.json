@@ -3,10 +3,9 @@
   "$help": "https://aka.ms/terminal-documentation",
   "defaultProfile": "{9ac80cec-1684-4a60-999b-108f29738231}",
   "disableAnimations": true,
-  "launchMode": "fullscreen",
-  "showTabsInTitlebar": false,
-  "showTerminalTitleInTitlebar": false,
   "theme": "dark",
+  "copyFormatting": false,
+  "copyOnSelect": true,
   "profiles": {
     "defaults": {
       "suppressApplicationTitle": true,
