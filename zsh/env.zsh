@@ -48,3 +48,4 @@ export CLAUDE_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/claude"
 # Copilot CLI
 export COPILOT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/copilot"
 export COPILOT_SKILLS_DIRS="$HOME/.agents/skills" # shared skills (COPILOT_HOME disables default discovery)
+export COPILOT_MASCOT_BLINK="0" # disable the animated mascot blink in the home header
