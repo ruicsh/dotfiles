@@ -17,7 +17,8 @@
   cm = commit -m # commit with message
   cw = commit --amend --only --edit # reword the last commit
   cp = cherry-pick
-  df = "!NVIM_GIT_DIFF=1 nvim -c 'DiffviewOpenOnly' $@" # open diffview (don't want to open one vim session per file like git difftool does)
+  df = diff # terminal diff, e.g. `g df path/to/file`
+  dfc = diff --cached # staged changes only
   fe = fetch
   lg = "!git log \
     --color=always \
@@ -62,6 +63,7 @@
 [core]
   editor = NVIM_APPNAME=vim nvim
   excludesFile = ~/.config/git/ignore
+  pager = less -FRX # -F: no pager if output fits, -R: keep colors, -X: don't clear on exit
 
 [diff]
   tool = nvimdiff
