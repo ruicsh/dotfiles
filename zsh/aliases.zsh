@@ -9,7 +9,6 @@ alias gu='gituser'
 alias l='lsd -la'
 alias oc='opencode'
 alias py='uv run python'
-alias v='nvim'
 
 # npm
 alias ni='npm install'
@@ -22,6 +21,15 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Functions
+# Use the minimal config for a single file, the full config otherwise.
+v() {
+  if (( $# == 1 )) && [[ $1 != -* && ! -d $1 ]]; then
+    NVIM_APPNAME=nvim-lite nvim "$@"
+  else
+    nvim "$@"
+  fi
+}
+
 vi() {
   NVIM_APPNAME=vim nvim "$@"
 }
