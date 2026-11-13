@@ -31,7 +31,6 @@ set listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:+
 set lazyredraw 
 set number
 set numberwidth=5
-set relativenumber
 set scrolloff=5
 set sidescrolloff=10
 set wrap
@@ -47,7 +46,7 @@ set termguicolors
 
 " 6 multiple windows {{{
 set hidden
-set laststatus=2
+set laststatus=0
 set noequalalways
 set splitbelow
 set splitkeep=cursor
