@@ -1,7 +1,17 @@
 # Aliases and functions (mirrors zsh/aliases.zsh)
 
 Set-Alias g  git
-Set-Alias v  nvim
+
+# Use the minimal config for a single file, the full config otherwise.
+function v {
+  if ($args.Count -eq 1 -and -not (Test-Path -LiteralPath $args[0] -PathType Container)) {
+    $env:NVIM_APPNAME = 'nvim-lite'
+    try { nvim @args }
+    finally { Remove-Item Env:NVIM_APPNAME -ErrorAction SilentlyContinue }
+  } else {
+    nvim @args
+  }
+}
 function l  { lsd -la @args }
 function oc { opencode @args }
 function c  { Clear-Host }
