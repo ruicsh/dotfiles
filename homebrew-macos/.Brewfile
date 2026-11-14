@@ -9,8 +9,6 @@ brew "git-lfs"
 brew "gituser"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
-# Painless compression and decompression for your terminal
-brew "ouch"
 # Command-line interface for SQLite
 brew "sqlite"
 # Internet file retriever

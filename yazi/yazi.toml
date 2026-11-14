@@ -18,10 +18,6 @@ edit = [
   { run = 'nvim "$@"', desc = "Edit with Neovim", block = true, for = "unix" },
   { run = 'nvim %*', desc = "Edit with Neovim", block = true, for = "windows" },
 ]
-extract = [
-  { run = 'ouch decompress --yes "$@"', desc = "Extract here", for = "unix" },
-  { run = 'ouch decompress --yes %*', desc = "Extract here", for = "windows" },
-]
 view = [
   { run = 'open-in-windows-from-wsl.sh "$@"', desc = "View", for = "unix" }, # WSL
 ]
@@ -47,8 +43,7 @@ previewers = [
   { mime = "*/javascript", run = "code" },
   { mime = "application/{json,ndjson}", run = "json" },
   { mime = "image/*", run = "image" },
-  { url = "*.zip", run = "ouch" },
-  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "ouch" },
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "archive" },
   { mime = "application/{octet-stream,dosexec,ms-*,microsoft.*}", run = "noop" }, # binary files - no preview
   { mime = "*", run = "file" },
 ]
