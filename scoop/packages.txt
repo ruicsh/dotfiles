@@ -1,0 +1,31 @@
+# Scoop packages (CLI tools and a few extras).
+#
+# Mirrors the Scoop-installable portion of ../winget/packages.json for machines
+# where winget is blocked but Scoop is allowed. Apps Scoop doesn't cover
+# (Teams, Windows Terminal, PowerShell, App Installer) stay in winget or are
+# installed manually.
+#
+# Install:
+#   scoop bucket add extras
+#   Get-Content .\scoop\packages.txt |
+#     Where-Object { $_ -and $_ -notmatch '^\s*#' } |
+#     ForEach-Object { scoop install $_ }
+
+extras/autohotkey
+extras/carapace-bin
+extras/powertoys
+main/7zip
+main/atuin
+main/bat
+main/curl
+main/fd
+main/fzf
+main/gcc
+main/jq
+main/lsd
+main/neovim
+main/pwsh
+main/ripgrep
+main/starship
+main/yazi
+main/zoxide

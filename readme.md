@@ -42,6 +42,20 @@ Neovim config is on a separate [repo](https://github.com/ruicsh/nvim-config).
 - [PowerToys](https://github.com/microsoft/PowerToys) OS customization
 - [Windows Terminal](https://github.com/microsoft/terminal) Terminal
 
+### Package management
+
+Two manifests, for two environments:
+
+- `winget/packages.json` — winget export; covers GUI and Store apps. Restore with `winget import -i winget/packages.json`.
+- `scoop/packages.txt` — Scoop package list for machines where winget is blocked. Covers the CLI tools plus extras like AutoHotkey and PowerToys.
+
+```powershell
+scoop bucket add extras
+Get-Content .\scoop\packages.txt |
+  Where-Object { $_ -and $_ -notmatch '^\s*#' } |
+  ForEach-Object { scoop install $_ }
+```
+
 ## PowerShell (Windows)
 
 ### Installation
