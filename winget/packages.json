@@ -20,9 +20,6 @@
           "PackageIdentifier": "BurntSushi.ripgrep.GNU"
         },
         {
-          "PackageIdentifier": "SST.opencode"
-        },
-        {
           "PackageIdentifier": "Starship.Starship"
         },
         {
@@ -53,16 +50,10 @@
           "PackageIdentifier": "sxyazi.yazi"
         },
         {
-          "PackageIdentifier": "Microsoft.Teams"
-        },
-        {
           "PackageIdentifier": "Microsoft.AppInstaller"
         },
         {
           "PackageIdentifier": "Microsoft.PowerShell"
-        },
-        {
-          "PackageIdentifier": "Microsoft.WindowsTerminal"
         }
       ],
       "SourceDetails": {
