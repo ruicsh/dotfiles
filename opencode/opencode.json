@@ -51,7 +51,7 @@
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:~/.agents/commands/commit.md}"
+      "template": "@commit\n\nScope: $ARGUMENTS"
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
@@ -66,7 +66,7 @@
     "review": {
       "description": "Review current changes across correctness, readability, architecture, security, performance",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:~/.agents/commands/review.md}"
+      "template": "@review\n\nScope: $ARGUMENTS"
     }
   },
   "instructions": [
