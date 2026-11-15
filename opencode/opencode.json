@@ -66,7 +66,7 @@
     "ship": {
       "description": "Run the pre-launch checklist via parallel fan-out to specialist subagents, then synthesize a go/no-go decision",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:~/.agents/commands/ship.md}"
+      "template": "Load the `ship` skill. `$ARGUMENTS` is the scope; if empty, use the staged changes or the most recent commits."
     },
     "review": {
       "description": "Review current changes across correctness, readability, architecture, security, performance",
