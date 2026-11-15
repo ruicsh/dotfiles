@@ -74,3 +74,81 @@ New-Item -ItemType Junction `
   -Path "$HOME\.config\powershell" `
   -Target "$HOME\dotfiles\powershell"
 ```
+
+## Agent config
+
+`claude/`, `copilot/`, and `opencode/` are symlinked into `~/.config`.
+`opencode/opencode.json` spells its instruction paths as
+`~/.config/opencode/prompts/*.md`, so moving `XDG_CONFIG_HOME` off `~/.config`
+leaves those entries resolving to nothing, and OpenCode skips missing files
+silently.
+
+`agent-prompts/` holds instructions shared across agents: `voice.md` for tone,
+`commit.md` and `review.md` for those workflows. Linked once:
+
+```sh
+ln -sfn ~/dotfiles/agent-prompts ~/.config/agent-prompts
+```
+
+OpenCode loads `voice.md` through its `instructions` array, and the other two
+through command templates:
+
+```json
+"instructions": [
+  "~/.config/opencode/prompts/general.md",
+  "~/.config/agent-prompts/voice.md"
+],
+"commands": {
+  "commit": { "template": "{file:../agent-prompts/commit.md}" },
+  "review": { "template": "{file:../agent-prompts/review.md}" }
+}
+```
+
+Command templates carry no frontmatter. `opencode.json` holds the description
+and model, which are OpenCode-only.
+
+Copilot CLI has no prompt-file commands. It turns `~/.copilot/skills/<name>/SKILL.md`
+into a slash command from that file's frontmatter, so each skill points at the
+shared prompt instead of copying it:
+
+```md
+---
+name: commit
+user-invocable: true
+disable-model-invocation: true
+---
+
+Read `~/.config/agent-prompts/commit.md` and follow it exactly.
+```
+
+`commit` and `review` work this way. The body stays one line; the prompt lives in
+`agent-prompts/`.
+
+Claude Code uses skills too — commands were merged into them. Same pointer shape,
+different frontmatter, and each skill needs a link into `~/.claude/skills`:
+
+```sh
+ln -sfn ~/dotfiles/claude/skills/commit ~/.claude/skills/commit
+ln -sfn ~/dotfiles/claude/skills/review ~/.claude/skills/review
+```
+
+```md
+---
+name: commit
+disable-model-invocation: true
+---
+
+@~/.config/agent-prompts/commit.md
+```
+
+Claude imports the file inline, so no read round-trip. Copilot cannot: its `@`
+references must stay inside `~/.copilot`, so it keeps the read pointer.
+
+Pass `instructions` an absolute or `~` path. It resolves relative entries
+against the current directory, not the config dir, so `../agent-prompts/...`
+silently loads nothing. `{file:}` does resolve against the config dir, which is
+why the template uses a relative path.
+
+Other agents take a single instructions file. Paste `voice.md`, or reference
+`~/.config/agent-prompts/voice.md`, into `~/.claude/CLAUDE.md` or
+`$HOME/.copilot/copilot-instructions.md`.
