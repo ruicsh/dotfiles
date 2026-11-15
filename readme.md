@@ -83,10 +83,9 @@ spells its instruction paths as `~/.config/opencode/prompts/*.md`, so moving
 `XDG_CONFIG_HOME` off `~/.config` leaves those entries resolving to nothing, and
 OpenCode skips missing files silently.
 
-`agents/` holds prompts shared across agents. `commands/` has the workflow bodies
-and `instructions/` has cross-cutting rules such as `voice.md` for tone — that one is a
-symlink to the `terse-voice` skill. The skills
-CLI also writes its store here, so one symlink covers both:
+`agents/` holds prompts shared across agents. `instructions/` has cross-cutting rules
+such as `skills.md`. The skills CLI also writes its store here, so one symlink covers
+both:
 
 ```sh
 ln -sfn ~/dotfiles/agents ~/.agents
@@ -143,17 +142,16 @@ Harnesses consume each file their own way:
 | File | OpenCode | Claude | Copilot |
 | --- | --- | --- | --- |
 | `skills.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
-| `voice.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 
-`voice.md` is a symlink to the installed `terse-voice` skill
-(`agents/skills/terse-voice/SKILL.md`), which comes from
-[`ruicsh/skills`](https://github.com/ruicsh/skills). Edit the skill in that repo, then
-`npx skills update`. The skill frontmatter is injected with the rules; harmless.
+Copilot gets `copilot/instructions/skills.instructions.md` as a symlink into
+`agents/instructions/`. Copilot reads through the symlink — verified via
+`copilot instruction list` and the `<custom_instruction>` block in the session log.
+Edit one file; no copies to drift.
 
-Copilot gets `copilot/instructions/skills.instructions.md` and
-`copilot/instructions/voice.instructions.md` as symlinks into `agents/instructions/`.
-Copilot reads through the symlink — verified via `copilot instruction list` and the
-`<custom_instruction>` block in the session log. Edit one file; no copies to drift.
+Tone rules are not injected as instructions. `terse-voice` ships only as a skill from
+[`ruicsh/skills`](https://github.com/ruicsh/skills): OpenCode discovers it in
+`~/.agents/skills`, and Claude gets a CLI symlink. Copilot has no link, so it never
+sees the skill. Edit it in that repo, then `npx skills update`.
 
 ### Commands
 
