@@ -23,7 +23,7 @@
 
 ## Skills
 
-Load a matching skill with the `skill` tool and follow it. The intent → skill map is loaded from `~/.agents/instructions/skills.md`.
+Load a matching skill with the `skill` tool and follow it. The intent → skill map is loaded from `~/.agents/skills/skill-router/SKILL.md`.
 
 ## Efficiency Rules
 

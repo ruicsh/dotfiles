@@ -1,1 +1,0 @@
-../../agents/instructions/skills.md
