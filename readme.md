@@ -84,7 +84,8 @@ spells its instruction paths as `~/.config/opencode/prompts/*.md`, so moving
 OpenCode skips missing files silently.
 
 `agents/` holds prompts shared across agents. `commands/` has the workflow bodies
-and `instructions/` has cross-cutting rules such as `voice.md` for tone. The skills
+and `instructions/` has cross-cutting rules such as `voice.md` for tone — that one is a
+symlink to the `terse-voice` skill. The skills
 CLI also writes its store here, so one symlink covers both:
 
 ```sh
@@ -143,6 +144,11 @@ Harnesses consume each file their own way:
 | --- | --- | --- | --- |
 | `skills.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 | `voice.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+
+`voice.md` is a symlink to the installed `terse-voice` skill
+(`agents/skills/terse-voice/SKILL.md`), which comes from
+[`ruicsh/skills`](https://github.com/ruicsh/skills). Edit the skill in that repo, then
+`npx skills update`. The skill frontmatter is injected with the rules; harmless.
 
 Copilot gets `copilot/instructions/skills.instructions.md` and
 `copilot/instructions/voice.instructions.md` as symlinks into `agents/instructions/`.
