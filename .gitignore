@@ -3,3 +3,6 @@
 nvim-vscode/lazy-lock.json
 carapace/bridge/
 yazi/state/
+
+# Skill bodies installed by the skills CLI. The lock file is tracked.
+agents/skills/
