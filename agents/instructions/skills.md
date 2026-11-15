@@ -1,7 +1,6 @@
 # Agent skills
 
-Skills are installed globally in `~/.agents/skills` and are visible to this session. Before acting, check whether
-a skill matches the request and load it.
+Skills are installed globally in `~/.agents/skills` and are visible to this session. Before acting, check whether a skill matches the request and load it.
 
 - Feature / new functionality → `spec-driven-development`, then `incremental-implementation` + `test-driven-development`
 - Planning / task breakdown → `planning-and-task-breakdown`

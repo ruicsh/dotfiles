@@ -77,11 +77,11 @@ New-Item -ItemType Junction `
 
 ## Agent config
 
-`claude/` and `opencode/` are symlinked under `~/.config`; `copilot/` is symlinked to
-`~/.copilot`. `opencode/opencode.json` spells its instruction paths as
-`~/.config/opencode/prompts/*.md`, so moving `XDG_CONFIG_HOME` off `~/.config`
-leaves those entries resolving to nothing, and OpenCode skips missing files
-silently.
+`claude/`, `opencode/`, and `copilot/` are symlinked under `~/.config`, with
+`COPILOT_HOME` set to `$XDG_CONFIG_HOME/copilot` in `zsh/env.zsh`. `opencode/opencode.json`
+spells its instruction paths as `~/.config/opencode/prompts/*.md`, so moving
+`XDG_CONFIG_HOME` off `~/.config` leaves those entries resolving to nothing, and
+OpenCode skips missing files silently.
 
 `agents/` holds prompts shared across agents. `commands/` has the workflow bodies
 and `instructions/` has cross-cutting rules such as `voice.md` for tone. The skills
@@ -110,9 +110,11 @@ npx skills update
   skill into `claude/skills`. Those links are gitignored; only `commit` is local.
 - `~/.agents/.skill-lock.json` records source and hash per skill. It is tracked, so
   the installed list survives a fresh machine.
-- Copilot CLI turns `~/.copilot/skills/<name>/SKILL.md` into a slash command from
-  its frontmatter. Claude imports shared prompts with `@`; Copilot must read them,
-  since its `@` references cannot leave `~/.copilot`.
+- Copilot CLI turns `~/.config/copilot/skills/<name>/SKILL.md` into a slash command from
+  its frontmatter. Claude imports shared prompts with `@`. Copilot resolves `@` in
+  `.github/copilot-instructions.md` and `AGENTS.md`, but **not** in the home-level
+  `copilot-instructions.md` — it injects those lines literally. So Copilot takes shared
+  rules as `*.instructions.md` files instead, symlinked into `copilot/instructions/`.
 
 New machine, after linking the repo:
 
@@ -126,8 +128,18 @@ npx skills list -g                    # verify: all entries "tracked"
 lock uses `npx skills experimental_install` instead. Remove a stray real
 `~/.agents` dir first, or `ln` nests the link inside it.
 
-Each agent gets the same intent → skill map: `opencode/prompts/general.md`,
-`claude/CLAUDE.md`, `copilot/copilot-instructions.md`.
+Shared rules live once in `agents/instructions/`, deployed at `~/.agents/instructions/`.
+Harnesses consume each file their own way:
+
+| File | OpenCode | Claude | Copilot |
+| --- | --- | --- | --- |
+| `skills.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+| `voice.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+
+Copilot gets `copilot/instructions/skills.instructions.md` and
+`copilot/instructions/voice.instructions.md` as symlinks into `agents/instructions/`.
+Copilot reads through the symlink — verified via `copilot instruction list` and the
+`<custom_instruction>` block in the session log. Edit one file; no copies to drift.
 
 ### Commands
 
