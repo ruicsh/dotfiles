@@ -64,6 +64,7 @@
   editor = NVIM_APPNAME=vim nvim
   excludesFile = ~/.config/git/ignore
   pager = less -FRX # -F: no pager if output fits, -R: keep colors, -X: don't clear on exit
+  symlinks = true # materialize symlinks on checkout (Windows defaults to false)
 
 [diff]
   tool = nvimdiff
