@@ -96,18 +96,26 @@ ln -sfn ~/dotfiles/agents ~/.agents
 
 ### Skills
 
-One standard pack, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
+Two packs, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
+for generic workflows, and [ruicsh/skills](https://github.com/ruicsh/skills) for the
+`commit` and `review` workflows this repo drives.
 
 ```sh
 npx skills add addyosmani/agent-skills -g -a opencode claude-code github-copilot -y
+npx skills add ruicsh/skills -g -a opencode claude-code github-copilot -y
 npx skills check
 npx skills update
 ```
 
-- Canonical store is `~/.agents/skills`, which OpenCode and Copilot CLI discover
-  directly.
-- Claude Code reads `~/.config/claude/skills`, so the CLI symlinks each installed
-  skill into `claude/skills`. Those links are gitignored; only `commit` is local.
+- Canonical store is `~/.agents/skills`, which OpenCode discovers directly.
+- Claude Code reads `~/.config/claude/skills`; Copilot CLI reads
+  `~/.config/copilot/skills` and, with `COPILOT_HOME` set, does not fall back to
+  `~/.agents/skills`. Both get symlinks into the store. CLI-made links are gitignored;
+  `commit` and `review` are tracked in both, so a fresh checkout has `/commit` and
+  `/review` without a CLI run.
+- `commit` and `review` are owned by `ruicsh/skills`. Edit them there, then
+  `npx skills update`. OpenCode needs a command wrapper because it has no skill-to-slash
+  mapping; Claude and Copilot map the skill directory name to the slash command themselves.
 - `~/.agents/.skill-lock.json` records source and hash per skill. It is tracked, so
   the installed list survives a fresh machine.
 - Copilot CLI turns `~/.config/copilot/skills/<name>/SKILL.md` into a slash command from
@@ -143,19 +151,31 @@ Copilot reads through the symlink — verified via `copilot instruction list` an
 
 ### Commands
 
-One body per workflow in `agents/commands/`: `build.md`, `commit.md`, `review.md`, `ship.md`.
-Each agent wraps it with its own frontmatter, so the workflow text is not duplicated.
+Two workflow bodies live in `agents/commands/`: `build.md` and `ship.md`. Each agent
+wraps them with its own frontmatter, so the workflow text is not duplicated.
+
+`commit` and `review` are no longer bodies here. They ship as skills from
+[`ruicsh/skills`](https://github.com/ruicsh/skills), so every agent reads one copy.
+Claude and Copilot turn each installed skill into `/commit` and `/review` from its
+frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json` maps them:
+
+```jsonc
+"commit": { "template": "@commit\n\nScope: $ARGUMENTS" }
+```
+
+`@<skill-id>` loads an OpenCode skill explicitly instead of hoping the model picks it.
 
 | Agent | Where | Shape |
 | --- | --- | --- |
-| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` plus description and model |
-| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md` |
-| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file |
+| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `build`/`ship`, `@<skill>` for `commit`/`review` |
+| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `commit`/`review` come from the skill dir |
+| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file (`build`/`ship` only) |
 
 - `review` loads `code-review-and-quality` in the main session.
 - `ship` fans out to review, security, and test subagents, then merges their reports plus a
   rollback plan.
-- `commit` stays OpenCode-only; Claude and Copilot have a local `commit` skill.
+- `commit` stays OpenCode-only as a command; the skill itself auto-invokes everywhere
+  else when the user asks to commit.
 
 OpenCode models: `build` and `commit` on `opencode-go/deepseek-v4.1-flash`, `review` and
 `ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot commands inherit the session
