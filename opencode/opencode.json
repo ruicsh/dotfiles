@@ -47,12 +47,12 @@
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:./commands/commit.md}"
+      "template": "{file:../agent-prompts/commit.md}"
     },
     "review": {
       "description": "Conduct a five-axis code review \u2014 correctness, readability, architecture, security, performance",
       "model": "opencode/big-pickle",
-      "template": "{file:./commands/review.md}"
+      "template": "{file:../agent-prompts/review.md}"
     },
     "plan": {
       "description": "Break work into small verifiable tasks with acceptance criteria and dependency ordering",
@@ -96,7 +96,8 @@
     }
   },
   "instructions": [
-    "./prompts/general.md"
+    "~/.config/opencode/prompts/general.md",
+    "~/.config/agent-prompts/voice.md"
   ],
   "permissions": [
     {
