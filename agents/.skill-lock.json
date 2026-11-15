@@ -242,7 +242,7 @@
       "skillPath": "skills/commit/SKILL.md",
       "skillFolderHash": "cacb6d206d65463598a0d7b35f08d6c959eb34b8",
       "installedAt": "2026-11-15T22:18:46.221Z",
-      "updatedAt": "2026-11-15T23:02:39.950Z"
+      "updatedAt": "2026-11-15T23:11:45.302Z"
     },
     "review": {
       "source": "ruicsh/skills",
@@ -251,16 +251,25 @@
       "skillPath": "skills/review/SKILL.md",
       "skillFolderHash": "6cba1b0d3550aed8a63f37d702fede6b6c4af476",
       "installedAt": "2026-11-15T22:18:46.228Z",
-      "updatedAt": "2026-11-15T23:02:39.953Z"
+      "updatedAt": "2026-11-15T23:11:45.304Z"
     },
     "build": {
       "source": "ruicsh/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ruicsh/skills.git",
       "skillPath": "skills/build/SKILL.md",
-      "skillFolderHash": "f96dee35d6b504279bf0c20ba8b24ebbd2bdb425",
+      "skillFolderHash": "a8809967b4f554a30853056df714ec2488b4ad63",
       "installedAt": "2026-11-15T23:02:39.945Z",
-      "updatedAt": "2026-11-15T23:02:39.945Z"
+      "updatedAt": "2026-11-15T23:11:45.299Z"
+    },
+    "plan": {
+      "source": "ruicsh/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ruicsh/skills.git",
+      "skillPath": "skills/plan/SKILL.md",
+      "skillFolderHash": "1c841c0a4218550de9e5532c6309870f32e8fe76",
+      "installedAt": "2026-11-15T23:11:45.304Z",
+      "updatedAt": "2026-11-15T23:11:45.304Z"
     }
   },
   "dismissed": {
