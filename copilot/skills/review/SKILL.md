@@ -1,8 +1,9 @@
 ---
 name: review
-description: Conduct a five-axis code review — correctness, readability, architecture, security, performance.
+description: Review current changes across correctness, readability, architecture, security, performance.
 user-invocable: true
-disable-model-invocation: true
 ---
 
-Read `~/.config/agent-prompts/review.md` and follow it exactly.
+Read `~/.config/agents/commands/review.md` and follow it exactly.
+
+Text after the command name is the scope. Empty scope means the staged and unstaged changes (`git diff HEAD`).
