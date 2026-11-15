@@ -151,30 +151,28 @@ Copilot reads through the symlink — verified via `copilot instruction list` an
 
 ### Commands
 
-One workflow body lives in `agents/commands/`: `ship.md`. Each agent wraps it with its own
-frontmatter, so the workflow text is not duplicated.
-
-`build`, `commit`, `plan`, and `review` are no longer bodies here. They ship as skills from
-[`ruicsh/skills`](https://github.com/ruicsh/skills), so every agent reads one copy.
-Claude and Copilot turn each installed skill into `/build`, `/commit`, `/plan`, and
-`/review` from its frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json`
-maps them:
+`build`, `commit`, `plan`, `review`, and `ship` all ship as skills from
+[`ruicsh/skills`](https://github.com/ruicsh/skills), so every agent reads one copy. There are
+no command bodies in this repo. Claude and Copilot turn each installed skill into `/build`,
+`/commit`, `/plan`, `/review`, and `/ship` from its frontmatter. OpenCode has no
+skill-to-slash mapping, so `opencode.json` maps them:
 
 ```jsonc
 "commit": { "template": "@commit" },
 "plan": { "template": "@plan" },
+"ship": { "template": "Load the `ship` skill. `$ARGUMENTS` is the scope; ..." },
 "build": { "template": "Load the `build` skill. `$ARGUMENTS` picks the mode: ..." }
 ```
 
 `@<skill-id>` loads an OpenCode skill explicitly instead of hoping the model picks it.
-`build` needs the longer wrapper because the mode has to come from `$ARGUMENTS`, which a
-bare `@build` cannot carry.
+`build` and `ship` need the longer wrapper because `$ARGUMENTS` must reach the skill, and a
+bare `@<skill-id>` cannot carry it.
 
 | Agent | Where | Shape |
 | --- | --- | --- |
-| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `ship`, `@<skill>` for `commit`/`plan`/`review`, inline wrapper for `build` |
-| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `build`/`commit`/`plan`/`review` come from the skill dir |
-| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file (`ship` only) |
+| OpenCode | `opencode.json` `commands` | `@<skill>` for `commit`/`plan`/`review`, inline wrapper for `build`/`ship` |
+| Claude | `claude/commands/<name>.md` | none — all five come from `~/.agents/skills/<name>` |
+| Copilot | `copilot/skills/<name>` | symlink to `~/.agents/skills/<name>` |
 
 - `review` loads `code-review-and-quality` in the main session.
 - `ship` fans out to review, security, and test subagents, then merges their reports plus a
@@ -185,8 +183,8 @@ bare `@build` cannot carry.
   `planning-and-task-breakdown`. It never implements; `build` consumes its output.
 
 OpenCode models: `build` and `commit` on `opencode-go/deepseek-v4.1-flash`, `plan`,
-`review`, and `ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot commands inherit
-the session model.
+`review`, and `ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot use the session
+model.
 
 ### Subagents
 
