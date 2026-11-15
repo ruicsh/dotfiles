@@ -15,7 +15,8 @@
     },
     "code-reviewer": {
       "description": "Senior code reviewer that evaluates changes across five dimensions \u2014 correctness, readability, architecture, security, and performance. Use for thorough code review before merge.",
-      "model": "opencode-go/mimo-v2.5-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "system": "{file:./prompts/code-reviewer.md}",
       "mode": "subagent"
     },
     "build": {
@@ -28,17 +29,20 @@
     },
     "security-auditor": {
       "description": "Security engineer focused on vulnerability detection, threat modeling, and secure coding practices. Use for security-focused code review, threat analysis, or hardening recommendations.",
-      "model": "opencode-go/mimo-v2.5-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "system": "{file:./prompts/security-auditor.md}",
       "mode": "subagent"
     },
     "test-engineer": {
       "description": "QA engineer specialized in test strategy, test writing, and coverage analysis. Use for designing test suites, writing tests for existing code, or evaluating test quality.",
-      "model": "opencode-go/mimo-v2.5",
+      "model": "opencode-go/deepseek-v4-pro",
+      "system": "{file:./prompts/test-engineer.md}",
       "mode": "subagent"
     },
     "web-performance-auditor": {
       "description": "Web performance engineer focused on Core Web Vitals, loading, rendering, and network optimization. Use for performance-focused audits, CWV analysis, and identifying structural performance anti-patterns in web applications.",
-      "model": "opencode-go/mimo-v2.5-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "system": "{file:./prompts/web-performance-auditor.md}",
       "mode": "subagent"
     }
   },
@@ -47,57 +51,27 @@
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:../agent-prompts/commit.md}"
-    },
-    "review": {
-      "description": "Conduct a five-axis code review \u2014 correctness, readability, architecture, security, performance",
-      "model": "opencode/big-pickle",
-      "template": "{file:../agent-prompts/review.md}"
-    },
-    "plan": {
-      "description": "Break work into small verifiable tasks with acceptance criteria and dependency ordering",
-      "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:./commands/plan.md}"
+      "template": "{file:../agents/commands/commit.md}"
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:./commands/build.md}"
+      "template": "{file:../agents/commands/build.md}"
     },
     "ship": {
-      "description": "Run the pre-launch checklist via parallel fan-out to specialist personas, then synthesize a go/no-go decision",
+      "description": "Run the pre-launch checklist via parallel fan-out to specialist subagents, then synthesize a go/no-go decision",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:./commands/ship.md}"
+      "template": "{file:../agents/commands/ship.md}"
     },
-    "test": {
-      "description": "Run TDD workflow \u2014 write failing tests, implement, verify. For bugs, use the Prove-It pattern.",
-      "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:./commands/test.md}"
-    },
-    "analyst": {
-      "description": "Elicit and document project requirements through structured discovery, producing REQUIREMENTS.md",
+    "review": {
+      "description": "Review current changes across correctness, readability, architecture, security, performance",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:./commands/analyst.md}"
-    },
-    "architect": {
-      "description": "Design the solution architecture and produce ARCHITECTURE.md from REQUIREMENTS.md",
-      "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:./commands/architect.md}"
-    },
-    "spec": {
-      "description": "Start spec-driven development \u2014 write a structured specification before writing code",
-      "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:./commands/spec.md}"
-    },
-    "simplify": {
-      "description": "Simplify code for clarity and maintainability \u2014 reduce complexity without changing behavior",
-      "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:./commands/code-simplify.md}"
+      "template": "{file:../agents/commands/review.md}"
     }
   },
   "instructions": [
     "~/.config/opencode/prompts/general.md",
-    "~/.config/agent-prompts/voice.md"
+    "~/.config/agents/instructions/voice.md"
   ],
   "permissions": [
     {

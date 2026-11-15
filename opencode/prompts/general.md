@@ -19,6 +19,25 @@
 - Prefer explore subagent for codebase exploration.
 - Use the Task tool (`subagent_type="executor"`) to delegate to `@executor` by default for commands, tool calls, tests, and other execution-heavy validation so the caller can keep context compact.
 - Do not run bash directly when `@executor` (via the Task tool) can perform the same work.
+- Route review, audit, and reasoning-heavy work to `opencode-go/deepseek-v4-pro`. Keep mechanical execution on the fast model.
+
+## Skills
+
+Before acting, check whether a skill matches the request. If one does, load it with the `skill` tool and follow it.
+
+- Feature / new functionality → `spec-driven-development`, then `incremental-implementation` + `test-driven-development`
+- Planning / task breakdown → `planning-and-task-breakdown`
+- Bug, failing test, unexpected behavior → `debugging-and-error-recovery`
+- Code review → `code-review-and-quality`
+- Refactor / simplify → `code-simplification`
+- API or interface design → `api-and-interface-design`
+- UI work → `frontend-ui-engineering`
+- Security-sensitive change → `security-and-hardening`
+- Performance issue → `performance-optimization`
+- Release / deploy → `shipping-and-launch`
+- Requirements gathering → `interview-me`
+- Unfamiliar codebase or high-stakes change → `doubt-driven-development`
+- Commit / branch / versioning → `git-workflow-and-versioning`
 
 ## Efficiency Rules
 
