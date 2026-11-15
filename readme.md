@@ -98,7 +98,7 @@ ln -sfn ~/dotfiles/agents ~/.agents
 
 Two packs, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
 for generic workflows, and [ruicsh/skills](https://github.com/ruicsh/skills) for the
-`build`, `commit`, and `review` workflows this repo drives.
+`build`, `commit`, `plan`, and `review` workflows this repo drives.
 
 ```sh
 npx skills add addyosmani/agent-skills -g -a opencode claude-code github-copilot -y
@@ -111,9 +111,9 @@ npx skills update
 - Claude Code reads `~/.config/claude/skills`; Copilot CLI reads
   `~/.config/copilot/skills` and, with `COPILOT_HOME` set, does not fall back to
   `~/.agents/skills`. Both get symlinks into the store. CLI-made links are gitignored;
-  `build`, `commit`, and `review` are tracked in both, so a fresh checkout has
-  `/build`, `/commit`, and `/review` without a CLI run.
-- `build`, `commit`, and `review` are owned by `ruicsh/skills`. Edit them there, then
+  `build`, `commit`, `plan`, and `review` are tracked in both, so a fresh checkout has
+  `/build`, `/commit`, `/plan`, and `/review` without a CLI run.
+- `build`, `commit`, `plan`, and `review` are owned by `ruicsh/skills`. Edit them there, then
   `npx skills update`. OpenCode needs a command wrapper because it has no skill-to-slash
   mapping; Claude and Copilot map the skill directory name to the slash command themselves.
 - `~/.agents/.skill-lock.json` records source and hash per skill. It is tracked, so
@@ -154,13 +154,15 @@ Copilot reads through the symlink — verified via `copilot instruction list` an
 One workflow body lives in `agents/commands/`: `ship.md`. Each agent wraps it with its own
 frontmatter, so the workflow text is not duplicated.
 
-`build`, `commit`, and `review` are no longer bodies here. They ship as skills from
+`build`, `commit`, `plan`, and `review` are no longer bodies here. They ship as skills from
 [`ruicsh/skills`](https://github.com/ruicsh/skills), so every agent reads one copy.
-Claude and Copilot turn each installed skill into `/build`, `/commit`, and `/review` from
-its frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json` maps them:
+Claude and Copilot turn each installed skill into `/build`, `/commit`, `/plan`, and
+`/review` from its frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json`
+maps them:
 
 ```jsonc
 "commit": { "template": "@commit" },
+"plan": { "template": "@plan" },
 "build": { "template": "Load the `build` skill. `$ARGUMENTS` picks the mode: ..." }
 ```
 
@@ -170,8 +172,8 @@ bare `@build` cannot carry.
 
 | Agent | Where | Shape |
 | --- | --- | --- |
-| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `ship`, `@<skill>` for `commit`/`review`, inline wrapper for `build` |
-| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `build`/`commit`/`review` come from the skill dir |
+| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `ship`, `@<skill>` for `commit`/`plan`/`review`, inline wrapper for `build` |
+| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `build`/`commit`/`plan`/`review` come from the skill dir |
 | Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file (`ship` only) |
 
 - `review` loads `code-review-and-quality` in the main session.
@@ -179,10 +181,12 @@ bare `@build` cannot carry.
   rollback plan.
 - `commit` stays OpenCode-only as a command; the skill itself auto-invokes everywhere
   else when the user asks to commit.
+- `plan` writes `tasks/plan.md` from a spec and defers the decomposition method to
+  `planning-and-task-breakdown`. It never implements; `build` consumes its output.
 
-OpenCode models: `build` and `commit` on `opencode-go/deepseek-v4.1-flash`, `review` and
-`ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot commands inherit the session
-model.
+OpenCode models: `build` and `commit` on `opencode-go/deepseek-v4.1-flash`, `plan`,
+`review`, and `ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot commands inherit
+the session model.
 
 ### Subagents
 
