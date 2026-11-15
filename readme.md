@@ -83,9 +83,8 @@ spells its instruction paths as `~/.config/opencode/prompts/*.md`, so moving
 `XDG_CONFIG_HOME` off `~/.config` leaves those entries resolving to nothing, and
 OpenCode skips missing files silently.
 
-`agents/` holds prompts shared across agents. `instructions/` has cross-cutting rules
-such as `skills.md`. The skills CLI also writes its store here, so one symlink covers
-both:
+`agents/` holds prompts shared across agents. The skills CLI also writes its store here,
+so one symlink covers both:
 
 ```sh
 ln -sfn ~/dotfiles/agents ~/.agents
@@ -98,7 +97,7 @@ ln -sfn ~/dotfiles/agents ~/.agents
 
 Two packs, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
 for generic workflows, and [ruicsh/skills](https://github.com/ruicsh/skills) for the
-`build`, `commit`, `plan`, and `review` workflows this repo drives.
+skill router plus the `build`, `commit`, `plan`, and `review` workflows this repo drives.
 
 ```sh
 npx skills add addyosmani/agent-skills -g -a opencode claude-code github-copilot -y
@@ -136,24 +135,24 @@ npx skills list -g                    # verify: all entries "tracked"
 lock uses `npx skills experimental_install` instead. Remove a stray real
 `~/.agents` dir first, or `ln` nests the link inside it.
 
-Shared rules live once in `agents/instructions/`, deployed at `~/.agents/instructions/`.
-Tone rules come straight from the installed skill. Harnesses consume each file their own
-way:
+Shared rules live once, in the installed skills. The intent → skill router and the tone
+rules are read straight from `~/.agents/skills/`, so nothing is copied into this repo.
+Harnesses consume each file their own way:
 
 | File | OpenCode | Claude | Copilot |
 | --- | --- | --- | --- |
-| `skills.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+| `skills/skill-router/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 | `skills/terse-voice/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 
-Copilot gets `copilot/instructions/skills.instructions.md` and
-`copilot/instructions/terse-voice.instructions.md` as symlinks. The first points into
-`agents/instructions/`; the second points straight at the installed skill, so tone rules
-keep one source. Copilot reads through the symlinks — verified via
-`copilot instruction list` and the `<custom_instruction>` block in the session log.
+Copilot gets `copilot/instructions/skill-router.instructions.md` and
+`copilot/instructions/terse-voice.instructions.md` as symlinks; both point straight at
+the installed skills, so each rule keeps one source. Copilot reads through the symlinks —
+verified via `copilot instruction list` and the `<custom_instruction>` block in the
+session log.
 
-`terse-voice` comes from [`ruicsh/skills`](https://github.com/ruicsh/skills). The skill
-frontmatter is injected with the rules; harmless. Edit it in that repo, then
-`npx skills update`.
+`skill-router` and `terse-voice` come from
+[`ruicsh/skills`](https://github.com/ruicsh/skills). The skill frontmatter is injected
+with the rules; harmless. Edit them in that repo, then `npx skills update`.
 
 ### Commands
 
