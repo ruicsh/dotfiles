@@ -137,21 +137,23 @@ lock uses `npx skills experimental_install` instead. Remove a stray real
 `~/.agents` dir first, or `ln` nests the link inside it.
 
 Shared rules live once in `agents/instructions/`, deployed at `~/.agents/instructions/`.
-Harnesses consume each file their own way:
+Tone rules come straight from the installed skill. Harnesses consume each file their own
+way:
 
 | File | OpenCode | Claude | Copilot |
 | --- | --- | --- | --- |
 | `skills.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+| `skills/terse-voice/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 
-Copilot gets `copilot/instructions/skills.instructions.md` as a symlink into
-`agents/instructions/`. Copilot reads through the symlink — verified via
+Copilot gets `copilot/instructions/skills.instructions.md` and
+`copilot/instructions/terse-voice.instructions.md` as symlinks. The first points into
+`agents/instructions/`; the second points straight at the installed skill, so tone rules
+keep one source. Copilot reads through the symlinks — verified via
 `copilot instruction list` and the `<custom_instruction>` block in the session log.
-Edit one file; no copies to drift.
 
-Tone rules are not injected as instructions. `terse-voice` ships only as a skill from
-[`ruicsh/skills`](https://github.com/ruicsh/skills): OpenCode discovers it in
-`~/.agents/skills`, and Claude gets a CLI symlink. Copilot has no link, so it never
-sees the skill. Edit it in that repo, then `npx skills update`.
+`terse-voice` comes from [`ruicsh/skills`](https://github.com/ruicsh/skills). The skill
+frontmatter is injected with the rules; harmless. Edit it in that repo, then
+`npx skills update`.
 
 ### Commands
 
