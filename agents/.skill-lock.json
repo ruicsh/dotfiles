@@ -270,6 +270,15 @@
       "skillFolderHash": "1c841c0a4218550de9e5532c6309870f32e8fe76",
       "installedAt": "2026-11-15T23:11:45.304Z",
       "updatedAt": "2026-11-15T23:11:45.304Z"
+    },
+    "ship": {
+      "source": "ruicsh/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ruicsh/skills.git",
+      "skillPath": "skills/ship/SKILL.md",
+      "skillFolderHash": "4467a012bdc7f9343950ec6c4f30e1ff22865b9f",
+      "installedAt": "2026-11-15T23:16:00.000Z",
+      "updatedAt": "2026-11-15T23:16:00.000Z"
     }
   },
   "dismissed": {
