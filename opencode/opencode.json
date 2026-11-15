@@ -51,12 +51,12 @@
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "@commit\n\nScope: $ARGUMENTS"
+      "template": "@commit"
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:~/.agents/commands/build.md}"
+      "template": "Load the `build` skill. `$ARGUMENTS` picks the mode: `auto` (or `all`) runs the whole plan after one approval, anything else implements the next task and stops."
     },
     "ship": {
       "description": "Run the pre-launch checklist via parallel fan-out to specialist subagents, then synthesize a go/no-go decision",
@@ -66,7 +66,7 @@
     "review": {
       "description": "Review current changes across correctness, readability, architecture, security, performance",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "@review\n\nScope: $ARGUMENTS"
+      "template": "@review"
     }
   },
   "instructions": [
