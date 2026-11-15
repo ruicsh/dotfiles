@@ -58,6 +58,11 @@
       "model": "opencode-go/deepseek-v4.1-flash",
       "template": "Load the `build` skill. `$ARGUMENTS` picks the mode: `auto` (or `all`) runs the whole plan after one approval, anything else implements the next task and stops."
     },
+    "plan": {
+      "description": "Turn a spec into tasks/plan.md \u2014 ordered tasks with acceptance criteria, sized for the build skill",
+      "model": "opencode-go/deepseek-v4-pro",
+      "template": "@plan"
+    },
     "ship": {
       "description": "Run the pre-launch checklist via parallel fan-out to specialist subagents, then synthesize a go/no-go decision",
       "model": "opencode-go/deepseek-v4-pro",
