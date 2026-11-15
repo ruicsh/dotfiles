@@ -51,27 +51,27 @@
     "commit": {
       "description": "Stage and commit changes with auto-generated conventional commit messages",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:../agents/commands/commit.md}"
+      "template": "{file:~/.agents/commands/commit.md}"
     },
     "build": {
       "description": "Implement tasks incrementally \u2014 build, test, verify, commit. Add \"auto\" to run the whole plan in one approved pass.",
       "model": "opencode-go/deepseek-v4.1-flash",
-      "template": "{file:../agents/commands/build.md}"
+      "template": "{file:~/.agents/commands/build.md}"
     },
     "ship": {
       "description": "Run the pre-launch checklist via parallel fan-out to specialist subagents, then synthesize a go/no-go decision",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:../agents/commands/ship.md}"
+      "template": "{file:~/.agents/commands/ship.md}"
     },
     "review": {
       "description": "Review current changes across correctness, readability, architecture, security, performance",
       "model": "opencode-go/deepseek-v4-pro",
-      "template": "{file:../agents/commands/review.md}"
+      "template": "{file:~/.agents/commands/review.md}"
     }
   },
   "instructions": [
     "~/.config/opencode/prompts/general.md",
-    "~/.config/agents/instructions/voice.md"
+    "~/.agents/instructions/voice.md"
   ],
   "permissions": [
     {

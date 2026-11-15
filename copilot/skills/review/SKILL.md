@@ -4,6 +4,6 @@ description: Review current changes across correctness, readability, architectur
 user-invocable: true
 ---
 
-Read `~/.config/agents/commands/review.md` and follow it exactly.
+Read `~/.agents/commands/review.md` and follow it exactly.
 
 Text after the command name is the scope. Empty scope means the staged and unstaged changes (`git diff HEAD`).

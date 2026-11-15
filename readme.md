@@ -84,11 +84,15 @@ leaves those entries resolving to nothing, and OpenCode skips missing files
 silently.
 
 `agents/` holds prompts shared across agents. `commands/` has the workflow bodies
-and `instructions/` has cross-cutting rules such as `voice.md` for tone. Linked once:
+and `instructions/` has cross-cutting rules such as `voice.md` for tone. The skills
+CLI also writes its store here, so one symlink covers both:
 
 ```sh
-ln -sfn ~/dotfiles/agents ~/.config/agents
+ln -sfn ~/dotfiles/agents ~/.agents
 ```
+
+`agents/skills/` is gitignored; `agents/.skill-lock.json` is tracked.
+`~/.config/agents` does not exist. Callers reference `~/.agents/...` directly.
 
 ### Skills
 
@@ -104,10 +108,23 @@ npx skills update
   directly.
 - Claude Code reads `~/.config/claude/skills`, so the CLI symlinks each installed
   skill into `claude/skills`. Those links are gitignored; only `commit` is local.
-- `~/.agents/.skill-lock.json` records source and hash per skill.
+- `~/.agents/.skill-lock.json` records source and hash per skill. It is tracked, so
+  the installed list survives a fresh machine.
 - Copilot CLI turns `~/.copilot/skills/<name>/SKILL.md` into a slash command from
   its frontmatter. Claude imports shared prompts with `@`; Copilot must read them,
   since its `@` references cannot leave `~/.copilot`.
+
+New machine, after linking the repo:
+
+```sh
+ln -sfn ~/dotfiles/agents ~/.agents   # must exist before the CLI runs
+npx skills update -g -y               # reinstalls every locked skill missing on disk
+npx skills list -g                    # verify: all entries "tracked"
+```
+
+`update -g` is the restore path. There is no `skills install -g` yet; the project
+lock uses `npx skills experimental_install` instead. Remove a stray real
+`~/.agents` dir first, or `ln` nests the link inside it.
 
 Each agent gets the same intent → skill map: `opencode/prompts/general.md`,
 `claude/CLAUDE.md`, `copilot/copilot-instructions.md`.
@@ -120,7 +137,7 @@ Each agent wraps it with its own frontmatter, so the workflow text is not duplic
 | Agent | Where | Shape |
 | --- | --- | --- |
 | OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` plus description and model |
-| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.config/agents/commands/<name>.md` |
+| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md` |
 | Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file |
 
 - `review` loads `code-review-and-quality` in the main session.

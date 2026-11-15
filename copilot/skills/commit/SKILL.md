@@ -5,4 +5,4 @@ user-invocable: true
 disable-model-invocation: true
 ---
 
-Read `~/.config/agents/commands/commit.md` and follow it exactly.
+Read `~/.agents/commands/commit.md` and follow it exactly.

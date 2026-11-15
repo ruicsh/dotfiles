@@ -5,4 +5,4 @@ argument-hint: "[scope]"
 
 Follow this workflow. Arguments: $ARGUMENTS
 
-@~/.config/agents/commands/review.md
+@~/.agents/commands/review.md

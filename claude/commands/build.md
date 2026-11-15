@@ -5,4 +5,4 @@ argument-hint: "[auto]"
 
 Follow this workflow. Arguments: $ARGUMENTS
 
-@~/.config/agents/commands/build.md
+@~/.agents/commands/build.md
