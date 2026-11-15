@@ -13,3 +13,5 @@ Cover all five axes:
 5. **Performance** — Unbounded operations? N+1 queries? Load `performance-optimization` when relevant.
 
 Label each finding Critical / Required / Optional / Nit and cite `file:line`.
+
+Format: one line per finding — `location` — problem — fix. No preamble, no recap, no restating the diff. Group under the axis it belongs to, findings first, summary last only if asked.
