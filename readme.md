@@ -77,78 +77,68 @@ New-Item -ItemType Junction `
 
 ## Agent config
 
-`claude/`, `copilot/`, and `opencode/` are symlinked into `~/.config`.
-`opencode/opencode.json` spells its instruction paths as
+`claude/` and `opencode/` are symlinked under `~/.config`; `copilot/` is symlinked to
+`~/.copilot`. `opencode/opencode.json` spells its instruction paths as
 `~/.config/opencode/prompts/*.md`, so moving `XDG_CONFIG_HOME` off `~/.config`
 leaves those entries resolving to nothing, and OpenCode skips missing files
 silently.
 
-`agent-prompts/` holds instructions shared across agents: `voice.md` for tone,
-`commit.md` and `review.md` for those workflows. Linked once:
+`agents/` holds prompts shared across agents. `commands/` has the workflow bodies
+and `instructions/` has cross-cutting rules such as `voice.md` for tone. Linked once:
 
 ```sh
-ln -sfn ~/dotfiles/agent-prompts ~/.config/agent-prompts
+ln -sfn ~/dotfiles/agents ~/.config/agents
 ```
 
-OpenCode loads `voice.md` through its `instructions` array, and the other two
-through command templates:
+### Skills
 
-```json
-"instructions": [
-  "~/.config/opencode/prompts/general.md",
-  "~/.config/agent-prompts/voice.md"
-],
-"commands": {
-  "commit": { "template": "{file:../agent-prompts/commit.md}" },
-  "review": { "template": "{file:../agent-prompts/review.md}" }
-}
-```
-
-Command templates carry no frontmatter. `opencode.json` holds the description
-and model, which are OpenCode-only.
-
-Copilot CLI has no prompt-file commands. It turns `~/.copilot/skills/<name>/SKILL.md`
-into a slash command from that file's frontmatter, so each skill points at the
-shared prompt instead of copying it:
-
-```md
----
-name: commit
-user-invocable: true
-disable-model-invocation: true
----
-
-Read `~/.config/agent-prompts/commit.md` and follow it exactly.
-```
-
-`commit` and `review` work this way. The body stays one line; the prompt lives in
-`agent-prompts/`.
-
-Claude Code uses skills too — commands were merged into them. Same pointer shape,
-different frontmatter, and each skill needs a link into `~/.claude/skills`:
+One standard pack, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
 ```sh
-ln -sfn ~/dotfiles/claude/skills/commit ~/.claude/skills/commit
-ln -sfn ~/dotfiles/claude/skills/review ~/.claude/skills/review
+npx skills add addyosmani/agent-skills -g -a opencode claude-code github-copilot -y
+npx skills check
+npx skills update
 ```
 
-```md
----
-name: commit
-disable-model-invocation: true
----
+- Canonical store is `~/.agents/skills`, which OpenCode and Copilot CLI discover
+  directly.
+- Claude Code reads `~/.config/claude/skills`, so the CLI symlinks each installed
+  skill into `claude/skills`. Those links are gitignored; only `commit` is local.
+- `~/.agents/.skill-lock.json` records source and hash per skill.
+- Copilot CLI turns `~/.copilot/skills/<name>/SKILL.md` into a slash command from
+  its frontmatter. Claude imports shared prompts with `@`; Copilot must read them,
+  since its `@` references cannot leave `~/.copilot`.
 
-@~/.config/agent-prompts/commit.md
-```
+Each agent gets the same intent → skill map: `opencode/prompts/general.md`,
+`claude/CLAUDE.md`, `copilot/copilot-instructions.md`.
 
-Claude imports the file inline, so no read round-trip. Copilot cannot: its `@`
-references must stay inside `~/.copilot`, so it keeps the read pointer.
+### Commands
 
-Pass `instructions` an absolute or `~` path. It resolves relative entries
-against the current directory, not the config dir, so `../agent-prompts/...`
-silently loads nothing. `{file:}` does resolve against the config dir, which is
-why the template uses a relative path.
+One body per workflow in `agents/commands/`: `build.md`, `commit.md`, `review.md`, `ship.md`.
+Each agent wraps it with its own frontmatter, so the workflow text is not duplicated.
 
-Other agents take a single instructions file. Paste `voice.md`, or reference
-`~/.config/agent-prompts/voice.md`, into `~/.claude/CLAUDE.md` or
-`$HOME/.copilot/copilot-instructions.md`.
+| Agent | Where | Shape |
+| --- | --- | --- |
+| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` plus description and model |
+| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.config/agents/commands/<name>.md` |
+| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file |
+
+- `review` loads `code-review-and-quality` in the main session.
+- `ship` fans out to review, security, and test subagents, then merges their reports plus a
+  rollback plan.
+- `commit` stays OpenCode-only; Claude and Copilot have a local `commit` skill.
+
+OpenCode models: `build` and `commit` on `opencode-go/deepseek-v4.1-flash`, `review` and
+`ship` on `opencode-go/deepseek-v4-pro`. Claude and Copilot commands inherit the session
+model.
+
+### Subagents
+
+`opencode/prompts/` holds the persona adapters: `code-reviewer`,
+`security-auditor`, `test-engineer`, `web-performance-auditor`. Each starts by
+loading its skill, then reports. They are registered in `opencode.json` under
+`agents` with `system: {file:...}` and `mode: subagent`.
+
+Review, audit, and reasoning route to `opencode-go/deepseek-v4-pro`; mechanical
+execution stays on `opencode-go/deepseek-v4.1-flash`.
+
