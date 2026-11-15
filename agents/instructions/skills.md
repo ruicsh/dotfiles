@@ -12,7 +12,7 @@ Skills are installed globally in `~/.agents/skills` and are visible to this sess
 - UI work → `frontend-ui-engineering`
 - Security-sensitive change → `security-and-hardening`
 - Performance issue → `performance-optimization`
-- Release / deploy → `shipping-and-launch`
+- Release / deploy → `ship` (fan-out, then go/no-go + rollback). `shipping-and-launch` holds the checklist alone.
 - Requirements gathering → `interview-me`
 - Unfamiliar codebase or high-stakes change → `doubt-driven-development`
 - Commit / split a working tree → `commit`
