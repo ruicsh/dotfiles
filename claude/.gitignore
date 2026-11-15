@@ -7,7 +7,8 @@
 !themes/
 !themes/**
 # Installed skills are CLI-created symlinks into ~/.agents/skills and stay ignored.
-# commit and review are tracked so a fresh checkout has /commit and /review.
+# build, commit and review are tracked so a fresh checkout has /build, /commit and /review.
 !skills/
+!skills/build
 !skills/commit
 !skills/review

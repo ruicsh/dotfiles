@@ -4,6 +4,7 @@ Skills are installed globally in `~/.agents/skills` and are visible to this sess
 
 - Feature / new functionality → `spec-driven-development`, then `incremental-implementation` + `test-driven-development`
 - Planning / task breakdown → `planning-and-task-breakdown`
+- Execute an existing plan or spec → `build`
 - Bug, failing test, unexpected behavior → `debugging-and-error-recovery`
 - Code review → `code-review-and-quality`
 - Refactor / simplify → `code-simplification`
