@@ -98,7 +98,7 @@ ln -sfn ~/dotfiles/agents ~/.agents
 
 Two packs, not vendored: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
 for generic workflows, and [ruicsh/skills](https://github.com/ruicsh/skills) for the
-`commit` and `review` workflows this repo drives.
+`build`, `commit`, and `review` workflows this repo drives.
 
 ```sh
 npx skills add addyosmani/agent-skills -g -a opencode claude-code github-copilot -y
@@ -111,9 +111,9 @@ npx skills update
 - Claude Code reads `~/.config/claude/skills`; Copilot CLI reads
   `~/.config/copilot/skills` and, with `COPILOT_HOME` set, does not fall back to
   `~/.agents/skills`. Both get symlinks into the store. CLI-made links are gitignored;
-  `commit` and `review` are tracked in both, so a fresh checkout has `/commit` and
-  `/review` without a CLI run.
-- `commit` and `review` are owned by `ruicsh/skills`. Edit them there, then
+  `build`, `commit`, and `review` are tracked in both, so a fresh checkout has
+  `/build`, `/commit`, and `/review` without a CLI run.
+- `build`, `commit`, and `review` are owned by `ruicsh/skills`. Edit them there, then
   `npx skills update`. OpenCode needs a command wrapper because it has no skill-to-slash
   mapping; Claude and Copilot map the skill directory name to the slash command themselves.
 - `~/.agents/.skill-lock.json` records source and hash per skill. It is tracked, so
@@ -151,25 +151,28 @@ Copilot reads through the symlink — verified via `copilot instruction list` an
 
 ### Commands
 
-Two workflow bodies live in `agents/commands/`: `build.md` and `ship.md`. Each agent
-wraps them with its own frontmatter, so the workflow text is not duplicated.
+One workflow body lives in `agents/commands/`: `ship.md`. Each agent wraps it with its own
+frontmatter, so the workflow text is not duplicated.
 
-`commit` and `review` are no longer bodies here. They ship as skills from
+`build`, `commit`, and `review` are no longer bodies here. They ship as skills from
 [`ruicsh/skills`](https://github.com/ruicsh/skills), so every agent reads one copy.
-Claude and Copilot turn each installed skill into `/commit` and `/review` from its
-frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json` maps them:
+Claude and Copilot turn each installed skill into `/build`, `/commit`, and `/review` from
+its frontmatter. OpenCode has no skill-to-slash mapping, so `opencode.json` maps them:
 
 ```jsonc
-"commit": { "template": "@commit\n\nScope: $ARGUMENTS" }
+"commit": { "template": "@commit" },
+"build": { "template": "Load the `build` skill. `$ARGUMENTS` picks the mode: ..." }
 ```
 
 `@<skill-id>` loads an OpenCode skill explicitly instead of hoping the model picks it.
+`build` needs the longer wrapper because the mode has to come from `$ARGUMENTS`, which a
+bare `@build` cannot carry.
 
 | Agent | Where | Shape |
 | --- | --- | --- |
-| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `build`/`ship`, `@<skill>` for `commit`/`review` |
-| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `commit`/`review` come from the skill dir |
-| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file (`build`/`ship` only) |
+| OpenCode | `opencode.json` `commands` | `template: {file:../agents/commands/<name>.md}` for `ship`, `@<skill>` for `commit`/`review`, inline wrapper for `build` |
+| Claude | `claude/commands/<name>.md` | frontmatter, body `@~/.agents/commands/<name>.md`; `build`/`commit`/`review` come from the skill dir |
+| Copilot | `copilot/skills/<name>/SKILL.md` | `user-invocable: true`, body reads the shared file (`ship` only) |
 
 - `review` loads `code-review-and-quality` in the main session.
 - `ship` fans out to review, security, and test subagents, then merges their reports plus a
