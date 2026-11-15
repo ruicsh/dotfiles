@@ -1,1 +1,0 @@
-../skills/terse-voice/SKILL.md

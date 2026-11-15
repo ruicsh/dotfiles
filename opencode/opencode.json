@@ -76,8 +76,7 @@
   },
   "instructions": [
     "~/.config/opencode/prompts/general.md",
-    "~/.agents/instructions/skills.md",
-    "~/.agents/instructions/voice.md"
+    "~/.agents/instructions/skills.md"
   ],
   "permissions": [
     {
