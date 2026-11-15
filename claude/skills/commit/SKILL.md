@@ -4,4 +4,4 @@ description: Group the current working tree changes into logical Conventional Co
 disable-model-invocation: true
 ---
 
-@~/.config/agent-prompts/commit.md
+@~/.config/agents/commands/commit.md

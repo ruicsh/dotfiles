@@ -1,7 +1,13 @@
 *
 !.gitignore
+!CLAUDE.md
 !settings.json
+!commands/
+!commands/**
 !themes/
 !themes/**
 !skills/
-!skills/**
+# Only the local `commit` skill is tracked. Installed skills are CLI-created
+# symlinks into ~/.agents/skills and stay ignored.
+!skills/commit/
+!skills/commit/**
