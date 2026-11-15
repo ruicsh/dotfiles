@@ -14,4 +14,5 @@ Skills are installed globally in `~/.agents/skills` and are visible to this sess
 - Release / deploy → `shipping-and-launch`
 - Requirements gathering → `interview-me`
 - Unfamiliar codebase or high-stakes change → `doubt-driven-development`
-- Commit / branch / versioning → `git-workflow-and-versioning`
+- Commit / split a working tree → `commit`
+- Branch / versioning / changelog → `git-workflow-and-versioning`
