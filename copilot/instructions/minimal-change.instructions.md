@@ -1,0 +1,1 @@
+../../agents/skills/minimal-change/SKILL.md
