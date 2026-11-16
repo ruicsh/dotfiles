@@ -135,22 +135,23 @@ npx skills list -g                    # verify: all entries "tracked"
 lock uses `npx skills experimental_install` instead. Remove a stray real
 `~/.agents` dir first, or `ln` nests the link inside it.
 
-Shared rules live once, in the installed skills. The intent → skill router and the tone
-rules are read straight from `~/.agents/skills/`, so nothing is copied into this repo.
-Harnesses consume each file their own way:
+Shared rules live once, in the installed skills. The intent → skill router and the
+tone and minimal-change rules are read straight from `~/.agents/skills/`, so nothing
+is copied into this repo. Harnesses consume each file their own way:
 
 | File | OpenCode | Claude | Copilot |
 | --- | --- | --- | --- |
 | `skills/skill-router/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 | `skills/terse-voice/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
+| `skills/minimal-change/SKILL.md` | `instructions` array | `@~/.agents/...` | symlink to `*.instructions.md` |
 
-Copilot gets `copilot/instructions/skill-router.instructions.md` and
-`copilot/instructions/terse-voice.instructions.md` as symlinks; both point straight at
-the installed skills, so each rule keeps one source. Copilot reads through the symlinks —
+Copilot gets `skill-router.instructions.md`, `terse-voice.instructions.md`, and
+`minimal-change.instructions.md` in `copilot/instructions/` as symlinks; each points
+straight at the installed skill, so each rule keeps one source. Copilot reads through the symlinks —
 verified via `copilot instruction list` and the `<custom_instruction>` block in the
 session log.
 
-`skill-router` and `terse-voice` come from
+`skill-router`, `terse-voice`, and `minimal-change` come from
 [`ruicsh/skills`](https://github.com/ruicsh/skills). The skill frontmatter is injected
 with the rules; harmless. Edit them in that repo, then `npx skills update`.
 
